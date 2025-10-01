@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- TradingView embed runtime -->
+<script src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async></script>
+<script src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async></script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cana Impex — Unlimited Bulk Supply from Côte d’Ivoire</title>
@@ -51,32 +55,110 @@
   </section>
 
   <!-- Live Prices using FREE ETF proxies -->
-  <section id="prices" class="max-w-7xl mx-auto px-6 py-14">
-    <div class="max-w-3xl">
-      <p class="text-xs tracking-widest uppercase text-gray-500 mb-2">Live Prices</p>
-      <h2 class="text-2xl md:text-3xl font-bold">Realtime Commodities (reference)</h2>
-      <p class="mt-2 text-gray-600 text-sm">
-        Cocoa & Coffee shown via *free* ETF proxies that track futures: <strong>NIB</strong> (cocoa) & <strong>JO</strong> (coffee).
-        Rubber & Cashew are OTC — request a desk quote.
-      </p>
+  <!-- Live Prices (Free + Works) -->
+<section id="prices" class="max-w-7xl mx-auto px-6 py-14">
+  <div class="max-w-3xl">
+    <p class="text-xs tracking-widest uppercase text-gray-500 mb-2">Live Prices</p>
+    <h2 class="text-2xl md:text-3xl font-bold">Realtime Commodities (reference)</h2>
+    <p class="mt-2 text-gray-600 text-sm">
+      Cocoa & Coffee via free ETF proxies (no login): <strong>NIB</strong> (cocoa) & <strong>JO</strong> (coffee).
+      Rubber & Cashew are OTC — request a desk quote.
+    </p>
+  </div>
+
+  <!-- Always-free ticker strip (NIB/JO) -->
+  <div class="my-6 tradingview-widget-container card" style="border:1px solid #e5e7eb; border-radius:16px; padding:8px;">
+    <div class="tradingview-widget-container__widget" id="ticker_tape_container"></div>
+    <script type="text/javascript">
+      new Promise(r=>document.readyState==='complete'?r():addEventListener('load',r)).then(()=>{
+        const el = document.getElementById('ticker_tape_container');
+        if(!el) return;
+        const s = document.createElement('script');
+        s.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
+        s.async = true;
+        s.innerHTML = JSON.stringify({
+          symbols: [
+            { proName: "AMEX:NIB", title: "Cocoa ETF (NIB)" },
+            { proName: "AMEX:JO",  title: "Coffee ETF (JO)" }
+          ],
+          colorTheme: "light",
+          isTransparent: true,
+          displayMode: "adaptive",
+          locale: "en"
+        });
+        el.parentNode.insertBefore(s, el.nextSibling);
+      });
+    </script>
+  </div>
+
+  <!-- Two mini charts (free) -->
+  <div class="grid md:grid-cols-2 gap-8">
+    <!-- Cocoa via NIB -->
+    <div class="tradingview-widget-container card" style="border:1px solid #e5e7eb; border-radius:16px; padding:16px;">
+      <h3 class="font-semibold mb-3">Cocoa Proxy — NIB</h3>
+      <div class="tradingview-widget-container__widget" id="nib_chart"></div>
+      <script type="text/javascript">
+        new Promise(r=>document.readyState==='complete'?r():addEventListener('load',r)).then(()=>{
+          const el = document.getElementById('nib_chart');
+          if(!el) return;
+          const s = document.createElement('script');
+          s.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
+          s.async = true;
+          s.innerHTML = JSON.stringify({
+            symbols: [["AMEX:NIB",""]],
+            chartOnly: false, width: "100%", height: 320,
+            locale: "en", colorTheme: "light", autosize: true, showVolume: false
+          });
+          el.parentNode.insertBefore(s, el.nextSibling);
+        });
+      </script>
     </div>
 
-    <!-- Ticker -->
-    <div class="my-6">
-      <div class="tradingview-widget-container">
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-        {
-          "symbols": [
-            { "proName": "AMEX:NIB", "title": "Cocoa ETF (NIB)" },
-            { "proName": "AMEX:JO", "title": "Coffee ETF (JO)" }
-          ],
-          "colorTheme": "light",
-          "isTransparent": true,
-          "displayMode": "adaptive",
-          "locale": "en"
-        }
-        </script>
+    <!-- Coffee via JO -->
+    <div class="tradingview-widget-container card" style="border:1px solid #e5e7eb; border-radius:16px; padding:16px;">
+      <h3 class="font-semibold mb-3">Coffee Proxy — JO</h3>
+      <div class="tradingview-widget-container__widget" id="jo_chart"></div>
+      <script type="text/javascript">
+        new Promise(r=>document.readyState==='complete'?r():addEventListener('load',r)).then(()=>{
+          const el = document.getElementById('jo_chart');
+          if(!el) return;
+          const s = document.createElement('script');
+          s.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
+          s.async = true;
+          s.innerHTML = JSON.stringify({
+            symbols: [["AMEX:JO",""]],
+            chartOnly: false, width: "100%", height: 320,
+            locale: "en", colorTheme: "light", autosize: true, showVolume: false
+          });
+          el.parentNode.insertBefore(s, el.nextSibling);
+        });
+      </script>
+    </div>
+  </div>
+
+  <!-- Rubber & Cashew (desk quotes) -->
+  <div class="grid md:grid-cols-2 gap-8 mt-8">
+    <div class="card" style="border:1px solid #e5e7eb; border-radius:16px; padding:20px;">
+      <h3 class="font-semibold text-lg">Rubber (Natural)</h3>
+      <p class="text-sm text-gray-600 mt-2">
+        Regional exchange listings vary & free embeds are limited. For a current bulk offer, request a desk quote.
+      </p>
+      <a href="#contact" class="mt-4 inline-block px-3 py-2 rounded-lg text-sm" style="background:#006644; color:#fff;">
+        Request Live Quote
+      </a>
+    </div>
+    <div class="card" style="border:1px solid #e5e7eb; border-radius:16px; padding:20px;">
+      <h3 class="font-semibold text-lg">Cashew (Bulk)</h3>
+      <p class="text-sm text-gray-600 mt-2">
+        Cashews trade OTC by grade & origin (no public exchange chart). Get a tailored live price for your spec.
+      </p>
+      <a href="#contact" class="mt-4 inline-block px-3 py-2 rounded-lg text-sm" style="background:#006644; color:#fff;">
+        Request Live Quote
+      </a>
+    </div>
+  </div>
+</section>
+
       </div>
     </div>
 
