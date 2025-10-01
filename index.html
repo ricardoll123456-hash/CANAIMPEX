@@ -3,205 +3,102 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cana Impex — Côte d’Ivoire to the World</title>
-  <meta name="description" content="Cana Impex: Unlimited bulk supply of Cashew, Cocoa, Hevea & Coffee — tailored to your business." />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-
-  <!-- Tailwind -->
+  <title>Cana Impex • NutWorks</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Cana Impex (NutWorks) — premium cashews from Côte d’Ivoire to the world.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- AOS (Animate On Scroll) -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <!-- Inter font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
-    :root{--ivory:#FDFCF9;--green:#006644;--green2:#10B981;--ink:#1A1A1A}
-    html{scroll-behavior:smooth}
-    body{background:var(--ivory);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-    .btn{background:var(--green);color:#fff}
-    .btn:hover{background:var(--green2)}
-    .card{background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:20px}
-    .lift{transition:transform .25s ease, box-shadow .25s ease}
-    .lift:hover{transform:translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,.08)}
-    .floating{animation:float 6s ease-in-out infinite}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-    .fade-edge{mask-image:linear-gradient(#000,rgba(0,0,0,0.85) 70%, transparent)}
+    html { scroll-behavior: smooth; }
+    .glass { background: rgba(255,255,255,.72); backdrop-filter: blur(8px); }
   </style>
 </head>
-<body>
-  <!-- Header -->
-  <header class="fixed inset-x-0 top-0 z-30 backdrop-blur bg-white/70 border-b">
-    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <img src="assets/logo.png" alt="Cana Impex logo" class="h-9 w-auto">
-        <span class="font-semibold">Cana Impex</span>
+<body class="text-gray-900 bg-gradient-to-b from-amber-50 via-white to-white">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 border-b bg-white/80 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#">
+        <img src="logo.png" alt="Cana Impex logo" class="h-9 w-auto">
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#commodities" class="hover:underline">Commodities</a>
-        <a href="#origin" class="hover:underline">Origin</a>
-        <a href="#contact" class="hover:underline">Contact</a>
+        <a href="#about">About</a>
+        <a href="#plan">Plan</a>
+        <a href="#products">Products</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <a href="#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold shadow lift">Request Samples</a>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="relative pt-16">
-    <img src="assets/hero.png" alt="Cana Impex Hero" class="w-full h-[70vh] object-cover fade-edge">
-    <div class="absolute inset-0 grid place-items-center text-center px-6">
-      <div data-aos="zoom-in" data-aos-duration="900"
-           class="bg-white/80 backdrop-blur rounded-2xl px-6 py-4 md:px-10 md:py-6 shadow floating">
-        <h1 class="text-2xl md:text-4xl font-extrabold">Unlimited Cashew, Cocoa, Hevea & Coffee</h1>
-        <p class="mt-2 text-sm md:text-base">Direct from Côte d’Ivoire • Bulk supply • We adapt to your specs</p>
-        <div class="mt-4 flex gap-3 justify-center">
-          <a href="#commodities" class="btn px-4 py-2 rounded-lg text-sm font-semibold lift">Explore Commodities</a>
-          <a href="#contact" class="px-4 py-2 rounded-lg border text-sm font-semibold lift">Talk to Sales</a>
+  <!-- HERO -->
+  <section class="py-20 text-center">
+    <h1 class="text-5xl font-bold">Building a Global Cashew Brand</h1>
+    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+      Cana Impex (NutWorks) brings premium Ivorian cashews to worldwide tables.
+    </p>
+    <div class="mt-6 flex justify-center gap-4">
+      <a href="#plan" class="bg-black text-white px-5 py-3 rounded-lg">See the Plan</a>
+      <a href="#products" class="border px-5 py-3 rounded-lg">Explore Products</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold">About Us</h2>
+      <p class="mt-3 text-gray-600">
+        Two entrepreneurs. One mission: bring premium, tasty, and healthy cashews to the world while supporting sustainable development in Côte d’Ivoire.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold">Products</h2>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 border rounded-xl glass">
+          <p class="font-semibold">Roasted Cashews 1kg</p>
+        </div>
+        <div class="p-6 border rounded-xl glass">
+          <p class="font-semibold">Cashew Butter</p>
+        </div>
+        <div class="p-6 border rounded-xl glass">
+          <p class="font-semibold">Cashew Protein Bar</p>
+        </div>
+        <div class="p-6 border rounded-xl glass">
+          <p class="font-semibold">Cashew Chocolate</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About / Promise -->
-  <section id="about" class="max-w-7xl mx-auto px-6 py-16">
-    <div class="grid md:grid-cols-2 gap-10 items-center">
-      <div data-aos="fade-right">
-        <h2 class="text-3xl font-extrabold leading-tight">Unlimited Supply. Tailored to You.</h2>
-        <p class="mt-3 text-gray-700">
-          We’re a registered corporation in Côte d’Ivoire with a strong cooperative network. There’s no ceiling to what
-          we can supply — our only limits are the ones you set. Grades, packaging, volumes, Incoterms — we adapt to your business.
-        </p>
-        <ul class="mt-6 grid sm:grid-cols-2 gap-3 text-sm">
-          <li class="card lift">✔️ Pallet to multi-container</li>
-          <li class="card lift">✔️ FOB Abidjan, CIF EU/NA</li>
-          <li class="card lift">✔️ QC & traceability at origin</li>
-          <li class="card lift">✔️ Private label options</li>
-        </ul>
-      </div>
-      <div data-aos="fade-left">
-        <div class="relative card">
-          <div class="absolute -top-4 -left-4 bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-1 rounded">Bulk First</div>
-          <h3 class="font-semibold text-lg">Commodities we export</h3>
-          <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
-            <div class="p-3 rounded-lg border lift">Cashew</div>
-            <div class="p-3 rounded-lg border lift">Cocoa</div>
-            <div class="p-3 rounded-lg border lift">Hevea (Rubber)</div>
-            <div class="p-3 rounded-lg border lift">Coffee</div>
-          </div>
-        </div>
-      </div>
+  <!-- TEAM -->
+  <section id="team" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold">Our Team</h2>
+      <p class="mt-4">Jean F. Kouassi & Ricardo A. Llorente</p>
     </div>
   </section>
 
-  <!-- Commodities cards -->
-  <section id="commodities" class="bg-[#F5FBF7] py-16">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-2xl md:text-3xl font-bold" data-aos="fade-up">Our Commodities</h2>
-      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="card lift" data-aos="fade-up" data-aos-delay="0">
-          <h3 class="font-semibold text-lg">Cashew</h3>
-          <p class="text-sm text-gray-600 mt-2">RCN & kernels (W240/W320). Roasted & 25kg bulk.</p>
-        </div>
-        <div class="card lift" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="font-semibold text-lg">Cocoa</h3>
-          <p class="text-sm text-gray-600 mt-2">Beans & derivatives. Moisture & grade per buyer spec.</p>
-        </div>
-        <div class="card lift" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="font-semibold text-lg">Hevea (Rubber)</h3>
-          <p class="text-sm text-gray-600 mt-2">Industrial buyers. Bulk volumes; contract-based.</p>
-        </div>
-        <div class="card lift" data-aos="fade-up" data-aos-delay="300">
-          <h3 class="font-semibold text-lg">Coffee</h3>
-          <p class="text-sm text-gray-600 mt-2">Green beans for roasting; bulk bags & pallets.</p>
-        </div>
-      </div>
+  <!-- CONTACT -->
+  <section id="contact" class="py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold">Contact Us</h2>
+      <form class="mt-6 grid gap-4">
+        <input type="email" placeholder="Your email" class="border px-3 py-2 rounded-lg" required>
+        <textarea placeholder="Message" class="border px-3 py-2 rounded-lg" required></textarea>
+        <button type="submit" class="bg-black text-white px-5 py-3 rounded-lg">Send</button>
+      </form>
     </div>
   </section>
 
-  <!-- Origin & Operations gallery -->
-  <section id="origin" class="max-w-7xl mx-auto px-6 py-16">
-    <div class="md:flex items-end justify-between" data-aos="fade-up">
-      <div>
-        <p class="text-xs tracking-widest uppercase text-gray-500">Origin</p>
-        <h2 class="text-2xl md:text-3xl font-bold">Plantations, Processing & Export</h2>
-      </div>
-      <p class="text-sm text-gray-600 mt-2 md:mt-0">Replace these placeholders with your real photos anytime.</p>
-    </div>
-    <div class="mt-8 grid md:grid-cols-3 gap-4">
-      <div class="aspect-[4/3] bg-gray-200 rounded-xl overflow-hidden lift" data-aos="zoom-in">
-        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Plantation">
-      </div>
-      <div class="aspect-[4/3] bg-gray-200 rounded-xl overflow-hidden lift" data-aos="zoom-in" data-aos-delay="100">
-        <img src="https://images.unsplash.com/photo-1617195737498-d68bbf24e4f1?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Processing">
-      </div>
-      <div class="aspect-[4/3] bg-gray-200 rounded-xl overflow-hidden lift" data-aos="zoom-in" data-aos-delay="200">
-        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Logistics">
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="bg-[#F5FBF7] py-16">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-2xl md:text-3xl font-bold" data-aos="fade-up">Request samples or a quote</h2>
-      <div class="mt-8 grid md:grid-cols-2 gap-8">
-        <form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="card lift" data-aos="fade-right">
-          <input type="hidden" name="_subject" value="New B2B Inquiry — Cana Impex">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="thanks.html">
-          <input type="hidden" name="_autoresponse" value="Thanks for contacting Cana Impex. We received your message and will reply within 1–2 business days.">
-          <input type="text" name="_honey" style="display:none">
-          <div class="grid gap-4">
-            <input name="name" placeholder="Your name" required class="border rounded-lg px-3 py-2">
-            <input name="company" placeholder="Company" class="border rounded-lg px-3 py-2">
-            <input type="email" name="email" placeholder="Email" required class="border rounded-lg px-3 py-2">
-            <input name="country" placeholder="Destination country" class="border rounded-lg px-3 py-2">
-            <textarea name="message" placeholder="Volumes, grades, Incoterms…" rows="4" class="border rounded-lg px-3 py-2" required></textarea>
-            <button class="btn px-4 py-2 rounded-lg lift">Send</button>
-          </div>
-        </form>
-        <div class="card lift" data-aos="fade-left">
-          <p class="text-sm"><strong>Email:</strong> ricardollorente@canaimpex.com</p>
-          <p class="text-sm mt-2"><strong>Locations:</strong> Côte d’Ivoire • Canada</p>
-          <p class="text-sm mt-2"><strong>Commodities:</strong> Cashew, Cocoa, Hevea, Coffee</p>
-          <p class="text-sm mt-4 text-gray-600">We conduct our business with integrity and transparency.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-10 text-sm" style="background:#006644; color:#ffffff;">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p>© <span id="year"></span> Cana Impex Inc. All rights reserved.</p>
-      <div class="flex items-center gap-4 text-white/90">
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#commodities" class="hover:underline">Commodities</a>
-        <a href="#origin" class="hover:underline">Origin</a>
-        <a href="#contact" class="hover:underline">Contact</a>
-      </div>
-    </div>
+  <!-- FOOTER -->
+  <footer class="border-t py-6 text-center text-sm">
+    © <span id="year"></span> Cana Impex Inc. — All rights reserved.
   </footer>
 
-  <!-- Cookie banner -->
-  <div id="cookie" class="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:max-w-xl bg-white/95 backdrop-blur border rounded-2xl p-4 shadow hidden">
-    <p class="text-sm">We use basic cookies for site functionality and analytics. <a href="#" class="underline">Learn more</a>.</p>
-    <div class="mt-3 flex gap-3">
-      <button class="btn px-3 py-2 rounded-lg" onclick="acceptCookies()">Accept</button>
-      <button class="px-3 py-2 rounded-lg border" onclick="dismissCookies()">No thanks</button>
-    </div>
-  </div>
-
   <script>
-    AOS.init({ once: true, offset: 80, duration: 700 });
-    document.getElementById('year').textContent = new Date().getFullYear();
-    function acceptCookies(){ localStorage.setItem('cookie_ok','1'); document.getElementById('cookie').classList.add('hidden'); }
-    function dismissCookies(){ localStorage.setItem('cookie_ok','0'); document.getElementById('cookie').classList.add('hidden'); }
-    if(!localStorage.getItem('cookie_ok')){ document.getElementById('cookie').classList.remove('hidden'); }
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
