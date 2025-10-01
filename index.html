@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- TradingView embed runtime -->
-<script src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async></script>
-<script src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async></script>
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cana Impex — Unlimited Bulk Supply from Côte d’Ivoire</title>
@@ -17,8 +13,7 @@
     .btn { background:#006644; color:#fff; }
     .btn:hover { background:#10B981; }
     .alt { background:#F5FBF7; }
-    .card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:20px; }
-    .shadow-soft { box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+    .card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:20px; text-align:center; }
   </style>
 </head>
 <body>
@@ -30,9 +25,7 @@
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm">
         <a href="#commodities" class="hover:underline">Commodities</a>
-        <a href="#specs" class="hover:underline">Specs</a>
-        <a href="#prices" class="hover:underline">Live Prices</a>
-        <a href="#logistics" class="hover:underline">Logistics</a>
+        <a href="#quotes" class="hover:underline">Get Quotes</a>
         <a href="#contact" class="hover:underline">Contact</a>
       </nav>
       <a href="#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold">Request Samples</a>
@@ -41,201 +34,36 @@
 
   <section><img src="assets/hero.png" alt="Cana Impex Hero" class="w-full object-cover"></section>
 
-  <section id="commodities" class="alt py-14">
-    <div class="max-w-7xl mx-auto px-6">
-      <p class="text-xs tracking-widest uppercase text-gray-500 mb-2">What we export</p>
-      <h2 class="text-2xl md:text-3xl font-bold">Cashew • Cocoa • Hevea • Coffee</h2>
-      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="card"><h3 class="font-semibold text-lg">Cashew</h3><p class="text-sm text-gray-600 mt-2">RCN & kernels (W240/W320). Roasted & bulk 25kg.</p></div>
-        <div class="card"><h3 class="font-semibold text-lg">Cocoa</h3><p class="text-sm text-gray-600 mt-2">Beans & derivatives. Moisture & grade per buyer spec.</p></div>
-        <div class="card"><h3 class="font-semibold text-lg">Hevea (Rubber)</h3><p class="text-sm text-gray-600 mt-2">Industrial buyers. Bulk volumes; contract-based.</p></div>
-        <div class="card"><h3 class="font-semibold text-lg">Coffee</h3><p class="text-sm text-gray-600 mt-2">Green beans for roasting; bulk bags & pallets.</p></div>
-      </div>
+  <section id="quotes" class="max-w-7xl mx-auto px-6 py-14">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-xs tracking-widest uppercase text-gray-500 mb-2">Market Quotes</p>
+      <h2 class="text-2xl md:text-3xl font-bold">Request Your Bulk Price Today</h2>
+      <p class="mt-2 text-gray-600 text-sm">International desk quotes available for all commodities. Click below to request your tailored price.</p>
     </div>
-  </section>
-
-  <!-- Live Prices using FREE ETF proxies -->
-  <!-- Live Prices (Free + Works) -->
-<section id="prices" class="max-w-7xl mx-auto px-6 py-14">
-  <div class="max-w-3xl">
-    <p class="text-xs tracking-widest uppercase text-gray-500 mb-2">Live Prices</p>
-    <h2 class="text-2xl md:text-3xl font-bold">Realtime Commodities (reference)</h2>
-    <p class="mt-2 text-gray-600 text-sm">
-      Cocoa & Coffee via free ETF proxies (no login): <strong>NIB</strong> (cocoa) & <strong>JO</strong> (coffee).
-      Rubber & Cashew are OTC — request a desk quote.
-    </p>
-  </div>
-
-  <!-- Always-free ticker strip (NIB/JO) -->
-  <div class="my-6 tradingview-widget-container card" style="border:1px solid #e5e7eb; border-radius:16px; padding:8px;">
-    <div class="tradingview-widget-container__widget" id="ticker_tape_container"></div>
-    <script type="text/javascript">
-      new Promise(r=>document.readyState==='complete'?r():addEventListener('load',r)).then(()=>{
-        const el = document.getElementById('ticker_tape_container');
-        if(!el) return;
-        const s = document.createElement('script');
-        s.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
-        s.async = true;
-        s.innerHTML = JSON.stringify({
-          symbols: [
-            { proName: "AMEX:NIB", title: "Cocoa ETF (NIB)" },
-            { proName: "AMEX:JO",  title: "Coffee ETF (JO)" }
-          ],
-          colorTheme: "light",
-          isTransparent: true,
-          displayMode: "adaptive",
-          locale: "en"
-        });
-        el.parentNode.insertBefore(s, el.nextSibling);
-      });
-    </script>
-  </div>
-
-  <!-- Two mini charts (free) -->
-  <div class="grid md:grid-cols-2 gap-8">
-    <!-- Cocoa via NIB -->
-    <div class="tradingview-widget-container card" style="border:1px solid #e5e7eb; border-radius:16px; padding:16px;">
-      <h3 class="font-semibold mb-3">Cocoa Proxy — NIB</h3>
-      <div class="tradingview-widget-container__widget" id="nib_chart"></div>
-      <script type="text/javascript">
-        new Promise(r=>document.readyState==='complete'?r():addEventListener('load',r)).then(()=>{
-          const el = document.getElementById('nib_chart');
-          if(!el) return;
-          const s = document.createElement('script');
-          s.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
-          s.async = true;
-          s.innerHTML = JSON.stringify({
-            symbols: [["AMEX:NIB",""]],
-            chartOnly: false, width: "100%", height: 320,
-            locale: "en", colorTheme: "light", autosize: true, showVolume: false
-          });
-          el.parentNode.insertBefore(s, el.nextSibling);
-        });
-      </script>
-    </div>
-
-    <!-- Coffee via JO -->
-    <div class="tradingview-widget-container card" style="border:1px solid #e5e7eb; border-radius:16px; padding:16px;">
-      <h3 class="font-semibold mb-3">Coffee Proxy — JO</h3>
-      <div class="tradingview-widget-container__widget" id="jo_chart"></div>
-      <script type="text/javascript">
-        new Promise(r=>document.readyState==='complete'?r():addEventListener('load',r)).then(()=>{
-          const el = document.getElementById('jo_chart');
-          if(!el) return;
-          const s = document.createElement('script');
-          s.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
-          s.async = true;
-          s.innerHTML = JSON.stringify({
-            symbols: [["AMEX:JO",""]],
-            chartOnly: false, width: "100%", height: 320,
-            locale: "en", colorTheme: "light", autosize: true, showVolume: false
-          });
-          el.parentNode.insertBefore(s, el.nextSibling);
-        });
-      </script>
-    </div>
-  </div>
-
-  <!-- Rubber & Cashew (desk quotes) -->
-  <div class="grid md:grid-cols-2 gap-8 mt-8">
-    <div class="card" style="border:1px solid #e5e7eb; border-radius:16px; padding:20px;">
-      <h3 class="font-semibold text-lg">Rubber (Natural)</h3>
-      <p class="text-sm text-gray-600 mt-2">
-        Regional exchange listings vary & free embeds are limited. For a current bulk offer, request a desk quote.
-      </p>
-      <a href="#contact" class="mt-4 inline-block px-3 py-2 rounded-lg text-sm" style="background:#006644; color:#fff;">
-        Request Live Quote
-      </a>
-    </div>
-    <div class="card" style="border:1px solid #e5e7eb; border-radius:16px; padding:20px;">
-      <h3 class="font-semibold text-lg">Cashew (Bulk)</h3>
-      <p class="text-sm text-gray-600 mt-2">
-        Cashews trade OTC by grade & origin (no public exchange chart). Get a tailored live price for your spec.
-      </p>
-      <a href="#contact" class="mt-4 inline-block px-3 py-2 rounded-lg text-sm" style="background:#006644; color:#fff;">
-        Request Live Quote
-      </a>
-    </div>
-  </div>
-</section>
-
-      </div>
-    </div>
-
-    <!-- Two small charts -->
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="tradingview-widget-container card shadow-soft">
-        <h3 class="font-semibold mb-3">Cocoa Proxy — NIB</h3>
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
-        {
-          "symbols": [["AMEX:NIB",""]],
-          "chartOnly": false, "width": "100%", "height": 320, "locale": "en",
-          "colorTheme": "light", "autosize": true, "showVolume": false
-        }
-        </script>
-      </div>
-      <div class="tradingview-widget-container card shadow-soft">
-        <h3 class="font-semibold mb-3">Coffee Proxy — JO</h3>
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
-        {
-          "symbols": [["AMEX:JO",""]],
-          "chartOnly": false, "width": "100%", "height": 320, "locale": "en",
-          "colorTheme": "light", "autosize": true, "showVolume": false
-        }
-        </script>
-      </div>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8 mt-8">
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="card">
-        <h3 class="font-semibold text-lg">Rubber (Natural)</h3>
-        <p class="text-sm text-gray-600 mt-2">Regional listings vary. For current bulk offers and contracts, contact our desk.</p>
-        <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Live Quote</a>
+        <img src="assets/cashew.svg" alt="Cashew" class="mx-auto mb-4 h-24">
+        <h3 class="font-semibold text-lg">Cashew</h3>
+        <p class="text-sm text-gray-600 mt-2">Bulk W240/W320, RCN & kernels.</p>
+        <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
       </div>
       <div class="card">
-        <h3 class="font-semibold text-lg">Cashew (Bulk)</h3>
-        <p class="text-sm text-gray-600 mt-2">Cashews trade OTC based on grade & origin. Get a live price tailored to your spec.</p>
-        <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Live Quote</a>
+        <img src="assets/cocoa.svg" alt="Cocoa" class="mx-auto mb-4 h-24">
+        <h3 class="font-semibold text-lg">Cocoa</h3>
+        <p class="text-sm text-gray-600 mt-2">Bulk beans from Côte d’Ivoire.</p>
+        <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
       </div>
-    </div>
-  </section>
-
-  <section id="specs" class="max-w-7xl mx-auto px-6 py-14">
-    <div class="max-w-3xl">
-      <p class="text-xs tracking-widest uppercase text-gray-500 mb-2">Specifications</p>
-      <h2 class="text-2xl md:text-3xl font-bold">Cashew Kernel Grades (example)</h2>
-      <p class="mt-2 text-gray-600 text-sm">Tailored specs available upon request. Below typical values for reference.</p>
-    </div>
-    <div class="mt-6 overflow-x-auto bg-white border rounded-xl">
-      <table class="min-w-full text-sm">
-        <thead class="bg-[#F5FBF7]">
-          <tr>
-            <th class="text-left p-3">Grade</th>
-            <th class="text-left p-3">Count/lb</th>
-            <th class="text-left p-3">Moisture %</th>
-            <th class="text-left p-3">Defects %</th>
-            <th class="text-left p-3">Packaging</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-t"><td class="p-3">W240</td><td class="p-3">220–240</td><td class="p-3">≤ 5%</td><td class="p-3">≤ 10%</td><td class="p-3">25 kg vacuum / tin</td></tr>
-          <tr class="border-t"><td class="p-3">W320</td><td class="p-3">300–320</td><td class="p-3">≤ 5%</td><td class="p-3">≤ 10%</td><td class="p-3">25 kg vacuum / tin</td></tr>
-          <tr class="border-t"><td class="p-3">Pieces</td><td class="p-3">—</td><td class="p-3">≤ 5%</td><td class="p-3">≤ 12%</td><td class="p-3">25 kg</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section id="logistics" class="alt py-14">
-    <div class="max-w-7xl mx-auto px-6">
-      <p class="text-xs tracking-widest uppercase text-gray-500 mb-2">Logistics</p>
-      <h2 class="text-2xl md:text-3xl font-bold">From Abidjan to the world</h2>
-      <div class="mt-6 grid md:grid-cols-3 gap-6">
-        <div class="card"><h3 class="font-semibold">Incoterms</h3><p class="text-sm text-gray-600 mt-2">FOB Abidjan, CFR/CIF EU & NA. DDP possible by arrangement.</p></div>
-        <div class="card"><h3 class="font-semibold">Lead times</h3><p class="text-sm text-gray-600 mt-2">Quotation in 24–48h. Typical ETD 7–14 days from PO.</p></div>
-        <div class="card"><h3 class="font-semibold">Volumes</h3><p class="text-sm text-gray-600 mt-2">Trial pallet → multi‑container. We adapt to your demand.</p></div>
+      <div class="card">
+        <img src="assets/coffee.svg" alt="Coffee" class="mx-auto mb-4 h-24">
+        <h3 class="font-semibold text-lg">Coffee</h3>
+        <p class="text-sm text-gray-600 mt-2">Green beans in bulk shipments.</p>
+        <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
+      </div>
+      <div class="card">
+        <img src="assets/rubber.svg" alt="Rubber" class="mx-auto mb-4 h-24">
+        <h3 class="font-semibold text-lg">Rubber</h3>
+        <p class="text-sm text-gray-600 mt-2">Natural hevea, industrial contracts.</p>
+        <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
       </div>
     </div>
   </section>
@@ -253,7 +81,6 @@
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_next" value="thanks.html">
         <input type="hidden" name="_autoresponse" value="Thanks for contacting Cana Impex. We received your message and will reply within 1–2 business days.">
-        <input type="text" name="_honey" style="display:none">
         <div class="grid gap-4">
           <input name="name" placeholder="Your name" required class="border rounded-lg px-3 py-2">
           <input name="company" placeholder="Company" class="border rounded-lg px-3 py-2">
@@ -277,15 +104,12 @@
       <p>© <span id="year"></span> Cana Impex Inc. All rights reserved.</p>
       <div class="flex items-center gap-4 text-white/90">
         <a href="#commodities" class="hover:underline">Commodities</a>
-        <a href="#specs" class="hover:underline">Specs</a>
-        <a href="#prices" class="hover:underline">Live Prices</a>
-        <a href="#logistics" class="hover:underline">Logistics</a>
+        <a href="#quotes" class="hover:underline">Get Quotes</a>
         <a href="#contact" class="hover:underline">Contact</a>
       </div>
     </div>
   </footer>
 
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
