@@ -1,21 +1,210 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-<meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'>
-<title>Cana Impex — Animated</title>
-<link rel='icon' href='assets/favicon.svg' type='image/svg+xml'>
-<script src='https://cdn.tailwindcss.com'></script>
-<link href='https://unpkg.com/aos@2.3.4/dist/aos.css' rel='stylesheet'>
-<script src='https://unpkg.com/aos@2.3.4/dist/aos.js'></script>
-<style>:root{--green:#006644}body{font-family:sans-serif;background:#FDFCF9;color:#111}.btn{background:var(--green);color:#fff}</style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cana Impex — Bulk Supply from Côte d’Ivoire</title>
+<meta name="description" content="Cana Impex: Bulk supply of Cashew, Cocoa, Hevea, and Coffee from Côte d’Ivoire. Tailored to your business.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+html { scroll-behavior: smooth; }
+body { background:#0b1f16; color:#0e1a15; }
+.btn { background:#0A7F49; color:#fff; }
+.btn:hover { background:#10B981; }
+.card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; }
+.glass { background:rgba(255,255,255,.08); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,.15); }
+.img-card { border-radius:12px; object-fit:cover; width:100%; height:160px; }
+    /* keep the 3D canvas behind everything */
+#hero3d { position: absolute; inset: 0; z-index: 0; }
+.hero-overlay { position: relative; z-index: 1; }
+</style>
 </head>
-<body>
-<header class='px-6 py-4 border-b bg-white/80 sticky top-0 z-30'><div class='max-w-7xl mx-auto flex justify-between'><div class='flex items-center gap-3'><img src='assets/logo.png' class='h-9'><span class='font-semibold'>Cana Impex</span></div><nav class='hidden md:flex gap-6 text-sm'><a href='#about'>About</a><a href='#commodities'>Commodities</a><a href='#origin'>Origin</a><a href='#contact'>Contact</a></nav><a href='#contact' class='btn px-4 py-2 rounded'>Samples</a></div></header>
-<section class='relative'><img src='assets/hero.png' class='w-full h-[70vh] object-cover'><div class='absolute inset-0 grid place-items-center text-center'><div data-aos='zoom-in' class='bg-white/80 px-6 py-4 rounded'><h1 class='text-3xl font-bold'>Unlimited Cashew, Cocoa, Hevea & Coffee</h1></div></div></section>
-<section id='about' class='max-w-7xl mx-auto px-6 py-16'><h2 class='text-2xl font-bold mb-4' data-aos='fade-up'>Unlimited Supply. Tailored to You.</h2><p data-aos='fade-up'>We adapt volumes, packaging, and Incoterms to your needs.</p></section>
-<section id='commodities' class='bg-gray-50 py-16'><div class='max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6'><div class='p-4 border rounded' data-aos='fade-up'>Cashew</div><div class='p-4 border rounded' data-aos='fade-up' data-aos-delay='100'>Cocoa</div><div class='p-4 border rounded' data-aos='fade-up' data-aos-delay='200'>Hevea</div><div class='p-4 border rounded' data-aos='fade-up' data-aos-delay='300'>Coffee</div></div></section>
-<section id='origin' class='max-w-7xl mx-auto px-6 py-16'><h2 class='text-2xl font-bold mb-4' data-aos='fade-up'>Origin & Operations</h2><div class='grid md:grid-cols-3 gap-4'><img src='https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=800' data-aos='zoom-in'><img src='https://images.unsplash.com/photo-1617195737498-d68bbf24e4f1?q=80&w=800' data-aos='zoom-in' data-aos-delay='100'><img src='https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800' data-aos='zoom-in' data-aos-delay='200'></div></section>
-<section id='contact' class='bg-gray-50 py-16'><div class='max-w-7xl mx-auto px-6'><h2 class='text-2xl font-bold' data-aos='fade-up'>Contact</h2><form action='https://formsubmit.co/9557f1bf227663742077ce7c6353e6df' method='POST' class='mt-6 grid gap-3' data-aos='fade-up'><input type='hidden' name='_next' value='thanks.html'><input name='name' placeholder='Name' class='border p-2 rounded'><input type='email' name='email' placeholder='Email' class='border p-2 rounded'><textarea name='message' placeholder='Message' class='border p-2 rounded'></textarea><button class='btn px-4 py-2 rounded'>Send</button></form></div></section>
-<footer class='py-6 text-center bg-[#006644] text-white'>© <span id='year'></span> Cana Impex Inc.</footer>
-<script>AOS.init();document.getElementById('year').textContent=new Date().getFullYear();</script>
-</body></html>
+<body class="text-gray-900">
+<!-- Header -->
+<header class="border-b border-white/10" style="background:linear-gradient(180deg, rgba(11,31,22,.9) 0%, rgba(11,31,22,.7) 100%);">
+<div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+<a href="#" class="flex items-center gap-3">
+<!-- Bigger logo -->
+<img src="assets/logo.png" alt="Cana Impex logo" class="h-16 w-auto">
+<span class="text-white/90 text-lg font-bold">Cana Impex</span>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
+<a href="#quotes" class="hover:underline">Get Quotes</a>
+<a href="#contact" class="hover:underline">Contact</a>
+</nav>
+<a href="#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold">Request Samples</a>
+</div>
+</header>
+
+<!-- HERO (3D background + headline) -->
+<section class="relative overflow-hidden" style="min-height: 68vh;">
+<canvas id="hero3d"></canvas>
+<div class="hero-overlay max-w-7xl mx-auto px-6 py-20 md:py-28">
+<div class="max-w-3xl text-white">
+<h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
+Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Coffee
+</h1>
+<p class="mt-4 text-white/80 md:text-lg">
+Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms. No ceiling — just your requirements.
+</p>
+<div class="mt-8 flex flex-wrap items-center gap-3">
+<a href="#quotes" class="btn px-5 py-3 rounded-xl font-semibold">Get a Desk Quote</a>
+<a href="#contact" class="px-5 py-3 rounded-xl font-semibold text-white/90 border border-white/30 hover:bg-white/10">Talk to Sales</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Quote Cards -->
+<section id="quotes" class="max-w-7xl mx-auto px-6 py-16">
+<div class="max-w-3xl mx-auto text-center text-white">
+<p class="text-xs tracking-widest uppercase text-white/60 mb-2">Market Quotes</p>
+<h2 class="text-2xl md:text-3xl font-bold">Request Your Bulk Price Today</h2>
+      <p class="mt-2 text-white/70 text-sm">Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>.</p>
+      <p class="mt-2 text-white/70 text-sm">Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>. If missing, the cards still work.</p>
+</div>
+
+<div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Cashew -->
+<div class="card p-5">
+<img class="img-card" src="assets/cashew.jpg" alt="Cashew" onerror="this.style.display='none'">
+<h3 class="font-semibold text-lg mt-4">Cashew</h3>
+<p class="text-sm text-gray-600 mt-2">Bulk W240/W320, RCN & kernels.</p>
+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
+</div>
+      <!-- Cocoa -->
+<div class="card p-5">
+<img class="img-card" src="assets/cocoa.jpg" alt="Cocoa" onerror="this.style.display='none'">
+<h3 class="font-semibold text-lg mt-4">Cocoa</h3>
+<p class="text-sm text-gray-600 mt-2">West African cocoa beans.</p>
+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
+</div>
+      <!-- Coffee -->
+<div class="card p-5">
+<img class="img-card" src="assets/coffee.jpg" alt="Coffee" onerror="this.style.display='none'">
+<h3 class="font-semibold text-lg mt-4">Coffee</h3>
+<p class="text-sm text-gray-600 mt-2">Green beans in bulk.</p>
+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
+</div>
+      <!-- Rubber -->
+<div class="card p-5">
+<img class="img-card" src="assets/rubber.jpg" alt="Rubber" onerror="this.style.display='none'">
+<h3 class="font-semibold text-lg mt-4">Rubber</h3>
+<p class="text-sm text-gray-600 mt-2">Natural hevea, industrial contracts.</p>
+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="max-w-7xl mx-auto px-6 pb-20">
+<div class="max-w-3xl text-white">
+<p class="text-xs tracking-widest uppercase text-white/60 mb-2">Contact</p>
+<h2 class="text-2xl md:text-3xl font-bold">Request samples or a quote</h2>
+<p class="mt-2 text-white/70 text-sm">We’ll respond within 24–48h.</p>
+</div>
+
+<div class="mt-8 grid md:grid-cols-2 gap-8">
+<form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="glass rounded-2xl p-6">
+<input type="hidden" name="_subject" value="New B2B Inquiry — Cana Impex">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="thanks.html">
+<input type="hidden" name="_autoresponse" value="Thanks for contacting Cana Impex. We received your message and will reply soon.">
+<div class="grid gap-4">
+<input name="name" placeholder="Your name" required class="border rounded-lg px-3 py-2">
+<input name="company" placeholder="Company" class="border rounded-lg px-3 py-2">
+<input type="email" name="email" placeholder="Email" required class="border rounded-lg px-3 py-2">
+<textarea name="message" placeholder="Volumes, grades, Incoterms…" rows="4" class="border rounded-lg px-3 py-2" required></textarea>
+<button class="btn px-4 py-2 rounded-lg">Send</button>
+</div>
+</form>
+
+<div class="glass rounded-2xl p-6 text-white/90">
+<p class="text-sm"><strong>Email:</strong> ricardollorente@canaimpex.com</p>
+<p class="text-sm mt-2"><strong>Locations:</strong> Côte d’Ivoire • Canada</p>
+<p class="text-sm mt-2"><strong>Commodities:</strong> Cashew, Cocoa, Hevea, Coffee</p>
+<p class="text-sm mt-4 text-white/70">We conduct our business with integrity and transparency.</p>
+</div>
+</div>
+</section>
+
+<!-- Footer with Ivory Coast flag -->
+<footer class="py-8 text-sm bg-[#0A7F49] text-white">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+<p>© <span id="year"></span> Cana Impex Inc. All rights reserved.</p>
+<div class="flex items-center gap-3">
+<span class="text-white/90">Made in Côte d’Ivoire</span>
+        <!-- Ivory Coast flag -->
+        <!-- Ivory Coast flag (orange–white–green) -->
+<svg width="36" height="24" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-label="Ivory Coast flag">
+<rect width="1" height="2" x="0" y="0" fill="#F77F00"/>
+<rect width="1" height="2" x="1" y="0" fill="#FFFFFF"/>
+<rect width="1" height="2" x="2" y="0" fill="#009E60"/>
+</svg>
+</div>
+</div>
+</footer>
+
+  <!-- Three.js (3D globe background) -->
+  <!-- Three.js (CDN) -->
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+<script>
+    // Minimal rotating point-globe for a premium "3D" feel
+const canvas = document.getElementById('hero3d');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 100);
+camera.position.set(0, 0, 6);
+
+    function resize() {
+    const resize = () => {
+const w = canvas.clientWidth = canvas.parentElement.clientWidth;
+const h = canvas.clientHeight = Math.max(400, canvas.parentElement.clientHeight);
+renderer.setSize(w, h, false);
+camera.aspect = w / h;
+camera.updateProjectionMatrix();
+    }
+    resize(); window.addEventListener('resize', resize);
+    };
+    resize(); addEventListener('resize', resize);
+
+    // Points sphere
+const dots = 2000;
+const positions = new Float32Array(dots * 3);
+for (let i=0;i<dots;i++){
+const u = Math.random(), v = Math.random();
+const theta = 2 * Math.PI * u;
+const phi = Math.acos(2*v - 1);
+const r = 2.1;
+positions[i*3+0] = r * Math.sin(phi) * Math.cos(theta);
+positions[i*3+1] = r * Math.cos(phi);
+positions[i*3+2] = r * Math.sin(phi) * Math.sin(theta);
+}
+const geo = new THREE.BufferGeometry();
+geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+const mat = new THREE.PointsMaterial({ size: 0.02, color: 0x10B981 });
+const globe = new THREE.Points(geo, mat);
+scene.add(globe);
+
+    // Soft vignette plane behind for depth
+    const planeGeo = new THREE.PlaneGeometry(14, 8);
+    const planeMat = new THREE.MeshBasicMaterial({ color: 0x062b1c, transparent:true, opacity:0.6 });
+    const plane = new THREE.Mesh(planeGeo, planeMat);
+    plane.position.z = -1.5;
+    scene.add(plane);
+
+function animate(t){
+globe.rotation.y += 0.0018;
+globe.rotation.x = 0.15 * Math.sin(t*0.0003);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.render(scene, camera);
+requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
