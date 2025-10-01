@@ -7,12 +7,19 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <meta name="description" content="Cana Impex / NutWorks — premium cashews from Côte d’Ivoire to the world.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>html{scroll-behavior:smooth}</style>
+  <style>
+    html{scroll-behavior:smooth}
+    body { background-color: #FDFCF9; color: #1A1A1A; }
+    .btn-main { background-color:#006644; color:white; }
+    .btn-main:hover { background-color:#10B981; }
+    header, footer { background-color:#FDFCF9; }
+    section.alt { background-color:#F5FBF7; }
+  </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="text-gray-900">
 
   <!-- Header -->
-  <header class="bg-amber-50 border-b">
+  <header class="border-b">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
       <a href="#" class="flex items-center gap-3">
         <img src="assets/logo.png" alt="Cana Impex logo" class="h-10 w-auto">
@@ -34,14 +41,14 @@
   <!-- About -->
   <section id="about" class="max-w-4xl mx-auto px-6 py-16">
     <h2 class="text-2xl font-bold mb-4">About Us</h2>
-    <p class="text-gray-700 leading-relaxed">
+    <p class="leading-relaxed">
       We are two entrepreneurs on a mission to bring premium, tasty, and healthy cashews to the world,
       while supporting sustainable development in Côte d’Ivoire.
     </p>
   </section>
 
   <!-- Products -->
-  <section id="products" class="bg-gray-50 py-16">
+  <section id="products" class="alt py-16">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-2xl font-bold mb-6">Products</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -56,13 +63,23 @@
   <!-- Contact -->
   <section id="contact" class="max-w-4xl mx-auto px-6 py-16">
     <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
-    <form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST">
+    <form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="space-y-4">
       <input type="hidden" name="_subject" value="New message from Cana Impex website">
       <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="name" placeholder="Your Name" required class="w-full border rounded px-3 py-2">
-      <input type="email" name="email" placeholder="Your Email" required class="w-full border rounded px-3 py-2">
-      <textarea name="message" placeholder="Message" required class="w-full border rounded px-3 py-2"></textarea>
-      <button type="submit" class="bg-amber-500 text-white px-4 py-2 rounded">Send</button>
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="thanks.html">
+      <input type="text" name="_honey" class="hidden" style="display:none">
+      <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Cana Impex. We received your message and will reply shortly.">
+      <div>
+        <input type="text" name="name" placeholder="Your Name" required class="w-full border rounded px-3 py-2">
+      </div>
+      <div>
+        <input type="email" name="email" placeholder="Your Email" required class="w-full border rounded px-3 py-2">
+      </div>
+      <div>
+        <textarea name="message" placeholder="Message" required class="w-full border rounded px-3 py-2"></textarea>
+      </div>
+      <button type="submit" class="btn-main px-4 py-2 rounded">Send</button>
     </form>
   </section>
 
