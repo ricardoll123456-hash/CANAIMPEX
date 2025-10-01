@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cana Impex</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cana Impex — Bulk Supply from Côte d’Ivoire</title>
+<meta name="description" content="Cana Impex: Bulk supply of Cashew, Cocoa, Hevea, and Coffee from Côte d’Ivoire. Tailored to your business.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+html { scroll-behavior: smooth; }
+body { background:#0b1f16; color:#0e1a15; }
+.btn { background:#0A7F49; color:#fff; }
+.btn:hover { background:#10B981; }
+.card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; }
+.glass { background:rgba(255,255,255,.08); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,.15); }
+.img-card { border-radius:12px; object-fit:cover; width:100%; height:160px; }
+    /* keep the 3D canvas behind everything */
+#hero3d { position: absolute; inset: 0; z-index: 0; }
+.hero-overlay { position: relative; z-index: 1; }
+</style>
 </head>
-<body>
-  <h1>Welcome to Cana Impex</h1>
-  <p>Import • Export of Cashew, Coffee, Cocoa, and Hevea.</p>
-</body>
-</html>
+<body class="text-gray-900">
+<!-- Header -->
+<header class="border-b border-white/10" style="background:linear-gradient(180deg, rgba(11,31,22,.9) 0%, rgba(11,31,22,.7) 100%);">
+<div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+<a href="#" class="flex items-center gap-3">
+<!-- Bigger logo -->
+<img src="assets/logo.png" alt="Cana Impex logo" class="h-16 w-auto">
+<span class="text-white/90 text-lg font-bold">Cana Impex</span>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
+<a href="#quotes" class="hover:underline">Get Quotes</a>
+<a href="#contact" class="hover:underline">Contact</a>
+</nav>
+<a href="#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold">Request Samples</a>
+</div>
+</header>
+
+<!-- HERO (3D background + headline) -->
+<section class="relative overflow-hidden" style="min-height: 68vh;">
+<canvas id="hero3d"></canvas>
+<div class="hero-overlay max-w-7xl mx-auto px-6 py-20 md:py-28">
+<div class="max-w-3xl text-white">
+<h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
+Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Coffee
+</h1>
+<p class="mt-4 text-white/80 md:text-lg">
+Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms. No ceiling — just your requirements.
+</p>
+<div class="mt-8 flex flex-wrap items-center gap-3">
