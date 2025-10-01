@@ -1,119 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cana Impex</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#0f172a">
-  <style>
-    :root{--bg:#030712;--fg:#e5ffee;--accent:#10b981;--accent2:#34d399}
-    *{box-sizing:border-box}html,body{height:100%}body{margin:0;background:radial-gradient(1200px 600px at 70% -10%, #052e26 0%, #030712 45%, #000 100%);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-    .wrap{position:relative;min-height:100vh;display:grid;place-items:center;padding:24px}
-    header{position:absolute;top:16px;left:16px;right:16px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:40px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4))}
-    .brand span{font-weight:700;letter-spacing:.02em}
-    canvas{display:block}
-    .glow{position:absolute;inset:0;background:radial-gradient(600px 300px at 50% 40%, rgba(16,185,129,.25), transparent 60%);pointer-events:none;mix-blend:screen}
-    .footer{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-size:12px;color:#a7f3d0;opacity:.7}
-  </style>
+<meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Cana Impex — Animated</title>
+<link rel='icon' href='assets/favicon.svg' type='image/svg+xml'>
+<script src='https://cdn.tailwindcss.com'></script>
+<link href='https://unpkg.com/aos@2.3.4/dist/aos.css' rel='stylesheet'>
+<script src='https://unpkg.com/aos@2.3.4/dist/aos.js'></script>
+<style>:root{--green:#006644}body{font-family:sans-serif;background:#FDFCF9;color:#111}.btn{background:var(--green);color:#fff}</style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <img src="assets/logo.png" alt="Cana Impex logo">
-        <span>Cana Impex</span>
-      </div>
-    </header>
-    <div id="scene" style="width: min(92vw, 1100px); aspect-ratio: 1 / 1; max-height: 78vh;"></div>
-    <div class="glow"></div>
-    <div class="footer">© <span id="y"></span> Cana Impex</div>
-  </div>
-
-  <!-- three.js CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js" integrity="sha512-UYKMq7YFf1xGdO3X+FhKpniHm4i8mhmrQ3qj2M4qBuq9W3/2gQJxUoY9n9QmA6oJ9oS6f5x2R8H0k7K6Cw1pNw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script>
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Scene setup
-    const container = document.getElementById('scene');
-    const w = container.clientWidth;
-    const h = container.clientHeight;
-
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(w, h);
-    container.appendChild(renderer.domElement);
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(32, w/h, 0.1, 100);
-    camera.position.set(0, 0, 6);
-
-    // Lights
-    const key = new THREE.PointLight(0x34d399, 1.1); key.position.set(4, 3, 6); scene.add(key);
-    const rim = new THREE.PointLight(0x10b981, 0.6); rim.position.set(-6, -2, -4); scene.add(rim);
-    scene.add(new THREE.AmbientLight(0x0a3a2f, 0.6));
-
-    // Sphere with glowing wireframe
-    const sphere = new THREE.SphereGeometry(2.1, 64, 64);
-    const mat = new THREE.MeshPhysicalMaterial({
-      color: 0x0b3b2e,
-      metalness: 0.1,
-      roughness: 0.35,
-      transmission: 0.1,
-      thickness: 0.5,
-      clearcoat: 0.6,
-      clearcoatRoughness: 0.1
-    });
-    const mesh = new THREE.Mesh(sphere, mat);
-    scene.add(mesh);
-
-    const wireMat = new THREE.MeshBasicMaterial({ color: 0x10b981, wireframe: true, transparent: true, opacity: 0.35 });
-    const wire = new THREE.Mesh(new THREE.SphereGeometry(2.12, 28, 18), wireMat);
-    scene.add(wire);
-
-    // Subtle particles ring
-    const pGeo = new THREE.BufferGeometry();
-    const count = 800;
-    const positions = new Float32Array(count * 3);
-    for (let i = 0; i < count; i++) {
-      const r = 3.2 + (Math.random() * 0.3 - 0.15);
-      const a = Math.random() * Math.PI * 2;
-      const y = (Math.random() - 0.5) * 0.4;
-      positions[i*3+0] = Math.cos(a) * r;
-      positions[i*3+1] = y;
-      positions[i*3+2] = Math.sin(a) * r;
-    }
-    pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    const pMat = new THREE.PointsMaterial({ color: 0x34d399, size: 0.01 });
-    const points = new THREE.Points(pGeo, pMat);
-    scene.add(points);
-
-    // Resize
-    function resize() {
-      const w = container.clientWidth;
-      const h = container.clientHeight;
-      renderer.setSize(w, h);
-      camera.aspect = w / h;
-      camera.updateProjectionMatrix();
-    }
-    window.addEventListener('resize', resize);
-
-    // Animate
-    let t = 0;
-    function tick() {
-      t += 0.005;
-      mesh.rotation.y += 0.003;
-      mesh.rotation.x = Math.sin(t) * 0.05;
-      wire.rotation.y -= 0.0025;
-      points.rotation.y += 0.0008;
-      renderer.render(scene, camera);
-      requestAnimationFrame(tick);
-    }
-    tick();
-  </script>
-</body>
-</html>
+<header class='px-6 py-4 border-b bg-white/80 sticky top-0 z-30'><div class='max-w-7xl mx-auto flex justify-between'><div class='flex items-center gap-3'><img src='assets/logo.png' class='h-9'><span class='font-semibold'>Cana Impex</span></div><nav class='hidden md:flex gap-6 text-sm'><a href='#about'>About</a><a href='#commodities'>Commodities</a><a href='#origin'>Origin</a><a href='#contact'>Contact</a></nav><a href='#contact' class='btn px-4 py-2 rounded'>Samples</a></div></header>
+<section class='relative'><img src='assets/hero.png' class='w-full h-[70vh] object-cover'><div class='absolute inset-0 grid place-items-center text-center'><div data-aos='zoom-in' class='bg-white/80 px-6 py-4 rounded'><h1 class='text-3xl font-bold'>Unlimited Cashew, Cocoa, Hevea & Coffee</h1></div></div></section>
+<section id='about' class='max-w-7xl mx-auto px-6 py-16'><h2 class='text-2xl font-bold mb-4' data-aos='fade-up'>Unlimited Supply. Tailored to You.</h2><p data-aos='fade-up'>We adapt volumes, packaging, and Incoterms to your needs.</p></section>
+<section id='commodities' class='bg-gray-50 py-16'><div class='max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6'><div class='p-4 border rounded' data-aos='fade-up'>Cashew</div><div class='p-4 border rounded' data-aos='fade-up' data-aos-delay='100'>Cocoa</div><div class='p-4 border rounded' data-aos='fade-up' data-aos-delay='200'>Hevea</div><div class='p-4 border rounded' data-aos='fade-up' data-aos-delay='300'>Coffee</div></div></section>
+<section id='origin' class='max-w-7xl mx-auto px-6 py-16'><h2 class='text-2xl font-bold mb-4' data-aos='fade-up'>Origin & Operations</h2><div class='grid md:grid-cols-3 gap-4'><img src='https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=800' data-aos='zoom-in'><img src='https://images.unsplash.com/photo-1617195737498-d68bbf24e4f1?q=80&w=800' data-aos='zoom-in' data-aos-delay='100'><img src='https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800' data-aos='zoom-in' data-aos-delay='200'></div></section>
+<section id='contact' class='bg-gray-50 py-16'><div class='max-w-7xl mx-auto px-6'><h2 class='text-2xl font-bold' data-aos='fade-up'>Contact</h2><form action='https://formsubmit.co/9557f1bf227663742077ce7c6353e6df' method='POST' class='mt-6 grid gap-3' data-aos='fade-up'><input type='hidden' name='_next' value='thanks.html'><input name='name' placeholder='Name' class='border p-2 rounded'><input type='email' name='email' placeholder='Email' class='border p-2 rounded'><textarea name='message' placeholder='Message' class='border p-2 rounded'></textarea><button class='btn px-4 py-2 rounded'>Send</button></form></div></section>
+<footer class='py-6 text-center bg-[#006644] text-white'>© <span id='year'></span> Cana Impex Inc.</footer>
+<script>AOS.init();document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
