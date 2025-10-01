@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NutWorks par Cana Impex — Marque de Noix de Cajou Premium</title>
+  <meta name="description" content="NutWorks par Cana Impex relie les fermes ivoiriennes au monde. Découvrez notre mission, nos valeurs, notre feuille de route, nos produits et nos coordonnées." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandGold: '#D4AF37',
+            brandGreen: '#1C4D3C',
+            brandDeep: '#061A12'
+          },
+          fontFamily: {
+            heading: ['\"Poppins\"', 'ui-sans-serif', 'system-ui'],
+            body: ['\"Inter\"', 'ui-sans-serif', 'system-ui']
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #050d0a; }
+    .hero-bg {
+      background-image: linear-gradient(rgba(6,26,18,0.75), rgba(6,26,18,0.9)), url('assets/hero.png');
+      background-size: cover;
+      background-position: center;
+    }
+    .card-gradient {
+      background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(9,41,30,0.6) 100%);
+    }
+  </style>
+</head>
+<body class="text-slate-100 font-body">
+  <header class="fixed inset-x-0 top-0 z-50 backdrop-blur bg-brandDeep/80 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center justify-between h-20">
+        <a href="#home" class="flex items-center gap-3">
+          <img src="assets/logo.png" alt="Logo NutWorks" class="h-12 w-auto" />
+          <div class="flex flex-col">
+            <span class="font-heading text-lg font-semibold tracking-wide">NutWorks</span>
+            <span class="text-xs uppercase text-white/60">par Cana Impex</span>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
+          <a href="#about" class="hover:text-brandGold transition">À propos</a>
+          <a href="#values" class="hover:text-brandGold transition">Valeurs</a>
+          <a href="#roadmap" class="hover:text-brandGold transition">Feuille de route</a>
+          <a href="#products" class="hover:text-brandGold transition">Produits</a>
+          <a href="#team" class="hover:text-brandGold transition">Équipe</a>
+          <a href="#contact" class="hover:text-brandGold transition">Contact</a>
+          <a href="index.html" class="font-semibold text-brandGold">EN</a>
+        </nav>
+        <div class="md:hidden">
+          <button id="menuButton" class="p-2 rounded-lg border border-white/20 text-white" aria-label="Ouvrir le menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5m-16.5 6.75h16.5" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden pb-6 text-sm text-white/80 space-y-4">
+        <a href="#about" class="block hover:text-brandGold">À propos</a>
+        <a href="#values" class="block hover:text-brandGold">Valeurs</a>
+        <a href="#roadmap" class="block hover:text-brandGold">Feuille de route</a>
+        <a href="#products" class="block hover:text-brandGold">Produits</a>
+        <a href="#team" class="block hover:text-brandGold">Équipe</a>
+        <a href="#contact" class="block hover:text-brandGold">Contact</a>
+        <a href="index.html" class="block font-semibold text-brandGold">English</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home" class="pt-24">
+    <section class="hero-bg relative">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brandDeep/20 to-brandDeep"></div>
+      <div class="relative max-w-6xl mx-auto px-6 py-24 md:py-32">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.35em] text-xs text-brandGold/80">Marque de cajou premium</p>
+          <h1 class="mt-6 text-4xl md:text-5xl font-heading font-semibold leading-tight">
+            Des fermes ivoiriennes aux tables du monde entier, nous redéfinissons la qualité des noix de cajou.
+          </h1>
+          <p class="mt-6 text-base md:text-lg text-white/80">
+            NutWorks collabore directement avec les producteurs ivoiriens pour offrir des noix de cajou savoureuses, saines et traçables.
+          </p>
+          <div class="mt-10 flex flex-wrap items-center gap-4">
+            <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-brandGold text-brandDeep px-6 py-3 font-semibold shadow-lg shadow-brandGold/20 hover:shadow-xl transition">
+              Nous écrire
+            </a>
+            <a href="#roadmap" class="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm uppercase tracking-wide hover:bg-white/10 transition">
+              Voir notre plan
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="bg-brandDeep/60">
+      <div class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-[1.2fr_1fr] gap-12 items-start">
+        <div>
+          <h2 class="text-3xl font-heading font-semibold">Qui nous sommes</h2>
+          <p class="mt-4 text-white/80 leading-relaxed">
+            NutWorks est l’initiative premium de Cana Impex dédiée à la noix de cajou. Enracinés en Afrique de l’Ouest et tournés vers l’Amérique du Nord, nous combinons expertise agricole et branding moderne pour élever la cajou au rang de plaisir quotidien haut de gamme.
+          </p>
+          <p class="mt-4 text-white/70 leading-relaxed">
+            Notre promesse : relier les producteurs ivoiriens aux marchés internationaux, garantir une qualité constante et redistribuer la valeur aux communautés locales.
+          </p>
+          <div class="mt-8 grid sm:grid-cols-3 gap-6">
+            <div class="card-gradient rounded-2xl border border-white/10 p-5">
+              <p class="text-3xl font-heading font-semibold text-brandGold">20+</p>
+              <p class="mt-2 text-sm text-white/70">Années de leadership logistique en Côte d’Ivoire.</p>
+            </div>
+            <div class="card-gradient rounded-2xl border border-white/10 p-5">
+              <p class="text-3xl font-heading font-semibold text-brandGold">100%</p>
+              <p class="mt-2 text-sm text-white/70">Partenariats équitables et traçabilité totale.</p>
+            </div>
+            <div class="card-gradient rounded-2xl border border-white/10 p-5">
+              <p class="text-3xl font-heading font-semibold text-brandGold">International</p>
+              <p class="mt-2 text-sm text-white/70">Distribution en Amérique du Nord et marchés mondiaux.</p>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div class="card-gradient rounded-3xl border border-white/10 p-6">
+            <h3 class="text-lg font-heading font-semibold text-brandGold">Notre parcours</h3>
+            <ul class="mt-4 space-y-3 text-sm text-white/80">
+              <li><span class="font-semibold text-white">2005 – 2023 :</span> Jean F. Kouassi fonde une coopérative agricole pour le café, le cacao et l’agriculture durable en Côte d’Ivoire.</li>
+              <li><span class="font-semibold text-white">2025 :</span> Cana Impex lance NutWorks, alliant expertise terrain et branding premium pour faire rayonner la cajou.</li>
+              <li><span class="font-semibold text-white">Futur :</span> Développer la transformation locale, élargir la distribution et créer de nouvelles innovations à base de cajou.</li>
+            </ul>
+          </div>
+          <div class="card-gradient rounded-3xl border border-white/10 p-6">
+            <h3 class="text-lg font-heading font-semibold text-brandGold">Mission & Vision</h3>
+            <p class="mt-3 text-sm text-white/80">
+              Devenir la marque de référence sur les marchés majeurs en alliant sourcing responsable, transformation maîtrisée et storytelling inspirant. Offrir des cajous délicieux et sains tout en valorisant les communautés qui les cultivent.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="values" class="py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.35em] text-xs text-brandGold/80">Notre ADN</p>
+          <h2 class="mt-4 text-3xl font-heading font-semibold">Des valeurs qui guident chaque partenariat</h2>
+          <p class="mt-4 text-white/70">Nous créons des relations qui respectent les producteurs, inspirent les clients et protègent l’avenir de la filière cajou.</p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div class="card-gradient rounded-2xl border border-white/10 p-6">
+            <div class="text-brandGold text-2xl">🌱</div>
+            <h3 class="mt-4 font-heading font-semibold">Durabilité</h3>
+            <p class="mt-2 text-sm text-white/80">Investissements dans les pratiques régénératives et prix équitables pour un impact positif durable.</p>
+          </div>
+          <div class="card-gradient rounded-2xl border border-white/10 p-6">
+            <div class="text-brandGold text-2xl">🤝</div>
+            <h3 class="mt-4 font-heading font-semibold">Communauté</h3>
+            <p class="mt-2 text-sm text-white/80">Des partenariats fondés sur la confiance, la transparence et la croissance partagée.</p>
+          </div>
+          <div class="card-gradient rounded-2xl border border-white/10 p-6">
+            <div class="text-brandGold text-2xl">⭐</div>
+            <h3 class="mt-4 font-heading font-semibold">Qualité</h3>
+            <p class="mt-2 text-sm text-white/80">Sélection, transformation et packaging méticuleux pour une expérience gustative premium.</p>
+          </div>
+          <div class="card-gradient rounded-2xl border border-white/10 p-6">
+            <div class="text-brandGold text-2xl">🛡️</div>
+            <h3 class="mt-4 font-heading font-semibold">Intégrité</h3>
+            <p class="mt-2 text-sm text-white/80">Des actions transparentes, éthiques et inspirées par nos valeurs chrétiennes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="bg-brandDeep/60 py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.35em] text-xs text-brandGold/80">Feuille de route</p>
+          <h2 class="mt-4 text-3xl font-heading font-semibold">Une trajectoire maîtrisée pour devenir la référence</h2>
+          <p class="mt-4 text-white/70">Nous grandissons par étapes, proches des producteurs et attentifs aux attentes des marchés mondiaux.</p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <div class="card-gradient rounded-3xl border border-white/10 p-6">
+            <p class="text-sm uppercase tracking-wide text-brandGold/80">Phase 1 · Mois 0–6</p>
+            <h3 class="mt-2 font-heading font-semibold text-xl">Lancement & chaîne d’approvisionnement</h3>
+            <ul class="mt-4 space-y-2 text-sm text-white/80">
+              <li>Contrats directs avec les producteurs de cajou à travers la Côte d’Ivoire.</li>
+              <li>Mise en place de la collecte, du tri et de la logistique d’exportation.</li>
+              <li>Revenus initiaux via l’expédition en vrac vers l’Amérique du Nord.</li>
+            </ul>
+          </div>
+          <div class="card-gradient rounded-3xl border border-white/10 p-6">
+            <p class="text-sm uppercase tracking-wide text-brandGold/80">Phase 2 · Mois 6–12</p>
+            <h3 class="mt-2 font-heading font-semibold text-xl">Marque & entrée sur le marché</h3>
+            <ul class="mt-4 space-y-2 text-sm text-white/80">
+              <li>Lancement des gammes NutWorks pour le retail et l’e-commerce.</li>
+              <li>Marketing narratif axé sur l’origine, la qualité et la santé.</li>
+              <li>Partenariats avec distributeurs, grossistes et chaînes stratégiques.</li>
+            </ul>
+          </div>
+          <div class="card-gradient rounded-3xl border border-white/10 p-6">
+            <p class="text-sm uppercase tracking-wide text-brandGold/80">Phase 3 · Années 1–2</p>
+            <h3 class="mt-2 font-heading font-semibold text-xl">Transformation locale</h3>
+            <ul class="mt-4 space-y-2 text-sm text-white/80">
+              <li>Construction d’unités de transformation et de conditionnement en Côte d’Ivoire.</li>
+              <li>Mise en place de laboratoires qualité et de certifications internationales.</li>
+              <li>Montée en puissance des exportations de produits finis premium.</li>
+            </ul>
+          </div>
+          <div class="card-gradient rounded-3xl border border-white/10 p-6">
+            <p class="text-sm uppercase tracking-wide text-brandGold/80">Phase 4 · Années 2–3</p>
+            <h3 class="mt-2 font-heading font-semibold text-xl">Expansion mondiale</h3>
+            <ul class="mt-4 space-y-2 text-sm text-white/80">
+              <li>Implantation de centres de torréfaction et distribution en Amérique du Nord.</li>
+              <li>Développement de nouvelles gammes : beurres, boissons, snacks à base de cajou.</li>
+              <li>Entrée sur les marchés européens et moyen-orientaux avec un positionnement premium.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-12 text-center">
+          <a href="#contact" class="inline-flex items-center gap-3 rounded-full bg-brandGold px-8 py-3 text-brandDeep font-semibold shadow-lg shadow-brandGold/20 hover:shadow-xl transition">
+            Discuter partenariats & investissement
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.35em] text-xs text-brandGold/80">Produits</p>
+          <h2 class="mt-4 text-3xl font-heading font-semibold">Des expériences cajou haut de gamme</h2>
+          <p class="mt-4 text-white/70">Une collection qui marie classiques incontournables et innovations pensées pour les consommateurs d’aujourd’hui.</p>
+        </div>
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="card-gradient rounded-2xl border border-white/10 overflow-hidden">
+            <img src="assets/cashew.jpg" alt="Noix de cajou rôties" class="w-full h-44 object-cover">
+            <div class="p-5">
+              <h3 class="font-heading font-semibold text-lg">Noix de cajou rôties</h3>
+              <p class="mt-2 text-sm text-white/80">Grains entiers W240 & W320 légèrement assaisonnés pour un croquant raffiné.</p>
+              <span class="mt-4 inline-block text-xs uppercase tracking-wide text-brandGold/80">Disponible</span>
+            </div>
+          </article>
+          <article class="card-gradient rounded-2xl border border-white/10 overflow-hidden">
+            <img src="assets/cocoa.jpg" alt="Cajous enrobés de cacao" class="w-full h-44 object-cover">
+            <div class="p-5">
+              <h3 class="font-heading font-semibold text-lg">Cajous enrobés de cacao</h3>
+              <p class="mt-2 text-sm text-white/80">Délice gourmand avec poudre de cacao ivoirienne et texture fondante.</p>
+              <span class="mt-4 inline-block text-xs uppercase tracking-wide text-brandGold/80">Bientôt</span>
+            </div>
+          </article>
+          <article class="card-gradient rounded-2xl border border-white/10 overflow-hidden">
+            <img src="assets/coffee.jpg" alt="Beurre de cajou" class="w-full h-44 object-cover">
+            <div class="p-5">
+              <h3 class="font-heading font-semibold text-lg">Beurre de cajou velours</h3>
+              <p class="mt-2 text-sm text-white/80">Une pâte ultra onctueuse composée uniquement de cajous torréfiés.</p>
+              <span class="mt-4 inline-block text-xs uppercase tracking-wide text-brandGold/80">En développement</span>
+            </div>
+          </article>
+          <article class="card-gradient rounded-2xl border border-white/10 overflow-hidden">
+            <img src="assets/rubber.jpg" alt="Barres énergie cajou" class="w-full h-44 object-cover">
+            <div class="p-5">
+              <h3 class="font-heading font-semibold text-lg">Barres énergie cajou</h3>
+              <p class="mt-2 text-sm text-white/80">Apport protéiné associant cajous, fruits et graines pour un snack actif.</p>
+              <span class="mt-4 inline-block text-xs uppercase tracking-wide text-brandGold/80">Prototype</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="bg-brandDeep/60 py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.35em] text-xs text-brandGold/80">Leadership</p>
+          <h2 class="mt-4 text-3xl font-heading font-semibold">Les artisans de NutWorks</h2>
+          <p class="mt-4 text-white/70">Une équipe complémentaire qui unit ancrage agricole et optimisation d’affaires.</p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <div class="card-gradient rounded-3xl border border-white/10 p-6">
+            <div class="flex items-center gap-4">
+              <div class="h-20 w-20 rounded-2xl bg-brandGold/20 border border-brandGold/40 grid place-items-center text-3xl text-brandGold">JF</div>
+              <div>
+                <h3 class="font-heading font-semibold text-xl">Jean F. Kouassi</h3>
+                <p class="text-sm text-brandGold/90">Co-fondateur · Chaîne d’approvisionnement</p>
+              </div>
+            </div>
+            <p class="mt-4 text-sm text-white/80">
+              Diplômé en gestion et fondateur d’une coopérative pionnière, Jean dispose de 20 ans d’expérience en sourcing agricole, relations producteurs et logistique grand volume.
+            </p>
+            <p class="mt-3 text-sm text-white/70">
+              Engagé pour le développement durable, il garantit un lien fort avec les cultivateurs tout en construisant des capacités de transformation modernes.
+            </p>
+          </div>
+          <div class="card-gradient rounded-3xl border border-white/10 p-6">
+            <div class="flex items-center gap-4">
+              <div class="h-20 w-20 rounded-2xl bg-brandGold/20 border border-brandGold/40 grid place-items-center text-3xl text-brandGold">RL</div>
+              <div>
+                <h3 class="font-heading font-semibold text-xl">Ricardo A. Llorente</h3>
+                <p class="text-sm text-brandGold/90">Co-fondateur · Optimisation des affaires</p>
+              </div>
+            </div>
+            <p class="mt-4 text-sm text-white/80">
+              Spécialiste en gestion et technologies, Ricardo pilote le branding, la commercialisation et les systèmes pour une organisation agile et orientée données.
+            </p>
+            <p class="mt-3 text-sm text-white/70">
+              Il relie les opérations ivoiriennes à la distribution nord-américaine pour accélérer la pénétration de marché et la valeur pour les investisseurs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20">
+      <div class="max-w-6xl mx-auto px-6 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
+        <div>
+          <p class="uppercase tracking-[0.35em] text-xs text-brandGold/80">Contact</p>
+          <h2 class="mt-4 text-3xl font-heading font-semibold">Construisons ensemble une référence de la cajou</h2>
+          <p class="mt-4 text-white/70">Partagez vos besoins — approvisionnement vrac, marque privée, distribution ou investissement. Réponse sous 48 heures.</p>
+          <form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="mt-10 card-gradient rounded-3xl border border-white/10 p-6 md:p-8 space-y-4">
+            <input type="hidden" name="_subject" value="Nouvelle demande — NutWorks par Cana Impex">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="thanks.html">
+            <input type="hidden" name="_autoresponse" value="Merci d’avoir contacté NutWorks. Nous revenons vers vous rapidement.">
+            <div>
+              <label class="text-sm font-semibold text-white/80">Nom</label>
+              <input name="name" required class="mt-2 w-full rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brandGold/60" placeholder="Votre nom" />
+            </div>
+            <div>
+              <label class="text-sm font-semibold text-white/80">Entreprise</label>
+              <input name="company" class="mt-2 w-full rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brandGold/60" placeholder="Entreprise" />
+            </div>
+            <div>
+              <label class="text-sm font-semibold text-white/80">Courriel</label>
+              <input type="email" name="email" required class="mt-2 w-full rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brandGold/60" placeholder="vous@entreprise.com" />
+            </div>
+            <div>
+              <label class="text-sm font-semibold text-white/80">Message</label>
+              <textarea name="message" rows="4" required class="mt-2 w-full rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brandGold/60" placeholder="Volumes, grades, Incoterms, objectifs de distribution…"></textarea>
+            </div>
+            <button class="w-full rounded-full bg-brandGold text-brandDeep font-semibold py-3 hover:shadow-lg hover:shadow-brandGold/30 transition" type="submit">Envoyer</button>
+          </form>
+        </div>
+        <div class="space-y-6">
+          <div class="card-gradient rounded-3xl border border-white/10 p-6">
+            <h3 class="font-heading font-semibold text-xl text-brandGold">Contact direct</h3>
+            <ul class="mt-4 space-y-3 text-sm text-white/80">
+              <li><span class="text-white font-semibold">Courriel :</span> <a href="mailto:ricardollorente@canaimpex.com" class="underline hover:text-brandGold">ricardollorente@canaimpex.com</a></li>
+              <li><span class="text-white font-semibold">Implantations :</span> Abidjan, Côte d’Ivoire · Québec, Canada</li>
+              <li><span class="text-white font-semibold">Expertises :</span> Cajous premium · Transformation locale · Sourcing durable</li>
+            </ul>
+          </div>
+          <div class="card-gradient rounded-3xl border border-white/10 p-6">
+            <h3 class="font-heading font-semibold text-xl text-brandGold">Ce que recherchent nos partenaires</h3>
+            <p class="mt-3 text-sm text-white/80">Capacités intégrées du sourcing au branding, reporting transparent et quête constante d’excellence produit.</p>
+            <p class="mt-3 text-sm text-white/70">Nous co-créons des marques privées, animons des dégustations et développons la distribution avec des investisseurs alignés.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-brandDeep border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-12 grid gap-8 md:grid-cols-4 text-sm text-white/70">
+      <div>
+        <img src="assets/logo.png" alt="Logo NutWorks" class="h-12 w-auto" />
+        <p class="mt-4">© <span id="year"></span> Cana Impex Inc. NutWorks™ — Cajous premium élaborées avec intégrité.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3">Entreprise</h4>
+        <ul class="space-y-2">
+          <li><a href="#about" class="hover:text-brandGold">À propos</a></li>
+          <li><a href="#values" class="hover:text-brandGold">Valeurs</a></li>
+          <li><a href="#roadmap" class="hover:text-brandGold">Feuille de route</a></li>
+          <li><a href="#products" class="hover:text-brandGold">Produits</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3">Ressources</h4>
+        <ul class="space-y-2">
+          <li><a href="#team" class="hover:text-brandGold">Équipe</a></li>
+          <li><a href="#contact" class="hover:text-brandGold">Contact</a></li>
+          <li><span class="text-white/60">Dossier investisseur — sur demande</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3">Légal</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-brandGold">Politique de confidentialité</a></li>
+          <li><a href="#" class="hover:text-brandGold">Conditions d’utilisation</a></li>
+          <li class="text-white/60">Préférences cookies</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-6">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/60">
+        <p>Fiers de nos racines ivoiriennes · Ambition mondiale</p>
+        <p>Suivez-nous sur LinkedIn (bientôt)</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cookieBanner" class="fixed inset-x-4 bottom-4 md:inset-x-auto md:right-6 md:max-w-lg bg-white text-slate-900 rounded-2xl shadow-2xl shadow-black/40 border border-slate-200 p-5 space-y-3 hidden">
+    <p class="text-sm font-semibold">Votre confidentialité compte</p>
+    <p class="text-sm text-slate-600">NutWorks utilise des cookies limités pour améliorer votre expérience. En cliquant sur « Accepter », vous consentez aux statistiques anonymes.</p>
+    <div class="flex flex-wrap gap-3">
+      <button id="acceptCookies" class="px-4 py-2 rounded-full bg-brandGold text-brandDeep font-semibold">Accepter</button>
+      <button id="closeCookies" class="px-4 py-2 rounded-full border border-slate-300 text-slate-700">Refuser</button>
+      <a href="#" class="text-sm underline text-slate-600">En savoir plus</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+    }
+
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptCookies = document.getElementById('acceptCookies');
+    const closeCookies = document.getElementById('closeCookies');
+    const consent = localStorage.getItem('nutworks-cookie-consent');
+
+    if (!consent) {
+      cookieBanner.classList.remove('hidden');
+    }
+
+    function handleConsent(value) {
+      localStorage.setItem('nutworks-cookie-consent', value);
+      cookieBanner.classList.add('hidden');
+    }
+
+    acceptCookies?.addEventListener('click', () => handleConsent('accepted'));
+    closeCookies?.addEventListener('click', () => handleConsent('declined'));
+  </script>
+</body>
+</html>
