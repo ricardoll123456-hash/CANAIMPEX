@@ -7,19 +7,11 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <meta name="description" content="Cana Impex / NutWorks — premium cashews from Côte d’Ivoire to the world.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html{scroll-behavior:smooth}
-    body { background-color: #FDFCF9; color: #1A1A1A; }
-    .btn-main { background-color:#006644; color:white; }
-    .btn-main:hover { background-color:#10B981; }
-    header, footer { background-color:#FDFCF9; }
-    section.alt { background-color:#F5FBF7; }
-  </style>
+  <style>html{scroll-behavior:smooth}</style>
 </head>
-<body class="text-gray-900">
-
-  <!-- Header -->
-  <header class="border-b">
+<body class="bg-[#FDFCF9] text-[#1A1A1A]">
+  <!-- Header (Ivory) -->
+  <header class="bg-[#FDFCF9] border-b">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
       <a href="#" class="flex items-center gap-3">
         <img src="assets/logo.png" alt="Cana Impex logo" class="h-10 w-auto">
@@ -30,6 +22,7 @@
         <a href="#products" class="hover:underline">Products</a>
         <a href="#contact" class="hover:underline">Contact</a>
       </nav>
+      <a href="#contact" class="hidden sm:inline-block bg-[#006644] hover:bg-[#10B981] text-white px-4 py-2 rounded-lg text-sm font-semibold">Request info</a>
     </div>
   </header>
 
@@ -38,7 +31,7 @@
     <img src="assets/hero.png" alt="NutWorks Tree Hero" class="w-full object-cover">
   </section>
 
-  <!-- About -->
+  <!-- About (Ivory) -->
   <section id="about" class="max-w-4xl mx-auto px-6 py-16">
     <h2 class="text-2xl font-bold mb-4">About Us</h2>
     <p class="leading-relaxed">
@@ -47,8 +40,8 @@
     </p>
   </section>
 
-  <!-- Products -->
-  <section id="products" class="alt py-16">
+  <!-- Products (Light Green) -->
+  <section id="products" class="bg-[#F5FBF7] py-16">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-2xl font-bold mb-6">Products</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -60,7 +53,7 @@
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact (Ivory) -->
   <section id="contact" class="max-w-4xl mx-auto px-6 py-16">
     <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
     <form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="space-y-4">
@@ -79,12 +72,20 @@
       <div>
         <textarea name="message" placeholder="Message" required class="w-full border rounded px-3 py-2"></textarea>
       </div>
-      <button type="submit" class="btn-main px-4 py-2 rounded">Send</button>
+      <button type="submit" class="bg-[#006644] hover:bg-[#10B981] text-white px-4 py-2 rounded">Send</button>
     </form>
   </section>
 
-  <footer class="text-center text-sm py-6 border-t">
-    © <span id="year"></span> Cana Impex Inc. — All rights reserved.
+  <!-- Footer (Deep Green) -->
+  <footer class="bg-[#006644] text-white text-sm py-8">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Cana Impex Inc. — All rights reserved.</p>
+      <div class="flex items-center gap-4 text-white/90">
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#products" class="hover:underline">Products</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </div>
+    </div>
   </footer>
 
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
