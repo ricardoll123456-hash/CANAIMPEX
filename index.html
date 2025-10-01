@@ -15,6 +15,7 @@
     .card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; }
     .glass { background:rgba(255,255,255,.08); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,.15); }
     .img-card { border-radius:12px; object-fit:cover; width:100%; height:160px; }
+    /* keep the 3D canvas behind everything */
     #hero3d { position: absolute; inset: 0; z-index: 0; }
     .hero-overlay { position: relative; z-index: 1; }
   </style>
@@ -60,27 +61,32 @@
     <div class="max-w-3xl mx-auto text-center text-white">
       <p class="text-xs tracking-widest uppercase text-white/60 mb-2">Market Quotes</p>
       <h2 class="text-2xl md:text-3xl font-bold">Request Your Bulk Price Today</h2>
+      <p class="mt-2 text-white/70 text-sm">Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>. If missing, the cards still work.</p>
     </div>
 
     <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Cashew -->
       <div class="card p-5">
         <img class="img-card" src="assets/cashew.jpg" alt="Cashew" onerror="this.style.display='none'">
         <h3 class="font-semibold text-lg mt-4">Cashew</h3>
         <p class="text-sm text-gray-600 mt-2">Bulk W240/W320, RCN & kernels.</p>
         <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
       </div>
+      <!-- Cocoa -->
       <div class="card p-5">
         <img class="img-card" src="assets/cocoa.jpg" alt="Cocoa" onerror="this.style.display='none'">
         <h3 class="font-semibold text-lg mt-4">Cocoa</h3>
         <p class="text-sm text-gray-600 mt-2">West African cocoa beans.</p>
         <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
       </div>
+      <!-- Coffee -->
       <div class="card p-5">
         <img class="img-card" src="assets/coffee.jpg" alt="Coffee" onerror="this.style.display='none'">
         <h3 class="font-semibold text-lg mt-4">Coffee</h3>
         <p class="text-sm text-gray-600 mt-2">Green beans in bulk.</p>
         <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
       </div>
+      <!-- Rubber -->
       <div class="card p-5">
         <img class="img-card" src="assets/rubber.jpg" alt="Rubber" onerror="this.style.display='none'">
         <h3 class="font-semibold text-lg mt-4">Rubber</h3>
@@ -129,7 +135,7 @@
       <p>© <span id="year"></span> Cana Impex Inc. All rights reserved.</p>
       <div class="flex items-center gap-3">
         <span class="text-white/90">Made in Côte d’Ivoire</span>
-        <!-- Ivory Coast flag -->
+        <!-- Ivory Coast flag (orange–white–green) -->
         <svg width="36" height="24" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-label="Ivory Coast flag">
           <rect width="1" height="2" x="0" y="0" fill="#F77F00"/>
           <rect width="1" height="2" x="1" y="0" fill="#FFFFFF"/>
@@ -139,24 +145,26 @@
     </div>
   </footer>
 
-  <!-- Three.js (3D globe background) -->
+  <!-- Three.js (CDN) -->
   <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
   <script>
+    // Minimal rotating point-globe for a premium "3D" feel
     const canvas = document.getElementById('hero3d');
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 100);
     camera.position.set(0, 0, 6);
 
-    function resize() {
+    const resize = () => {
       const w = canvas.clientWidth = canvas.parentElement.clientWidth;
       const h = canvas.clientHeight = Math.max(400, canvas.parentElement.clientHeight);
       renderer.setSize(w, h, false);
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
-    }
-    resize(); window.addEventListener('resize', resize);
+    };
+    resize(); addEventListener('resize', resize);
 
+    // Points sphere
     const dots = 2000;
     const positions = new Float32Array(dots * 3);
     for (let i=0;i<dots;i++){
@@ -173,6 +181,13 @@
     const mat = new THREE.PointsMaterial({ size: 0.02, color: 0x10B981 });
     const globe = new THREE.Points(geo, mat);
     scene.add(globe);
+
+    // Soft vignette plane behind for depth
+    const planeGeo = new THREE.PlaneGeometry(14, 8);
+    const planeMat = new THREE.MeshBasicMaterial({ color: 0x062b1c, transparent:true, opacity:0.6 });
+    const plane = new THREE.Mesh(planeGeo, planeMat);
+    plane.position.z = -1.5;
+    scene.add(plane);
 
     function animate(t){
       globe.rotation.y += 0.0018;
