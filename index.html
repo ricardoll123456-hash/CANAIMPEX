@@ -1,367 +1,358 @@
-diff --git a/index.html b/index.html
-index f4ecea0447fd69a36aa679c1035c4effa402d215..175410f0207fe767541ac662401d05b4f05f5197 100644
---- a/index.html
-+++ b/index.html
-@@ -8,156 +8,159 @@
- <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
- <script src="https://cdn.tailwindcss.com"></script>
- <style>
- html { scroll-behavior: smooth; }
- body { background:#0b1f16; color:#0e1a15; }
- .btn { background:#0A7F49; color:#fff; }
- .btn:hover { background:#10B981; }
- .card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; }
- .glass { background:rgba(255,255,255,.08); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,.15); }
- .img-card { border-radius:12px; object-fit:cover; width:100%; height:160px; }
-     /* keep the 3D canvas behind everything */
- #hero3d { position: absolute; inset: 0; z-index: 0; }
- .hero-overlay { position: relative; z-index: 1; }
- </style>
- </head>
- <body class="text-gray-900">
- <!-- Header -->
- <header class="border-b border-white/10" style="background:linear-gradient(180deg, rgba(11,31,22,.9) 0%, rgba(11,31,22,.7) 100%);">
- <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
- <a href="#" class="flex items-center gap-3">
- <!-- Bigger logo -->
- <img src="assets/logo.png" alt="Cana Impex logo" class="h-16 w-auto">
- <span class="text-white/90 text-lg font-bold">Cana Impex</span>
- </a>
- <nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
--<a href="#quotes" class="hover:underline">Get Quotes</a>
--<a href="#contact" class="hover:underline">Contact</a>
-+<a href="#quotes" class="hover:underline" data-i18n="nav.getQuotes">Get Quotes</a>
-+<a href="#contact" class="hover:underline" data-i18n="nav.contact">Contact</a>
- </nav>
--<a href="#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold">Request Samples</a>
-+<div class="flex items-center gap-3">
-+  <button type="button" id="langToggle" class="border border-white/40 text-white/80 px-3 py-2 rounded-lg text-sm font-semibold hover:bg-white/10 transition" aria-label="Switch to French" title="Switch to French">FR</button>
-+  <a href="#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold" data-i18n="header.requestSamples">Request Samples</a>
-+</div>
- </div>
- </header>
- 
- <!-- HERO (3D background + headline) -->
- <section class="relative overflow-hidden" style="min-height: 68vh;">
- <canvas id="hero3d"></canvas>
- <div class="hero-overlay max-w-7xl mx-auto px-6 py-20 md:py-28">
- <div class="max-w-3xl text-white">
--<h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
-+<h1 class="text-3xl md:text-5xl font-extrabold tracking-tight" data-i18n="hero.title">
- Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Coffee
- </h1>
--<p class="mt-4 text-white/80 md:text-lg">
-+<p class="mt-4 text-white/80 md:text-lg" data-i18n="hero.subtitle">
- Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms. No ceiling — just your requirements.
- </p>
- <div class="mt-8 flex flex-wrap items-center gap-3">
--<a href="#quotes" class="btn px-5 py-3 rounded-xl font-semibold">Get a Desk Quote</a>
--<a href="#contact" class="px-5 py-3 rounded-xl font-semibold text-white/90 border border-white/30 hover:bg-white/10">Talk to Sales</a>
-+<a href="#quotes" class="btn px-5 py-3 rounded-xl font-semibold" data-i18n="hero.primaryCta">Get a Desk Quote</a>
-+<a href="#contact" class="px-5 py-3 rounded-xl font-semibold text-white/90 border border-white/30 hover:bg-white/10" data-i18n="hero.secondaryCta">Talk to Sales</a>
- </div>
- </div>
- </div>
- </section>
- 
- <!-- Quote Cards -->
- <section id="quotes" class="max-w-7xl mx-auto px-6 py-16">
- <div class="max-w-3xl mx-auto text-center text-white">
--<p class="text-xs tracking-widest uppercase text-white/60 mb-2">Market Quotes</p>
--<h2 class="text-2xl md:text-3xl font-bold">Request Your Bulk Price Today</h2>
--      <p class="mt-2 text-white/70 text-sm">Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>.</p>
--      <p class="mt-2 text-white/70 text-sm">Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>. If missing, the cards still work.</p>
-+<p class="text-xs tracking-widest uppercase text-white/60 mb-2" data-i18n="quotes.kicker">Market Quotes</p>
-+<h2 class="text-2xl md:text-3xl font-bold" data-i18n="quotes.title">Request Your Bulk Price Today</h2>
-+      <p class="mt-2 text-white/70 text-sm" data-i18n="quotes.instructions" data-i18n-type="html">Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>.</p>
-+      <p class="mt-2 text-white/70 text-sm" data-i18n="quotes.instructions2" data-i18n-type="html">Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>. If missing, the cards still work.</p>
- </div>
- 
- <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-       <!-- Cashew -->
- <div class="card p-5">
- <img class="img-card" src="assets/cashew.jpg" alt="Cashew" onerror="this.style.display='none'">
--<h3 class="font-semibold text-lg mt-4">Cashew</h3>
--<p class="text-sm text-gray-600 mt-2">Bulk W240/W320, RCN & kernels.</p>
--<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
-+<h3 class="font-semibold text-lg mt-4" data-i18n="cashew.title">Cashew</h3>
-+<p class="text-sm text-gray-600 mt-2" data-i18n="cashew.description">Bulk W240/W320, RCN & kernels.</p>
-+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm" data-i18n="card.requestQuote">Request Quote</a>
- </div>
-       <!-- Cocoa -->
- <div class="card p-5">
- <img class="img-card" src="assets/cocoa.jpg" alt="Cocoa" onerror="this.style.display='none'">
--<h3 class="font-semibold text-lg mt-4">Cocoa</h3>
--<p class="text-sm text-gray-600 mt-2">West African cocoa beans.</p>
--<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
-+<h3 class="font-semibold text-lg mt-4" data-i18n="cocoa.title">Cocoa</h3>
-+<p class="text-sm text-gray-600 mt-2" data-i18n="cocoa.description">West African cocoa beans.</p>
-+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm" data-i18n="card.requestQuote">Request Quote</a>
- </div>
-       <!-- Coffee -->
- <div class="card p-5">
- <img class="img-card" src="assets/coffee.jpg" alt="Coffee" onerror="this.style.display='none'">
--<h3 class="font-semibold text-lg mt-4">Coffee</h3>
--<p class="text-sm text-gray-600 mt-2">Green beans in bulk.</p>
--<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
-+<h3 class="font-semibold text-lg mt-4" data-i18n="coffee.title">Coffee</h3>
-+<p class="text-sm text-gray-600 mt-2" data-i18n="coffee.description">Green beans in bulk.</p>
-+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm" data-i18n="card.requestQuote">Request Quote</a>
- </div>
-       <!-- Rubber -->
- <div class="card p-5">
- <img class="img-card" src="assets/rubber.jpg" alt="Rubber" onerror="this.style.display='none'">
--<h3 class="font-semibold text-lg mt-4">Rubber</h3>
--<p class="text-sm text-gray-600 mt-2">Natural hevea, industrial contracts.</p>
--<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
-+<h3 class="font-semibold text-lg mt-4" data-i18n="rubber.title">Rubber</h3>
-+<p class="text-sm text-gray-600 mt-2" data-i18n="rubber.description">Natural hevea, industrial contracts.</p>
-+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm" data-i18n="card.requestQuote">Request Quote</a>
- </div>
- </div>
- </section>
- 
- <!-- Contact -->
- <section id="contact" class="max-w-7xl mx-auto px-6 pb-20">
- <div class="max-w-3xl text-white">
--<p class="text-xs tracking-widest uppercase text-white/60 mb-2">Contact</p>
--<h2 class="text-2xl md:text-3xl font-bold">Request samples or a quote</h2>
--<p class="mt-2 text-white/70 text-sm">We’ll respond within 24–48h.</p>
-+<p class="text-xs tracking-widest uppercase text-white/60 mb-2" data-i18n="contact.kicker">Contact</p>
-+<h2 class="text-2xl md:text-3xl font-bold" data-i18n="contact.title">Request samples or a quote</h2>
-+<p class="mt-2 text-white/70 text-sm" data-i18n="contact.subtitle">We’ll respond within 24–48h.</p>
- </div>
- 
- <div class="mt-8 grid md:grid-cols-2 gap-8">
- <form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="glass rounded-2xl p-6">
- <input type="hidden" name="_subject" value="New B2B Inquiry — Cana Impex">
- <input type="hidden" name="_captcha" value="false">
- <input type="hidden" name="_template" value="table">
- <input type="hidden" name="_next" value="thanks.html">
- <input type="hidden" name="_autoresponse" value="Thanks for contacting Cana Impex. We received your message and will reply soon.">
- <div class="grid gap-4">
--<input name="name" placeholder="Your name" required class="border rounded-lg px-3 py-2">
--<input name="company" placeholder="Company" class="border rounded-lg px-3 py-2">
--<input type="email" name="email" placeholder="Email" required class="border rounded-lg px-3 py-2">
--<textarea name="message" placeholder="Volumes, grades, Incoterms…" rows="4" class="border rounded-lg px-3 py-2" required></textarea>
--<button class="btn px-4 py-2 rounded-lg">Send</button>
-+<input name="name" placeholder="Your name" required class="border rounded-lg px-3 py-2" data-i18n-placeholder="form.name">
-+<input name="company" placeholder="Company" class="border rounded-lg px-3 py-2" data-i18n-placeholder="form.company">
-+<input type="email" name="email" placeholder="Email" required class="border rounded-lg px-3 py-2" data-i18n-placeholder="form.email">
-+<textarea name="message" placeholder="Volumes, grades, Incoterms…" rows="4" class="border rounded-lg px-3 py-2" required data-i18n-placeholder="form.message"></textarea>
-+<button class="btn px-4 py-2 rounded-lg" data-i18n="form.submit">Send</button>
- </div>
- </form>
- 
- <div class="glass rounded-2xl p-6 text-white/90">
--<p class="text-sm"><strong>Email:</strong> ricardollorente@canaimpex.com</p>
--<p class="text-sm mt-2"><strong>Locations:</strong> Côte d’Ivoire • Canada</p>
--<p class="text-sm mt-2"><strong>Commodities:</strong> Cashew, Cocoa, Hevea, Coffee</p>
--<p class="text-sm mt-4 text-white/70">We conduct our business with integrity and transparency.</p>
-+<p class="text-sm"><strong data-i18n="contact.emailLabel">Email:</strong> <span>ricardollorente@canaimpex.com</span></p>
-+<p class="text-sm mt-2"><strong data-i18n="contact.locationsLabel">Locations:</strong> <span data-i18n="contact.locationsValue">Côte d’Ivoire • Canada</span></p>
-+<p class="text-sm mt-2"><strong data-i18n="contact.commoditiesLabel">Commodities:</strong> <span data-i18n="contact.commoditiesValue">Cashew, Cocoa, Hevea, Coffee</span></p>
-+<p class="text-sm mt-4 text-white/70" data-i18n="contact.closing">We conduct our business with integrity and transparency.</p>
- </div>
- </div>
- </section>
- 
- <!-- Footer with Ivory Coast flag -->
- <footer class="py-8 text-sm bg-[#0A7F49] text-white">
- <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
--<p>© <span id="year"></span> Cana Impex Inc. All rights reserved.</p>
-+<p>© <span id="year"></span> <span data-i18n="footer.copy">Cana Impex Inc. All rights reserved.</span></p>
- <div class="flex items-center gap-3">
--<span class="text-white/90">Made in Côte d’Ivoire</span>
-+<span class="text-white/90" data-i18n="footer.madeIn">Made in Côte d’Ivoire</span>
-         <!-- Ivory Coast flag -->
-         <!-- Ivory Coast flag (orange–white–green) -->
- <svg width="36" height="24" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-label="Ivory Coast flag">
- <rect width="1" height="2" x="0" y="0" fill="#F77F00"/>
- <rect width="1" height="2" x="1" y="0" fill="#FFFFFF"/>
- <rect width="1" height="2" x="2" y="0" fill="#009E60"/>
- </svg>
- </div>
- </div>
- </footer>
- 
-   <!-- Three.js (3D globe background) -->
-   <!-- Three.js (CDN) -->
- <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
- <script>
-     // Minimal rotating point-globe for a premium "3D" feel
- const canvas = document.getElementById('hero3d');
- const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
- const scene = new THREE.Scene();
- const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 100);
- camera.position.set(0, 0, 6);
- 
-     function resize() {
-     const resize = () => {
- const w = canvas.clientWidth = canvas.parentElement.clientWidth;
-diff --git a/index.html b/index.html
-index f4ecea0447fd69a36aa679c1035c4effa402d215..175410f0207fe767541ac662401d05b4f05f5197 100644
---- a/index.html
-+++ b/index.html
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+html { scroll-behavior: smooth; }
+body { background:#0b1f16; color:#0e1a15; }
+.btn { background:#0A7F49; color:#fff; }
+.btn:hover { background:#10B981; }
+.card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; }
+.glass { background:rgba(255,255,255,.08); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,.15); }
+.img-card { border-radius:12px; object-fit:cover; width:100%; height:160px; }
+    /* keep the 3D canvas behind everything */
+#hero3d { position: absolute; inset: 0; z-index: 0; }
+.hero-overlay { position: relative; z-index: 1; }
+</style>
+</head>
+<body class="text-gray-900">
+<!-- Header -->
+<header class="border-b border-white/10" style="background:linear-gradient(180deg, rgba(11,31,22,.9) 0%, rgba(11,31,22,.7) 100%);">
+<div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+<a href="#" class="flex items-center gap-3">
+<!-- Bigger logo -->
+<img src="assets/logo.png" alt="Cana Impex logo" class="h-16 w-auto">
+<span class="text-white/90 text-lg font-bold">Cana Impex</span>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
+<a href="#quotes" class="hover:underline">Get Quotes</a>
+<a href="#contact" class="hover:underline">Contact</a>
+<a href="#quotes" class="hover:underline" data-i18n="nav.getQuotes">Get Quotes</a>
+<a href="#contact" class="hover:underline" data-i18n="nav.contact">Contact</a>
+</nav>
+<a href="#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold">Request Samples</a>
+<div class="flex items-center gap-3">
+  <button type="button" id="langToggle" class="border border-white/40 text-white/80 px-3 py-2 rounded-lg text-sm font-semibold hover:bg-white/10 transition" aria-label="Switch to French" title="Switch to French">FR</button>
+  <a href="#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold" data-i18n="header.requestSamples">Request Samples</a>
+</div>
+</div>
+</header>
+
+<!-- HERO (3D background + headline) -->
+<section class="relative overflow-hidden" style="min-height: 68vh;">
+<canvas id="hero3d"></canvas>
+<div class="hero-overlay max-w-7xl mx-auto px-6 py-20 md:py-28">
+<div class="max-w-3xl text-white">
+<h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
+<h1 class="text-3xl md:text-5xl font-extrabold tracking-tight" data-i18n="hero.title">
+Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Coffee
+</h1>
+<p class="mt-4 text-white/80 md:text-lg">
+<p class="mt-4 text-white/80 md:text-lg" data-i18n="hero.subtitle">
+Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms. No ceiling — just your requirements.
+</p>
+<div class="mt-8 flex flex-wrap items-center gap-3">
+<a href="#quotes" class="btn px-5 py-3 rounded-xl font-semibold">Get a Desk Quote</a>
+<a href="#contact" class="px-5 py-3 rounded-xl font-semibold text-white/90 border border-white/30 hover:bg-white/10">Talk to Sales</a>
+<a href="#quotes" class="btn px-5 py-3 rounded-xl font-semibold" data-i18n="hero.primaryCta">Get a Desk Quote</a>
+<a href="#contact" class="px-5 py-3 rounded-xl font-semibold text-white/90 border border-white/30 hover:bg-white/10" data-i18n="hero.secondaryCta">Talk to Sales</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Quote Cards -->
+<section id="quotes" class="max-w-7xl mx-auto px-6 py-16">
+<div class="max-w-3xl mx-auto text-center text-white">
+<p class="text-xs tracking-widest uppercase text-white/60 mb-2">Market Quotes</p>
+<h2 class="text-2xl md:text-3xl font-bold">Request Your Bulk Price Today</h2>
+      <p class="mt-2 text-white/70 text-sm">Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>.</p>
+      <p class="mt-2 text-white/70 text-sm">Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>. If missing, the cards still work.</p>
+<p class="text-xs tracking-widest uppercase text-white/60 mb-2" data-i18n="quotes.kicker">Market Quotes</p>
+<h2 class="text-2xl md:text-3xl font-bold" data-i18n="quotes.title">Request Your Bulk Price Today</h2>
+      <p class="mt-2 text-white/70 text-sm" data-i18n="quotes.instructions" data-i18n-type="html">Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>.</p>
+      <p class="mt-2 text-white/70 text-sm" data-i18n="quotes.instructions2" data-i18n-type="html">Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>. If missing, the cards still work.</p>
+</div>
+
+<div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Cashew -->
+<div class="card p-5">
+<img class="img-card" src="assets/cashew.jpg" alt="Cashew" onerror="this.style.display='none'">
+<h3 class="font-semibold text-lg mt-4">Cashew</h3>
+<p class="text-sm text-gray-600 mt-2">Bulk W240/W320, RCN & kernels.</p>
+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
+<h3 class="font-semibold text-lg mt-4" data-i18n="cashew.title">Cashew</h3>
+<p class="text-sm text-gray-600 mt-2" data-i18n="cashew.description">Bulk W240/W320, RCN & kernels.</p>
+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm" data-i18n="card.requestQuote">Request Quote</a>
+</div>
+      <!-- Cocoa -->
+<div class="card p-5">
+<img class="img-card" src="assets/cocoa.jpg" alt="Cocoa" onerror="this.style.display='none'">
+<h3 class="font-semibold text-lg mt-4">Cocoa</h3>
+<p class="text-sm text-gray-600 mt-2">West African cocoa beans.</p>
+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
+<h3 class="font-semibold text-lg mt-4" data-i18n="cocoa.title">Cocoa</h3>
+<p class="text-sm text-gray-600 mt-2" data-i18n="cocoa.description">West African cocoa beans.</p>
+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm" data-i18n="card.requestQuote">Request Quote</a>
+</div>
+      <!-- Coffee -->
+<div class="card p-5">
+<img class="img-card" src="assets/coffee.jpg" alt="Coffee" onerror="this.style.display='none'">
+<h3 class="font-semibold text-lg mt-4">Coffee</h3>
+<p class="text-sm text-gray-600 mt-2">Green beans in bulk.</p>
+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
+<h3 class="font-semibold text-lg mt-4" data-i18n="coffee.title">Coffee</h3>
+<p class="text-sm text-gray-600 mt-2" data-i18n="coffee.description">Green beans in bulk.</p>
+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm" data-i18n="card.requestQuote">Request Quote</a>
+</div>
+      <!-- Rubber -->
+<div class="card p-5">
+<img class="img-card" src="assets/rubber.jpg" alt="Rubber" onerror="this.style.display='none'">
+<h3 class="font-semibold text-lg mt-4">Rubber</h3>
+<p class="text-sm text-gray-600 mt-2">Natural hevea, industrial contracts.</p>
+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
+<h3 class="font-semibold text-lg mt-4" data-i18n="rubber.title">Rubber</h3>
+<p class="text-sm text-gray-600 mt-2" data-i18n="rubber.description">Natural hevea, industrial contracts.</p>
+<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm" data-i18n="card.requestQuote">Request Quote</a>
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="max-w-7xl mx-auto px-6 pb-20">
+<div class="max-w-3xl text-white">
+<p class="text-xs tracking-widest uppercase text-white/60 mb-2">Contact</p>
+<h2 class="text-2xl md:text-3xl font-bold">Request samples or a quote</h2>
+<p class="mt-2 text-white/70 text-sm">We’ll respond within 24–48h.</p>
+<p class="text-xs tracking-widest uppercase text-white/60 mb-2" data-i18n="contact.kicker">Contact</p>
+<h2 class="text-2xl md:text-3xl font-bold" data-i18n="contact.title">Request samples or a quote</h2>
+<p class="mt-2 text-white/70 text-sm" data-i18n="contact.subtitle">We’ll respond within 24–48h.</p>
+</div>
+
+<div class="mt-8 grid md:grid-cols-2 gap-8">
+<form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="glass rounded-2xl p-6">
+<input type="hidden" name="_subject" value="New B2B Inquiry — Cana Impex">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="thanks.html">
+<input type="hidden" name="_autoresponse" value="Thanks for contacting Cana Impex. We received your message and will reply soon.">
+<div class="grid gap-4">
+<input name="name" placeholder="Your name" required class="border rounded-lg px-3 py-2">
+<input name="company" placeholder="Company" class="border rounded-lg px-3 py-2">
+<input type="email" name="email" placeholder="Email" required class="border rounded-lg px-3 py-2">
+<textarea name="message" placeholder="Volumes, grades, Incoterms…" rows="4" class="border rounded-lg px-3 py-2" required></textarea>
+<button class="btn px-4 py-2 rounded-lg">Send</button>
+<input name="name" placeholder="Your name" required class="border rounded-lg px-3 py-2" data-i18n-placeholder="form.name">
+<input name="company" placeholder="Company" class="border rounded-lg px-3 py-2" data-i18n-placeholder="form.company">
+<input type="email" name="email" placeholder="Email" required class="border rounded-lg px-3 py-2" data-i18n-placeholder="form.email">
+<textarea name="message" placeholder="Volumes, grades, Incoterms…" rows="4" class="border rounded-lg px-3 py-2" required data-i18n-placeholder="form.message"></textarea>
+<button class="btn px-4 py-2 rounded-lg" data-i18n="form.submit">Send</button>
+</div>
+</form>
+
+<div class="glass rounded-2xl p-6 text-white/90">
+<p class="text-sm"><strong>Email:</strong> ricardollorente@canaimpex.com</p>
+<p class="text-sm mt-2"><strong>Locations:</strong> Côte d’Ivoire • Canada</p>
+<p class="text-sm mt-2"><strong>Commodities:</strong> Cashew, Cocoa, Hevea, Coffee</p>
+<p class="text-sm mt-4 text-white/70">We conduct our business with integrity and transparency.</p>
+<p class="text-sm"><strong data-i18n="contact.emailLabel">Email:</strong> <span>ricardollorente@canaimpex.com</span></p>
+<p class="text-sm mt-2"><strong data-i18n="contact.locationsLabel">Locations:</strong> <span data-i18n="contact.locationsValue">Côte d’Ivoire • Canada</span></p>
+<p class="text-sm mt-2"><strong data-i18n="contact.commoditiesLabel">Commodities:</strong> <span data-i18n="contact.commoditiesValue">Cashew, Cocoa, Hevea, Coffee</span></p>
+<p class="text-sm mt-4 text-white/70" data-i18n="contact.closing">We conduct our business with integrity and transparency.</p>
+</div>
+</div>
+</section>
+
+<!-- Footer with Ivory Coast flag -->
+<footer class="py-8 text-sm bg-[#0A7F49] text-white">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+<p>© <span id="year"></span> Cana Impex Inc. All rights reserved.</p>
+<p>© <span id="year"></span> <span data-i18n="footer.copy">Cana Impex Inc. All rights reserved.</span></p>
+<div class="flex items-center gap-3">
+<span class="text-white/90">Made in Côte d’Ivoire</span>
+<span class="text-white/90" data-i18n="footer.madeIn">Made in Côte d’Ivoire</span>
+        <!-- Ivory Coast flag -->
+        <!-- Ivory Coast flag (orange–white–green) -->
+<svg width="36" height="24" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-label="Ivory Coast flag">
+<rect width="1" height="2" x="0" y="0" fill="#F77F00"/>
+<rect width="1" height="2" x="1" y="0" fill="#FFFFFF"/>
+<rect width="1" height="2" x="2" y="0" fill="#009E60"/>
+</svg>
+</div>
+</div>
+</footer>
+
+  <!-- Three.js (3D globe background) -->
+  <!-- Three.js (CDN) -->
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+<script>
+    // Minimal rotating point-globe for a premium "3D" feel
+const canvas = document.getElementById('hero3d');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 100);
+camera.position.set(0, 0, 6);
+
+    function resize() {
+    const resize = () => {
+const w = canvas.clientWidth = canvas.parentElement.clientWidth;
 @@ -182,29 +185,161 @@ positions[i*3+0] = r * Math.sin(phi) * Math.cos(theta);
- positions[i*3+1] = r * Math.cos(phi);
- positions[i*3+2] = r * Math.sin(phi) * Math.sin(theta);
- }
- const geo = new THREE.BufferGeometry();
- geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
- const mat = new THREE.PointsMaterial({ size: 0.02, color: 0x10B981 });
- const globe = new THREE.Points(geo, mat);
- scene.add(globe);
- 
-     // Soft vignette plane behind for depth
-     const planeGeo = new THREE.PlaneGeometry(14, 8);
-     const planeMat = new THREE.MeshBasicMaterial({ color: 0x062b1c, transparent:true, opacity:0.6 });
-     const plane = new THREE.Mesh(planeGeo, planeMat);
-     plane.position.z = -1.5;
-     scene.add(plane);
- 
- function animate(t){
- globe.rotation.y += 0.0018;
- globe.rotation.x = 0.15 * Math.sin(t*0.0003);
- renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
- renderer.render(scene, camera);
- requestAnimationFrame(animate);
- }
- requestAnimationFrame(animate);
- 
-+const translations = {
-+  en: {
-+    "nav.getQuotes": "Get Quotes",
-+    "nav.contact": "Contact",
-+    "header.requestSamples": "Request Samples",
-+    "hero.title": "Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Coffee",
-+    "hero.subtitle": "Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms. No ceiling — just your requirements.",
-+    "hero.primaryCta": "Get a Desk Quote",
-+    "hero.secondaryCta": "Talk to Sales",
-+    "quotes.kicker": "Market Quotes",
-+    "quotes.title": "Request Your Bulk Price Today",
-+    "quotes.instructions": "Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>.",
-+    "quotes.instructions2": "Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>. If missing, the cards still work.",
-+    "cashew.title": "Cashew",
-+    "cashew.description": "Bulk W240/W320, RCN & kernels.",
-+    "cocoa.title": "Cocoa",
-+    "cocoa.description": "West African cocoa beans.",
-+    "coffee.title": "Coffee",
-+    "coffee.description": "Green beans in bulk.",
-+    "rubber.title": "Rubber",
-+    "rubber.description": "Natural hevea, industrial contracts.",
-+    "card.requestQuote": "Request Quote",
-+    "contact.kicker": "Contact",
-+    "contact.title": "Request samples or a quote",
-+    "contact.subtitle": "We’ll respond within 24–48h.",
-+    "form.name": "Your name",
-+    "form.company": "Company",
-+    "form.email": "Email",
-+    "form.message": "Volumes, grades, Incoterms…",
-+    "form.submit": "Send",
-+    "contact.emailLabel": "Email:",
-+    "contact.locationsLabel": "Locations:",
-+    "contact.locationsValue": "Côte d’Ivoire • Canada",
-+    "contact.commoditiesLabel": "Commodities:",
-+    "contact.commoditiesValue": "Cashew, Cocoa, Hevea, Coffee",
-+    "contact.closing": "We conduct our business with integrity and transparency.",
-+    "footer.copy": "Cana Impex Inc. All rights reserved.",
-+    "footer.madeIn": "Made in Côte d’Ivoire",
-+    "toggle.switch": "Switch to French"
-+  },
-+  fr: {
-+    "nav.getQuotes": "Demander des prix",
-+    "nav.contact": "Contact",
-+    "header.requestSamples": "Demander des échantillons",
-+    "hero.title": "Approvisionnement illimité — Noix de cajou • Cacao • Hévéa • Café",
-+    "hero.subtitle": "Basés en Côte d’Ivoire. Nous adaptons volumes, grades et Incoterms à vos besoins. Aucun plafond — seulement vos exigences.",
-+    "hero.primaryCta": "Obtenir un devis personnalisé",
-+    "hero.secondaryCta": "Parler aux ventes",
-+    "quotes.kicker": "Cours du marché",
-+    "quotes.title": "Demandez votre prix de gros dès aujourd’hui",
-+    "quotes.instructions": "Ajoutez vos propres photos dans <code>assets/</code> avec les noms <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>.",
-+    "quotes.instructions2": "Ajoutez vos propres photos dans <code>assets/</code> avec les noms <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>. Si elles manquent, les cartes restent fonctionnelles.",
-+    "cashew.title": "Noix de cajou",
-+    "cashew.description": "Volumes W240/W320, noix brutes et amandes.",
-+    "cocoa.title": "Cacao",
-+    "cocoa.description": "Fèves de cacao d’Afrique de l’Ouest.",
-+    "coffee.title": "Café",
-+    "coffee.description": "Café vert en vrac.",
-+    "rubber.title": "Hévéa",
-+    "rubber.description": "Latex naturel, contrats industriels.",
-+    "card.requestQuote": "Demander un devis",
-+    "contact.kicker": "Contact",
-+    "contact.title": "Demandez des échantillons ou un devis",
-+    "contact.subtitle": "Nous répondons sous 24 à 48 h.",
-+    "form.name": "Votre nom",
-+    "form.company": "Entreprise",
-+    "form.email": "Courriel",
-+    "form.message": "Volumes, qualités, Incoterms…",
-+    "form.submit": "Envoyer",
-+    "contact.emailLabel": "Courriel :",
-+    "contact.locationsLabel": "Implantations :",
-+    "contact.locationsValue": "Côte d’Ivoire • Canada",
-+    "contact.commoditiesLabel": "Produits :",
-+    "contact.commoditiesValue": "Noix de cajou, cacao, hévéa, café",
-+    "contact.closing": "Nous menons nos activités avec intégrité et transparence.",
-+    "footer.copy": "Cana Impex Inc. Tous droits réservés.",
-+    "footer.madeIn": "Fabriqué en Côte d’Ivoire",
-+    "toggle.switch": "Passer en anglais"
-+  }
-+};
-+
-+const langToggle = document.getElementById('langToggle');
-+const storedLang = localStorage.getItem('preferredLang');
-+let currentLang = storedLang === 'fr' ? 'fr' : 'en';
-+
-+function applyLanguage(lang) {
-+  if (!translations[lang]) return;
-+  document.documentElement.lang = lang;
-+  document.querySelectorAll('[data-i18n]').forEach((el) => {
-+    const key = el.dataset.i18n;
-+    const value = translations[lang][key];
-+    if (value !== undefined) {
-+      if (el.dataset.i18nType === 'html') {
-+        el.innerHTML = value;
-+      } else {
-+        el.textContent = value;
-+      }
-+    }
-+  });
-+  document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
-+    const key = el.dataset.i18nPlaceholder;
-+    const value = translations[lang][key];
-+    if (value !== undefined) {
-+      el.setAttribute('placeholder', value);
-+    }
-+  });
-+  document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
-+    const key = el.dataset.i18nAriaLabel;
-+    const value = translations[lang][key];
-+    if (value !== undefined) {
-+      el.setAttribute('aria-label', value);
-+      el.setAttribute('title', value);
-+    }
-+  });
-+  const toggleLabel = translations[lang]['toggle.switch'];
-+  if (langToggle && toggleLabel) {
-+    langToggle.textContent = lang === 'en' ? 'FR' : 'EN';
-+    langToggle.setAttribute('aria-label', toggleLabel);
-+    langToggle.setAttribute('title', toggleLabel);
-+  }
-+  localStorage.setItem('preferredLang', lang);
-+}
-+
-+applyLanguage(currentLang);
-+
-+if (langToggle) {
-+  langToggle.addEventListener('click', () => {
-+    currentLang = currentLang === 'en' ? 'fr' : 'en';
-+    applyLanguage(currentLang);
-+  });
-+}
-+
- document.getElementById('year').textContent = new Date().getFullYear();
- </script>
- </body>
- </html>
+positions[i*3+1] = r * Math.cos(phi);
+positions[i*3+2] = r * Math.sin(phi) * Math.sin(theta);
+}
+const geo = new THREE.BufferGeometry();
+geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+const mat = new THREE.PointsMaterial({ size: 0.02, color: 0x10B981 });
+const globe = new THREE.Points(geo, mat);
+scene.add(globe);
+
+    // Soft vignette plane behind for depth
+    const planeGeo = new THREE.PlaneGeometry(14, 8);
+    const planeMat = new THREE.MeshBasicMaterial({ color: 0x062b1c, transparent:true, opacity:0.6 });
+    const plane = new THREE.Mesh(planeGeo, planeMat);
+    plane.position.z = -1.5;
+    scene.add(plane);
+
+function animate(t){
+globe.rotation.y += 0.0018;
+globe.rotation.x = 0.15 * Math.sin(t*0.0003);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.render(scene, camera);
+requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
+
+const translations = {
+  en: {
+    "nav.getQuotes": "Get Quotes",
+    "nav.contact": "Contact",
+    "header.requestSamples": "Request Samples",
+    "hero.title": "Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Coffee",
+    "hero.subtitle": "Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms. No ceiling — just your requirements.",
+    "hero.primaryCta": "Get a Desk Quote",
+    "hero.secondaryCta": "Talk to Sales",
+    "quotes.kicker": "Market Quotes",
+    "quotes.title": "Request Your Bulk Price Today",
+    "quotes.instructions": "Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>.",
+    "quotes.instructions2": "Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>. If missing, the cards still work.",
+    "cashew.title": "Cashew",
+    "cashew.description": "Bulk W240/W320, RCN & kernels.",
+    "cocoa.title": "Cocoa",
+    "cocoa.description": "West African cocoa beans.",
+    "coffee.title": "Coffee",
+    "coffee.description": "Green beans in bulk.",
+    "rubber.title": "Rubber",
+    "rubber.description": "Natural hevea, industrial contracts.",
+    "card.requestQuote": "Request Quote",
+    "contact.kicker": "Contact",
+    "contact.title": "Request samples or a quote",
+    "contact.subtitle": "We’ll respond within 24–48h.",
+    "form.name": "Your name",
+    "form.company": "Company",
+    "form.email": "Email",
+    "form.message": "Volumes, grades, Incoterms…",
+    "form.submit": "Send",
+    "contact.emailLabel": "Email:",
+    "contact.locationsLabel": "Locations:",
+    "contact.locationsValue": "Côte d’Ivoire • Canada",
+    "contact.commoditiesLabel": "Commodities:",
+    "contact.commoditiesValue": "Cashew, Cocoa, Hevea, Coffee",
+    "contact.closing": "We conduct our business with integrity and transparency.",
+    "footer.copy": "Cana Impex Inc. All rights reserved.",
+    "footer.madeIn": "Made in Côte d’Ivoire",
+    "toggle.switch": "Switch to French"
+  },
+  fr: {
+    "nav.getQuotes": "Demander des prix",
+    "nav.contact": "Contact",
+    "header.requestSamples": "Demander des échantillons",
+    "hero.title": "Approvisionnement illimité — Noix de cajou • Cacao • Hévéa • Café",
+    "hero.subtitle": "Basés en Côte d’Ivoire. Nous adaptons volumes, grades et Incoterms à vos besoins. Aucun plafond — seulement vos exigences.",
+    "hero.primaryCta": "Obtenir un devis personnalisé",
+    "hero.secondaryCta": "Parler aux ventes",
+    "quotes.kicker": "Cours du marché",
+    "quotes.title": "Demandez votre prix de gros dès aujourd’hui",
+    "quotes.instructions": "Ajoutez vos propres photos dans <code>assets/</code> avec les noms <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>.",
+    "quotes.instructions2": "Ajoutez vos propres photos dans <code>assets/</code> avec les noms <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>. Si elles manquent, les cartes restent fonctionnelles.",
+    "cashew.title": "Noix de cajou",
+    "cashew.description": "Volumes W240/W320, noix brutes et amandes.",
+    "cocoa.title": "Cacao",
+    "cocoa.description": "Fèves de cacao d’Afrique de l’Ouest.",
+    "coffee.title": "Café",
+    "coffee.description": "Café vert en vrac.",
+    "rubber.title": "Hévéa",
+    "rubber.description": "Latex naturel, contrats industriels.",
+    "card.requestQuote": "Demander un devis",
+    "contact.kicker": "Contact",
+    "contact.title": "Demandez des échantillons ou un devis",
+    "contact.subtitle": "Nous répondons sous 24 à 48 h.",
+    "form.name": "Votre nom",
+    "form.company": "Entreprise",
+    "form.email": "Courriel",
+    "form.message": "Volumes, qualités, Incoterms…",
+    "form.submit": "Envoyer",
+    "contact.emailLabel": "Courriel :",
+    "contact.locationsLabel": "Implantations :",
+    "contact.locationsValue": "Côte d’Ivoire • Canada",
+    "contact.commoditiesLabel": "Produits :",
+    "contact.commoditiesValue": "Noix de cajou, cacao, hévéa, café",
+    "contact.closing": "Nous menons nos activités avec intégrité et transparence.",
+    "footer.copy": "Cana Impex Inc. Tous droits réservés.",
+    "footer.madeIn": "Fabriqué en Côte d’Ivoire",
+    "toggle.switch": "Passer en anglais"
+  }
+};
+
+const langToggle = document.getElementById('langToggle');
+const storedLang = localStorage.getItem('preferredLang');
+let currentLang = storedLang === 'fr' ? 'fr' : 'en';
+
+function applyLanguage(lang) {
+  if (!translations[lang]) return;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const key = el.dataset.i18n;
+    const value = translations[lang][key];
+    if (value !== undefined) {
+      if (el.dataset.i18nType === 'html') {
+        el.innerHTML = value;
+      } else {
+        el.textContent = value;
+      }
+    }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+    const key = el.dataset.i18nPlaceholder;
+    const value = translations[lang][key];
+    if (value !== undefined) {
+      el.setAttribute('placeholder', value);
+    }
+  });
+  document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
+    const key = el.dataset.i18nAriaLabel;
+    const value = translations[lang][key];
+    if (value !== undefined) {
+      el.setAttribute('aria-label', value);
+      el.setAttribute('title', value);
+    }
+  });
+  const toggleLabel = translations[lang]['toggle.switch'];
+  if (langToggle && toggleLabel) {
+    langToggle.textContent = lang === 'en' ? 'FR' : 'EN';
+    langToggle.setAttribute('aria-label', toggleLabel);
+    langToggle.setAttribute('title', toggleLabel);
+  }
+  localStorage.setItem('preferredLang', lang);
+}
+
+applyLanguage(currentLang);
+
+if (langToggle) {
+  langToggle.addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'fr' : 'en';
+    applyLanguage(currentLang);
+  });
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
