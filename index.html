@@ -6,8 +6,6 @@
   <title>Cana Impex — Unlimited Bulk Supply from Côte d’Ivoire</title>
   <meta name="description" content="Cana Impex: Unlimited bulk supply of Cashew, Cocoa, Hevea, and Coffee from Côte d’Ivoire. Tailored to your business.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="Cana Impex — Unlimited Bulk Supply" />
-  <meta property="og:image" content="assets/hero.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html{scroll-behavior:smooth}
@@ -16,13 +14,14 @@
     .btn:hover { background:#10B981; }
     .alt { background:#F5FBF7; }
     .card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:20px; }
+    .shadow-soft { box-shadow: 0 8px 24px rgba(0,0,0,.06); }
   </style>
 </head>
 <body>
   <header class="border-b" style="background:#FDFCF9;">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
       <a href="#" class="flex items-center gap-3">
-        <img src="assets/logo.png" alt="Cana Impex logo" class="h-20 w-auto">
+        <img src="assets/logo.png" alt="Cana Impex logo" class="h-10 w-auto">
         <span class="text-lg font-bold">Cana Impex</span>
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm">
@@ -36,31 +35,7 @@
     </div>
   </header>
 
-  <section>
-    <img src="assets/hero.png" alt="Cana Impex Hero" class="w-full object-cover">
-  </section>
-
-  <section class="max-w-7xl mx-auto px-6 py-14">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <div>
-        <h1 class="text-3xl md:text-4xl font-extrabold leading-tight">Unlimited Supply. Tailored to Your Business.</h1>
-        <p class="mt-3 text-gray-700 leading-relaxed">
-          We are a registered corporation in Côte d’Ivoire exporting at scale. There is no ceiling to what we can supply — our only limits are the ones you set.
-          We adapt to your requirements: grades, packaging, volumes, and Incoterms.
-        </p>
-        <div class="mt-6 flex gap-3">
-          <a href="#commodities" class="btn px-4 py-2 rounded-lg">Explore Commodities</a>
-          <a href="#contact" class="px-4 py-2 rounded-lg border">Talk to Sales</a>
-        </div>
-      </div>
-      <ul class="grid sm:grid-cols-2 gap-4 text-sm">
-        <li class="card">✔️ Bulk-first supply: pallets to multi-container</li>
-        <li class="card">✔️ Flexible trade terms: FOB Abidjan, CIF EU/NA</li>
-        <li class="card">✔️ Quality control & traceability at origin</li>
-        <li class="card">✔️ Private label & packaging options</li>
-      </ul>
-    </div>
-  </section>
+  <section><img src="assets/hero.png" alt="Cana Impex Hero" class="w-full object-cover"></section>
 
   <section id="commodities" class="alt py-14">
     <div class="max-w-7xl mx-auto px-6">
@@ -75,75 +50,45 @@
     </div>
   </section>
 
-  <!-- Live Prices -->
+  <!-- Live Prices (fixed) -->
   <section id="prices" class="max-w-7xl mx-auto px-6 py-14">
     <div class="max-w-3xl">
       <p class="text-xs tracking-widest uppercase text-gray-500 mb-2">Live Prices</p>
       <h2 class="text-2xl md:text-3xl font-bold">Realtime Commodities (reference)</h2>
-      <p class="mt-2 text-gray-600 text-sm">Cocoa & Coffee shown via public futures. Rubber & Cashew are typically OTC — contact us for live desk quotes.</p>
+      <p class="mt-2 text-gray-600 text-sm">Cocoa & Coffee via public futures. Rubber & Cashew trade OTC — contact us for a desk quote.</p>
     </div>
 
-    <div class="my-6">
-      <div class="tradingview-widget-container">
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-        {
-          "symbols": [
-            { "proName": "ICEUS:CC1!", "title": "Cocoa (Front Month)" },
-            { "proName": "ICEUS:KC1!", "title": "Coffee (Front Month)" }
-          ],
-          "colorTheme": "light",
-          "isTransparent": true,
-          "displayMode": "adaptive",
-          "locale": "en"
-        }
-        </script>
+    <div class="grid md:grid-cols-2 gap-8 mt-8">
+      <!-- Cocoa (Advanced Chart) -->
+      <div class="card shadow-soft">
+        <h3 class="font-semibold mb-3">Cocoa (Front Month)</h3>
+        <div class="tradingview-widget-container">
+          <div id="cocoa_chart"></div>
+        </div>
       </div>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="tradingview-widget-container card">
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
-        {
-          "symbols": [["ICEUS:CC1!",""]],
-          "chartOnly": false, "width": "100%", "height": 300, "locale": "en",
-          "colorTheme": "light", "autosize": true, "showVolume": false
-        }
-        </script>
-      </div>
-      <div class="tradingview-widget-container card">
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
-        {
-          "symbols": [["ICEUS:KC1!",""]],
-          "chartOnly": false, "width": "100%", "height": 300, "locale": "en",
-          "colorTheme": "light", "autosize": true, "showVolume": false
-        }
-        </script>
+      <!-- Coffee (Advanced Chart) -->
+      <div class="card shadow-soft">
+        <h3 class="font-semibold mb-3">Coffee (Front Month)</h3>
+        <div class="tradingview-widget-container">
+          <div id="coffee_chart"></div>
+        </div>
       </div>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8 mt-8">
       <div class="card">
         <h3 class="font-semibold text-lg">Rubber (Natural)</h3>
-        <p class="text-sm text-gray-600 mt-2">Exchange listings vary by region. For current bulk offers and contracts, contact our desk.</p>
-        <div class="mt-4 flex gap-3">
-          <a href="#contact" class="btn px-3 py-2 rounded-lg text-sm">Request Live Quote</a>
-        </div>
+        <p class="text-sm text-gray-600 mt-2">Regional listings vary. For current bulk offers and contracts, contact our desk.</p>
+        <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Live Quote</a>
       </div>
       <div class="card">
         <h3 class="font-semibold text-lg">Cashew (Bulk)</h3>
-        <p class="text-sm text-gray-600 mt-2">Cashews trade OTC based on grade and origin. For a live price, request a quote.</p>
-        <div class="mt-4 text-sm"><strong>Reference:</strong> <span id="cashewRef">Call for quote</span></div>
-        <div class="mt-4 flex gap-3">
-          <a href="#contact" class="btn px-3 py-2 rounded-lg text-sm">Request Live Quote</a>
-        </div>
+        <p class="text-sm text-gray-600 mt-2">Cashews trade OTC based on grade & origin. Get a live price tailored to your spec.</p>
+        <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Live Quote</a>
       </div>
     </div>
   </section>
 
-  <!-- Specs, Logistics, Contact, Footer (same as before) -->
   <section id="specs" class="max-w-7xl mx-auto px-6 py-14">
     <div class="max-w-3xl">
       <p class="text-xs tracking-widest uppercase text-gray-500 mb-2">Specifications</p>
@@ -227,11 +172,37 @@
     </div>
   </footer>
 
+  <!-- TradingView Advanced Chart scripts -->
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
   <script>
-    fetch('assets/prices.json').then(r=>r.json()).then(d=>{
-      const el = document.getElementById('cashewRef');
-      if (el && d.cashew_bulk_usd_per_mt) el.textContent = d.cashew_bulk_usd_per_mt;
-    }).catch(()=>{});
+    try {
+      new TradingView.widget({
+        "container_id": "cocoa_chart",
+        "symbol": "ICEUS:CC1!",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "light",
+        "style": "1",
+        "locale": "en",
+        "hide_side_toolbar": true,
+        "allow_symbol_change": false,
+        "height": 320,
+        "width": "100%"
+      });
+      new TradingView.widget({
+        "container_id": "coffee_chart",
+        "symbol": "ICEUS:KC1!",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "light",
+        "style": "1",
+        "locale": "en",
+        "hide_side_toolbar": true,
+        "allow_symbol_change": false,
+        "height": 320,
+        "width": "100%"
+      });
+    } catch (e) {}
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
