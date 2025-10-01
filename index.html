@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cana Impex — Unlimited Bulk Supply from Côte d’Ivoire</title>
-  <meta name="description" content="Cana Impex: Unlimited bulk supply of Cashew, Cocoa, Hevea, and Coffee from Côte d’Ivoire. Tailored to your business.">
+  <title>Cana Impex — Bulk Supply from Côte d’Ivoire</title>
+  <meta name="description" content="Cana Impex: Bulk supply of Cashew, Cocoa, Hevea, and Coffee from Côte d’Ivoire. Tailored to your business.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -14,6 +14,8 @@
     .btn:hover { background:#10B981; }
     .alt { background:#F5FBF7; }
     .card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:20px; text-align:center; }
+    .shadow-soft { box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+    .img-card { border-radius:12px; object-fit:cover; width:100%; height:160px; }
   </style>
 </head>
 <body>
@@ -24,7 +26,6 @@
         <span class="text-lg font-bold">Cana Impex</span>
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#commodities" class="hover:underline">Commodities</a>
         <a href="#quotes" class="hover:underline">Get Quotes</a>
         <a href="#contact" class="hover:underline">Contact</a>
       </nav>
@@ -32,37 +33,38 @@
     </div>
   </header>
 
-  <section><img src="assets/hero.png" alt="Cana Impex Hero" class="w-full object-cover"></section>
+  <section><img src="assets/hero.png" alt="Cana Impex Hero" class="w-full object-cover" loading="eager"></section>
 
+  <!-- Get Quotes Section with real photos -->
   <section id="quotes" class="max-w-7xl mx-auto px-6 py-14">
     <div class="max-w-3xl mx-auto text-center">
       <p class="text-xs tracking-widest uppercase text-gray-500 mb-2">Market Quotes</p>
       <h2 class="text-2xl md:text-3xl font-bold">Request Your Bulk Price Today</h2>
-      <p class="mt-2 text-gray-600 text-sm">International desk quotes available for all commodities. Click below to request your tailored price.</p>
+      <p class="mt-2 text-gray-600 text-sm">International desk quotes for Cashew, Cocoa, Coffee & Hevea (Rubber). Tell us your volume, grade, and Incoterms.</p>
     </div>
     <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="card">
-        <img src="assets/cashew.svg" alt="Cashew" class="mx-auto mb-4 h-24">
-        <h3 class="font-semibold text-lg">Cashew</h3>
+      <div class="card shadow-soft">
+        <img class="img-card" src="https://source.unsplash.com/featured/400x300?cashew,nuts" alt="Cashew kernels" loading="lazy" referrerpolicy="no-referrer">
+        <h3 class="font-semibold text-lg mt-4">Cashew</h3>
         <p class="text-sm text-gray-600 mt-2">Bulk W240/W320, RCN & kernels.</p>
         <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
       </div>
-      <div class="card">
-        <img src="assets/cocoa.svg" alt="Cocoa" class="mx-auto mb-4 h-24">
-        <h3 class="font-semibold text-lg">Cocoa</h3>
-        <p class="text-sm text-gray-600 mt-2">Bulk beans from Côte d’Ivoire.</p>
+      <div class="card shadow-soft">
+        <img class="img-card" src="https://source.unsplash.com/featured/400x300?cocoa,beans" alt="Cocoa beans" loading="lazy" referrerpolicy="no-referrer">
+        <h3 class="font-semibold text-lg mt-4">Cocoa</h3>
+        <p class="text-sm text-gray-600 mt-2">West African cocoa beans.</p>
         <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
       </div>
-      <div class="card">
-        <img src="assets/coffee.svg" alt="Coffee" class="mx-auto mb-4 h-24">
-        <h3 class="font-semibold text-lg">Coffee</h3>
-        <p class="text-sm text-gray-600 mt-2">Green beans in bulk shipments.</p>
+      <div class="card shadow-soft">
+        <img class="img-card" src="https://source.unsplash.com/featured/400x300?coffee,beans" alt="Coffee beans" loading="lazy" referrerpolicy="no-referrer">
+        <h3 class="font-semibold text-lg mt-4">Coffee</h3>
+        <p class="text-sm text-gray-600 mt-2">Green beans in bulk.</p>
         <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
       </div>
-      <div class="card">
-        <img src="assets/rubber.svg" alt="Rubber" class="mx-auto mb-4 h-24">
-        <h3 class="font-semibold text-lg">Rubber</h3>
-        <p class="text-sm text-gray-600 mt-2">Natural hevea, industrial contracts.</p>
+      <div class="card shadow-soft">
+        <img class="img-card" src="https://source.unsplash.com/featured/400x300?rubber,plantation" alt="Rubber plantation" loading="lazy" referrerpolicy="no-referrer">
+        <h3 class="font-semibold text-lg mt-4">Rubber (Hevea)</h3>
+        <p class="text-sm text-gray-600 mt-2">Industrial contracts, bulk.</p>
         <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
       </div>
     </div>
@@ -72,7 +74,7 @@
     <div class="max-w-3xl">
       <p class="text-xs tracking-widest uppercase text-gray-500 mb-2">Contact</p>
       <h2 class="text-2xl md:text-3xl font-bold">Request samples or a quote</h2>
-      <p class="mt-2 text-gray-600 text-sm">Tell us your volumes, destination, and grade requirements. We’ll respond within 24–48h.</p>
+      <p class="mt-2 text-gray-600 text-sm">We’ll respond within 24–48h.</p>
     </div>
     <div class="mt-8 grid md:grid-cols-2 gap-8">
       <form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="card">
@@ -103,7 +105,6 @@
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
       <p>© <span id="year"></span> Cana Impex Inc. All rights reserved.</p>
       <div class="flex items-center gap-4 text-white/90">
-        <a href="#commodities" class="hover:underline">Commodities</a>
         <a href="#quotes" class="hover:underline">Get Quotes</a>
         <a href="#contact" class="hover:underline">Contact</a>
       </div>
