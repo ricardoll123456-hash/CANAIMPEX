@@ -3,528 +3,399 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>NutWorks by Cana Impex — Premium Cashew Brand</title>
-<meta name="description" content="NutWorks by Cana Impex connects Ivory Coast cashew farms to the world. Discover our mission, values, roadmap, products, and contact information." />
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<title>Cana Impex — Bulk Supply from Côte d’Ivoire</title>
+<meta name="description" content="Cana Impex: Bulk supply of Cashew, Cocoa, Hevea, and Coffee from Côte d’Ivoire. Tailored to your business.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-theme: {
-extend: {
-colors: {
-brandGold: '#D4AF37',
-brandGreen: '#1C4D3C',
-brandDeep: '#061A12'
-},
-fontFamily: {
-heading: ['\"Poppins\"', 'ui-sans-serif', 'system-ui'],
-body: ['\"Inter\"', 'ui-sans-serif', 'system-ui']
-}
-}
-}
-};
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-html { scroll-behavior: smooth; }
-body { background: #050d0a; }
-    .hero-bg {
-      background-image: linear-gradient(rgba(6,26,18,0.75), rgba(6,26,18,0.9)), url('assets/hero.png');
-      background-size: cover;
-      background-position: center;
-    .hero-section {
-      min-height: 72vh;
-    }
-    #hero3d {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-}
-.card-gradient {
-background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(9,41,30,0.6) 100%);
-}
+    html{scroll-behavior:smooth}
+    body{background:#0b1f16;color:#0e1a15}
+    .btn{background:#0A7F49;color:#fff}.btn:hover{background:#10B981}
+    .card{background:#fff;border:1px solid #e5e7eb;border-radius:16px}
+    .section{min-height:80vh;display:grid;place-items:center;padding:5rem 1.5rem}
+    /* Canvas for flying beans/nuts */
+    #fx{position:fixed;inset:0;z-index:0;pointer-events:none}
+    .layer{position:relative;z-index:1}
+    html { scroll-behavior: smooth; }
+    body { background:#0b1f16; color:#0e1a15; }
+    .btn { background:#0A7F49; color:#fff; }
+    .btn:hover { background:#10B981; }
+    .card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; }
+    .glass { background:rgba(255,255,255,.08); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,.15); }
+    .img-card { border-radius:12px; object-fit:cover; width:100%; height:160px; }
+    #hero3d { position: absolute; inset: 0; z-index: 0; }
+    .hero-overlay { position: relative; z-index: 1; }
 </style>
 </head>
-<body class="text-slate-100 font-body">
-<header class="fixed inset-x-0 top-0 z-50 backdrop-blur bg-brandDeep/80 border-b border-white/10">
-<div class="max-w-6xl mx-auto px-6">
-<div class="flex items-center justify-between h-20">
-<a href="#home" class="flex items-center gap-3">
-<img src="assets/logo.png" alt="NutWorks logo" class="h-12 w-auto" />
-<div class="flex flex-col">
-<span class="font-heading text-lg font-semibold tracking-wide">NutWorks</span>
-<span class="text-xs uppercase text-white/60">by Cana Impex</span>
-</div>
+<body class="text-gray-900">
+
+  <!-- Fixed FX canvas -->
+  <canvas id="fx"></canvas>
+
+<!-- Header -->
+  <header class="layer border-b border-white/10 sticky top-0 backdrop-blur bg-[rgba(11,31,22,.75)]">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+  <header class="border-b border-white/10" style="background:linear-gradient(180deg, rgba(11,31,22,.9) 0%, rgba(11,31,22,.7) 100%);">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+<a href="#" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Cana Impex" class="h-16 w-auto">
+        <span class="text-white/90 font-bold">Cana Impex</span>
+        <!-- Bigger logo -->
+        <img src="assets/logo.png" alt="Cana Impex logo" class="h-16 w-auto">
+        <span class="text-white/90 text-lg font-bold">Cana Impex</span>
 </a>
 <nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
-<a href="#about" class="hover:text-brandGold transition">About</a>
-<a href="#values" class="hover:text-brandGold transition">Values</a>
-<a href="#roadmap" class="hover:text-brandGold transition">Roadmap</a>
-<a href="#products" class="hover:text-brandGold transition">Products</a>
-<a href="#team" class="hover:text-brandGold transition">Team</a>
-<a href="#contact" class="hover:text-brandGold transition">Contact</a>
-<a href="index_fr.html" class="font-semibold text-brandGold">FR</a>
+        <a href="#cashew" class="hover:underline">Cashew</a>
+        <a href="#cocoa" class="hover:underline">Cocoa</a>
+        <a href="#coffee" class="hover:underline">Coffee</a>
+        <a href="#rubber" class="hover:underline">Rubber</a>
+        <a href="#quotes" class="hover:underline">Get Quotes</a>
+<a href="#contact" class="hover:underline">Contact</a>
 </nav>
-<div class="md:hidden">
-<button id="menuButton" class="p-2 rounded-lg border border-white/20 text-white" aria-label="Open menu">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5m-16.5 6.75h16.5" />
-</svg>
-</button>
-</div>
-</div>
-<div id="mobileMenu" class="md:hidden hidden pb-6 text-sm text-white/80 space-y-4">
-<a href="#about" class="block hover:text-brandGold">About</a>
-<a href="#values" class="block hover:text-brandGold">Values</a>
-<a href="#roadmap" class="block hover:text-brandGold">Roadmap</a>
-<a href="#products" class="block hover:text-brandGold">Products</a>
-<a href="#team" class="block hover:text-brandGold">Team</a>
-<a href="#contact" class="block hover:text-brandGold">Contact</a>
-<a href="index_fr.html" class="block font-semibold text-brandGold">Français</a>
-</div>
+<a href="#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold">Request Samples</a>
 </div>
 </header>
 
-<main id="home" class="pt-24">
-    <section class="hero-bg relative">
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brandDeep/20 to-brandDeep"></div>
-      <div class="relative max-w-6xl mx-auto px-6 py-24 md:py-32">
-    <section class="hero-section relative overflow-hidden flex items-center">
-      <canvas id="hero3d" aria-hidden="true"></canvas>
-      <div class="absolute inset-0 bg-gradient-to-b from-brandDeep/40 via-brandDeep/70 to-brandDeep z-10"></div>
-      <div class="relative z-20 w-full max-w-6xl mx-auto px-6 py-24 md:py-32">
-<div class="max-w-3xl">
-<p class="uppercase tracking-[0.35em] text-xs text-brandGold/80">Premium Cashew Brand</p>
-<h1 class="mt-6 text-4xl md:text-5xl font-heading font-semibold leading-tight">
-From Ivory Coast farms to worldwide tables, our mission is to redefine cashew quality.
-</h1>
-<p class="mt-6 text-base md:text-lg text-white/80">
-NutWorks partners directly with Ivorian farmers to deliver healthy, tasty and responsibly sourced cashew products.
-</p>
-<div class="mt-10 flex flex-wrap items-center gap-4">
-<a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-brandGold text-brandDeep px-6 py-3 font-semibold shadow-lg shadow-brandGold/20 hover:shadow-xl transition">
-Talk to Us
-</a>
-<a href="#roadmap" class="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm uppercase tracking-wide hover:bg-white/10 transition">
-Explore Our Plan
-</a>
-</div>
+  <!-- HERO -->
+  <section class="section layer" id="hero">
+    <div class="max-w-3xl text-center">
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
+        Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Coffee
+      </h1>
+      <p class="mt-4 text-white/80 md:text-lg">
+        Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <a href="#cashew" class="btn px-5 py-3 rounded-xl font-semibold">Explore Commodities</a>
+        <a href="#contact" class="px-5 py-3 rounded-xl font-semibold text-white/90 border border-white/30 hover:bg-white/10">Talk to Sales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASHEW -->
+  <section class="section layer" id="cashew" data-emit="cashew">
+    <div class="max-w-5xl grid md:grid-cols-2 gap-8 items-center">
+      <div class="text-white">
+        <p class="text-xs uppercase tracking-widest text-white/60 mb-2">Commodity</p>
+        <h2 class="text-3xl md:text-4xl font-bold">Cashew (RCN & Kernels)</h2>
+        <p class="mt-3 text-white/80">W240/W320, roasted or raw. Bulk packs and container loads. Desk quotes tailored to your grade & origin.</p>
+        <a href="#contact" class="btn inline-block mt-5 px-4 py-2 rounded-lg">Request Quote</a>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-semibold text-lg">Typical Specs</h3>
+        <ul class="mt-3 text-sm text-gray-700 space-y-1">
+          <li>• Moisture ≤ 5%</li><li>• Defects ≤ 10% (kernels)</li><li>• Packaging: 25kg vacuum/tin</li><li>• Incoterms: FOB Abidjan, CFR/CIF</li>
+        </ul>
+  <!-- HERO (3D background + headline) -->
+  <section class="relative overflow-hidden" style="min-height: 68vh;">
+    <canvas id="hero3d"></canvas>
+    <div class="hero-overlay max-w-7xl mx-auto px-6 py-20 md:py-28">
+      <div class="max-w-3xl text-white">
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
+          Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Coffee
+        </h1>
+        <p class="mt-4 text-white/80 md:text-lg">
+          Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms. No ceiling — just your requirements.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#quotes" class="btn px-5 py-3 rounded-xl font-semibold">Get a Desk Quote</a>
+          <a href="#contact" class="px-5 py-3 rounded-xl font-semibold text-white/90 border border-white/30 hover:bg-white/10">Talk to Sales</a>
+        </div>
 </div>
 </div>
 </section>
 
-<section id="about" class="bg-brandDeep/60">
-<div class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-[1.2fr_1fr] gap-12 items-start">
-<div>
-<h2 class="text-3xl font-heading font-semibold">Who We Are</h2>
-<p class="mt-4 text-white/80 leading-relaxed">
-NutWorks is the premium cashew initiative of Cana Impex. We are a West Africa rooted, North America focused team that brings decades of agricultural expertise and modern branding together to elevate cashew products into a luxury, everyday snack.
-</p>
-<p class="mt-4 text-white/70 leading-relaxed">
-Our promise is simple: connect Ivory Coast growers directly with global markets, deliver consistent quality, and share the value back with local communities.
-</p>
-<div class="mt-8 grid sm:grid-cols-3 gap-6">
-<div class="card-gradient rounded-2xl border border-white/10 p-5">
-<p class="text-3xl font-heading font-semibold text-brandGold">20+</p>
-<p class="mt-2 text-sm text-white/70">Years of supply chain leadership in Côte d’Ivoire.</p>
+  <!-- COCOA -->
+  <section class="section layer" id="cocoa" data-emit="cocoa">
+    <div class="max-w-5xl grid md:grid-cols-2 gap-8 items-center">
+      <div class="text-white">
+        <p class="text-xs uppercase tracking-widest text-white/60 mb-2">Commodity</p>
+        <h2 class="text-3xl md:text-4xl font-bold">Cocoa Beans</h2>
+        <p class="mt-3 text-white/80">West African beans with buyer-grade moisture & defect specs. Bulk shipments, full logistics support.</p>
+        <a href="#contact" class="btn inline-block mt-5 px-4 py-2 rounded-lg">Request Quote</a>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-semibold text-lg">Capabilities</h3>
+        <ul class="mt-3 text-sm text-gray-700 space-y-1">
+          <li>• Grade per buyer standard</li><li>• Rapid desk pricing</li><li>• Multi-container volumes</li>
+        </ul>
+      </div>
+  <!-- Quote Cards -->
+  <section id="quotes" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="max-w-3xl mx-auto text-center text-white">
+      <p class="text-xs tracking-widest uppercase text-white/60 mb-2">Market Quotes</p>
+      <h2 class="text-2xl md:text-3xl font-bold">Request Your Bulk Price Today</h2>
+      <p class="mt-2 text-white/70 text-sm">Add your own photos in <code>assets/</code> named <strong>cashew.jpg</strong>, <strong>cocoa.jpg</strong>, <strong>coffee.jpg</strong>, <strong>rubber.jpg</strong>.</p>
 </div>
-<div class="card-gradient rounded-2xl border border-white/10 p-5">
-<p class="text-3xl font-heading font-semibold text-brandGold">100%</p>
-<p class="mt-2 text-sm text-white/70">Committed to farmer partnerships and transparent sourcing.</p>
+  </section>
+
+  <!-- COFFEE -->
+  <section class="section layer" id="coffee" data-emit="coffee">
+    <div class="max-w-5xl grid md:grid-cols-2 gap-8 items-center">
+      <div class="text-white">
+        <p class="text-xs uppercase tracking-widest text-white/60 mb-2">Commodity</p>
+        <h2 class="text-3xl md:text-4xl font-bold">Coffee (Green Beans)</h2>
+        <p class="mt-3 text-white/80">Green beans for roasting. Bulk bags and pallets. Destination-specific documentation handled.</p>
+        <a href="#contact" class="btn inline-block mt-5 px-4 py-2 rounded-lg">Request Quote</a>
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="card p-5">
+        <img class="img-card" src="assets/cashew.jpg" alt="Cashew" onerror="this.style.display='none'">
+        <h3 class="font-semibold text-lg mt-4">Cashew</h3>
+        <p class="text-sm text-gray-600 mt-2">Bulk W240/W320, RCN & kernels.</p>
+        <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
 </div>
-<div class="card-gradient rounded-2xl border border-white/10 p-5">
-<p class="text-3xl font-heading font-semibold text-brandGold">Global</p>
-<p class="mt-2 text-sm text-white/70">Serving buyers and retailers across North America and beyond.</p>
+      <div class="card p-6">
+        <h3 class="font-semibold text-lg">Volumes</h3>
+        <ul class="mt-3 text-sm text-gray-700 space-y-1">
+          <li>• Trial pallets → multi-container</li><li>• Lead times 7–14 days ETD</li>
+        </ul>
+      <div class="card p-5">
+        <img class="img-card" src="assets/cocoa.jpg" alt="Cocoa" onerror="this.style.display='none'">
+        <h3 class="font-semibold text-lg mt-4">Cocoa</h3>
+        <p class="text-sm text-gray-600 mt-2">West African cocoa beans.</p>
+        <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
 </div>
+    </div>
+  </section>
+
+  <!-- RUBBER -->
+  <section class="section layer" id="rubber" data-emit="rubber">
+    <div class="max-w-5xl grid md:grid-cols-2 gap-8 items-center">
+      <div class="text-white">
+        <p class="text-xs uppercase tracking-widest text-white/60 mb-2">Commodity</p>
+        <h2 class="text-3xl md:text-4xl font-bold">Hevea (Natural Rubber)</h2>
+        <p class="mt-3 text-white/80">Industrial buyers, contract supply. Regional listings vary; we quote to your spec and destination.</p>
+        <a href="#contact" class="btn inline-block mt-5 px-4 py-2 rounded-lg">Request Quote</a>
+      <div class="card p-5">
+        <img class="img-card" src="assets/coffee.jpg" alt="Coffee" onerror="this.style.display='none'">
+        <h3 class="font-semibold text-lg mt-4">Coffee</h3>
+        <p class="text-sm text-gray-600 mt-2">Green beans in bulk.</p>
+        <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
 </div>
-</div>
-<div class="space-y-6">
-<div class="card-gradient rounded-3xl border border-white/10 p-6">
-<h3 class="text-lg font-heading font-semibold text-brandGold">Our Journey</h3>
-<ul class="mt-4 space-y-3 text-sm text-white/80">
-<li><span class="font-semibold text-white">2005 – 2023:</span> Jean F. Kouassi establishes an agricultural cooperative for coffee, cocoa and sustainable farming in Côte d’Ivoire.</li>
-<li><span class="font-semibold text-white">2025:</span> Cana Impex launches NutWorks, uniting field expertise with premium branding to transform cashew into a global lifestyle product.</li>
-<li><span class="font-semibold text-white">Future:</span> Build processing at origin, expand distribution, and create new cashew-based innovations.</li>
-</ul>
-</div>
-<div class="card-gradient rounded-3xl border border-white/10 p-6">
-<h3 class="text-lg font-heading font-semibold text-brandGold">Mission & Vision</h3>
-<p class="mt-3 text-sm text-white/80">
-To become the most trusted cashew brand in major markets by combining responsible sourcing, refined processing and inspiring storytelling. We deliver delicious, healthy cashews while empowering the communities that grow them.
-</p>
-</div>
+      <div class="card p-6">
+        <h3 class="font-semibold text-lg">Logistics</h3>
+        <ul class="mt-3 text-sm text-gray-700 space-y-1">
+          <li>• FOB Abidjan, CFR/CIF available</li><li>• Documentation & compliance</li>
+        </ul>
+      <div class="card p-5">
+        <img class="img-card" src="assets/rubber.jpg" alt="Rubber" onerror="this.style.display='none'">
+        <h3 class="font-semibold text-lg mt-4">Rubber</h3>
+        <p class="text-sm text-gray-600 mt-2">Natural hevea, industrial contracts.</p>
+        <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
 </div>
 </div>
 </section>
 
-<section id="values" class="py-20">
-<div class="max-w-6xl mx-auto px-6">
-<div class="max-w-3xl">
-<p class="uppercase tracking-[0.35em] text-xs text-brandGold/80">Our DNA</p>
-<h2 class="mt-4 text-3xl font-heading font-semibold">Values that shape every partnership</h2>
-<p class="mt-4 text-white/70">We build relationships that honor farmers, inspire customers, and protect the future of the cashew industry.</p>
+  <!-- CONTACT -->
+  <section id="contact" class="layer max-w-7xl mx-auto px-6 py-16">
+    <div class="max-w-3xl">
+  <!-- Contact -->
+  <section id="contact" class="max-w-7xl mx-auto px-6 pb-20">
+    <div class="max-w-3xl text-white">
+<p class="text-xs tracking-widest uppercase text-white/60 mb-2">Contact</p>
+      <h2 class="text-2xl md:text-3xl font-bold text-white">Request samples or a quote</h2>
+      <h2 class="text-2xl md:text-3xl font-bold">Request samples or a quote</h2>
+<p class="mt-2 text-white/70 text-sm">We’ll respond within 24–48h.</p>
 </div>
-<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-<div class="card-gradient rounded-2xl border border-white/10 p-6">
-<div class="text-brandGold text-2xl">🌱</div>
-<h3 class="mt-4 font-heading font-semibold">Sustainability</h3>
-<p class="mt-2 text-sm text-white/80">We invest in regenerative practices and fair pricing so every harvest respects people and planet.</p>
-</div>
-<div class="card-gradient rounded-2xl border border-white/10 p-6">
-<div class="text-brandGold text-2xl">🤝</div>
-<h3 class="mt-4 font-heading font-semibold">Community</h3>
-<p class="mt-2 text-sm text-white/80">Farmers, partners and customers thrive when we grow together through trust and shared success.</p>
-</div>
-<div class="card-gradient rounded-2xl border border-white/10 p-6">
-<div class="text-brandGold text-2xl">⭐</div>
-<h3 class="mt-4 font-heading font-semibold">Quality</h3>
-<p class="mt-2 text-sm text-white/80">Meticulous selection, processing and packaging ensure a premium taste in every bite.</p>
-</div>
-<div class="card-gradient rounded-2xl border border-white/10 p-6">
-<div class="text-brandGold text-2xl">🛡️</div>
-<h3 class="mt-4 font-heading font-semibold">Integrity</h3>
-<p class="mt-2 text-sm text-white/80">Transparent, ethical and faith-driven actions guide how we work with our ecosystem.</p>
-</div>
-</div>
-</div>
-</section>
 
-<section id="roadmap" class="bg-brandDeep/60 py-20">
-<div class="max-w-6xl mx-auto px-6">
-<div class="max-w-3xl">
-<p class="uppercase tracking-[0.35em] text-xs text-brandGold/80">Our Roadmap</p>
-<h2 class="mt-4 text-3xl font-heading font-semibold">A phased path to build the leading cashew brand</h2>
-<p class="mt-4 text-white/70">We grow in deliberate stages, staying close to farmers while unlocking global demand.</p>
-</div>
-<div class="mt-10 grid gap-6 md:grid-cols-2">
-<div class="card-gradient rounded-3xl border border-white/10 p-6">
-<p class="text-sm uppercase tracking-wide text-brandGold/80">Stage 1 · Months 0–6</p>
-<h3 class="mt-2 font-heading font-semibold text-xl">Launch & Supply Chain</h3>
-<ul class="mt-4 space-y-2 text-sm text-white/80">
-<li>Secure direct contracts with cashew farmers across Côte d’Ivoire.</li>
-<li>Establish collection, grading and export logistics for raw cashews.</li>
-<li>Generate early revenue through bulk shipments to North America.</li>
-</ul>
-</div>
-<div class="card-gradient rounded-3xl border border-white/10 p-6">
-<p class="text-sm uppercase tracking-wide text-brandGold/80">Stage 2 · Months 6–12</p>
-<h3 class="mt-2 font-heading font-semibold text-xl">Brand & Market Entry</h3>
-<ul class="mt-4 space-y-2 text-sm text-white/80">
-<li>Introduce NutWorks packaged cashews for retail and e-commerce.</li>
-<li>Launch storytelling-driven marketing focused on provenance and taste.</li>
-<li>Partner with distributors, wholesalers and key retail chains.</li>
-</ul>
-</div>
-<div class="card-gradient rounded-3xl border border-white/10 p-6">
-<p class="text-sm uppercase tracking-wide text-brandGold/80">Stage 3 · Years 1–2</p>
-<h3 class="mt-2 font-heading font-semibold text-xl">Processing at Origin</h3>
-<ul class="mt-4 space-y-2 text-sm text-white/80">
-<li>Build value-added processing and packaging facilities in Côte d’Ivoire.</li>
-<li>Implement rigorous quality control labs and certifications.</li>
-<li>Scale exports of finished cashew products to global markets.</li>
-</ul>
-</div>
-<div class="card-gradient rounded-3xl border border-white/10 p-6">
-<p class="text-sm uppercase tracking-wide text-brandGold/80">Stage 4 · Years 2–3</p>
-<h3 class="mt-2 font-heading font-semibold text-xl">Global Expansion</h3>
-<ul class="mt-4 space-y-2 text-sm text-white/80">
-<li>Establish North American roasting and fulfillment hubs.</li>
-<li>Expand into new categories such as cashew butter, beverages and snacks.</li>
-<li>Enter European and Middle Eastern retail channels with premium positioning.</li>
-</ul>
-</div>
-</div>
-<div class="mt-12 text-center">
-<a href="#contact" class="inline-flex items-center gap-3 rounded-full bg-brandGold px-8 py-3 text-brandDeep font-semibold shadow-lg shadow-brandGold/20 hover:shadow-xl transition">
-Discuss Partnerships & Investment
-</a>
-</div>
-</div>
-</section>
-
-<section id="products" class="py-20">
-<div class="max-w-6xl mx-auto px-6">
-<div class="max-w-3xl">
-<p class="uppercase tracking-[0.35em] text-xs text-brandGold/80">Products</p>
-<h2 class="mt-4 text-3xl font-heading font-semibold">Premium cashew experiences</h2>
-<p class="mt-4 text-white/70">Our collection blends signature classics with innovative formats crafted for modern consumers.</p>
-</div>
-<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-<article class="card-gradient rounded-2xl border border-white/10 overflow-hidden">
-<img src="assets/cashew.jpg" alt="Roasted cashew kernels" class="w-full h-44 object-cover">
-<div class="p-5">
-<h3 class="font-heading font-semibold text-lg">Roasted Cashew Kernels</h3>
-<p class="mt-2 text-sm text-white/80">Whole W240 & W320 kernels, lightly seasoned for a refined crunch.</p>
-<span class="mt-4 inline-block text-xs uppercase tracking-wide text-brandGold/80">Available Now</span>
-</div>
-</article>
-<article class="card-gradient rounded-2xl border border-white/10 overflow-hidden">
-<img src="assets/cocoa.jpg" alt="Chocolate coated cashews" class="w-full h-44 object-cover">
-<div class="p-5">
-<h3 class="font-heading font-semibold text-lg">Cocoa Dusted Cashews</h3>
-<p class="mt-2 text-sm text-white/80">Decadent dessert-style cashews dipped in Ivorian cocoa powder.</p>
-<span class="mt-4 inline-block text-xs uppercase tracking-wide text-brandGold/80">Coming Soon</span>
-</div>
-</article>
-<article class="card-gradient rounded-2xl border border-white/10 overflow-hidden">
-<img src="assets/coffee.jpg" alt="Cashew butter jar" class="w-full h-44 object-cover">
-<div class="p-5">
-<h3 class="font-heading font-semibold text-lg">Velvet Cashew Butter</h3>
-<p class="mt-2 text-sm text-white/80">Ultra-smooth spread crafted with nothing but roasted cashews.</p>
-<span class="mt-4 inline-block text-xs uppercase tracking-wide text-brandGold/80">In Development</span>
-</div>
-</article>
-<article class="card-gradient rounded-2xl border border-white/10 overflow-hidden">
-<img src="assets/rubber.jpg" alt="Cashew energy bars" class="w-full h-44 object-cover">
-<div class="p-5">
-<h3 class="font-heading font-semibold text-lg">Cashew Energy Bars</h3>
-<p class="mt-2 text-sm text-white/80">Protein-rich on-the-go fuel combining cashews, fruits and seeds.</p>
-<span class="mt-4 inline-block text-xs uppercase tracking-wide text-brandGold/80">Prototype</span>
-</div>
-</article>
-</div>
-</div>
-</section>
-
-<section id="team" class="bg-brandDeep/60 py-20">
-<div class="max-w-6xl mx-auto px-6">
-<div class="max-w-3xl">
-<p class="uppercase tracking-[0.35em] text-xs text-brandGold/80">Leadership</p>
-<h2 class="mt-4 text-3xl font-heading font-semibold">The people behind NutWorks</h2>
-<p class="mt-4 text-white/70">A complementary team blending agricultural roots with business optimization.</p>
-</div>
-<div class="mt-10 grid gap-6 md:grid-cols-2">
-<div class="card-gradient rounded-3xl border border-white/10 p-6">
-<div class="flex items-center gap-4">
-<div class="h-20 w-20 rounded-2xl bg-brandGold/20 border border-brandGold/40 grid place-items-center text-3xl text-brandGold">JF</div>
-<div>
-<h3 class="font-heading font-semibold text-xl">Jean F. Kouassi</h3>
-<p class="text-sm text-brandGold/90">Co-Founder · Supply Chain & Production</p>
-</div>
-</div>
-<p class="mt-4 text-sm text-white/80">
-MBA graduate and founder of a pioneering Ivorian cooperative, Jean brings 20 years of experience in agricultural sourcing, farmer relations and large-scale logistics.
-</p>
-<p class="mt-3 text-sm text-white/70">
-Passionate about sustainable development, he ensures NutWorks maintains close ties with growers while building modern processing capacity.
-</p>
-</div>
-<div class="card-gradient rounded-3xl border border-white/10 p-6">
-<div class="flex items-center gap-4">
-<div class="h-20 w-20 rounded-2xl bg-brandGold/20 border border-brandGold/40 grid place-items-center text-3xl text-brandGold">RL</div>
-<div>
-<h3 class="font-heading font-semibold text-xl">Ricardo A. Llorente</h3>
-<p class="text-sm text-brandGold/90">Co-Founder · Business Optimization</p>
-</div>
-</div>
-<p class="mt-4 text-sm text-white/80">
-Business management specialist focused on operational excellence, Ricardo leads branding, commercialization and technology implementation for a lean, data-driven organization.
-</p>
-<p class="mt-3 text-sm text-white/70">
-He bridges Ivory Coast operations with North American distribution to accelerate market penetration and investor value.
-</p>
-</div>
-</div>
-</div>
-</section>
-
-<section id="contact" class="py-20">
-<div class="max-w-6xl mx-auto px-6 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
-<div>
-<p class="uppercase tracking-[0.35em] text-xs text-brandGold/80">Contact</p>
-<h2 class="mt-4 text-3xl font-heading font-semibold">Let’s build a cashew legacy together</h2>
-<p class="mt-4 text-white/70">Share your project needs — bulk supply, private label, distribution or investment. We respond within 48 hours.</p>
-<form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="mt-10 card-gradient rounded-3xl border border-white/10 p-6 md:p-8 space-y-4">
-<input type="hidden" name="_subject" value="New Inquiry — NutWorks by Cana Impex">
+<div class="mt-8 grid md:grid-cols-2 gap-8">
+      <form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="backdrop-blur bg-white/10 border border-white/20 rounded-2xl p-6 text-white">
+      <form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="glass rounded-2xl p-6">
+<input type="hidden" name="_subject" value="New B2B Inquiry — Cana Impex">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_next" value="thanks.html">
-<input type="hidden" name="_autoresponse" value="Thank you for contacting NutWorks. Our team will reach you shortly.">
-<div>
-<label class="text-sm font-semibold text-white/80">Name</label>
-<input name="name" required class="mt-2 w-full rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brandGold/60" placeholder="Your name" />
+<input type="hidden" name="_autoresponse" value="Thanks for contacting Cana Impex. We received your message and will reply soon.">
+<div class="grid gap-4">
+          <input name="name" placeholder="Your name" required class="border rounded-lg px-3 py-2 text-gray-900">
+          <input name="company" placeholder="Company" class="border rounded-lg px-3 py-2 text-gray-900">
+          <input type="email" name="email" placeholder="Email" required class="border rounded-lg px-3 py-2 text-gray-900">
+          <textarea name="message" placeholder="Volumes, grades, Incoterms…" rows="4" class="border rounded-lg px-3 py-2 text-gray-900" required></textarea>
+          <input name="name" placeholder="Your name" required class="border rounded-lg px-3 py-2">
+          <input name="company" placeholder="Company" class="border rounded-lg px-3 py-2">
+          <input type="email" name="email" placeholder="Email" required class="border rounded-lg px-3 py-2">
+          <textarea name="message" placeholder="Volumes, grades, Incoterms…" rows="4" class="border rounded-lg px-3 py-2" required></textarea>
+<button class="btn px-4 py-2 rounded-lg">Send</button>
 </div>
-<div>
-<label class="text-sm font-semibold text-white/80">Company</label>
-<input name="company" class="mt-2 w-full rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brandGold/60" placeholder="Company" />
-</div>
-<div>
-<label class="text-sm font-semibold text-white/80">Email</label>
-<input type="email" name="email" required class="mt-2 w-full rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brandGold/60" placeholder="you@company.com" />
-</div>
-<div>
-<label class="text-sm font-semibold text-white/80">Message</label>
-<textarea name="message" rows="4" required class="mt-2 w-full rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brandGold/60" placeholder="Volumes, grades, Incoterms, distribution goals…"></textarea>
-</div>
-<button class="w-full rounded-full bg-brandGold text-brandDeep font-semibold py-3 hover:shadow-lg hover:shadow-brandGold/30 transition" type="submit">Send Message</button>
 </form>
-</div>
-<div class="space-y-6">
-<div class="card-gradient rounded-3xl border border-white/10 p-6">
-<h3 class="font-heading font-semibold text-xl text-brandGold">Connect directly</h3>
-<ul class="mt-4 space-y-3 text-sm text-white/80">
-<li><span class="text-white font-semibold">Email:</span> <a href="mailto:ricardollorente@canaimpex.com" class="underline hover:text-brandGold">ricardollorente@canaimpex.com</a></li>
-<li><span class="text-white font-semibold">Locations:</span> Abidjan, Côte d’Ivoire · Quebec, Canada</li>
-<li><span class="text-white font-semibold">Focus:</span> Premium cashews · Value-added processing · Sustainable sourcing</li>
-</ul>
-</div>
-<div class="card-gradient rounded-3xl border border-white/10 p-6">
-<h3 class="font-heading font-semibold text-xl text-brandGold">Why partners choose NutWorks</h3>
-<p class="mt-3 text-sm text-white/80">Integrated sourcing to branding capabilities, transparent reporting, and a relentless commitment to product excellence.</p>
-<p class="mt-3 text-sm text-white/70">We’re ready to co-create private labels, design tasting activations, and scale distribution with aligned investors.</p>
-</div>
+
+      <div class="backdrop-blur bg-white/10 border border-white/20 rounded-2xl p-6 text-white/90">
+      <div class="glass rounded-2xl p-6 text-white/90">
+<p class="text-sm"><strong>Email:</strong> ricardollorente@canaimpex.com</p>
+<p class="text-sm mt-2"><strong>Locations:</strong> Côte d’Ivoire • Canada</p>
+<p class="text-sm mt-2"><strong>Commodities:</strong> Cashew, Cocoa, Hevea, Coffee</p>
+<p class="text-sm mt-4 text-white/70">We conduct our business with integrity and transparency.</p>
 </div>
 </div>
 </section>
-</main>
 
-<footer class="bg-brandDeep border-t border-white/10">
-<div class="max-w-6xl mx-auto px-6 py-12 grid gap-8 md:grid-cols-4 text-sm text-white/70">
-<div>
-<img src="assets/logo.png" alt="NutWorks logo" class="h-12 w-auto" />
-<p class="mt-4">© <span id="year"></span> Cana Impex Inc. NutWorks™ — Premium cashew products crafted with integrity.</p>
-</div>
-<div>
-<h4 class="text-white font-semibold mb-3">Company</h4>
-<ul class="space-y-2">
-<li><a href="#about" class="hover:text-brandGold">About</a></li>
-<li><a href="#values" class="hover:text-brandGold">Values</a></li>
-<li><a href="#roadmap" class="hover:text-brandGold">Roadmap</a></li>
-<li><a href="#products" class="hover:text-brandGold">Products</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-white font-semibold mb-3">Resources</h4>
-<ul class="space-y-2">
-<li><a href="#team" class="hover:text-brandGold">Team</a></li>
-<li><a href="#contact" class="hover:text-brandGold">Contact</a></li>
-<li><span class="text-white/60">Investor Deck — Available on request</span></li>
-</ul>
-</div>
-<div>
-<h4 class="text-white font-semibold mb-3">Legal</h4>
-<ul class="space-y-2">
-<li><a href="#" class="hover:text-brandGold">Privacy Policy</a></li>
-<li><a href="#" class="hover:text-brandGold">Terms of Use</a></li>
-<li class="text-white/60">Cookie preferences</li>
-</ul>
-</div>
-</div>
-<div class="border-t border-white/10 py-6">
-<div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/60">
-<p>Made with pride in Côte d’Ivoire · Serving global markets</p>
-<p>Follow us on LinkedIn (coming soon)</p>
+  <!-- FOOTER with Ivory Coast flag -->
+  <footer class="layer py-8 text-sm bg-[#0A7F49] text-white">
+  <!-- Footer with Ivory Coast flag -->
+  <footer class="py-8 text-sm bg-[#0A7F49] text-white">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+<p>© <span id="year"></span> Cana Impex Inc. All rights reserved.</p>
+<div class="flex items-center gap-3">
+<span class="text-white/90">Made in Côte d’Ivoire</span>
+        <!-- Ivory Coast flag -->
+<svg width="36" height="24" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-label="Ivory Coast flag">
+<rect width="1" height="2" x="0" y="0" fill="#F77F00"/>
+<rect width="1" height="2" x="1" y="0" fill="#FFFFFF"/>
+<rect width="1" height="2" x="2" y="0" fill="#009E60"/>
+</svg>
 </div>
 </div>
 </footer>
 
-<div id="cookieBanner" class="fixed inset-x-4 bottom-4 md:inset-x-auto md:right-6 md:max-w-lg bg-white text-slate-900 rounded-2xl shadow-2xl shadow-black/40 border border-slate-200 p-5 space-y-3 hidden">
-<p class="text-sm font-semibold">We value your privacy</p>
-<p class="text-sm text-slate-600">NutWorks uses minimal cookies to ensure the best browsing experience. By clicking “Accept”, you consent to analytics that help us improve.</p>
-<div class="flex flex-wrap gap-3">
-<button id="acceptCookies" class="px-4 py-2 rounded-full bg-brandGold text-brandDeep font-semibold">Accept</button>
-<button id="closeCookies" class="px-4 py-2 rounded-full border border-slate-300 text-slate-700">Decline</button>
-<a href="#" class="text-sm underline text-slate-600">Learn more</a>
-</div>
-</div>
-
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-const menuButton = document.getElementById('menuButton');
-const mobileMenu = document.getElementById('mobileMenu');
-if (menuButton && mobileMenu) {
-menuButton.addEventListener('click', () => {
-mobileMenu.classList.toggle('hidden');
-});
-mobileMenu.querySelectorAll('a').forEach(link => {
-link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-});
-}
-
-const cookieBanner = document.getElementById('cookieBanner');
-const acceptCookies = document.getElementById('acceptCookies');
-const closeCookies = document.getElementById('closeCookies');
-const consent = localStorage.getItem('nutworks-cookie-consent');
-
-if (!consent) {
-cookieBanner.classList.remove('hidden');
-}
-
-function handleConsent(value) {
-localStorage.setItem('nutworks-cookie-consent', value);
-cookieBanner.classList.add('hidden');
-}
-
-acceptCookies?.addEventListener('click', () => handleConsent('accepted'));
-closeCookies?.addEventListener('click', () => handleConsent('declined'));
-</script>
+  <!-- Flying beans/nuts canvas script -->
+  <!-- Three.js (3D globe background) -->
   <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
-  <script>
-    (() => {
-      const canvas = document.getElementById('hero3d');
-      if (!canvas || !window.THREE) return;
+<script>
+    // --- CONFIG ---
+    const SPRITES = {
+      cashew: 'assets/cashew.png',
+      cocoa:  'assets/cocoa.png',
+      coffee: 'assets/coffee.png',
+      rubber: 'assets/rubber.png'
+    };
+    const BURST_COUNT = 60;   // how many items per burst
+    const GRAVITY = 0.08;     // downward acceleration
+    const AIR = 0.994;        // air resistance (closer to 1 = floatier)
+    const ROT_SPEED = 0.05;   // base rotation speed
+    const canvas = document.getElementById('hero3d');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 100);
+    camera.position.set(0, 0, 6);
 
-      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 100);
-      camera.position.set(0, 0, 6);
+    // --- CANVAS SETUP ---
+    const canvas = document.getElementById('fx');
+    const ctx = canvas.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+function resize() {
+      canvas.width = innerWidth * dpr;
+      canvas.height = innerHeight * dpr;
+      canvas.style.width = innerWidth + 'px';
+      canvas.style.height = innerHeight + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    addEventListener('resize', resize); resize();
 
-      const resize = () => {
-        const parent = canvas.parentElement;
-        if (!parent) return;
-        const width = parent.clientWidth;
-        const height = Math.max(parent.clientHeight, 480);
-        renderer.setSize(width, height, false);
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-      };
-      resize();
-      window.addEventListener('resize', resize);
+    // --- LOAD IMAGES (with color fallback) ---
+    const imgs = {};
+    const promises = Object.entries(SPRITES).map(([k, src]) => new Promise(res => {
+      const im = new Image();
+      im.onload = () => { imgs[k] = im; res(); };
+      im.onerror = () => { imgs[k] = null; res(); };
+      im.src = src;
+    }));
 
-      const dots = 2000;
-      const positions = new Float32Array(dots * 3);
-      for (let i = 0; i < dots; i++) {
-        const u = Math.random();
-        const v = Math.random();
-        const theta = 2 * Math.PI * u;
-        const phi = Math.acos(2 * v - 1);
-        const radius = 2.1;
-        positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
-        positions[i * 3 + 1] = radius * Math.cos(phi);
-        positions[i * 3 + 2] = radius * Math.sin(phi) * Math.sin(theta);
+    // --- PARTICLES ---
+    const parts = [];
+    function spawnBurst(kind, x, y) {
+      const im = imgs[kind];
+      for (let i=0;i<BURST_COUNT;i++){
+        const ang = (Math.random()*Math.PI) - Math.PI/2; // mostly upward
+        const speed = 3 + Math.random()*3.5;
+        const vx = Math.cos(ang)*speed;
+        const vy = Math.sin(ang)*speed - 1; // extra lift
+        const s = 20 + Math.random()*18;
+        parts.push({
+          kind, im,
+          x, y, vx, vy,
+          rot: Math.random()*Math.PI*2,
+          vr: (Math.random()-.5)*ROT_SPEED,
+          s, life: 1
+        });
       }
+      const w = canvas.clientWidth = canvas.parentElement.clientWidth;
+      const h = canvas.clientHeight = Math.max(400, canvas.parentElement.clientHeight);
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+}
 
-      const geometry = new THREE.BufferGeometry();
-      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-      const material = new THREE.PointsMaterial({ size: 0.02, color: 0xD4AF37 });
-      const globe = new THREE.Points(geometry, material);
-      scene.add(globe);
+    function step() {
+      ctx.clearRect(0,0,innerWidth,innerHeight);
+      for (let i=parts.length-1;i>=0;i--){
+        const p = parts[i];
+        p.vx *= AIR; p.vy = p.vy*AIR + GRAVITY;
+        p.x += p.vx; p.y += p.vy;
+        p.rot += p.vr;
+        p.life -= 0.006;
+        if (p.y > innerHeight + 80 || p.life <= 0) { parts.splice(i,1); continue; }
 
-      const planeGeometry = new THREE.PlaneGeometry(14, 8);
-      const planeMaterial = new THREE.MeshBasicMaterial({ color: 0x041610, transparent: true, opacity: 0.7 });
-      const plane = new THREE.Mesh(planeGeometry, planeMaterial);
-      plane.position.z = -1.5;
-      scene.add(plane);
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        const alpha = Math.max(0, Math.min(1, p.life));
+        ctx.globalAlpha = alpha;
 
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      const animate = (time) => {
-        if (!prefersReducedMotion) {
-          globe.rotation.y += 0.0018;
-          globe.rotation.x = 0.15 * Math.sin(time * 0.0003);
+        if (p.im) {
+          const w = p.s, h = p.s;
+          ctx.drawImage(p.im, -w/2, -h/2, w, h);
+        } else {
+          // fallback: colored circle by kind
+          const color = {cashew:'#E6C089', cocoa:'#6B3E2E', coffee:'#3C2A21', rubber:'#0A7F49'}[p.kind] || '#fff';
+          ctx.fillStyle = color;
+          ctx.beginPath(); ctx.arc(0,0,p.s*0.35,0,Math.PI*2); ctx.fill();
         }
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        renderer.render(scene, camera);
-        requestAnimationFrame(animate);
-      };
+        ctx.restore();
+      }
+      requestAnimationFrame(step);
+    resize(); window.addEventListener('resize', resize);
 
+    const dots = 2000;
+    const positions = new Float32Array(dots * 3);
+    for (let i=0;i<dots;i++){
+      const u = Math.random(), v = Math.random();
+      const theta = 2 * Math.PI * u;
+      const phi = Math.acos(2*v - 1);
+      const r = 2.1;
+      positions[i*3+0] = r * Math.sin(phi) * Math.cos(theta);
+      positions[i*3+1] = r * Math.cos(phi);
+      positions[i*3+2] = r * Math.sin(phi) * Math.sin(theta);
+}
+
+    // --- OBSERVE SECTIONS & TRIGGER BURSTS ---
+    function burstFor(el){
+      const kind = el.getAttribute('data-emit');
+      if (!kind) return;
+      const rect = el.getBoundingClientRect();
+      const x = innerWidth/2;
+      const y = rect.top + rect.height*0.45; // mid of section
+      spawnBurst(kind, x, y);
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const mat = new THREE.PointsMaterial({ size: 0.02, color: 0x10B981 });
+    const globe = new THREE.Points(geo, mat);
+    scene.add(globe);
+
+    function animate(t){
+      globe.rotation.y += 0.0018;
+      globe.rotation.x = 0.15 * Math.sin(t*0.0003);
+      renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+      renderer.render(scene, camera);
       requestAnimationFrame(animate);
-    })();
-  </script>
+}
+    requestAnimationFrame(animate);
+
+    Promise.all(promises).then(() => {
+      const io = new IntersectionObserver(entries=>{
+        for (const e of entries){
+          if (e.isIntersecting && !e.target._burstOnce){
+            e.target._burstOnce = true;
+            burstFor(e.target);
+          }
+        }
+      }, { threshold: 0.5 });
+
+      document.querySelectorAll('[data-emit]').forEach(el=>io.observe(el));
+      step();
+    });
+
+    // Year in footer
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
