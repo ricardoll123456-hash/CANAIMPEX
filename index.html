@@ -7,6 +7,14 @@
 <meta name="description" content="Cana Impex: Bulk supply of Cashew, Cocoa, Hevea, and Rubber from Côte d’Ivoire. Tailored to your business.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:#0b1f16; color:#0e1a15; }
+    .btn { background:#0A7F49; color:#fff; border-radius:12px; transition:all .2s ease; box-shadow:0 12px 30px -18px rgba(10,127,73,0.8); }
+    .btn:hover { background:#10B981; }
+    .card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; }
+    .glass { background:rgba(255,255,255,.08); backdrop-filter: blur(12px); border:1px solid rgba(255,255,255,.15); border-radius:20px; }
+    .img-card { border-radius:12px; object-fit:cover; width:100%; height:180px; }
 <style>
 html { scroll-behavior: smooth; }
 body { background:#f5f8f6; color:#1d3b2d; }
@@ -71,6 +79,28 @@ body { background:#0b1f16; color:#0e1a15; }
 
 
 <!-- Header -->
+<header class="border-b border-white/10" style="background:linear-gradient(180deg, rgba(11,31,22,.92) 0%, rgba(11,31,22,.82) 100%);">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-6">
+    <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
+      <img src="assets/logo.png" alt="Cana Impex logo" class="h-16 w-auto">
+      <span class="text-white/90 text-lg font-bold">Cana Impex</span>
+    </a>
+    <div class="flex items-center gap-4 sm:gap-6 ml-auto">
+      <nav class="hidden lg:flex items-center gap-6 text-sm text-white/70">
+        <a href="index.html" class="font-semibold text-white">Home</a>
+        <a href="our-products.html" class="hover:text-white">Our Products</a>
+        <a href="about.html" class="hover:text-white">About</a>
+        <a href="#quotes" class="hover:text-white">Get Quotes</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="our-products.html" class="px-4 py-2 rounded-xl text-sm font-semibold border border-white/30 text-white/90 hover:bg-white/10 whitespace-nowrap">View Portfolio</a>
+        <a href="#contact" class="btn px-4 py-2 text-sm font-semibold whitespace-nowrap">Request Samples</a>
+      </div>
+      <div class="flex md:hidden items-center gap-2">
+        <a href="our-products.html" class="px-3 py-2 rounded-lg text-xs font-semibold border border-white/30 text-white/90 hover:bg-white/10 whitespace-nowrap">Portfolio</a>
+        <a href="#contact" class="btn px-3 py-2 text-xs font-semibold whitespace-nowrap">Samples</a>
+      </div>
 <header class="border-b border-white/10" style="background:linear-gradient(180deg, rgba(11,31,22,.9) 0%, rgba(11,31,22,.7) 100%);">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
     <!-- Logo -->
@@ -129,6 +159,7 @@ Worldwide Shipping Available
 
 <div class="max-w-3xl mx-auto text-center text-white">
 <p class="text-xs tracking-widest uppercase text-white/60 mb-2">Market Quotes</p>
+<h2 class="text-2xl md:text-3xl font-bold text-white">Request Your Bulk Price Today</h2>
 <h2 class="text-2xl md:text-3xl font-bold">Request Your Bulk Price Today</h2>
       <p class="mt-2 text-white/70 text-sm">Preview the quality of our key export commodities from Côte d’Ivoire.</p>
 </div>
@@ -190,6 +221,7 @@ Worldwide Shipping Available
 </div>
 
 <div class="mt-8 grid md:grid-cols-2 gap-8">
+<form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="glass p-6">
 <form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="card p-6">
 <input type="hidden" name="_subject" value="New B2B Inquiry — Cana Impex">
 <input type="hidden" name="_captcha" value="false">
@@ -197,6 +229,10 @@ Worldwide Shipping Available
 <input type="hidden" name="_next" value="thanks.html">
 <input type="hidden" name="_autoresponse" value="Thanks for contacting Cana Impex. We received your message and will reply soon.">
 <div class="grid gap-4">
+<input name="name" placeholder="Your name" required class="border rounded-lg px-3 py-2 bg-white/90 text-gray-900">
+<input name="company" placeholder="Company" class="border rounded-lg px-3 py-2 bg-white/90 text-gray-900">
+<input type="email" name="email" placeholder="Email" required class="border rounded-lg px-3 py-2 bg-white/90 text-gray-900">
+<textarea name="message" placeholder="Volumes, grades, Incoterms…" rows="4" class="border rounded-lg px-3 py-2 bg-white/90 text-gray-900" required></textarea>
 <input name="name" placeholder="Your name" required class="border border-emerald-100 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-300">
 <input name="company" placeholder="Company" class="border border-emerald-100 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-300">
 <input type="email" name="email" placeholder="Email" required class="border border-emerald-100 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-300">
@@ -205,6 +241,14 @@ Worldwide Shipping Available
 </div>
 </form>
 
+<div class="glass p-6 text-white/90">
+<p class="text-sm font-semibold text-white">Email</p>
+<p class="text-sm text-white/80 mt-1">ricardollorente@canaimpex.com</p>
+<p class="text-sm font-semibold text-white mt-4">Locations</p>
+<p class="text-sm text-white/80 mt-1">Côte d’Ivoire • Canada</p>
+<p class="text-sm font-semibold text-white mt-4">Commodities</p>
+<p class="text-sm text-white/80 mt-1">Cashew, Cocoa, Hevea, Coffee</p>
+<p class="text-sm text-white/70 mt-4">We conduct our business with integrity and transparency.</p>
 <div class="card p-6 text-emerald-900 bg-white">
 <p class="text-sm font-semibold text-emerald-800">Email</p>
 <p class="text-sm text-emerald-700 mt-1">ricardollorente@canaimpex.com</p>
