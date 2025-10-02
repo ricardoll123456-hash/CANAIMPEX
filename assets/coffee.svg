@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f3ede3" />
+      <stop offset="100%" stop-color="#e2d6c7" />
+    </linearGradient>
+    <radialGradient id="beanLight" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0%" stop-color="#f7d8b0" />
+      <stop offset="60%" stop-color="#b87941" />
+      <stop offset="100%" stop-color="#65321b" />
+    </radialGradient>
+    <radialGradient id="beanDark" cx="0.55" cy="0.35" r="0.75">
+      <stop offset="0%" stop-color="#d8a076" />
+      <stop offset="55%" stop-color="#8b4b2b" />
+      <stop offset="100%" stop-color="#3c1e12" />
+    </radialGradient>
+    <linearGradient id="steam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)" />
+  <ellipse cx="320" cy="420" rx="250" ry="58" fill="#d5c6b6" opacity="0.6" />
+  <g transform="translate(0,-10)">
+    <g opacity="0.65">
+      <path d="M290 150c0-30 18-50 36-60" stroke="url(#steam)" stroke-width="10" stroke-linecap="round" fill="none" />
+      <path d="M330 140c-4-34 20-52 40-64" stroke="url(#steam)" stroke-width="9" stroke-linecap="round" fill="none" />
+      <path d="M360 148c-6-28 12-46 26-56" stroke="url(#steam)" stroke-width="8" stroke-linecap="round" fill="none" />
+    </g>
+    <path d="M210 190h220c44 0 80 36 80 80s-36 80-80 80H210c-44 0-80-36-80-80s36-80 80-80z" fill="#fefefe" />
+    <path d="M220 210h190c36 0 66 30 66 66s-30 66-66 66H220c-36 0-66-30-66-66s30-66 66-66z" fill="#c87a39" />
+    <path d="M410 214c44 0 76 28 74 60-2 32-38 56-82 56h-4c18-16 30-38 30-62 0-21-8-40-18-54z" fill="#8d431b" opacity="0.55" />
+    <g transform="translate(40,230) rotate(-12)">
+      <path d="M120 0c58 4 110 42 118 90 6 42-24 74-80 70-58-4-110-42-118-90-6-42 24-74 80-70z" fill="url(#beanLight)" />
+      <path d="M132 18c32 28 32 74-2 102" stroke="#3e1f12" stroke-width="10" stroke-linecap="round" opacity="0.45" />
+    </g>
+    <g transform="translate(280,240) rotate(14)">
+      <path d="M120 0c60 8 112 54 116 104 4 46-32 78-90 70-60-8-112-54-116-104-4-46 32-78 90-70z" fill="url(#beanDark)" />
+      <path d="M134 22c30 34 24 82-14 108" stroke="#2d160c" stroke-width="12" stroke-linecap="round" opacity="0.4" />
+    </g>
+  </g>
+  <text x="320" y="448" font-family="'Poppins',sans-serif" font-size="42" text-anchor="middle" fill="#5b341c" opacity="0.85">Ivorian Coffee</text>
+</svg>
