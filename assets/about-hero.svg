@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract aerial port illustration</title>
+  <desc id="desc">Gradient illustration representing shipping lanes and global logistics for Cana Impex.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#061b12"/>
+      <stop offset="100%" stop-color="#0f3c27"/>
+    </linearGradient>
+    <linearGradient id="lane" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#1fb87a" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#1fb87a" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g stroke="url(#lane)" stroke-width="8" fill="none" opacity="0.6">
+    <path d="M0 220c220 0 280 180 520 180s300-160 520-160 340 200 560 200"/>
+    <path d="M0 440c300 0 340 120 520 120s220-100 420-100 320 120 660 120" stroke-width="6" opacity="0.5"/>
+    <path d="M0 660c220 0 280-140 500-140s320 180 520 180 360-160 580-160" stroke-width="10" opacity="0.4"/>
+  </g>
+  <g fill="#ffffff" opacity="0.25">
+    <circle cx="320" cy="180" r="60"/>
+    <circle cx="920" cy="280" r="38"/>
+    <circle cx="1260" cy="620" r="52"/>
+    <circle cx="620" cy="640" r="44"/>
+  </g>
+</svg>

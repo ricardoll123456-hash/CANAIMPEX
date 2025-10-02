@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Our Products — Cana Impex</title>
   <meta name="description" content="Discover Cana Impex's portfolio of cashew, cocoa, hevea, and coffee sourced responsibly from Côte d’Ivoire." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
   <!-- keeping both favicons as you had -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -21,6 +23,27 @@
     .card { background:#ffffff; border:1px solid #e5e7eb; border-radius:20px; }
     .product-card img { border-radius:18px; }
   </style>
+</head>
+<body class="text-gray-900">
+  <header class="border-b border-white/10" style="background:linear-gradient(180deg, rgba(11,31,22,.92) 0%, rgba(11,31,22,.82) 100%);">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-6">
+      <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
+        <img src="assets/logo.png" alt="Cana Impex logo" class="h-16 w-auto">
+        <span class="text-white/90 text-lg font-bold">Cana Impex</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 text-sm text-white/70 ml-12">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="our-products.html" class="font-semibold text-white">Our Products</a>
+        <a href="about.html" class="hover:text-white">About</a>
+        <a href="index.html#quotes" class="hover:text-white">Get Quotes</a>
+        <a href="index.html#contact" class="hover:text-white">Contact</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3 ml-auto">
+        <a href="#portfolio" class="px-4 py-2 rounded-xl text-sm font-semibold border border-white/30 text-white/90 hover:bg-white/10 whitespace-nowrap">View Portfolio</a>
+        <a href="index.html#contact" class="btn px-4 py-2 text-sm font-semibold whitespace-nowrap">Request Samples</a>
+      </div>
+      <div class="flex md:hidden items-center gap-2 ml-auto">
+        <a href="#portfolio" class="px-3 py-2 rounded-lg text-xs font-semibold border border-white/30 text-white/90 hover:bg-white/10 whitespace-nowrap">Portfolio</a>
 
   <!-- styles that were accidentally inside <header> moved here and DISABLED to avoid conflicts -->
   <!--
@@ -73,6 +96,8 @@
     </div>
   </header>
 
+  <section class="relative overflow-hidden" style="background:linear-gradient(220deg, rgba(11,31,22,.95) 0%, rgba(4,16,11,.85) 65%, rgba(4,14,9,.88) 100%);">
+    <div class="absolute inset-0 opacity-35" style="background-image:radial-gradient(circle at 20% 20%, rgba(16,185,129,.4), transparent 45%), radial-gradient(circle at 80% 10%, rgba(247,127,0,.35), transparent 50%);"></div>
   <!-- DUPLICATE HEADERS (dark variants) DISABLED but preserved -->
   <!--
   <header class="border-b border-white/10" style="background:linear-gradient(180deg, rgba(11,31,22,.95) 0%, rgba(11,31,22,.7) 100%);">
@@ -184,6 +209,9 @@
           </ul>
         </div>
       </div>
+    </section>
+
+=======
       <!-- alt coffee variants preserved but DISABLED
       <div class="grid ..."> ... </div>
       -->
@@ -208,6 +236,15 @@
       </div>
     </section>
 
+    <section class="relative" style="background:linear-gradient(135deg, rgba(4,14,9,.95) 0%, rgba(10,127,73,.85) 85%);">
+      <div class="absolute inset-0 opacity-15" style="background-image:url('assets/coffee.jpg'); background-size:cover; background-position:center;"></div>
+      <div class="relative max-w-5xl mx-auto px-6 py-20 text-white text-center">
+        <h2 class="text-3xl md:text-4xl font-bold">Need tailored specifications?</h2>
+        <p class="mt-4 text-white/85">Share your cup scores, out-turn requirements, or rubber specs. Our origin team will prepare matched samples and a shipment roadmap within 48 hours.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="index.html#contact" class="btn px-6 py-3 rounded-xl font-semibold">Start a Project</a>
+          <a href="index.html#quotes" class="px-6 py-3 rounded-xl font-semibold border border-white/40 text-white hover:bg-white/10">Request a Quote</a>
+=======
     <!-- Alternate feature trio (kept but DISABLED) -->
     <!--
     <section class="bg-gradient-to-br from-white via-[#f0f7f2] to-[#dff1e6]"> ... </section>
@@ -230,6 +267,7 @@
       </div>
     </section>
   </main>
+
 
   <!-- Footer: keep green one; earlier variant preserved but DISABLED -->
   <!--
