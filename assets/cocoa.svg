@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f3ede3" />
+      <stop offset="100%" stop-color="#d6c6b3" />
+    </linearGradient>
+    <linearGradient id="pod" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c360d" />
+      <stop offset="40%" stop-color="#a44d14" />
+      <stop offset="100%" stop-color="#e97a1b" />
+    </linearGradient>
+    <linearGradient id="pod2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4f2408" />
+      <stop offset="100%" stop-color="#ca6518" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)" />
+  <ellipse cx="320" cy="420" rx="250" ry="60" fill="#c4b29e" opacity="0.5" />
+  <g transform="translate(0,-10)">
+    <path d="M250 380c-48-70 10-168 86-214 60-36 128-34 148 32 16 54-18 136-86 176-60 36-112 28-148 6z" fill="url(#pod)" stroke="#481c07" stroke-width="8" stroke-linejoin="round" />
+    <path d="M210 340c-34-58 28-150 92-176 42-16 78-8 94 30 18 40-4 112-62 158-52 42-102 46-124 22z" fill="url(#pod2)" stroke="#331205" stroke-width="8" stroke-linejoin="round" />
+    <path d="M278 214c54-32 120-28 132 12" fill="none" stroke="#fbc481" stroke-width="10" stroke-linecap="round" opacity="0.5" />
+    <path d="M234 284c44-34 110-40 152-6" fill="none" stroke="#f3d6ad" stroke-width="14" stroke-linecap="round" opacity="0.35" />
+    <path d="M196 320c40 38 108 44 168 18" fill="none" stroke="#f5e2c7" stroke-width="12" stroke-linecap="round" opacity="0.35" />
+  </g>
+  <text x="320" y="440" font-family="'Poppins',sans-serif" font-size="42" text-anchor="middle" fill="#5d2a0b" opacity="0.85">Premium Cocoa Pods</text>
+</svg>
