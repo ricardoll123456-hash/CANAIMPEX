@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Cana Impex — Bulk Supply from Côte d’Ivoire</title>
-<meta name="description" content="Cana Impex: Bulk supply of Cashew, Cocoa, Hevea, and Coffee from Côte d’Ivoire. Tailored to your business.">
+<meta name="description" content="Cana Impex: Bulk supply of Cashew, Cocoa, Hevea, and Rubber from Côte d’Ivoire. Tailored to your business.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
@@ -32,8 +32,15 @@ body { background:#0b1f16; color:#0e1a15; }
 <nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
 <a href="#quotes" class="hover:underline">Get Quotes</a>
 <a href="#contact" class="hover:underline">Contact</a>
+    
 </nav>
 <a href="#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold">Request Samples</a>
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+  <a href="#products" class="hover:underline">Overview</a>
+  <a href="products.html" class="hover:underline">Products</a>
+  <a href="#origin" class="hover:underline">Origin</a>
+  <a href="#contact" class="hover:underline">Contact</a>
+</nav>
 </div>
 </header>
 
@@ -43,7 +50,7 @@ body { background:#0b1f16; color:#0e1a15; }
 <div class="hero-overlay max-w-7xl mx-auto px-6 py-20 md:py-28">
 <div class="max-w-3xl text-white">
 <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
-Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Coffee
+Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Rubber
 </h1>
 <p class="mt-4 text-white/80 md:text-lg">
 Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms. No ceiling — just your requirements.
@@ -91,6 +98,10 @@ Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms. No ce
 <img class="img-card" src="assets/coffee.svg" alt="Coffee beans illustration" onerror="this.style.display='none'">
 <h3 class="font-semibold text-lg mt-4">Coffee</h3>
 <p class="text-sm text-gray-600 mt-2">Green beans, washed & natural profiles.</p>
+
+<img class="img-card" src="assets/rubber.svg" alt="Rubber bales illustration" onerror="this.style.display='none'">
+<h3 class="font-semibold text-lg mt-4">Rubber</h3>
+<p class="text-sm text-gray-600 mt-2">Natural rubber sheets and TSR grades.</p>
 <a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
 </div>
 </div>
@@ -123,7 +134,7 @@ Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms. No ce
 <div class="glass rounded-2xl p-6 text-white/90">
 <p class="text-sm"><strong>Email:</strong> ricardollorente@canaimpex.com</p>
 <p class="text-sm mt-2"><strong>Locations:</strong> Côte d’Ivoire • Canada</p>
-<p class="text-sm mt-2"><strong>Commodities:</strong> Cashew, Cocoa, Hevea, Coffee</p>
+<p class="text-sm mt-2"><strong>Commodities:</strong> Cashew, Cocoa, Hevea, Rubber</p>
 <p class="text-sm mt-4 text-white/70">We conduct our business with integrity and transparency.</p>
 </div>
 </div>
@@ -192,7 +203,7 @@ scene.add(globe);
     const planeMat = new THREE.MeshBasicMaterial({ color: 0x062b1c, transparent:true, opacity:0.6 });
     const plane = new THREE.Mesh(planeGeo, planeMat);
     plane.position.z = -1.5;
-    scene.add(plane);
+      scene.add(plane);
 
 function animate(t){
 globe.rotation.y += 0.0018;
