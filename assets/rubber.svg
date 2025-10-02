@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eceff4" />
+      <stop offset="100%" stop-color="#c7d2e5" />
+    </linearGradient>
+    <linearGradient id="bale" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fdf8f1" />
+      <stop offset="60%" stop-color="#e2d8c7" />
+      <stop offset="100%" stop-color="#b7ac9b" />
+    </linearGradient>
+    <linearGradient id="strap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2e3b4e" />
+      <stop offset="100%" stop-color="#1b2433" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)" />
+  <ellipse cx="320" cy="420" rx="260" ry="60" fill="#b6bfd5" opacity="0.45" />
+  <g transform="translate(0,-20)">
+    <rect x="140" y="180" width="360" height="220" rx="42" fill="url(#bale)" stroke="#9c907e" stroke-width="10" />
+    <path d="M180 220h280" stroke="#d1c4b2" stroke-width="18" stroke-linecap="round" opacity="0.6" />
+    <path d="M190 260h260" stroke="#d9ccbb" stroke-width="16" stroke-linecap="round" opacity="0.6" />
+    <path d="M180 300h280" stroke="#cec1ae" stroke-width="16" stroke-linecap="round" opacity="0.6" />
+    <rect x="236" y="176" width="36" height="232" fill="url(#strap)" />
+    <rect x="368" y="176" width="36" height="232" fill="url(#strap)" />
+    <path d="M240 200v184" stroke="#121722" stroke-width="8" stroke-linecap="round" opacity="0.45" />
+    <path d="M382 200v184" stroke="#121722" stroke-width="8" stroke-linecap="round" opacity="0.45" />
+    <path d="M156 224c40-52 328-68 356 0" fill="none" stroke="#f9f2e9" stroke-width="16" stroke-linecap="round" opacity="0.4" />
+  </g>
+  <text x="320" y="444" font-family="'Poppins',sans-serif" font-size="42" text-anchor="middle" fill="#2a3345" opacity="0.85">Natural Rubber Bales</text>
+</svg>
