@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait illustration of Ricardo A. Llorente</title>
+  <desc id="desc">Stylised illustration with teal background for the managing director of Cana Impex.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b2431"/>
+      <stop offset="100%" stop-color="#135167"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f7f73"/>
+      <stop offset="100%" stop-color="#23b3a3"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#c7895c"/>
+      <stop offset="100%" stop-color="#a06844"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#bg)" rx="48"/>
+  <circle cx="320" cy="230" r="136" fill="#0c3242" opacity="0.35"/>
+  <path d="M320 260c-52 0-88-44-88-94 0-60 46-110 88-110s88 50 88 110c0 50-36 94-88 94z" fill="url(#skin)"/>
+  <path d="M230 474c0-78 48-128 90-128s90 50 90 128v106H230V474z" fill="url(#shirt)"/>
+  <path d="M320 120c-60 0-116 35-124 82 21-20 61-36 124-36 63 0 102 15 124 36-8-47-64-82-124-82z" fill="#091821"/>
+  <rect x="210" y="548" width="220" height="132" rx="32" fill="#0a2a36" opacity="0.65"/>
+  <text x="320" y="598" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" text-anchor="middle" fill="#f7f9f8">Ricardo A. Llorente</text>
+  <text x="320" y="642" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" text-anchor="middle" fill="#a9f2e8" letter-spacing="4">MANAGING DIRECTOR</text>
+</svg>

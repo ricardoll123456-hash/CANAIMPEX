@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Operations warehouse illustration</title>
+  <desc id="desc">Stylised illustration of warehouse logistics for Cana Impex.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b2016"/>
+      <stop offset="100%" stop-color="#15422d"/>
+    </linearGradient>
+    <linearGradient id="light" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2bd98c" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#2bd98c" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <g fill="url(#light)">
+    <rect x="240" y="120" width="180" height="600" rx="32"/>
+    <rect x="460" y="200" width="180" height="520" rx="32"/>
+    <rect x="680" y="160" width="180" height="560" rx="32"/>
+    <rect x="900" y="240" width="180" height="480" rx="32"/>
+    <rect x="1120" y="180" width="180" height="540" rx="32"/>
+  </g>
+  <path d="M120 720h1160" stroke="#2bd98c" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+  <path d="M120 720c140-120 300-200 480-200s360 80 520 200" fill="none" stroke="#1a8f5c" stroke-width="10" opacity="0.4" stroke-linecap="round"/>
+  <g fill="#ffffff" opacity="0.4">
+    <circle cx="360" cy="660" r="32"/>
+    <circle cx="780" cy="640" r="28"/>
+    <circle cx="1040" cy="680" r="36"/>
+  </g>
+</svg>

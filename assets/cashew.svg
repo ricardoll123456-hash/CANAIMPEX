@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8eedc" />
+      <stop offset="100%" stop-color="#f2d1a2" />
+    </linearGradient>
+    <radialGradient id="nut" cx="0.45" cy="0.35" r="0.7">
+      <stop offset="0%" stop-color="#f6d8a6" />
+      <stop offset="65%" stop-color="#d5a870" />
+      <stop offset="100%" stop-color="#9f6a37" />
+    </radialGradient>
+    <radialGradient id="apple" cx="0.5" cy="0.35" r="0.7">
+      <stop offset="0%" stop-color="#ffd68f" />
+      <stop offset="70%" stop-color="#f5944a" />
+      <stop offset="100%" stop-color="#c74d1e" />
+    </radialGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)" />
+  <ellipse cx="320" cy="420" rx="260" ry="60" fill="#e3c49a" opacity="0.55" />
+  <g transform="translate(0,-20)">
+    <path d="M280 360c-28-20-40-56-32-102 7-40 30-86 72-130 38-40 96-32 122 6 20 28 18 74-2 120-24 58-70 96-120 114-18 6-34 4-40-8z" fill="url(#apple)" />
+    <path d="M292 326c30-28 76-30 112-2 6 6 5 16-2 24-18 24-56 48-88 56-18 4-32-2-34-14-4-20 2-44 12-64z" fill="url(#nut)" />
+    <path d="M286 330c18-16 62-24 96-4" fill="none" stroke="#f5dfbc" stroke-width="10" stroke-linecap="round" opacity="0.4" />
+    <path d="M330 174c10-24 28-36 52-32" fill="none" stroke="#ffe6b5" stroke-width="12" stroke-linecap="round" opacity="0.4" />
+  </g>
+  <text x="320" y="440" font-family="'Poppins',sans-serif" font-size="42" text-anchor="middle" fill="#8a5018" opacity="0.85">Ivory Coast Cashew</text>
+</svg>

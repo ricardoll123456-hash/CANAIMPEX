@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Global network illustration</title>
+  <desc id="desc">Stylised world map arcs highlighting Cana Impex logistics network.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#0c1f15"/>
+      <stop offset="100%" stop-color="#0a291b"/>
+    </radialGradient>
+    <linearGradient id="arc" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#1de99a" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#1de99a" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#1de99a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <g fill="#122c20" opacity="0.5">
+    <ellipse cx="420" cy="420" rx="220" ry="140"/>
+    <ellipse cx="880" cy="440" rx="240" ry="150"/>
+    <ellipse cx="720" cy="620" rx="300" ry="160" opacity="0.4"/>
+  </g>
+  <g stroke="url(#arc)" stroke-width="8" fill="none" stroke-linecap="round">
+    <path d="M220 640c120-240 360-360 640-360s520 120 700 360"/>
+    <path d="M180 540c140-180 420-280 640-280s480 80 720 280" stroke-width="6" opacity="0.6"/>
+    <path d="M260 700c140-200 380-280 600-280s420 80 640 280" stroke-width="10" opacity="0.4"/>
+  </g>
+  <g fill="#1de99a">
+    <circle cx="480" cy="360" r="10"/>
+    <circle cx="820" cy="400" r="12"/>
+    <circle cx="1120" cy="520" r="9"/>
+    <circle cx="320" cy="540" r="8"/>
+    <circle cx="620" cy="660" r="10"/>
+  </g>
+</svg>

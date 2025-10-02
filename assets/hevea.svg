@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e0f2e9" />
+      <stop offset="100%" stop-color="#a5d5b0" />
+    </linearGradient>
+    <linearGradient id="trunk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f1dac7" />
+      <stop offset="100%" stop-color="#b78b6a" />
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3f8d3a" />
+      <stop offset="100%" stop-color="#94d45f" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)" />
+  <ellipse cx="320" cy="430" rx="260" ry="60" fill="#8abf8f" opacity="0.45" />
+  <g transform="translate(0,-10)">
+    <path d="M316 140c-60 12-102 50-126 106 48 34 110 50 174 44 58-6 108-28 144-58-28-70-82-118-156-124-12-2-24-2-36 0z" fill="url(#leaf)" />
+    <path d="M312 160c-20 64-28 142-10 222 2 12 18 18 32 16 18-2 32-14 34-26 10-70 16-148-6-216-10-32-40-32-50 4z" fill="url(#trunk)" stroke="#8d6244" stroke-width="10" stroke-linecap="round" />
+    <path d="M340 220l54 30" stroke="#4c3221" stroke-width="12" stroke-linecap="round" opacity="0.6" />
+    <path d="M300 260l-48 46" stroke="#4c3221" stroke-width="12" stroke-linecap="round" opacity="0.6" />
+    <path d="M322 280c-12 30-14 60-6 92" stroke="#4c3221" stroke-width="10" stroke-linecap="round" opacity="0.4" />
+    <path d="M260 196c28-24 84-44 140-22" fill="none" stroke="#dff6d8" stroke-width="16" stroke-linecap="round" opacity="0.45" />
+  </g>
+  <g transform="translate(0,12)">
+    <path d="M350 320c44-22 88-30 126-18" fill="none" stroke="#63b15f" stroke-width="12" stroke-linecap="round" opacity="0.45" />
+    <path d="M182 330c42 26 102 42 162 38" fill="none" stroke="#63b15f" stroke-width="12" stroke-linecap="round" opacity="0.35" />
+  </g>
+  <text x="320" y="446" font-family="'Poppins',sans-serif" font-size="42" text-anchor="middle" fill="#2d6a38" opacity="0.9">Hevea Latex Harvest</text>
+</svg>
