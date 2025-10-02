@@ -15,20 +15,39 @@ body { background:#0b1f16; color:#0e1a15; }
 .card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; }
 .glass { background:rgba(255,255,255,.08); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,.15); }
 .img-card { border-radius:12px; object-fit:cover; width:100%; height:200px; background:#f5f5f5; padding:8px; box-sizing:border-box; }
+.hero-shell { position: relative; min-height: 72vh; }
+.hero-shell::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:linear-gradient(220deg, rgba(8,24,17,0.85) 0%, rgba(8,24,17,0.95) 45%, rgba(8,24,17,0.65) 100%), url('assets/hero-port.jpg');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  z-index:0;
+}
+=======
     /* keep the 3D canvas behind everything */
 #hero3d { position: absolute; inset: 0; z-index: 0; }
 .hero-overlay { position: relative; z-index: 1; }
+    /* keep the 3D canvas behind everything */
+#hero3d { position: absolute; inset: 0; z-index: 0; opacity:0.45; mix-blend-mode:screen; }
 </style>
 </head>
 <body class="text-gray-900">
 <!-- Header -->
 <header class="border-b border-white/10" style="background:linear-gradient(180deg, rgba(11,31,22,.9) 0%, rgba(11,31,22,.7) 100%);">
-<div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
-<a href="#" class="flex items-center gap-3">
+<div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-4">
+<a href="index.html" class="flex items-center gap-3">
 <!-- Bigger logo -->
 <img src="assets/logo.png" alt="Cana Impex logo" class="h-16 w-auto">
 <span class="text-white/90 text-lg font-bold">Cana Impex</span>
 </a>
+<div class="hidden md:flex items-center gap-8 ml-auto">
+<nav class="flex items-center gap-6 text-sm text-white/80">
+<a href="our-products.html" class="hover:underline">Our Products</a>
+<a href="about.html" class="hover:underline">About</a>
+=======
 <nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
 <a href="our-products.html" class="hover:underline">Our Products</a>
 <a href="#quotes" class="hover:underline">Get Quotes</a>
@@ -36,6 +55,11 @@ body { background:#0b1f16; color:#0e1a15; }
     
 </nav>
 <div class="flex items-center gap-3">
+<a href="our-products.html" class="px-4 py-2 rounded-lg text-sm font-semibold border border-white/30 text-white/90 hover:bg-white/10 whitespace-nowrap">View Portfolio</a>
+<a href="#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap">Request Samples</a>
+</div>
+</div>
+<a href="#contact" class="md:hidden btn px-4 py-2 rounded-lg text-xs font-semibold ml-auto">Request Samples</a>
 <a href="our-products.html" class="px-4 py-2 rounded-lg text-sm font-semibold border border-white/30 text-white/90 hover:bg-white/10">View Portfolio</a>
 <a href="#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold">Request Samples</a>
     <nav class="hidden md:flex items-center gap-6 text-sm">
@@ -49,16 +73,20 @@ body { background:#0b1f16; color:#0e1a15; }
 </header>
 
 <!-- HERO (3D background + headline) -->
-<section class="relative overflow-hidden" style="min-height: 68vh;">
+<section class="hero-shell overflow-hidden">
 <canvas id="hero3d"></canvas>
-<div class="hero-overlay max-w-7xl mx-auto px-6 py-20 md:py-28">
+<div class="hero-overlay max-w-7xl mx-auto px-6 py-20 md:py-32">
 <div class="max-w-3xl text-white">
 <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
 Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Rubber
 </h1>
 <p class="mt-4 text-white/80 md:text-lg">
-Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms. No ceiling — just your requirements.
+Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms. Dedicated port teams coordinate loading out of Abidjan and San Pedro with end-to-end visibility.
 </p>
+<div class="mt-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+<span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+Worldwide Shipping Available
+</div>
 <div class="mt-8 flex flex-wrap items-center gap-3">
 <a href="#quotes" class="btn px-5 py-3 rounded-xl font-semibold">Get a Desk Quote</a>
 <a href="our-products.html" class="px-5 py-3 rounded-xl font-semibold text-white/90 border border-white/30 hover:bg-white/10">Explore Our Products</a>
@@ -100,6 +128,10 @@ Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms. No ce
 </div>
       <!-- Coffee -->
 <div class="card p-5">
+<img class="img-card" src="assets/coffee.svg" alt="Coffee cherries and beans illustration" onerror="this.style.display='none'">
+<h3 class="font-semibold text-lg mt-4">Coffee</h3>
+<p class="text-sm text-gray-600 mt-2">Green beans, washed & natural profiles.</p>
+=======
 <img class="img-card" src="assets/coffee.svg" alt="Coffee beans illustration" onerror="this.style.display='none'">
 <h3 class="font-semibold text-lg mt-4">Coffee</h3>
 <p class="text-sm text-gray-600 mt-2">Green beans, washed & natural profiles.</p>

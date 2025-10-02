@@ -1,3 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Coffee cherries and beans illustration</title>
+  <desc id="desc">Stylised branch of coffee cherries above a tasting cup with beans.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5ede2" />
+      <stop offset="100%" stop-color="#ead7c2" />
+    </linearGradient>
+    <radialGradient id="leaf" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0%" stop-color="#b8e0c0" />
+      <stop offset="80%" stop-color="#3d7b4d" />
+      <stop offset="100%" stop-color="#27593d" />
+    </radialGradient>
+    <radialGradient id="cherry" cx="0.45" cy="0.35" r="0.7">
+      <stop offset="0%" stop-color="#ffd4c5" />
+      <stop offset="55%" stop-color="#d55a38" />
+      <stop offset="100%" stop-color="#8a2418" />
+    </radialGradient>
+    <linearGradient id="cup" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#d5d8df" />
+    </linearGradient>
+    <linearGradient id="espresso" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5b2e18" />
+      <stop offset="100%" stop-color="#2b130b" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)" />
+  <ellipse cx="320" cy="420" rx="250" ry="60" fill="#d2c3b5" opacity="0.45" />
+  <g transform="translate(60,40)">
+    <g transform="translate(60,40) rotate(-8)">
+      <path d="M0 160 C80 70, 220 40, 360 120" fill="none" stroke="#28533d" stroke-width="14" stroke-linecap="round" />
+      <path d="M40 150 C120 90, 200 70, 320 120" fill="none" stroke="#3f8b5c" stroke-width="10" stroke-linecap="round" />
+      <g transform="translate(180,48)">
+        <ellipse rx="86" ry="42" fill="url(#leaf)" />
+        <path d="M-10 -35 C5 -18, 12 4, 10 35" stroke="#1e4a31" stroke-width="4" fill="none" />
+      </g>
+      <g transform="translate(260,110) rotate(12)">
+        <ellipse rx="92" ry="48" fill="url(#leaf)" />
+        <path d="M-8 -38 C4 -16, 8 6, 6 40" stroke="#1e4a31" stroke-width="4" fill="none" />
+      </g>
+      <g transform="translate(120,120)">
+        <circle r="34" fill="url(#cherry)" />
+        <circle cx="48" cy="-18" r="28" fill="url(#cherry)" />
+        <circle cx="78" cy="24" r="32" fill="url(#cherry)" />
+        <circle cx="18" cy="46" r="26" fill="url(#cherry)" />
+        <path d="M18 6 C30 -14, 50 -18, 70 -12" stroke="#f7cab9" stroke-width="5" stroke-linecap="round" opacity="0.7" />
+      </g>
+      <g transform="translate(290,150)">
+        <circle r="30" fill="url(#cherry)" />
+        <circle cx="40" cy="-10" r="26" fill="url(#cherry)" />
+        <circle cx="62" cy="24" r="30" fill="url(#cherry)" />
+        <path d="M18 2 C30 -12, 48 -12, 62 -4" stroke="#f7cab9" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+      </g>
+    </g>
+  </g>
+  <g transform="translate(0,40)">
+    <g transform="translate(210,180)">
+      <path d="M40 0 h180 c32 0 58 26 58 58s-26 58-58 58H40c-32 0-58-26-58-58S8 0 40 0z" fill="url(#cup)" />
+      <path d="M70 22 h126 c20 0 36 16 36 36s-16 36-36 36H70c-20 0-36-16-36-36S50 22 70 22z" fill="url(#espresso)" />
+      <path d="M210 40 h32c22 0 40 18 40 40s-18 40-40 40h-12c16-10 26-28 26-46 0-14-5-26-14-34z" fill="#cdd2dc" opacity="0.65" />
+      <path d="M0 58 c0 58 48 106 106 106s106-48 106-106" fill="none" stroke="#c0a896" stroke-width="10" stroke-linecap="round" opacity="0.4" />
+    </g>
+    <g transform="translate(170,292)">
+      <ellipse cx="40" cy="64" rx="42" ry="24" fill="#a36f4a" opacity="0.55" />
+      <path d="M0 60 c12-32 34-58 62-74 28-16 60-22 92-16" fill="none" stroke="#8a4e2f" stroke-width="12" stroke-linecap="round" opacity="0.5" />
+    </g>
+    <g transform="translate(420,260)">
+      <ellipse cx="40" cy="70" rx="44" ry="26" fill="#a36f4a" opacity="0.55" />
+      <path d="M0 68 c16-30 46-54 82-66 24-8 50-10 74-4" fill="none" stroke="#8a4e2f" stroke-width="12" stroke-linecap="round" opacity="0.5" />
+    </g>
+  </g>
+  <text x="320" y="450" font-family="'Poppins', 'Segoe UI', sans-serif" font-size="40" text-anchor="middle" fill="#5c3420" opacity="0.85">West African Coffee</text>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
