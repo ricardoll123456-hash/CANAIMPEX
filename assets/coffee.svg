@@ -1,3 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="coffeeTitle coffeeDesc">
+  <title id="coffeeTitle">Coffee cherries with roasting cup</title>
+  <desc id="coffeeDesc">Stylised illustration of coffee cherries on a branch beside a tasting cup.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f3ede7" />
+      <stop offset="100%" stop-color="#e3d3c6" />
+    </linearGradient>
+    <radialGradient id="leaf" cx="0.5" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#d5f2ce" />
+      <stop offset="60%" stop-color="#4a915b" />
+      <stop offset="100%" stop-color="#2d5a39" />
+    </radialGradient>
+    <radialGradient id="cherry" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0%" stop-color="#ffd6c5" />
+      <stop offset="55%" stop-color="#d45736" />
+      <stop offset="100%" stop-color="#7f1f13" />
+    </radialGradient>
+    <linearGradient id="cup" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#d6dbe2" />
+    </linearGradient>
+    <linearGradient id="brew" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5b2d1b" />
+      <stop offset="100%" stop-color="#2c140b" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)" />
+  <ellipse cx="256" cy="420" rx="200" ry="56" fill="#c7b8ac" opacity="0.4" />
+  <g transform="translate(40,60)">
+    <path d="M40 210 C140 140 260 120 360 170" fill="none" stroke="#2f5b3a" stroke-width="16" stroke-linecap="round" />
+    <path d="M60 206 C150 140 270 130 360 176" fill="none" stroke="#3f8b5c" stroke-width="10" stroke-linecap="round" />
+    <g transform="translate(150,110) rotate(-12)">
+      <ellipse rx="82" ry="42" fill="url(#leaf)" />
+      <path d="M-12 -32 C6 -10 12 18 8 38" stroke="#1e4a31" stroke-width="4" fill="none" />
+    </g>
+    <g transform="translate(240,160) rotate(8)">
+      <ellipse rx="90" ry="46" fill="url(#leaf)" />
+      <path d="M-8 -38 C6 -12 10 14 6 40" stroke="#1e4a31" stroke-width="4" fill="none" />
+    </g>
+    <g transform="translate(90,200)">
+      <circle r="32" fill="url(#cherry)" />
+      <circle cx="46" cy="-20" r="28" fill="url(#cherry)" />
+      <circle cx="70" cy="24" r="30" fill="url(#cherry)" />
+      <circle cx="16" cy="46" r="24" fill="url(#cherry)" />
+      <path d="M14 6 C30 -12 48 -16 64 -10" stroke="#f7cab9" stroke-width="5" stroke-linecap="round" opacity="0.7" />
+    </g>
+    <g transform="translate(300,210)">
+      <circle r="30" fill="url(#cherry)" />
+      <circle cx="38" cy="-12" r="26" fill="url(#cherry)" />
+      <circle cx="60" cy="22" r="28" fill="url(#cherry)" />
+      <path d="M18 0 C30 -12 46 -12 60 -4" stroke="#f7cab9" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+    </g>
+  </g>
+  <g transform="translate(140,250)">
+    <path d="M36 0 h180 c32 0 58 26 58 58s-26 58-58 58H36c-32 0-58-26-58-58S4 0 36 0z" fill="url(#cup)" />
+    <path d="M70 22 h116 c20 0 36 16 36 36s-16 36-36 36H70c-20 0-36-16-36-36S50 22 70 22z" fill="url(#brew)" />
+    <path d="M200 38 h28c22 0 40 18 40 40s-18 40-40 40h-10c16-10 26-28 26-46 0-14-4-26-12-34z" fill="#cdd2dc" opacity="0.65" />
+    <path d="M0 58 c0 58 46 106 104 106s104-48 104-106" fill="none" stroke="#bfa692" stroke-width="10" stroke-linecap="round" opacity="0.4" />
+  </g>
+  <text x="256" y="472" font-family="'Poppins', 'Segoe UI', sans-serif" font-size="36" text-anchor="middle" fill="#5c3420" opacity="0.85">West African Coffee</text>
+
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
   <title id="title">Coffee cherries and beans illustration</title>
   <desc id="desc">Stylised branch of coffee cherries above a tasting cup with beans.</desc>
