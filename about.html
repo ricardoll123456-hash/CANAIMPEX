@@ -3,234 +3,124 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Cana Impex — 20 Years of Export Expertise</title>
-  <meta name="description" content="Learn about Cana Impex, a Côte d’Ivoire-based exporter with 20 years of experience led by Jean Fortuné Kouassi and Ricardo A. Llorente." />
+  <title>About Cana Impex — Côte d’Ivoire Export Specialists</title>
+  <meta name="description" content="Meet the Cana Impex leadership team led by Jean Fortuné Kouassi and Ricardo A. Llorente with over 20 years of cashew, cocoa, hevea, and coffee expertise." />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
-    body { background:#0b1f16; color:#0e1a15; }
-    .btn { background:#0A7F49; color:#fff; border-radius:12px; transition:all .2s ease; box-shadow:0 12px 30px -18px rgba(10,127,73,0.8); }
+    body { background:#071912; color:#e6f5ed; }
+    header { background:linear-gradient(180deg, rgba(6,21,15,0.95) 0%, rgba(6,21,15,0.75) 100%); border-bottom:1px solid rgba(255,255,255,0.08); }
+    .btn { background:#0A7F49; color:#fff; border-radius:14px; transition:all .2s ease; box-shadow:0 16px 38px -22px rgba(13,148,86,0.6); }
     .btn:hover { background:#10B981; }
-    .card { background:#ffffff; border:1px solid rgba(229,231,235,0.7); border-radius:22px; }
-    .glass { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); backdrop-filter:blur(16px); border-radius:24px; }
-    body { background:#f5f8f6; color:#1d3b2d; }
-    .btn { background:#2fb47c; color:#fff; border-radius:12px; box-shadow:0 14px 30px -16px rgba(48,168,115,0.6); transition:all .2s ease; }
-    .btn:hover { background:#28a36f; }
-    .card { background:#ffffff; border:1px solid rgba(47,180,124,0.18); border-radius:22px; box-shadow:0 22px 45px -28px rgba(31,124,86,0.28); }
-    .glass { background:rgba(255,255,255,0.7); border:1px solid rgba(47,180,124,0.24); backdrop-filter:blur(18px); border-radius:24px; }
-    body { background:#06150f; color:#0e1a15; }
-    .btn { background:#0A7F49; color:#fff; }
-    .btn:hover { background:#10B981; }
-    .card { background:#ffffff; border:1px solid rgba(15,118,110,0.15); border-radius:20px; }
-    .glass { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); backdrop-filter:blur(14px); border-radius:24px; }
-    .hero::before {
+    .card { background:rgba(7,25,18,0.72); border:1px solid rgba(255,255,255,0.1); border-radius:24px; backdrop-filter:blur(18px); }
+    .hero-shell { position:relative; min-height:68vh; overflow:hidden; }
+    .hero-shell::before {
       content:"";
-      position:absolute;
-      inset:0;
-      background-image:linear-gradient(215deg, rgba(24,73,53,0.88) 0%, rgba(24,73,53,0.72) 45%, rgba(18,58,42,0.82) 100%), url('assets/about-hero.jpg');
-      background-image:linear-gradient(215deg, rgba(6,21,15,0.9) 0%, rgba(6,21,15,0.7) 45%, rgba(6,21,15,0.85) 100%), url('assets/about-hero.jpg');
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-      z-index:0;
+      position:absolute; inset:0;
+      background-image:linear-gradient(215deg, rgba(6,21,15,0.88) 0%, rgba(6,21,15,0.68) 45%, rgba(6,21,15,0.9) 100%), url('assets/about-operations.jpg');
+      background-size:cover; background-position:center; background-repeat:no-repeat;
+      opacity:0.65;
     }
-    .hero > * { position:relative; z-index:1; }
+    .hero-shell > * { position:relative; z-index:1; }
+    .section-title { letter-spacing:0.3em; text-transform:uppercase; font-size:0.75rem; }
+    .portrait { width:100%; height:100%; object-fit:cover; }
   </style>
 </head>
-<body class="text-gray-900">
-  <header class="border-b border-white/10" style="background:linear-gradient(180deg, rgba(11,31,22,.92) 0%, rgba(11,31,22,.82) 100%);">
-<body class="text-emerald-900">
-  <header class="border-b" style="background:linear-gradient(180deg, rgba(243,252,247,0.95) 0%, rgba(222,241,232,0.9) 100%); border-bottom-color:#cfe5d9;">
+<body class="min-h-screen flex flex-col">
+  <header class="sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-6">
-      <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
-        <img src="assets/logo.png" alt="Cana Impex logo" class="h-16 w-auto">
-        <span class="text-emerald-900 text-lg font-bold">Cana Impex</span>
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Cana Impex logo" class="h-14 w-auto">
+        <span class="text-white text-lg font-semibold">Cana Impex</span>
       </a>
-      <nav class="hidden lg:flex items-center gap-6 text-sm text-emerald-900/80 ml-12">
-        <a href="index.html" class="hover:text-emerald-700">Home</a>
-        <a href="our-products.html" class="hover:text-emerald-700">Our Products</a>
-        <a href="about.html" class="hover:text-emerald-700 font-semibold text-emerald-900">About</a>
-        <a href="index.html#quotes" class="hover:text-emerald-700">Get Quotes</a>
-        <a href="index.html#contact" class="hover:text-emerald-700">Contact</a>
-      </nav>
-      <div class="hidden md:flex items-center gap-3 ml-auto">
-        <a href="our-products.html" class="px-4 py-2 rounded-xl text-sm font-semibold border border-emerald-200 text-emerald-800 hover:bg-emerald-50 whitespace-nowrap">View Portfolio</a>
-        <a href="index.html#contact" class="btn px-4 py-2 text-sm font-semibold whitespace-nowrap">Request Samples</a>
-      </div>
-      <div class="flex md:hidden items-center gap-2 ml-auto">
-        <a href="our-products.html" class="px-3 py-2 rounded-lg text-xs font-semibold border border-emerald-200 text-emerald-800 hover:bg-emerald-50 whitespace-nowrap">Portfolio</a>
-        <a href="index.html#contact" class="btn px-3 py-2 text-xs font-semibold whitespace-nowrap">Samples</a>
-      </div>
-<body class="text-gray-900">
-  <header class="border-b border-white/10" style="background:linear-gradient(180deg, rgba(11,31,22,.95) 0%, rgba(11,31,22,.7) 100%);">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-6">
-      <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
-        <img src="assets/logo.png" alt="Cana Impex logo" class="h-16 w-auto">
-        <span class="text-white/90 text-lg font-bold">Cana Impex</span>
-      </a>
-      <nav class="hidden lg:flex items-center gap-6 text-sm text-white/70 ml-12">
+      <nav class="hidden md:flex items-center gap-6 text-sm text-white/80 ml-auto">
         <a href="index.html" class="hover:text-white">Home</a>
         <a href="our-products.html" class="hover:text-white">Our Products</a>
         <a href="about.html" class="font-semibold text-white">About</a>
         <a href="index.html#quotes" class="hover:text-white">Get Quotes</a>
         <a href="index.html#contact" class="hover:text-white">Contact</a>
       </nav>
-      <div class="hidden md:flex items-center gap-3 ml-auto">
-        <a href="our-products.html" class="px-4 py-2 rounded-xl text-sm font-semibold border border-white/30 text-white/90 hover:bg-white/10 whitespace-nowrap">View Portfolio</a>
-        <a href="index.html#contact" class="btn px-4 py-2 text-sm font-semibold whitespace-nowrap">Request Samples</a>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="index.html#contact" class="px-4 py-2 rounded-xl text-sm font-semibold border border-white/20 text-white/90 hover:bg-white/10">View Portfolio</a>
+        <a href="index.html#contact" class="btn px-4 py-2 text-sm font-semibold">Talk to Sales</a>
       </div>
-      <div class="flex md:hidden items-center gap-2 ml-auto">
-        <a href="our-products.html" class="px-3 py-2 rounded-lg text-xs font-semibold border border-white/30 text-white/90 hover:bg-white/10 whitespace-nowrap">Portfolio</a>
-        <a href="index.html#contact" class="btn px-3 py-2 text-xs font-semibold whitespace-nowrap">Samples</a>
-      </div>
-      <nav class="hidden lg:flex items-center gap-6 text-sm text-white/80 ml-12">
-        <a href="index.html" class="hover:underline">Home</a>
-        <a href="our-products.html" class="hover:underline">Our Products</a>
-        <a href="about.html" class="hover:underline font-semibold text-white">About</a>
-        <a href="index.html#quotes" class="hover:underline">Get Quotes</a>
-        <a href="index.html#contact" class="hover:underline">Contact</a>
-      </nav>
-      <div class="hidden md:flex items-center gap-3 ml-auto">
-        <a href="our-products.html" class="px-4 py-2 rounded-lg text-sm font-semibold border border-white/30 text-white/90 hover:bg-white/10 whitespace-nowrap">View Portfolio</a>
-        <a href="index.html#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap">Request Samples</a>
-      </div>
-      <div class="flex md:hidden items-center gap-2 ml-auto">
-        <a href="our-products.html" class="px-3 py-2 rounded-lg text-xs font-semibold border border-white/30 text-white/90 hover:bg-white/10 whitespace-nowrap">Portfolio</a>
-        <a href="index.html#contact" class="btn px-3 py-2 rounded-lg text-xs font-semibold whitespace-nowrap">Samples</a>
-      </div>
-
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-4">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/logo.png" alt="Cana Impex logo" class="h-16 w-auto">
-        <span class="text-white/90 text-lg font-bold">Cana Impex</span>
-      </a>
-      <div class="hidden md:flex items-center gap-8 ml-auto">
-        <nav class="flex items-center gap-6 text-sm text-white/80">
-          <a href="index.html" class="hover:underline">Home</a>
-          <a href="our-products.html" class="hover:underline">Our Products</a>
-          <a href="about.html" class="hover:underline font-semibold text-white">About</a>
-          <a href="index.html#quotes" class="hover:underline">Get Quotes</a>
-          <a href="index.html#contact" class="hover:underline">Contact</a>
-        </nav>
-        <div class="flex items-center gap-3">
-          <a href="our-products.html" class="px-4 py-2 rounded-lg text-sm font-semibold border border-white/30 text-white/90 hover:bg-white/10 whitespace-nowrap">View Portfolio</a>
-          <a href="index.html#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap">Request Samples</a>
-        </div>
-      </div>
-      <a href="index.html#contact" class="md:hidden btn px-4 py-2 rounded-lg text-xs font-semibold ml-auto">Contact</a>
+      <a href="index.html#contact" class="md:hidden btn px-4 py-2 text-xs font-semibold ml-auto">Request Samples</a>
     </div>
   </header>
 
-  <main>
-    <section class="hero relative overflow-hidden">
+  <main class="flex-1">
+    <section class="hero-shell">
       <div class="max-w-6xl mx-auto px-6 py-24 md:py-32 text-white">
-        <p class="text-xs tracking-[0.3em] uppercase text-white/70">Who We Are</p>
-        <h1 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">20 Years Moving Côte d’Ivoire’s Harvests to the World</h1>
-        <p class="mt-6 max-w-3xl text-white/80 md:text-lg">Cana Impex is a privately held export house specialising in cashew, cocoa, hevea, and coffee. From our base in Abidjan we partner with cooperatives, processors, and logistics leaders to deliver compliant cargo to roasters, traders, and industrial buyers worldwide.</p>
+        <p class="section-title text-emerald-300/80">Who We Are</p>
+        <h1 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">20 Years Connecting Côte d’Ivoire to Global Markets</h1>
+        <p class="mt-6 max-w-3xl text-white/80 md:text-lg">Cana Impex is a privately-held export house built by agronomy and logistics experts. From Abidjan, our team manages end-to-end sourcing for cashew, cocoa, hevea, and coffee buyers who demand quality, compliance, and reliable sailings.</p>
         <div class="mt-8 flex flex-wrap items-center gap-3">
           <a href="index.html#contact" class="btn px-5 py-3 rounded-xl font-semibold">Talk to Our Team</a>
-          <a href="our-products.html" class="px-5 py-3 rounded-xl font-semibold text-white/90 border border-white/30 hover:bg-white/10">Explore Our Products</a>
+          <a href="our-products.html" class="px-5 py-3 rounded-xl font-semibold border border-white/20 text-white/90 hover:bg-white/10">Explore Our Commodities</a>
         </div>
       </div>
     </section>
 
     <section class="max-w-6xl mx-auto px-6 py-16 grid lg:grid-cols-[3fr,2fr] gap-12 items-center">
-      <div class="text-white">
-        <h2 class="text-2xl md:text-3xl font-bold">Rooted in Côte d’Ivoire, Trading with Confidence</h2>
-        <p class="mt-4 text-white/80">We combine origin-side quality control with export documentation, finance, and logistics support. Our bilingual teams guide partners through procurement, sampling, and shipment execution from Côte d’Ivoire’s ports of Abidjan and San Pedro.</p>
-        <dl class="mt-8 grid sm:grid-cols-2 gap-6 text-sm text-white/80">
-          <div class="glass rounded-2xl p-6">
-            <dt class="uppercase tracking-[0.2em] text-xs text-white/70">Experience</dt>
-            <dd class="mt-2 text-2xl font-semibold text-white">20+ years in origin sourcing</dd>
-          </div>
-          <div class="glass rounded-2xl p-6">
-            <dt class="uppercase tracking-[0.2em] text-xs text-white/70">Footprint</dt>
       <div>
-        <h2 class="text-2xl md:text-3xl font-bold text-emerald-900">Rooted in Côte d’Ivoire, Trading with Confidence</h2>
-        <p class="mt-4 text-emerald-700">We combine origin-side quality control with export documentation, finance, and logistics support. Our bilingual teams guide partners through procurement, sampling, and shipment execution from Côte d’Ivoire’s ports of Abidjan and San Pedro.</p>
-        <dl class="mt-8 grid sm:grid-cols-2 gap-6 text-sm text-emerald-700">
-          <div class="glass rounded-2xl p-6">
-            <dt class="uppercase tracking-[0.2em] text-xs text-emerald-500">Experience</dt>
-            <dd class="mt-2 text-2xl font-semibold text-emerald-900">20+ years in origin sourcing</dd>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Origin Specialists with a Global Mindset</h2>
+        <p class="mt-4 text-white/80">We coordinate raw and processed shipments for traders, roasters, and manufacturers across more than a dozen markets. Our bilingual commercial teams bridge Côte d’Ivoire’s farmgate with international quality expectations, finance structures, and compliance requirements.</p>
+        <dl class="mt-10 grid sm:grid-cols-2 gap-6 text-sm text-white/80">
+          <div class="card p-6">
+            <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90">Experience</dt>
+            <dd class="mt-2 text-2xl font-semibold text-white">20+ years of export leadership</dd>
           </div>
-          <div class="glass rounded-2xl p-6">
-            <dt class="uppercase tracking-[0.2em] text-xs text-emerald-500">Footprint</dt>
-            <dd class="mt-2 text-2xl font-semibold text-emerald-900">12+ active markets served</dd>
+          <div class="card p-6">
+            <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90">Footprint</dt>
+            <dd class="mt-2 text-2xl font-semibold text-white">12+ countries served annually</dd>
           </div>
-        </dl>
-      </div>
-      <div class="card overflow-hidden">
-      <div class="text-white">
-        <h2 class="text-2xl md:text-3xl font-bold">Rooted in Côte d’Ivoire, Trading with Confidence</h2>
-        <p class="mt-4 text-white/70">We combine origin-side quality control with export documentation, finance, and logistics support. Our bilingual teams guide partners through procurement, sampling, and shipment execution from Côte d’Ivoire’s ports of Abidjan and San Pedro.</p>
-        <dl class="mt-8 grid sm:grid-cols-2 gap-6 text-sm text-white/80">
-          <div class="glass rounded-2xl p-6">
-            <dt class="uppercase tracking-[0.2em] text-xs text-emerald-200">Experience</dt>
-            <dd class="mt-2 text-2xl font-semibold text-white">20+ years in origin sourcing</dd>
+          <div class="card p-6">
+            <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90">Compliance</dt>
+            <dd class="mt-2 text-2xl font-semibold text-white">SGS, Cotecna & Phyto ready</dd>
           </div>
-          <div class="glass rounded-2xl p-6">
-            <dt class="uppercase tracking-[0.2em] text-xs text-emerald-200">Footprint</dt>
-            <dd class="mt-2 text-2xl font-semibold text-white">12+ active markets served</dd>
+          <div class="card p-6">
+            <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90">Logistics</dt>
+            <dd class="mt-2 text-2xl font-semibold text-white">Abidjan & San Pedro coverage</dd>
           </div>
         </dl>
       </div>
       <div class="card overflow-hidden">
-
-      <div class="card overflow-hidden shadow-xl shadow-emerald-900/10">
-        <img src="assets/about-operations.jpg" alt="Cana Impex operations and warehouses" class="w-full h-full object-cover">
+        <img src="assets/about-operations.jpg" alt="Cana Impex operations" class="portrait">
       </div>
     </section>
 
-    <section class="py-16" style="background:rgba(255,255,255,0.03);">
+    <section class="py-16" style="background:rgba(255,255,255,0.04);">
       <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-2xl md:text-3xl font-bold text-white">Leadership</h2>
-        <p class="mt-4 text-white/80 max-w-3xl">Our leadership blends agronomy, trading, and global logistics to ensure reliable supply chains for demanding partners.</p>
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-white">Leadership</h2>
+            <p class="mt-4 text-white/80 max-w-2xl">Our founders built Cana Impex on long-term relationships with cooperatives, processors, and shipping agents. Together they ensure transparent execution from sample to shipment.</p>
+          </div>
+          <div class="card px-6 py-4 text-sm text-white/80 max-w-sm">
+            <p class="font-semibold text-white">Executive Contacts</p>
+            <p class="mt-2">Reach Jean and Ricardo directly at <a href="mailto:leadership@canaimpex.com" class="text-emerald-300 underline">leadership@canaimpex.com</a> for strategic partnerships.</p>
+          </div>
+        </div>
         <div class="mt-10 grid md:grid-cols-2 gap-8">
           <article class="card p-8 flex flex-col gap-6">
-    <section class="bg-gradient-to-br from-white via-[#f0f7f2] to-[#dff1e6]">
-      <div class="max-w-6xl mx-auto px-6 py-16">
-        <h2 class="text-2xl md:text-3xl font-bold text-emerald-900">Leadership</h2>
-        <p class="mt-4 text-emerald-700 max-w-3xl">Our leadership blends agronomy, trading, and global logistics to ensure reliable supply chains for demanding partners.</p>
-        <div class="mt-10 grid md:grid-cols-2 gap-8">
-          <article class="card p-8 flex flex-col gap-6">
-    <section class="bg-white/95">
-      <div class="max-w-6xl mx-auto px-6 py-16">
-        <h2 class="text-2xl md:text-3xl font-bold text-emerald-900">Leadership</h2>
-        <p class="mt-4 text-gray-600 max-w-3xl">Our leadership blends agronomy, trading, and global logistics to ensure reliable supply chains for demanding partners.</p>
-        <div class="mt-10 grid md:grid-cols-2 gap-8">
-          <article class="card p-8 flex flex-col gap-6 shadow-lg shadow-emerald-900/10">
-            <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-emerald-100">
-              <img src="assets/jean-fortune-kouassi.jpg" alt="Portrait of Jean Fortuné Kouassi" class="w-full h-full object-cover">
+            <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-emerald-100/10">
+              <img src="assets/jean-fortune-kouassi.jpg" alt="Portrait of Jean Fortuné Kouassi" class="portrait">
             </div>
             <div>
-              <h3 class="text-xl font-semibold text-gray-900">Jean Fortuné Kouassi</h3>
-              <p class="text-sm uppercase tracking-[0.25em] text-emerald-600">Founder &amp; Executive Chairman</p>
-              <p class="mt-4 text-gray-600">Jean launched Cana Impex after years coordinating cashew procurement programmes across West Africa. He leads origin sourcing, cooperative relations, and government liaison to secure consistent commodity flows.</p>
+              <h3 class="text-xl font-semibold text-white">Jean Fortuné Kouassi</h3>
+              <p class="text-sm uppercase tracking-[0.25em] text-emerald-300">Founder & Executive Chairman</p>
+              <p class="mt-4 text-white/80">Jean launched Cana Impex after a decade coordinating cashew procurement programmes throughout Côte d’Ivoire. He leads origin sourcing, cooperative relations, and government liaison to secure consistent commodity flows.</p>
             </div>
           </article>
           <article class="card p-8 flex flex-col gap-6">
-              <h3 class="text-xl font-semibold text-emerald-900">Jean Fortuné Kouassi</h3>
-              <p class="text-sm uppercase tracking-[0.25em] text-emerald-500">Founder &amp; Executive Chairman</p>
-              <p class="mt-4 text-emerald-700">Jean launched Cana Impex after years coordinating cashew procurement programmes across West Africa. He leads origin sourcing, cooperative relations, and government liaison to secure consistent commodity flows.</p>
-            </div>
-          </article>
-          <article class="card p-8 flex flex-col gap-6">
-
-              <p class="mt-4 text-gray-600">Jean launched Cana Impex after years coordinating cashew procurement programmes across West Africa. He leads origin sourcing, cooperative relations, and government liaison to secure consistent commodity flows.</p>
-            </div>
-          </article>
-          <article class="card p-8 flex flex-col gap-6 shadow-lg shadow-emerald-900/10">
-            <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-emerald-100">
-              <img src="assets/ricardo-llorente.jpg" alt="Portrait of Ricardo A. Llorente" class="w-full h-full object-cover">
+            <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-emerald-100/10">
+              <img src="assets/ricardo-llorente.jpg" alt="Portrait of Ricardo A. Llorente" class="portrait">
             </div>
             <div>
-              <h3 class="text-xl font-semibold text-gray-900">Ricardo A. Llorente</h3>
-              <p class="text-sm uppercase tracking-[0.25em] text-emerald-600">Managing Director</p>
-              <h3 class="text-xl font-semibold text-emerald-900">Ricardo A. Llorente</h3>
-              <p class="text-sm uppercase tracking-[0.25em] text-emerald-500">Managing Director</p>
-              <p class="mt-4 text-emerald-700">Ricardo oversees commercial strategy, contract execution, and customer service from our international desks. His background in coffee trading and supply chain digitisation keeps our clients informed at every milestone.</p>
-              <p class="mt-4 text-gray-600">Ricardo oversees commercial strategy, contract execution, and customer service from our international desks. His background in coffee trading and supply chain digitisation keeps our clients informed at every milestone.</p>
+              <h3 class="text-xl font-semibold text-white">Ricardo A. Llorente</h3>
+              <p class="text-sm uppercase tracking-[0.25em] text-emerald-300">Managing Director</p>
+              <p class="mt-4 text-white/80">Ricardo oversees commercial strategy, contract execution, and customer service from our international desks. His background in coffee trading and supply chain digitisation keeps clients informed at every milestone.</p>
             </div>
           </article>
         </div>
@@ -238,86 +128,33 @@
     </section>
 
     <section class="max-w-6xl mx-auto px-6 py-16 text-white">
-      <h2 class="text-2xl md:text-3xl font-bold">Milestones</h2>
-      <div class="mt-10 grid md:grid-cols-3 gap-8">
-        <div class="glass rounded-2xl p-6">
-          <p class="text-sm uppercase tracking-[0.3em] text-white/70">2004</p>
-          <h3 class="mt-3 text-xl font-semibold text-white">Trading Desk Opens</h3>
-          <p class="mt-3 text-white/80">Cana Impex is incorporated in Abidjan to support cashew exporters with origin financing and quality control.</p>
+      <div class="grid lg:grid-cols-[1.2fr,0.8fr] gap-12">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Milestones</h2>
+          <ul class="mt-8 space-y-6">
+            <li class="card p-6">
+              <p class="text-sm uppercase tracking-[0.3em] text-emerald-300/90">2003</p>
+              <h3 class="mt-3 text-xl font-semibold text-white">Founded in Abidjan</h3>
+              <p class="mt-3 text-white/80">Cana Impex is incorporated to support cashew exporters with financing, grading labs, and supply chain controls across Côte d’Ivoire.</p>
+            </li>
+            <li class="card p-6">
+              <p class="text-sm uppercase tracking-[0.3em] text-emerald-300/90">2011</p>
+              <h3 class="mt-3 text-xl font-semibold text-white">Portfolio Expansion</h3>
+              <p class="mt-3 text-white/80">We diversify into cocoa and hevea, building cooperative partnerships and traceability programmes from tree to port.</p>
+            </li>
+            <li class="card p-6">
+              <p class="text-sm uppercase tracking-[0.3em] text-emerald-300/90">2019</p>
+              <h3 class="mt-3 text-xl font-semibold text-white">Global Desk Network</h3>
+              <p class="mt-3 text-white/80">International desks open in Canada and Europe to streamline documentation, trade finance, and sailing coordination.</p>
+            </li>
+          </ul>
         </div>
-        <div class="glass rounded-2xl p-6">
-          <p class="text-sm uppercase tracking-[0.3em] text-white/70">2012</p>
-          <h3 class="mt-3 text-xl font-semibold text-white">Regional Expansion</h3>
-          <p class="mt-3 text-white/80">Launch of cocoa and hevea sourcing programmes with partner cooperatives across Côte d’Ivoire and neighbouring origins.</p>
-        </div>
-        <div class="glass rounded-2xl p-6">
-          <p class="text-sm uppercase tracking-[0.3em] text-white/70">2020</p>
-          <h3 class="mt-3 text-xl font-semibold text-white">Global Logistics Hub</h3>
-          <p class="mt-3 text-white/80">New representation in Canada streamlines documentation, financing, and buyer communication across 12+ countries.</p>
-    <section class="max-w-6xl mx-auto px-6 py-16">
-      <h2 class="text-2xl md:text-3xl font-bold text-emerald-900">Milestones</h2>
-      <div class="mt-10 grid md:grid-cols-3 gap-8 text-emerald-900">
-        <div class="glass rounded-2xl p-6">
-          <p class="text-sm uppercase tracking-[0.3em] text-emerald-500">2004</p>
-          <h3 class="mt-3 text-xl font-semibold">Trading Desk Opens</h3>
-          <p class="mt-3 text-emerald-700">Cana Impex is incorporated in Abidjan to support cashew exporters with origin financing and quality control.</p>
-        </div>
-        <div class="glass rounded-2xl p-6">
-          <p class="text-sm uppercase tracking-[0.3em] text-emerald-500">2012</p>
-          <h3 class="mt-3 text-xl font-semibold">Regional Expansion</h3>
-          <p class="mt-3 text-emerald-700">Launch of cocoa and hevea sourcing programmes with partner cooperatives across Côte d’Ivoire and neighbouring origins.</p>
-        </div>
-        <div class="glass rounded-2xl p-6">
-          <p class="text-sm uppercase tracking-[0.3em] text-emerald-500">2020</p>
-          <h3 class="mt-3 text-xl font-semibold">Global Logistics Hub</h3>
-          <p class="mt-3 text-emerald-700">New representation in Canada streamlines documentation, financing, and buyer communication across 12+ countries.</p>
-      <h2 class="text-2xl md:text-3xl font-bold text-white">Milestones</h2>
-      <div class="mt-10 grid md:grid-cols-3 gap-8 text-white">
-        <div class="glass rounded-2xl p-6">
-          <p class="text-sm uppercase tracking-[0.3em] text-white/70">2004</p>
-          <h3 class="mt-3 text-xl font-semibold">Trading Desk Opens</h3>
-          <p class="mt-3 text-white/70">Cana Impex is incorporated in Abidjan to support cashew exporters with origin financing and quality control.</p>
-        </div>
-        <div class="glass rounded-2xl p-6">
-          <p class="text-sm uppercase tracking-[0.3em] text-white/70">2012</p>
-          <h3 class="mt-3 text-xl font-semibold">Regional Expansion</h3>
-          <p class="mt-3 text-white/70">Launch of cocoa and hevea sourcing programmes with partner cooperatives across Côte d’Ivoire and neighbouring origins.</p>
-        </div>
-        <div class="glass rounded-2xl p-6">
-          <p class="text-sm uppercase tracking-[0.3em] text-white/70">2020</p>
-          <h3 class="mt-3 text-xl font-semibold">Global Logistics Hub</h3>
-          <p class="mt-3 text-white/70">New representation in Canada streamlines documentation, financing, and buyer communication across 12+ countries.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="relative" style="background:linear-gradient(135deg, rgba(4,14,9,.95) 0%, rgba(10,127,73,.85) 85%);">
-    <section class="relative" style="background:linear-gradient(135deg,#174b36 0%,#2fb47c 95%);">
-      <div class="absolute inset-0 opacity-15" style="background-image:url('assets/about-network.jpg'); background-size:cover; background-position:center;"></div>
-      <div class="relative max-w-5xl mx-auto px-6 py-20 text-white text-center">
-        <h2 class="text-3xl md:text-4xl font-bold">Partner with Cana Impex</h2>
-        <p class="mt-4 text-white/85">Tell us your quality specs, volume plans, and logistics requirements. We will coordinate samples, SGS inspection, and sailing schedules tailored to your organisation.</p>
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
-          <a href="index.html#contact" class="btn px-6 py-3 rounded-xl font-semibold">Request a Consultation</a>
-          <a href="our-products.html" class="px-6 py-3 rounded-xl font-semibold border border-white/40 text-white hover:bg-white/10">View Our Commodities</a>
-    <section class="relative" style="background:linear-gradient(135deg,#041009 0%,#0A7F49 90%);">
-      <div class="absolute inset-0 opacity-15" style="background-image:url('assets/about-network.jpg'); background-size:cover; background-position:center;"></div>
-      <div class="relative max-w-5xl mx-auto px-6 py-20 text-white text-center">
-        <h2 class="text-3xl md:text-4xl font-bold">Partner with Cana Impex</h2>
-        <p class="mt-4 text-white/80">Tell us your quality specs, volume plans, and logistics requirements. We will coordinate samples, SGS inspection, and sailing schedules tailored to your organisation.</p>
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
-          <a href="index.html#contact" class="btn px-6 py-3 rounded-xl font-semibold">Request a Consultation</a>
-          <a href="our-products.html" class="px-6 py-3 rounded-xl font-semibold border border-white/40 text-white/90 hover:bg-white/10">View Our Commodities</a>
+        <div class="card overflow-hidden">
+          <img src="assets/about-network.svg" alt="Illustration of Cana Impex global network" class="portrait">
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="py-8 text-sm" style="background:#2f6f55; color:#f6fffc;">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p>© <span id="year"></span> Cana Impex Inc. All rights reserved.</p>
-      <div class="flex items-center gap-3">
-        <span class="text-emerald-50">Made in Côte d’Ivoire</span>
 
   <footer class="py-8 text-sm bg-[#0A7F49] text-white">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
