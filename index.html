@@ -289,13 +289,6 @@ scene.add(globe);
   renderer.render(scene, camera);
 }
     
-.hero-shell::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(70% 70% at 35% 40%, rgba(17,55,38,.45) 0%, rgba(8,24,17,.85) 100%);
-}
-
     window.addEventListener('resize', resize);
     resize();
     animate();
