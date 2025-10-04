@@ -1,92 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cana Impex — Bulk Supply from Côte d’Ivoire</title>
-<meta name="description" content="Cana Impex: Bulk supply of Cashew, Cocoa, Hevea, and Rubber from Côte d’Ivoire. Tailored to your business.">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cana Impex — Bulk Supply from Côte d’Ivoire</title>
+  <meta name="description" content="Cana Impex sources cashew, cocoa, hevea and coffee from Côte d’Ivoire with full logistics support and fast desk quotes." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
-    body { background:#0b1f16; color:#0e1a15; }
-    .btn { background:#0A7F49; color:#fff; border-radius:12px; transition:all .2s ease; box-shadow:0 12px 30px -18px rgba(10,127,73,0.8); }
+    body { background:#0b1f16; color:#e6f5ed; }
+    .btn { background:#0A7F49; color:#fff; border-radius:14px; transition:all .2s ease; box-shadow:0 16px 40px -22px rgba(13,148,86,0.65); }
     .btn:hover { background:#10B981; }
-    .card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; }
-    .glass { background:rgba(255,255,255,.08); backdrop-filter: blur(12px); border:1px solid rgba(255,255,255,.15); border-radius:20px; }
-    .img-card { border-radius:12px; object-fit:cover; width:100%; height:180px; }
-<style>
-html { scroll-behavior: smooth; }
-body { background:#f5f8f6; color:#1d3b2d; }
-.btn { background:#2fb47c; color:#fff; border-radius:12px; box-shadow:0 14px 30px -16px rgba(48, 168, 115, 0.6); transition:all .2s ease; }
-.btn:hover { background:#28a36f; }
-.card { background:#ffffff; border:1px solid #d9ebe1; border-radius:18px; box-shadow:0 22px 45px -28px rgba(31,124,86,0.35); }
-.glass { background:rgba(255,255,255,0.7); backdrop-filter: blur(16px); border:1px solid rgba(47,180,124,0.25); }
-.img-card { border-radius:14px; object-fit:cover; width:100%; height:200px; background:#edf6f1; padding:12px; box-sizing:border-box; }
-
-body { background:#0b1f16; color:#0e1a15; }
-.btn { background:#0A7F49; color:#fff; }
-.btn:hover { background:#10B981; }
-.card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; }
-.glass { background:rgba(255,255,255,.08); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,.15); }
-.img-card { border-radius:12px; object-fit:cover; width:100%; height:200px; background:#f5f5f5; padding:8px; box-sizing:border-box; }
-.hero-shell { position: relative; min-height: 72vh; }
-.hero-shell::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:linear-gradient(220deg, rgba(24,73,53,0.88) 0%, rgba(24,73,53,0.82) 45%, rgba(24,73,53,0.6) 100%), url('assets/hero-port.jpg');
-
-  background-image:linear-gradient(220deg, rgba(8,24,17,0.85) 0%, rgba(8,24,17,0.95) 45%, rgba(8,24,17,0.65) 100%), url('assets/hero-port.jpg');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  z-index:0;
-}
-.hero-overlay { position: relative; z-index: 1; }
-    /* keep the 3D canvas behind everything */
-#hero3d { position: absolute; inset: 0; z-index: 0; opacity:0.4; mix-blend-mode:screen; }
-    /* keep the 3D canvas behind everything */
-#hero3d { position: absolute; inset: 0; z-index: 0; }.hero-overlay { position: relative; z-index: 1; }
-    /* keep the 3D canvas behind everything */
-#hero3d { position: absolute; inset: 0; z-index: 0; opacity:0.45; mix-blend-mode:screen; }
-</style>
+    .card { background:rgba(11,31,22,0.55); border:1px solid rgba(255,255,255,0.12); border-radius:22px; backdrop-filter:blur(16px); }
+    .img-card { border-radius:18px; object-fit:cover; width:100%; height:200px; }
+    header { background:linear-gradient(180deg, rgba(9,27,18,0.95) 0%, rgba(9,27,18,0.75) 100%); border-bottom:1px solid rgba(255,255,255,0.08); }
+    .hero-shell { position:relative; min-height:75vh; overflow:hidden; }
+    .hero-shell::before {
+      content:"";
+      position:absolute; inset:0;
+      background-image:linear-gradient(220deg, rgba(8,24,17,0.88) 0%, rgba(8,24,17,0.65) 50%, rgba(8,24,17,0.9) 100%), url('assets/about-operations.jpg');
+      background-size:cover; background-position:center; background-repeat:no-repeat;
+      opacity:0.55;
+    }
+    .hero-overlay { position:relative; z-index:1; }
+    #hero3d { position:absolute; inset:0; z-index:0; opacity:0.45; mix-blend-mode:screen; }
+    .section-title { letter-spacing:0.3em; text-transform:uppercase; font-size:0.75rem; }
+    .glass { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:20px; }
+  </style>
 </head>
-<body class="text-emerald-900">
-<!-- Header -->
-<header class="border-b" style="background:linear-gradient(180deg, rgba(243,252,247,0.95) 0%, rgba(222,241,232,0.9) 100%); border-bottom-color:#cfe5d9;">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-6">
-    <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
-      <img src="assets/logo.png" alt="Cana Impex logo" class="h-16 w-auto">
-      <span class="text-emerald-900 text-lg font-bold">Cana Impex</span>
-    </a>
-    <div class="flex items-center gap-4 sm:gap-6 ml-auto">
-      <nav class="hidden lg:flex items-center gap-6 text-sm text-emerald-900/80">
-        <a href="index.html" class="hover:text-emerald-700 font-semibold text-emerald-900">Home</a>
-        <a href="our-products.html" class="hover:text-emerald-700">Our Products</a>
-        <a href="about.html" class="hover:text-emerald-700">About</a>
-        <a href="#quotes" class="hover:text-emerald-700">Get Quotes</a>
-        <a href="#contact" class="hover:text-emerald-700">Contact</a>
-      </nav>
-      <div class="hidden md:flex items-center gap-3">
-        <a href="our-products.html" class="px-4 py-2 rounded-xl text-sm font-semibold border border-emerald-200 text-emerald-800 hover:bg-emerald-50 whitespace-nowrap">View Portfolio</a>
-        <a href="#contact" class="btn px-4 py-2 text-sm font-semibold whitespace-nowrap">Request Samples</a>
-      </div>
-      <div class="flex md:hidden items-center gap-2">
-        <a href="our-products.html" class="px-3 py-2 rounded-lg text-xs font-semibold border border-emerald-200 text-emerald-800 hover:bg-emerald-50 whitespace-nowrap">Portfolio</a>
-        <a href="#contact" class="btn px-3 py-2 text-xs font-semibold whitespace-nowrap">Samples</a>
-      </div>
-
-
-<!-- Header -->
-<header class="border-b border-white/10" style="background:linear-gradient(180deg, rgba(11,31,22,.92) 0%, rgba(11,31,22,.82) 100%);">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-6">
-    <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
-      <img src="assets/logo.png" alt="Cana Impex logo" class="h-16 w-auto">
-      <span class="text-white/90 text-lg font-bold">Cana Impex</span>
-    </a>
-    <div class="flex items-center gap-4 sm:gap-6 ml-auto">
-      <nav class="hidden lg:flex items-center gap-6 text-sm text-white/70">
+<body class="min-h-screen flex flex-col">
+  <header class="sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-6">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Cana Impex logo" class="h-14 w-auto">
+        <span class="text-white text-lg font-semibold">Cana Impex</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-white/80 ml-auto">
         <a href="index.html" class="font-semibold text-white">Home</a>
         <a href="our-products.html" class="hover:text-white">Our Products</a>
         <a href="about.html" class="hover:text-white">About</a>
@@ -94,253 +44,211 @@ body { background:#0b1f16; color:#0e1a15; }
         <a href="#contact" class="hover:text-white">Contact</a>
       </nav>
       <div class="hidden md:flex items-center gap-3">
-        <a href="our-products.html" class="px-4 py-2 rounded-xl text-sm font-semibold border border-white/30 text-white/90 hover:bg-white/10 whitespace-nowrap">View Portfolio</a>
-        <a href="#contact" class="btn px-4 py-2 text-sm font-semibold whitespace-nowrap">Request Samples</a>
+        <a href="our-products.html" class="px-4 py-2 rounded-xl text-sm font-semibold border border-white/20 text-white/90 hover:bg-white/10">View Portfolio</a>
+        <a href="#contact" class="btn px-4 py-2 text-sm font-semibold">Request Samples</a>
       </div>
-      <div class="flex md:hidden items-center gap-2">
-        <a href="our-products.html" class="px-3 py-2 rounded-lg text-xs font-semibold border border-white/30 text-white/90 hover:bg-white/10 whitespace-nowrap">Portfolio</a>
-        <a href="#contact" class="btn px-3 py-2 text-xs font-semibold whitespace-nowrap">Samples</a>
-      </div>
-<header class="border-b border-white/10" style="background:linear-gradient(180deg, rgba(11,31,22,.9) 0%, rgba(11,31,22,.7) 100%);">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
-    <!-- Logo -->
-    <a href="index.html" class="flex items-center gap-3">
-      <img src="assets/logo.png" alt="Cana Impex logo" class="h-16 w-auto">
-      <span class="text-white/90 text-lg font-bold">Cana Impex</span>
-    </a>
-
-    <!-- Nav (desktop) -->
-    <nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
-      <a href="index.html" class="hover:underline font-semibold text-white">Home</a>
-      <a href="our-products.html" class="hover:underline">Our Products</a>
-      <a href="about.html" class="hover:underline">About</a>
-      <a href="#quotes" class="hover:underline">Get Quotes</a>
-      <a href="#contact" class="hover:underline">Contact</a>
-    </nav>
-
-    <!-- Actions -->
-    <div class="flex items-center gap-3">
-      <a href="our-products.html" class="hidden md:inline px-4 py-2 rounded-lg text-sm font-semibold border border-white/30 text-white/90 hover:bg-white/10">Portfolio</a>
-      <a href="#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold">Request Samples</a>
+      <a href="#contact" class="md:hidden btn px-4 py-2 text-xs font-semibold ml-auto">Talk to Sales</a>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- HERO (3D background + headline) -->
-<section class="hero-shell overflow-hidden">
-<canvas id="hero3d"></canvas>
-<div class="hero-overlay max-w-7xl mx-auto px-6 py-20 md:py-32">
-<div class="max-w-3xl text-white">
-<h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
-Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Rubber
-</h1>
-<p class="mt-4 text-white/80 md:text-lg">
-Based in Côte d’Ivoire. We adapt to your volumes, grades and Incoterms. Dedicated port teams coordinate loading out of Abidjan and San Pedro with end-to-end visibility.
-</p>
-<div class="mt-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-<span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-Worldwide Shipping Available
-</div>
-<div class="mt-8 flex flex-wrap items-center gap-3">
-<a href="#quotes" class="btn px-5 py-3 rounded-xl font-semibold">Get a Desk Quote</a>
-<a href="our-products.html" class="px-5 py-3 rounded-xl font-semibold text-white/90 border border-white/30 hover:bg-white/10">Explore Our Products</a>
-<a href="#contact" class="px-5 py-3 rounded-xl font-semibold text-white/90 border border-white/30 hover:bg-white/10">Talk to Sales</a>
-</div>
-</div>
-</div>
-</section>
+  <main class="flex-1">
+    <section class="hero-shell">
+      <canvas id="hero3d"></canvas>
+      <div class="hero-overlay max-w-7xl mx-auto px-6 py-24 md:py-32">
+        <div class="max-w-3xl">
+          <p class="section-title text-emerald-300/80">Côte d'Ivoire Export House</p>
+          <h1 class="mt-4 text-3xl md:text-5xl font-extrabold text-white">Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Coffee</h1>
+          <p class="mt-6 text-white/80 md:text-lg">We coordinate sourcing, grading, documentation, and shipping from Abidjan and San Pedro for roasters, processors, and industrial buyers around the world.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#quotes" class="btn px-5 py-3 rounded-xl font-semibold">Request a Desk Quote</a>
+            <a href="our-products.html" class="px-5 py-3 rounded-xl font-semibold border border-white/20 text-white/90 hover:bg-white/10">Explore Products</a>
+            <a href="#contact" class="px-5 py-3 rounded-xl font-semibold border border-white/20 text-white/90 hover:bg-white/10">Talk to Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- Quote Cards -->
-<section id="quotes" class="max-w-7xl mx-auto px-6 py-16">
-<div class="max-w-3xl mx-auto text-center">
-<p class="text-xs tracking-widest uppercase text-emerald-500 mb-2">Market Quotes</p>
-<h2 class="text-2xl md:text-3xl font-bold text-emerald-900">Request Your Bulk Price Today</h2>
-      <p class="mt-2 text-emerald-700 text-sm">Preview the quality of our key export commodities from Côte d’Ivoire.</p>
+    <section id="quotes" class="max-w-7xl mx-auto px-6 py-16">
+      <div class="text-center max-w-3xl mx-auto">
+        <p class="section-title text-emerald-400 mb-2">Market Quotes</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Preview Our Core Commodities</h2>
+        <p class="mt-3 text-white/70 text-sm">Every shipment is calibrated to your target grade, moisture, and packaging requirements.</p>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="card p-5 flex flex-col">
+          <img class="img-card" src="assets/cashew.jpg" alt="Cashew kernels in wooden bowls">
+          <h3 class="font-semibold text-lg mt-4 text-white">Cashew</h3>
+          <p class="text-sm text-white/70 mt-2">Bulk W240/W320 kernels and RCN with humidity control.</p>
+          <a href="#contact" class="btn mt-4 inline-flex justify-center px-4 py-2 text-sm">Request Cashew Quote</a>
+        </article>
+        <article class="card p-5 flex flex-col">
+          <img class="img-card" src="assets/cocoa-photo.jpg" alt="Cocoa pods and beans">
+          <h3 class="font-semibold text-lg mt-4 text-white">Cocoa</h3>
+          <p class="text-sm text-white/70 mt-2">Traceable cocoa beans and nibs ready for EU and NA import.</p>
+          <a href="#contact" class="btn mt-4 inline-flex justify-center px-4 py-2 text-sm">Request Cocoa Quote</a>
+        </article>
+        <article class="card p-5 flex flex-col">
+          <img class="img-card" src="assets/rubber-photo.jpg" alt="Hevea rubber cup collection">
+          <h3 class="font-semibold text-lg mt-4 text-white">Hevea</h3>
+          <p class="text-sm text-white/70 mt-2">Cup-lump and latex programs with SGS and Cotecna oversight.</p>
+          <a href="#contact" class="btn mt-4 inline-flex justify-center px-4 py-2 text-sm">Request Rubber Quote</a>
+        </article>
+        <article class="card p-5 flex flex-col">
+          <img class="img-card" src="assets/coffee-photo.jpg" alt="Green coffee beans on burlap">
+          <h3 class="font-semibold text-lg mt-4 text-white">Coffee</h3>
+          <p class="text-sm text-white/70 mt-2">Robusta and arabica profiles shipped in bulk bags or pallets.</p>
+          <a href="#contact" class="btn mt-4 inline-flex justify-center px-4 py-2 text-sm">Request Coffee Quote</a>
+        </article>
+      </div>
+    </section>
 
-<div class="max-w-3xl mx-auto text-center text-white">
-<p class="text-xs tracking-widest uppercase text-white/60 mb-2">Market Quotes</p>
-<h2 class="text-2xl md:text-3xl font-bold text-white">Request Your Bulk Price Today</h2>
-<h2 class="text-2xl md:text-3xl font-bold">Request Your Bulk Price Today</h2>
-      <p class="mt-2 text-white/70 text-sm">Preview the quality of our key export commodities from Côte d’Ivoire.</p>
-</div>
+    <section id="origin" class="py-16" style="background:linear-gradient(180deg, rgba(12,38,26,0.92) 0%, rgba(11,31,22,0.88) 100%);">
+      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-[1.4fr,1fr] gap-12 items-center">
+        <div>
+          <p class="section-title text-emerald-300">Origin Advantage</p>
+          <h2 class="mt-4 text-2xl md:text-3xl font-bold text-white">End-to-End Execution from Côte d’Ivoire</h2>
+          <p class="mt-4 text-white/70">Our bilingual teams manage procurement, quality control, fumigation, and documentation. We work directly with cooperatives and processors to secure volume and maintain traceability.</p>
+          <dl class="mt-8 grid sm:grid-cols-2 gap-6 text-sm text-white/80">
+            <div class="glass p-6">
+              <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90">Experience</dt>
+              <dd class="mt-2 text-xl font-semibold text-white">20+ years shipping globally</dd>
+            </div>
+            <div class="glass p-6">
+              <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90">Footprint</dt>
+              <dd class="mt-2 text-xl font-semibold text-white">Abidjan & San Pedro desks</dd>
+            </div>
+            <div class="glass p-6">
+              <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90">Compliance</dt>
+              <dd class="mt-2 text-xl font-semibold text-white">SGS • Cotecna • Phytosanitary</dd>
+            </div>
+            <div class="glass p-6">
+              <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90">Logistics</dt>
+              <dd class="mt-2 text-xl font-semibold text-white">FOB, CIF & multimodal options</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="glass p-6 rounded-3xl">
+          <h3 class="text-lg font-semibold text-white">Desk Coverage</h3>
+          <ul class="mt-4 space-y-3 text-white/80 text-sm">
+            <li>• Côte d’Ivoire origin specialists at port</li>
+            <li>• Canada & Europe customer service desks</li>
+            <li>• Weekly status reports and vessel tracking</li>
+            <li>• Financing options via partner banks</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Cashew -->
-<div class="card p-5">
-<img class="img-card" src="assets/cashew.svg" alt="Cashew apples and nuts illustration" onerror="this.style.display='none'">
-<h3 class="font-semibold text-lg mt-4 text-emerald-900">Cashew</h3>
-<p class="text-sm text-emerald-700 mt-2">Bulk W240/W320, RCN &amp; kernels.</p>
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <div class="grid lg:grid-cols-[1fr,1fr] gap-12 items-center">
+        <div class="card p-8">
+          <h2 class="text-2xl font-bold text-white">Sampling & Quality Control</h2>
+          <p class="mt-4 text-white/70">We prepare desk samples from our Abidjan warehouse and coordinate independent lab analysis when required. Moisture, defects, and count per pound are tracked in a shared dashboard.</p>
+          <ul class="mt-6 space-y-2 text-sm text-white/80">
+            <li>• Pre-shipment inspection with SGS/Cotecna</li>
+            <li>• Photo and video updates from stuffing</li>
+            <li>• Custom packaging per Incoterm</li>
+          </ul>
+        </div>
+        <div class="card p-8">
+          <h2 class="text-2xl font-bold text-white">Documentation & Logistics</h2>
+          <p class="mt-4 text-white/70">Our team prepares commercial invoices, packing lists, certificates of origin, phytosanitary certificates, and negotiates freight with preferred carriers to match your schedule.</p>
+          <ul class="mt-6 space-y-2 text-sm text-white/80">
+            <li>• Abidjan & San Pedro port coverage</li>
+            <li>• FOB, CFR, CIF, EXW, and FCA delivery</li>
+            <li>• Digitised paperwork for rapid clearance</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<h3 class="font-semibold text-lg mt-4">Cashew</h3>
-<p class="text-sm text-gray-600 mt-2">Bulk W240/W320, RCN & kernels.</p>
-<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
-</div>
-      <!-- Cocoa -->
-<div class="card p-5">
-<img class="img-card" src="assets/cocoa.svg" alt="Cocoa pods illustration" onerror="this.style.display='none'">
-<h3 class="font-semibold text-lg mt-4 text-emerald-900">Cocoa</h3>
-<p class="text-sm text-emerald-700 mt-2">West African cocoa beans.</p>
+    <section id="contact" class="max-w-7xl mx-auto px-6 pb-20">
+      <div class="max-w-3xl">
+        <p class="section-title text-emerald-400 mb-2">Contact</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Request Samples or a Quote</h2>
+        <p class="mt-3 text-white/70 text-sm">Tell us your volumes, target grades, and Incoterms. We respond within 24–48 hours.</p>
+      </div>
+      <div class="mt-10 grid md:grid-cols-2 gap-8">
+        <form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="card p-6">
+          <input type="hidden" name="_subject" value="New B2B Inquiry — Cana Impex">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="thanks.html">
+          <input type="hidden" name="_autoresponse" value="Thanks for contacting Cana Impex. We received your message and will reply soon.">
+          <div class="grid gap-4">
+            <input name="name" placeholder="Your name" required class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60">
+            <input name="company" placeholder="Company" class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60">
+            <input type="email" name="email" placeholder="Email" required class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60">
+            <textarea name="message" placeholder="Volumes, grades, Incoterms…" rows="4" required class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60"></textarea>
+            <button class="btn px-4 py-2 rounded-lg text-sm font-semibold">Send Message</button>
+          </div>
+        </form>
+        <div class="card p-6 flex flex-col justify-between">
+          <div>
+            <p class="text-sm text-white/70">Commercial Desk</p>
+            <p class="mt-2 text-lg font-semibold text-white">ricardollorente@canaimpex.com</p>
+            <p class="mt-4 text-sm text-white/80">Locations: Abidjan • San Pedro • Montreal</p>
+            <p class="mt-2 text-sm text-white/80">Commodities: Cashew, Cocoa, Hevea, Coffee</p>
+          </div>
+          <div class="mt-8 text-sm text-white/70">
+            <p>We conduct our business with integrity and transparent reporting from farmgate to vessel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<h3 class="font-semibold text-lg mt-4">Cocoa</h3>
-<p class="text-sm text-gray-600 mt-2">West African cocoa beans.</p>
-<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
-</div>
-      <!-- Hevea -->
-<div class="card p-5">
-<img class="img-card" src="assets/hevea.svg" alt="Hevea latex tapping illustration" onerror="this.style.display='none'">
-<h3 class="font-semibold text-lg mt-4 text-emerald-900">Hevea</h3>
-<p class="text-sm text-emerald-700 mt-2">Cup-lump and latex sourcing.</p>
+  <footer class="py-8 text-sm bg-[#0A7F49] text-white">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Cana Impex Inc. All rights reserved.</p>
+      <div class="flex items-center gap-3">
+        <span class="text-white/90">Made in Côte d’Ivoire</span>
+        <svg width="36" height="24" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-label="Ivory Coast flag">
+          <rect width="1" height="2" x="0" y="0" fill="#F77F00"/>
+          <rect width="1" height="2" x="1" y="0" fill="#FFFFFF"/>
+          <rect width="1" height="2" x="2" y="0" fill="#009E60"/>
+        </svg>
+      </div>
+    </div>
+  </footer>
 
-<h3 class="font-semibold text-lg mt-4">Hevea</h3>
-<p class="text-sm text-gray-600 mt-2">Cup-lump and latex sourcing.</p>
-<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
-</div>
-      <!-- Coffee -->
-<div class="card p-5">
-<img class="img-card" src="assets/coffee.svg" alt="Coffee cherries and beans illustration" onerror="this.style.display='none'">
-<h3 class="font-semibold text-lg mt-4 text-emerald-900">Coffee</h3>
-<p class="text-sm text-emerald-700 mt-2">Green beans, washed &amp; natural profiles.</p>
-<h3 class="font-semibold text-lg mt-4">Coffee</h3>
-<p class="text-sm text-gray-600 mt-2">Green beans, washed & natural profiles.</p>
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script>
+    const canvas = document.getElementById('hero3d');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 100);
+    camera.position.set(0, 0, 6);
 
-<img class="img-card" src="assets/coffee.svg" alt="Coffee beans illustration" onerror="this.style.display='none'">
-<h3 class="font-semibold text-lg mt-4">Coffee</h3>
-<p class="text-sm text-gray-600 mt-2">Green beans, washed & natural profiles.</p>
+    const geometry = new THREE.SphereGeometry(2, 32, 32);
+    const material = new THREE.PointsMaterial({ color: 0x2fb47c, size: 0.035 });
+    const globe = new THREE.Points(geometry, material);
+    scene.add(globe);
 
-<a href="#contact" class="btn mt-4 inline-block px-3 py-2 rounded-lg text-sm">Request Quote</a>
-</div>
-</div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="max-w-7xl mx-auto px-6 pb-20">
-<div class="max-w-3xl">
-<p class="text-xs tracking-widest uppercase text-emerald-500 mb-2">Contact</p>
-<h2 class="text-2xl md:text-3xl font-bold text-emerald-900">Request samples or a quote</h2>
-<p class="mt-2 text-emerald-700 text-sm">We’ll respond within 24–48h.</p>
-</div>
-
-<div class="mt-8 grid md:grid-cols-2 gap-8">
-<form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="glass p-6">
-<form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="card p-6">
-<input type="hidden" name="_subject" value="New B2B Inquiry — Cana Impex">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_next" value="thanks.html">
-<input type="hidden" name="_autoresponse" value="Thanks for contacting Cana Impex. We received your message and will reply soon.">
-<div class="grid gap-4">
-<input name="name" placeholder="Your name" required class="border rounded-lg px-3 py-2 bg-white/90 text-gray-900">
-<input name="company" placeholder="Company" class="border rounded-lg px-3 py-2 bg-white/90 text-gray-900">
-<input type="email" name="email" placeholder="Email" required class="border rounded-lg px-3 py-2 bg-white/90 text-gray-900">
-<textarea name="message" placeholder="Volumes, grades, Incoterms…" rows="4" class="border rounded-lg px-3 py-2 bg-white/90 text-gray-900" required></textarea>
-<input name="name" placeholder="Your name" required class="border border-emerald-100 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-300">
-<input name="company" placeholder="Company" class="border border-emerald-100 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-300">
-<input type="email" name="email" placeholder="Email" required class="border border-emerald-100 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-300">
-<textarea name="message" placeholder="Volumes, grades, Incoterms…" rows="4" class="border border-emerald-100 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-300" required></textarea>
-<button class="btn px-4 py-2">Send</button>
-</div>
-</form>
-
-<div class="glass p-6 text-white/90">
-<p class="text-sm font-semibold text-white">Email</p>
-<p class="text-sm text-white/80 mt-1">ricardollorente@canaimpex.com</p>
-<p class="text-sm font-semibold text-white mt-4">Locations</p>
-<p class="text-sm text-white/80 mt-1">Côte d’Ivoire • Canada</p>
-<p class="text-sm font-semibold text-white mt-4">Commodities</p>
-<p class="text-sm text-white/80 mt-1">Cashew, Cocoa, Hevea, Coffee</p>
-<p class="text-sm text-white/70 mt-4">We conduct our business with integrity and transparency.</p>
-<div class="card p-6 text-emerald-900 bg-white">
-<p class="text-sm font-semibold text-emerald-800">Email</p>
-<p class="text-sm text-emerald-700 mt-1">ricardollorente@canaimpex.com</p>
-<p class="text-sm font-semibold text-emerald-800 mt-4">Locations</p>
-<p class="text-sm text-emerald-700 mt-1">Côte d’Ivoire • Canada</p>
-<p class="text-sm font-semibold text-emerald-800 mt-4">Commodities</p>
-<p class="text-sm text-emerald-700 mt-1">Cashew, Cocoa, Hevea, Coffee</p>
-<p class="text-sm text-emerald-600 mt-4">We conduct our business with integrity and transparency.</p>
-<div class="glass rounded-2xl p-6 text-white/90">
-<p class="text-sm"><strong>Email:</strong> ricardollorente@canaimpex.com</p>
-<p class="text-sm mt-2"><strong>Locations:</strong> Côte d’Ivoire • Canada</p>
-<p class="text-sm mt-2"><strong>Commodities:</strong> Cashew, Cocoa, Hevea, Rubber</p>
-<p class="text-sm mt-4 text-white/70">We conduct our business with integrity and transparency.</p>
-</div>
-</div>
-</section>
-
-<!-- Footer with Ivory Coast flag -->
-<footer class="py-8 text-sm" style="background:#2f6f55; color:#f6fffc;">
-<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-<p>© <span id="year"></span> Cana Impex Inc. All rights reserved.</p>
-<div class="flex items-center gap-3">
-<span class="text-emerald-50">Made in Côte d’Ivoire</span>
-        <!-- Ivory Coast flag -->
-        <!-- Ivory Coast flag (orange–white–green) -->
-<svg width="36" height="24" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-label="Ivory Coast flag">
-<rect width="1" height="2" x="0" y="0" fill="#F77F00"/>
-<rect width="1" height="2" x="1" y="0" fill="#FFFFFF"/>
-<rect width="1" height="2" x="2" y="0" fill="#009E60"/>
-</svg>
-</div>
-</div>
-</footer>
-
-  <!-- Three.js (3D globe background) -->
-  <!-- Three.js (CDN) -->
-<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
-<script>
-    // Minimal rotating point-globe for a premium "3D" feel
-const canvas = document.getElementById('hero3d');
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 100);
-camera.position.set(0, 0, 6);
+    const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+    const directional = new THREE.DirectionalLight(0xffffff, 0.4);
+    directional.position.set(5, 3, 5);
+    scene.add(ambient, directional);
 
     function resize() {
-    const resize = () => {
-const w = canvas.clientWidth = canvas.parentElement.clientWidth;
-const h = canvas.clientHeight = Math.max(400, canvas.parentElement.clientHeight);
-renderer.setSize(w, h, false);
-camera.aspect = w / h;
-camera.updateProjectionMatrix();
+      const width = canvas.clientWidth = canvas.parentElement.clientWidth;
+      const height = canvas.clientHeight = Math.max(400, canvas.parentElement.clientHeight);
+      renderer.setSize(width, height, false);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
     }
-    resize(); window.addEventListener('resize', resize);
-    };
-    resize(); addEventListener('resize', resize);
 
-    // Points sphere
-const dots = 2000;
-const positions = new Float32Array(dots * 3);
-for (let i=0;i<dots;i++){
-const u = Math.random(), v = Math.random();
-const theta = 2 * Math.PI * u;
-const phi = Math.acos(2*v - 1);
-const r = 2.1;
-positions[i*3+0] = r * Math.sin(phi) * Math.cos(theta);
-positions[i*3+1] = r * Math.cos(phi);
-positions[i*3+2] = r * Math.sin(phi) * Math.sin(theta);
-}
-const geo = new THREE.BufferGeometry();
-geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-const mat = new THREE.PointsMaterial({ size: 0.02, color: 0x10B981 });
-const globe = new THREE.Points(geo, mat);
-scene.add(globe);
+    function animate() {
+      requestAnimationFrame(animate);
+      globe.rotation.y += 0.0015;
+      renderer.render(scene, camera);
+    }
 
-    // Soft vignette plane behind for depth
-    const planeGeo = new THREE.PlaneGeometry(14, 8);
-    const planeMat = new THREE.MeshBasicMaterial({ color: 0x062b1c, transparent:true, opacity:0.6 });
-    const plane = new THREE.Mesh(planeGeo, planeMat);
-    plane.position.z = -1.5;
-      scene.add(plane);
+    window.addEventListener('resize', resize);
+    resize();
+    animate();
 
-function animate(t){
-globe.rotation.y += 0.0018;
-globe.rotation.x = 0.15 * Math.sin(t*0.0003);
-renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-renderer.render(scene, camera);
-requestAnimationFrame(animate);
-}
-requestAnimationFrame(animate);
-
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
