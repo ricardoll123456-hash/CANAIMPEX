@@ -239,10 +239,35 @@
     const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 100);
     camera.position.set(0, 0, 6.25);
     
-    const geometry = new THREE.SphereGeometry(2.6, 48, 48);
-    const material = new THREE.PointsMaterial({ color: 0x2fb47c, size: 0.05 });
-    const globe = new THREE.Points(geometry, material);
-    scene.add(globe);
+// Create a random "particle cloud" roughly globe-shaped
+const particleCount = 3200;
+const positions = new Float32Array(particleCount * 3);
+const radius = 2.4;
+
+for (let i = 0; i < particleCount; i++) {
+  // random spherical coordinates
+  const phi = Math.random() * Math.PI * 2;   // 0 to 360°
+  const costheta = Math.random() * 2 - 1;    // -1 to 1
+  const theta = Math.acos(costheta);
+  const r = radius + (Math.random() - 0.5) * 0.25; // slightly uneven radius
+
+  positions[i * 3] = r * Math.sin(theta) * Math.cos(phi);
+  positions[i * 3 + 1] = r * Math.sin(theta) * Math.sin(phi);
+  positions[i * 3 + 2] = r * Math.cos(theta);
+}
+
+const geometry = new THREE.BufferGeometry();
+geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+
+const material = new THREE.PointsMaterial({
+  color: 0x2fb47c,
+  size: 0.05,
+  opacity: 0.9,
+  transparent: true
+});
+
+const globe = new THREE.Points(geometry, material);
+scene.add(globe);
 
     const ambient = new THREE.AmbientLight(0xffffff, 0.6);
     const directional = new THREE.DirectionalLight(0xffffff, 0.4);
