@@ -22,22 +22,35 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="sticky top-0 z-30 border-b bg-white/80 backdrop-blur">
-    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/logo.png" alt="Cana Impex" class="h-9 w-auto">
-        <span class="font-semibold">Cana Impex</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="index.html#products" class="hover:underline">Overview</a>
-        <a href="products.html" class="hover:underline font-semibold">Products</a>
-        <a href="custom-packaging.html" class="hover:text-white">Custom Packaging</a>
-        <a href="index.html#origin" class="hover:underline">Origin</a>
-        <a href="index.html#contact" class="hover:underline">Contact</a>
-      </nav>
-      <a href="index.html#contact" class="btn px-4 py-2 rounded-lg text-sm font-semibold shadow lift">Request Samples</a>
+<header class="sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-6">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="assets/logo.png" alt="Cana Impex logo" class="h-14 w-auto">
+      <span class="text-white text-lg font-semibold">Cana Impex</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-6 text-sm text-white/80 ml-auto">
+      <a href="index.html" class="hover:text-white font-semibold">Home</a>
+      <a href="our-products.html" class="hover:text-white">Our Products</a>
+      <a href="custom-packaging.html" class="hover:text-white">Custom Packaging</a>
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="#quotes" class="hover:text-white">Get Quotes</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+    </nav>
+
+    <!-- Desktop Buttons -->
+    <div class="hidden md:flex items-center gap-3">
+      <a href="our-products.html" class="px-4 py-2 rounded-xl text-sm font-semibold border border-white/20 text-white/90 hover:bg-white/10">View Portfolio</a>
+      <a href="#contact" class="btn px-4 py-2 text-sm font-semibold">Request Samples</a>
     </div>
-  </header>
+
+    <!-- Mobile Button -->
+    <a href="#contact" class="md:hidden btn px-4 py-2 text-xs font-semibold ml-auto">Talk to Sales</a>
+  </div>
+</header>
+
 
   <!-- Page header -->
   <section class="bg-emerald-900 text-white">
