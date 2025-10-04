@@ -55,37 +55,4 @@
   </div>
 </header>
 
-<script>
-  // Mobile menu toggle
-  (function () {
-    const btn = document.getElementById('menuToggle');
-    const panel = document.getElementById('mobileMenu');
 
-    if (!btn || !panel) return;
-
-    function closeMenu() {
-      panel.classList.add('hidden');
-      btn.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('overflow-hidden');
-    }
-
-    function openMenu() {
-      panel.classList.remove('hidden');
-      btn.setAttribute('aria-expanded', 'true');
-      document.body.classList.add('overflow-hidden');
-    }
-
-    btn.addEventListener('click', () => {
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      isOpen ? closeMenu() : openMenu();
-    });
-
-    panel.addEventListener('click', (e) => {
-      if (e.target.tagName === 'A') closeMenu();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-  })();
-</script>
