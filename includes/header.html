@@ -1,0 +1,91 @@
+<header class="sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-4">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="assets/logo.png" alt="Cana Impex logo" class="h-12 w-auto">
+      <span class="text-white text-lg font-semibold">Cana Impex</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-6 text-sm text-white/80 ml-auto">
+      <a href="index.html" class="hover:text-white font-semibold">Home</a>
+      <a href="our-products.html" class="hover:text-white">Our Products</a>
+      <a href="custom-packaging.html" class="hover:text-white">Custom Packaging</a>
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="#quotes" class="hover:text-white">Get Quotes</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+    </nav>
+
+    <!-- Desktop CTAs -->
+    <div class="hidden md:flex items-center gap-3">
+      <a href="our-products.html" class="px-4 py-2 rounded-xl text-sm font-semibold border border-white/20 text-white/90 hover:bg-white/10">View Portfolio</a>
+      <a href="#contact" class="btn px-4 py-2 text-sm font-semibold">Request Samples</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button aria-controls="mobileMenu"
+            aria-expanded="false"
+            class="md:hidden ml-auto inline-flex items-center justify-center rounded-xl border border-white/20 p-2 text-white/90 hover:bg-white/10"
+            id="menuToggle">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="sr-only">Open menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile menu panel -->
+  <div id="mobileMenu"
+       class="md:hidden hidden border-t border-white/10"
+       style="background:rgba(11,31,22,0.98); backdrop-filter:blur(10px);">
+    <nav class="px-6 py-4 flex flex-col gap-3 text-white/90 text-base">
+      <a class="py-2 border-b border-white/10 hover:text-white" href="index.html">Home</a>
+      <a class="py-2 border-b border-white/10 hover:text-white" href="our-products.html">Our Products</a>
+      <a class="py-2 border-b border-white/10 hover:text-white" href="custom-packaging.html">Custom Packaging</a>
+      <a class="py-2 border-b border-white/10 hover:text-white" href="about.html">About</a>
+      <a class="py-2 border-b border-white/10 hover:text-white" href="#quotes">Get Quotes</a>
+      <a class="py-2 hover:text-white" href="#contact">Contact</a>
+
+      <!-- Mobile CTAs -->
+      <div class="mt-4 grid gap-3">
+        <a href="our-products.html" class="w-full text-center px-4 py-2 rounded-xl text-sm font-semibold border border-white/20 text-white/90 hover:bg-white/10">View Portfolio</a>
+        <a href="#contact" class="w-full text-center btn px-4 py-2 text-sm font-semibold">Request Samples</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  (function () {
+    const btn = document.getElementById('menuToggle');
+    const panel = document.getElementById('mobileMenu');
+
+    if (!btn || !panel) return;
+
+    function closeMenu() {
+      panel.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function openMenu() {
+      panel.classList.remove('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    panel.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') closeMenu();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  })();
+</script>
