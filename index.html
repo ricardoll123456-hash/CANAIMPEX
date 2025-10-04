@@ -48,6 +48,16 @@
     .glass { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:20px; }
   </style>
 </head>
+  <script>
+  // Load the header into the #header div
+  fetch("includes/header.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("header").innerHTML = html;
+    })
+    .catch(err => console.error("Header load error:", err));
+</script>
+
 <body class="min-h-screen flex flex-col">
 <div id="header"></div>
 
