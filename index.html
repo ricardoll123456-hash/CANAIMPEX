@@ -237,12 +237,12 @@
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 100);
-    camera.position.set(0, 0, 6.25);
+    camera.position.set(1.8, 0.3, 6.5);
     
 // Create a random "particle cloud" roughly globe-shaped
 const particleCount = 3200;
 const positions = new Float32Array(particleCount * 3);
-const radius = 2.4;
+const radius = 3.8;
 
 for (let i = 0; i < particleCount; i++) {
   // random spherical coordinates
@@ -267,6 +267,7 @@ const material = new THREE.PointsMaterial({
 });
 
 const globe = new THREE.Points(geometry, material);
+    globe.position.set(2.4, 0.1, 0);
 scene.add(globe);
 
     const ambient = new THREE.AmbientLight(0xffffff, 0.6);
@@ -287,7 +288,13 @@ scene.add(globe);
   globe.rotation.y += 0.0021;
   renderer.render(scene, camera);
 }
-
+    
+.hero-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(70% 70% at 35% 40%, rgba(17,55,38,.45) 0%, rgba(8,24,17,.85) 100%);
+}
 
     window.addEventListener('resize', resize);
     resize();
