@@ -32,26 +32,8 @@
 </head>
 <body class="min-h-screen flex flex-col">
   <!-- Header -->
-  <header class="sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-6">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/logo.png" alt="Cana Impex logo" class="h-14 w-auto">
-        <span class="text-white text-lg font-semibold">Cana Impex</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm text-white/80 ml-auto">
-        <a href="index.html" class="hover:text-white">Home</a>
-        <a href="our-products.html" class="hover:text-white">Our Products</a>
-        <a href="about.html" class="hover:text-white">About</a>
-        <a href="custom-packaging.html" class="font-semibold text-white">Custom Packaging</a>
-        <a href="#contact" class="hover:text-white">Contact</a>
-      </nav>
-      <div class="hidden md:flex items-center gap-3">
-        <a href="#brief" class="px-4 py-2 rounded-xl text-sm font-semibold border border-white/20 text-white/90 hover:bg-white/10">Start a Brief</a>
-        <a href="#contact" class="btn px-4 py-2 text-sm font-semibold">Request Samples</a>
-      </div>
-      <a href="#contact" class="md:hidden btn px-4 py-2 text-xs font-semibold ml-auto">Talk to Sales</a>
-    </div>
-  </header>
+<div id="header"></div>
+
 
   <main class="flex-1">
     <!-- Hero -->
@@ -363,5 +345,13 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script>
+  // Load shared header into this page
+  fetch("includes/header.html")
+    .then(res => res.text())
+    .then(html => { document.getElementById("header").innerHTML = html; })
+    .catch(err => console.error("Header load error:", err));
+</script>
+
 </body>
 </html>
