@@ -150,5 +150,15 @@
     AOS.init({ once: true, offset: 80, duration: 700 });
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script>
+  // Dynamically load the shared header into the page
+  fetch("includes/header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header").innerHTML = html;
+    })
+    .catch(err => console.error("Header load error:", err));
+</script>
+
 </body>
 </html>
