@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Custom Packaging — Cana Impex</title>
+  <meta name="description" content="Custom private-label packaging for cashew, cocoa, hevea and coffee. Pouches, bulk bags, boxes, private label, and export-ready documentation.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:#0b1f16; color:#e6f5ed; }
+    .btn { background:#0A7F49; color:#fff; border-radius:14px; transition:all .2s ease; box-shadow:0 16px 40px -22px rgba(13,148,86,0.65); }
+    .btn:hover { background:#10B981; }
+    .card { background:rgba(11,31,22,0.55); border:1px solid rgba(255,255,255,0.12); border-radius:22px; backdrop-filter:blur(16px); }
+    .glass { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:20px; }
+    header { background:linear-gradient(180deg, rgba(9,27,18,0.95) 0%, rgba(9,27,18,0.75) 100%); border-bottom:1px solid rgba(255,255,255,0.08); }
+    .hero-shell { position:relative; min-height:60vh; display:grid; place-items:center; overflow:hidden; }
+    .hero-shell::before{
+      content:""; position:absolute; inset:0;
+      background: radial-gradient(70% 70% at 60% 40%, rgba(17,55,38,.35) 0%, rgba(8,24,17,.9) 100%);
+      opacity:1;
+    }
+    .hero-overlay{ position:relative; z-index:1; }
+    .section-title { letter-spacing:0.3em; text-transform:uppercase; font-size:0.75rem; }
+    .badge { font-size:.75rem; padding:.25rem .5rem; border-radius:9999px; border:1px solid rgba(255,255,255,.2); }
+    .kpi { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:18px; }
+    .table { width:100%; border-collapse: collapse; }
+    .table th, .table td { border-bottom:1px solid rgba(255,255,255,.12); padding:.9rem .75rem; text-align:left; }
+    .table th { color:#A7F3D0; font-weight:600; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-6">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Cana Impex logo" class="h-14 w-auto">
+        <span class="text-white text-lg font-semibold">Cana Impex</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-white/80 ml-auto">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="our-products.html" class="hover:text-white">Our Products</a>
+        <a href="about.html" class="hover:text-white">About</a>
+        <a href="custom-packaging.html" class="font-semibold text-white">Custom Packaging</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#brief" class="px-4 py-2 rounded-xl text-sm font-semibold border border-white/20 text-white/90 hover:bg-white/10">Start a Brief</a>
+        <a href="#contact" class="btn px-4 py-2 text-sm font-semibold">Request Samples</a>
+      </div>
+      <a href="#contact" class="md:hidden btn px-4 py-2 text-xs font-semibold ml-auto">Talk to Sales</a>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <!-- Hero -->
+    <section class="hero-shell">
+      <div class="hero-overlay max-w-5xl mx-auto px-6 py-16 text-center">
+        <p class="section-title text-emerald-300/80">Private Label & White Label</p>
+        <h1 class="mt-4 text-3xl md:text-5xl font-extrabold text-white">Custom Packaging for Cashew, Cocoa, Hevea & Coffee</h1>
+        <p class="mt-6 text-white/80 md:text-lg max-w-3xl mx-auto">
+          Retail pouches, bulk sacks, shipper boxes, and export-ready labeling. We handle dielines, print, packing, and documentation — end to end.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href="#brief" class="btn px-5 py-3 rounded-xl font-semibold">Start a Packaging Brief</a>
+          <a href="#specs" class="px-5 py-3 rounded-xl font-semibold border border-white/20 text-white/90 hover:bg-white/10">See Options & MOQs</a>
+        </div>
+        <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <div class="kpi p-4 text-center">
+            <div class="text-2xl font-bold text-white">1k–50k+</div>
+            <div class="text-xs text-white/70">Run sizes (units)</div>
+          </div>
+          <div class="kpi p-4 text-center">
+            <div class="text-2xl font-bold text-white">2–6 wks</div>
+            <div class="text-xs text-white/70">Typical lead times</div>
+          </div>
+          <div class="kpi p-4 text-center">
+            <div class="text-2xl font-bold text-white">EU/NA Ready</div>
+            <div class="text-xs text-white/70">Label compliance</div>
+          </div>
+          <div class="kpi p-4 text-center">
+            <div class="text-2xl font-bold text-white">FCL/LCL</div>
+            <div class="text-xs text-white/70">Export logistics</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <div class="text-center max-w-3xl mx-auto">
+        <p class="section-title text-emerald-400 mb-2">Capabilities</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">What We Can Build for You</h2>
+        <p class="mt-3 text-white/70 text-sm">All formats available with custom print, stickers, or sleeves. Food-safe materials and export paperwork included.</p>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="card p-6">
+          <div class="badge text-emerald-200/90">Retail</div>
+          <h3 class="font-semibold text-lg mt-3 text-white">Stand-Up Pouches (100g–1kg)</h3>
+          <ul class="mt-3 text-sm text-white/80 space-y-2">
+            <li>• Matte / gloss / kraft laminates</li>
+            <li>• Windows, degassing valves (coffee)</li>
+            <li>• Zip closures, tear notches</li>
+          </ul>
+        </article>
+        <article class="card p-6">
+          <div class="badge text-emerald-200/90">Bulk</div>
+          <h3 class="font-semibold text-lg mt-3 text-white">Multi-wall Sacks & PP Woven Bags</h3>
+          <ul class="mt-3 text-sm text-white/80 space-y-2">
+            <li>• 10–50 kg printed sacks</li>
+            <li>• Liners for moisture control</li>
+            <li>• Palletized & fumigated</li>
+          </ul>
+        </article>
+        <article class="card p-6">
+          <div class="badge text-emerald-200/90">Coffee</div>
+          <h3 class="font-semibold text-lg mt-3 text-white">Valve Bags & Bulk Jute</h3>
+          <ul class="mt-3 text-sm text-white/80 space-y-2">
+            <li>• 250g–1kg valve pouches</li>
+            <li>• 60–70 kg jute sacks (private label)</li>
+            <li>• Tin ties, nitrogen flush</li>
+          </ul>
+        </article>
+        <article class="card p-6">
+          <div class="badge text-emerald-200/90">Cashew & RCN</div>
+          <h3 class="font-semibold text-lg mt-3 text-white">Food-Grade Vacuum & Tins</h3>
+          <ul class="mt-3 text-sm text-white/80 space-y-2">
+            <li>• Nitrogen-flush vacuum bags</li>
+            <li>• 10–25 lb tins for kernels</li>
+            <li>• HACCP / SGS inspection</li>
+          </ul>
+        </article>
+        <article class="card p-6">
+          <div class="badge text-emerald-200/90">Boxes</div>
+          <h3 class="font-semibold text-lg mt-3 text-white">Shelf-Ready Shippers</h3>
+          <ul class="mt-3 text-sm text-white/80 space-y-2">
+            <li>• Custom diecut & print</li>
+            <li>• E-flute to double-wall</li>
+            <li>• Barcodes & batch coding</li>
+          </ul>
+        </article>
+        <article class="card p-6">
+          <div class="badge text-emerald-200/90">Docs</div>
+          <h3 class="font-semibold text-lg mt-3 text-white">Compliance & Export</h3>
+          <ul class="mt-3 text-sm text-white/80 space-y-2">
+            <li>• Nutrition facts (US/CA/EU)</li>
+            <li>• CO, phyto, fumigation certs</li>
+            <li>• HS codes & Incoterms</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Options & MOQs -->
+    <section id="specs" class="py-16" style="background:linear-gradient(180deg, rgba(12,38,26,0.92) 0%, rgba(11,31,22,0.88) 100%);">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="section-title text-emerald-300 mb-2">Options & MOQs</p>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Materials, Finishes & Lead Times</h2>
+        </div>
+        <div class="mt-10 grid lg:grid-cols-[1.25fr,.9fr] gap-10">
+          <div class="card p-6 overflow-x-auto">
+            <table class="table text-sm">
+              <thead>
+                <tr>
+                  <th>Format</th>
+                  <th>Materials</th>
+                  <th>Finish</th>
+                  <th>MOQ</th>
+                  <th>Lead Time</th>
+                </tr>
+              </thead>
+              <tbody class="text-white/85">
+                <tr>
+                  <td>Stand-up pouch 250g–1kg</td>
+                  <td>PET/ALU/PE, MOPP/Kraft</td>
+                  <td>Matte/Gloss, Window</td>
+                  <td>3,000–5,000</td>
+                  <td>3–5 wks</td>
+                </tr>
+                <tr>
+                  <td>Valve coffee bag</td>
+                  <td>PET/ALU/PE + valve</td>
+                  <td>Matte, Tin tie</td>
+                  <td>2,000–5,000</td>
+                  <td>3–5 wks</td>
+                </tr>
+                <tr>
+                  <td>PP woven sack 25–50 kg</td>
+                  <td>PP woven + liner</td>
+                  <td>1–3 color print</td>
+                  <td>2,000</td>
+                  <td>2–4 wks</td>
+                </tr>
+                <tr>
+                  <td>Jute bulk sack (coffee)</td>
+                  <td>Jute + inner liner</td>
+                  <td>Stencil/print</td>
+                  <td>1,000</td>
+                  <td>2–3 wks</td>
+                </tr>
+                <tr>
+                  <td>Metal tins (cashew)</td>
+                  <td>Food-grade tin</td>
+                  <td>Label/print</td>
+                  <td>1,000</td>
+                  <td>4–6 wks</td>
+                </tr>
+                <tr>
+                  <td>Shipper cartons</td>
+                  <td>Kraft E-flute/BC flute</td>
+                  <td>Up to 4-color</td>
+                  <td>500</td>
+                  <td>2–3 wks</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="text-xs text-white/60 mt-3">Lead times exclude ocean transit; rush options available. We can mix SKUs in a master carton to optimize pallets.</p>
+          </div>
+          <div class="card p-6">
+            <h3 class="text-lg font-semibold text-white">Branding Methods</h3>
+            <ul class="mt-3 text-sm text-white/80 space-y-2">
+              <li>• Rotogravure & digital print (CMYK + spot Pantone)</li>
+              <li>• Metallics, foils, matte/gloss varnish, soft-touch</li>
+              <li>• Sticker/sleeve for smaller runs & pilots</li>
+              <li>• Batch/lot/date coding & barcodes (EAN/UPC)</li>
+              <li>• Nutrition panels (US/CA), allergens, origin</li>
+            </ul>
+            <h3 class="text-lg font-semibold text-white mt-6">Quality & Safety</h3>
+            <ul class="mt-3 text-sm text-white/80 space-y-2">
+              <li>• Moisture control (desiccants, liners, nitrogen)</li>
+              <li>• SGS/Cotecna inspections at stuffing</li>
+              <li>• Phytosanitary & fumigation documentation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <div class="text-center max-w-3xl mx-auto">
+        <p class="section-title text-emerald-400 mb-2">Process</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">From Brief to Delivered Goods</h2>
+      </div>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="card p-6">
+          <div class="badge">01</div>
+          <h3 class="text-white font-semibold mt-3">Packaging Brief</h3>
+          <p class="text-white/75 text-sm mt-2">Share volumes, SKUs, target markets, and any certifications. We propose formats, materials, and quotes.</p>
+        </div>
+        <div class="card p-6">
+          <div class="badge">02</div>
+          <h3 class="text-white font-semibold mt-3">Dielines & Pre-Production</h3>
+          <p class="text-white/75 text-sm mt-2">We deliver dielines; you provide artwork or we design it. Samples on request.</p>
+        </div>
+        <div class="card p-6">
+          <div class="badge">03</div>
+          <h3 class="text-white font-semibold mt-3">Print, Pack & Ship</h3>
+          <p class="text-white/75 text-sm mt-2">We print, pack product, and prepare export documentation to your Incoterms.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brief form -->
+    <section id="brief" class="max-w-7xl mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div>
+          <p class="section-title text-emerald-400 mb-2">Start a Brief</p>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Tell Us What You Need</h2>
+          <p class="mt-3 text-white/70 text-sm">We’ll review and reply within 24–48 hours with a proposed format, MOQ, and timeline. Attach dielines or brand guides if you have them.</p>
+          <ul class="mt-6 text-white/80 text-sm space-y-2">
+            <li>• Products: Cashew, Cocoa, Hevea, Coffee (others on request)</li>
+            <li>• Markets: North America, Europe, MENA, Asia</li>
+            <li>• Incoterms: EXW, FOB, CFR, CIF, DDP via partners</li>
+          </ul>
+        </div>
+        <form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="card p-6">
+          <input type="hidden" name="_subject" value="Custom Packaging Brief — Cana Impex">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="thanks.html">
+          <div class="grid gap-4">
+            <input name="name" placeholder="Your name" required class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60">
+            <input name="company" placeholder="Company" class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60">
+            <input type="email" name="email" placeholder="Email" required class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60">
+            <select name="product" class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white">
+              <option value="">Product</option>
+              <option>Cashew</option>
+              <option>Cocoa</option>
+              <option>Hevea</option>
+              <option>Coffee</option>
+              <option>Other</option>
+            </select>
+            <select name="format" class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white">
+              <option value="">Preferred format</option>
+              <option>Stand-up pouch</option>
+              <option>Valve coffee bag</option>
+              <option>PP woven sack</option>
+              <option>Jute bulk sack</option>
+              <option>Metal tins</option>
+              <option>Shipper carton</option>
+            </select>
+            <input name="volume" placeholder="Estimated volume (units / month)" class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60">
+            <textarea name="notes" placeholder="Branding, materials, labeling requirements, target market…" rows="5" class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60"></textarea>
+            <button class="btn px-4 py-2 rounded-lg text-sm font-semibold">Submit Brief</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="max-w-7xl mx-auto px-6 pb-20">
+      <div class="max-w-3xl">
+        <p class="section-title text-emerald-400 mb-2">Contact</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Talk to Our Packaging Team</h2>
+        <p class="mt-3 text-white/70 text-sm">We’ll coordinate samples, dielines, and timelines with your team.</p>
+      </div>
+      <div class="mt-10 grid md:grid-cols-2 gap-8">
+        <div class="card p-6 flex flex-col justify-between">
+          <div>
+            <p class="text-sm text-white/70">Packaging Desk</p>
+            <p class="mt-2 text-lg font-semibold text-white">ricardollorente@canaimpex.com</p>
+            <p class="mt-4 text-sm text-white/80">Locations: Abidjan • San Pedro • Montreal</p>
+            <p class="mt-2 text-sm text-white/80">Commodities: Cashew, Cocoa, Hevea, Coffee</p>
+          </div>
+          <div class="mt-8 text-sm text-white/70">
+            <p>We manage print, pack, and export paperwork for a smooth import on your side.</p>
+          </div>
+        </div>
+        <form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="card p-6">
+          <input type="hidden" name="_subject" value="Packaging Contact — Cana Impex">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="thanks.html">
+          <div class="grid gap-4">
+            <input name="name" placeholder="Your name" required class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60">
+            <input type="email" name="email" placeholder="Email" required class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60">
+            <textarea name="message" placeholder="Tell us about your packaging needs…" rows="5" required class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60"></textarea>
+            <button class="btn px-4 py-2 rounded-lg text-sm font-semibold">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 text-sm bg-[#0A7F49] text-white">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Cana Impex Inc. All rights reserved.</p>
+      <div class="flex items-center gap-3">
+        <span class="text-white/90">Made in Côte d’Ivoire</span>
+        <svg width="36" height="24" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-label="Ivory Coast flag">
+          <rect width="1" height="2" x="0" y="0" fill="#F77F00"/>
+          <rect width="1" height="2" x="1" y="0" fill="#FFFFFF"/>
+          <rect width="1" height="2" x="2" y="0" fill="#009E60"/>
+        </svg>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
