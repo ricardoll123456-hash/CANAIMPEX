@@ -25,6 +25,192 @@
 
 
   <main class="flex-1">
+<!-- Subcategories / Detail Panels -->
+<section id="subcats" class="max-w-7xl mx-auto px-6 py-16">
+  <div class="mb-8">
+    <p class="section-title text-emerald-400 mb-2">Details by Line</p>
+    <h2 class="text-2xl md:text-3xl font-bold text-white">Subcategories & Partners</h2>
+    <p class="mt-3 text-white/70 text-sm">Explore specific SKUs and partner factories across our four commodity desks.</p>
+  </div>
+
+  <!-- Tabs -->
+  <div class="w-full overflow-x-auto">
+    <div class="inline-flex gap-2 bg-white/5 border border-white/10 rounded-2xl p-1">
+      <button class="tab btn-ghost px-4 py-2 rounded-xl text-sm font-semibold text-white/80 data-[active=true]:text-white data-[active=true]:bg-emerald-500/20" data-panel="#tab-cashew">Cashew</button>
+      <button class="tab btn-ghost px-4 py-2 rounded-xl text-sm font-semibold text-white/80 data-[active=true]:text-white data-[active=true]:bg-emerald-500/20" data-panel="#tab-cocoa">Cocoa</button>
+      <button class="tab btn-ghost px-4 py-2 rounded-xl text-sm font-semibold text-white/80 data-[active=true]:text-white data-[active=true]:bg-emerald-500/20" data-panel="#tab-hevea">Hevea</button>
+      <button class="tab btn-ghost px-4 py-2 rounded-xl text-sm font-semibold text-white/80 data-[active=true]:text-white data-[active=true]:bg-emerald-500/20" data-panel="#tab-coffee">Coffee</button>
+    </div>
+  </div>
+
+  <!-- Panels -->
+  <div class="mt-10">
+    <!-- Cashew: SKUs we sell -->
+    <div id="tab-cashew" class="panel grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold text-white">Kernels W240</h3>
+        <p class="text-white/70 text-sm mt-2">Premium whole cashews, low moisture, <span class="whitespace-nowrap">12.5 kg</span> vacuum bags.</p>
+        <ul class="text-white/70 text-sm mt-3">
+          <li>• Max Moisture: 5%</li>
+          <li>• Defects within AFI</li>
+          <li>• Packaging: 2×12.5 kg / 50 lb</li>
+        </ul>
+      </article>
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold text-white">Kernels W320</h3>
+        <p class="text-white/70 text-sm mt-2">Workhorse grade for roasting/blending; tight color specs.</p>
+        <ul class="text-white/70 text-sm mt-3">
+          <li>• Max Moisture: 5%</li>
+          <li>• Broken: &lt;10%</li>
+          <li>• Palletized / bulk bags</li>
+        </ul>
+      </article>
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold text-white">RCN in Shell</h3>
+        <p class="text-white/70 text-sm mt-2">Raw cashew nuts with humidity control and SGS supervision.</p>
+        <ul class="text-white/70 text-sm mt-3">
+          <li>• KOR as per contract</li>
+          <li>• Moisture: ≤ 10%</li>
+          <li>• 80 kg PP bags</li>
+        </ul>
+      </article>
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold text-white">Splits & Pieces (B)</h3>
+        <p class="text-white/70 text-sm mt-2">Broken grades for confectionery and paste applications.</p>
+        <ul class="text-white/70 text-sm mt-3">
+          <li>• BW/LP/WS</li>
+          <li>• Max Moisture: 5%</li>
+          <li>• Custom packing available</li>
+        </ul>
+      </article>
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold text-white">Roasted & Salted (Private Label)</h3>
+        <p class="text-white/70 text-sm mt-2">Retail-ready options via partner packers.</p>
+        <ul class="text-white/70 text-sm mt-3">
+          <li>• Doypack, tins, PET jars</li>
+          <li>• EU/NA labeling compliant</li>
+          <li>• MOQ by SKU</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- Cocoa: SKUs -->
+    <div id="tab-cocoa" class="panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold text-white">Cocoa Beans (Grade 1/2)</h3>
+        <p class="text-white/70 text-sm mt-2">Traceable lots with moisture &amp; defects within contract.</p>
+        <ul class="text-white/70 text-sm mt-3">
+          <li>• Moisture ≤ 7.5%</li>
+          <li>• FFA within spec</li>
+          <li>• Jute bags on pallets</li>
+        </ul>
+      </article>
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold text-white">Cocoa Nibs</h3>
+        <p class="text-white/70 text-sm mt-2">Roasted/cracked; consistent particle size for inclusion.</p>
+        <ul class="text-white/70 text-sm mt-3">
+          <li>• Food-grade bags</li>
+          <li>• Micro as required</li>
+          <li>• EU/NA ready</li>
+        </ul>
+      </article>
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold text-white">Liquor / Butter / Powder</h3>
+        <p class="text-white/70 text-sm mt-2">Processed derivatives via approved processors.</p>
+        <ul class="text-white/70 text-sm mt-3">
+          <li>• Customized fat content</li>
+          <li>• Phyto &amp; COO</li>
+          <li>• Palletized</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- Hevea: Partner factories -->
+    <div id="tab-hevea" class="panel hidden">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Factory card -->
+        <article class="card p-6">
+          <div class="flex items-center gap-3">
+            <img src="assets/partners/hevea-factory-1.jpg" alt="Partner Factory 1" class="w-14 h-14 rounded-xl object-cover">
+            <div>
+              <h3 class="text-lg font-semibold text-white">San Pedro TSR Plant</h3>
+              <p class="text-white/60 text-xs">Certs: SGS • ISO • Phyto</p>
+            </div>
+          </div>
+          <div class="mt-4 text-white/80 text-sm">
+            <p>• Grades: TSR 10 / TSR 20</p>
+            <p>• Capacity: 1,200–1,500 MT/month</p>
+            <p>• Loading: 20’ &amp; 40’ FCL</p>
+          </div>
+        </article>
+        <article class="card p-6">
+          <div class="flex items-center gap-3">
+            <img src="assets/partners/hevea-factory-2.jpg" alt="Partner Factory 2" class="w-14 h-14 rounded-xl object-cover">
+            <div>
+              <h3 class="text-lg font-semibold text-white">Abidjan Latex Line</h3>
+              <p class="text-white/60 text-xs">Certs: SGS • Cotecna</p>
+            </div>
+          </div>
+          <div class="mt-4 text-white/80 text-sm">
+            <p>• HA/LA grades (ammonia)</p>
+            <p>• Drums / IBC totes</p>
+            <p>• Customs fast-track</p>
+          </div>
+        </article>
+        <article class="card p-6">
+          <div class="flex items-center gap-3">
+            <img src="assets/partners/hevea-factory-3.jpg" alt="Partner Factory 3" class="w-14 h-14 rounded-xl object-cover">
+            <div>
+              <h3 class="text-lg font-semibold text-white">Cup-Lump Aggregation</h3>
+              <p class="text-white/60 text-xs">Supervision: SGS</p>
+            </div>
+          </div>
+          <div class="mt-4 text-white/80 text-sm">
+            <p>• Cup-lump programs</p>
+            <p>• Clean/Dry specs as per PO</p>
+            <p>• Export via San Pedro</p>
+          </div>
+        </article>
+      </div>
+      <div class="mt-8">
+        <a href="#contact" class="btn px-5 py-3 rounded-xl font-semibold">Request Hevea Quote</a>
+      </div>
+    </div>
+
+    <!-- Coffee: SKUs -->
+    <div id="tab-coffee" class="panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold text-white">Robusta (Various Screens)</h3>
+        <p class="text-white/70 text-sm mt-2">Screen 15–18 options; targeted defects and moisture.</p>
+        <ul class="text-white/70 text-sm mt-3">
+          <li>• Moisture ≤ 12.5%</li>
+          <li>• Max defects as per spec</li>
+          <li>• Jute bags / bulk</li>
+        </ul>
+      </article>
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold text-white">Arabica Profiles</h3>
+        <p class="text-white/70 text-sm mt-2">Custom profiles for blends or single-origin programs.</p>
+        <ul class="text-white/70 text-sm mt-3">
+          <li>• Screen sizes by origin</li>
+          <li>• Cup score targets</li>
+          <li>• Palletized</li>
+        </ul>
+      </article>
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold text-white">Green Coffee Services</h3>
+        <p class="text-white/70 text-sm mt-2">Sampling, pre-shipment inspection, and moisture tracking.</p>
+        <ul class="text-white/70 text-sm mt-3">
+          <li>• Photos &amp; videos at stuffing</li>
+          <li>• SGS/Cotecna</li>
+          <li>• Shared dashboard</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+    
     <section class="relative overflow-hidden" style="background:radial-gradient(circle at top,#0f3325 0%,#071a12 70%);">
       <div class="absolute inset-0 opacity-25" style="background-image:radial-gradient(circle at 20% 20%, rgba(47,180,124,0.5), transparent 45%), radial-gradient(circle at 80% 10%, rgba(255,185,99,0.45), transparent 50%);"></div>
       <div class="relative max-w-6xl mx-auto px-6 py-24 md:py-32 text-white">
