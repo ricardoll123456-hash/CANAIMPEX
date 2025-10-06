@@ -1,3 +1,4 @@
+
 // /assets/site.js
 (function () {
   // Create the header mount as the first element in <body>, if missing
@@ -54,5 +55,61 @@
     document.addEventListener('DOMContentLoaded', () => injectHeader().catch(console.error));
   } else {
     injectHeader().catch(console.error);
+  }
+})();
+// ==== AUTO LANGUAGE REDIRECT (EN <-> FR) ====
+
+// Liste des correspondances entre les pages anglaises et françaises
+const LANG_MAP = {
+  '/':                     { en: '/',                 fr: '/fr/' },
+  '/index.html':           { en: '/index.html',       fr: '/fr/index.html' },
+  '/about.html':           { en: '/about.html',       fr: '/fr/a-propos.html' },
+  '/our-products.html':    { en: '/our-products.html', fr: '/fr/produits.html' },
+  '/custom-packaging.html':{ en: '/custom-packaging.html', fr: '/fr/emballages-personnalises.html' },
+  '/thanks.html':          { en: '/thanks.html',      fr: '/fr/merci.html' },
+  // les pages FR pointent aussi vers leur équivalent EN
+  '/fr/':                  { en: '/',                 fr: '/fr/' },
+  '/fr/index.html':        { en: '/index.html',       fr: '/fr/index.html' },
+  '/fr/a-propos.html':     { en: '/about.html',       fr: '/fr/a-propos.html' },
+  '/fr/produits.html':     { en: '/our-products.html', fr: '/fr/produits.html' },
+  '/fr/emballages-personnalises.html': { en: '/custom-packaging.html', fr: '/fr/emballages-personnalises.html' },
+  '/fr/merci.html':        { en: '/thanks.html',      fr: '/fr/merci.html' },
+};
+
+// Fonction utilitaire
+function getCurrentPath() {
+  let p = location.pathname;
+  if (p === '' || p === '/') return '/';
+  return p;
+}
+
+// Vérifie si la page actuelle est française
+function isFrenchPage(p) {
+  return p.startsWith('/fr/');
+}
+
+// Détecte la langue du navigateur (fr / en)
+function detectBrowserLang() {
+  const lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+  return lang.startsWith('fr') ? 'fr' : 'en';
+}
+
+// Redirection automatique à la première visite
+(function autoLangRedirect() {
+  const storedLang = localStorage.getItem('cana_lang');
+  const browserLang = detectBrowserLang();
+  const current = getCurrentPath();
+  const pair = LANG_MAP[current] || LANG_MAP['/'];
+
+  // Si on a déjà choisi une langue manuellement, ne rien faire
+  if (storedLang) return;
+
+  // Sinon, rediriger selon la langue du navigateur
+  if (browserLang === 'fr' && !isFrenchPage(current)) {
+    localStorage.setItem('cana_lang', 'fr');
+    location.replace(pair.fr);
+  } else if (browserLang === 'en' && isFrenchPage(current)) {
+    localStorage.setItem('cana_lang', 'en');
+    location.replace(pair.en);
   }
 })();
