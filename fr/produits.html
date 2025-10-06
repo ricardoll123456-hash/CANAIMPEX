@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Produits — Cana Impex</title>
+  <meta name="description" content="Aperçu des marchandises: cajou, cacao, hévéa, café. Grades et spécifications à la demande." />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:#0b1f16; color:#e6f5ed; }
+    .btn { background:#0A7F49; color:#fff; border-radius:14px; transition:all .2s ease; box-shadow:0 16px 40px -22px rgba(13,148,86,0.65); }
+    .btn:hover { background:#10B981; }
+    .card { background:rgba(11,31,22,0.55); border:1px solid rgba(255,255,255,0.12); border-radius:22px; backdrop-filter:blur(16px); }
+    .section-title { letter-spacing:0.3em; text-transform:uppercase; font-size:0.75rem; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <div id="header"></div>
+  <main class="flex-1">
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <p class="section-title text-emerald-300/80">Produits</p>
+      <h1 class="mt-4 text-3xl md:text-5xl font-extrabold text-white">Nos Marchandises Principales</h1>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="card p-6"><h3 class="text-lg font-semibold">Cajou</h3><p class="text-sm text-white/70 mt-2">W240/W320, contrôle d’humidité.</p></article>
+        <article class="card p-6"><h3 class="text-lg font-semibold">Cacao</h3><p class="text-sm text-white/70 mt-2">Fèves & nibs traçables.</p></article>
+        <article class="card p-6"><h3 class="text-lg font-semibold">Hévéa</h3><p class="text-sm text-white/70 mt-2">Cup-lump & latex, inspections.</p></article>
+        <article class="card p-6"><h3 class="text-lg font-semibold">Café</h3><p class="text-sm text-white/70 mt-2">Robusta & arabica, sacs vrac.</p></article>
+      </div>
+    </section>
+
+  </main>
+  <div id="footer"></div>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>
