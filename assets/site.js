@@ -1,32 +1,48 @@
-
 // /assets/site.js
 (function () {
-  // Create the header mount as the first element in <body>, if missing
-  function ensureHeaderMount() {
-    let mount = document.getElementById('header');
-    if (!mount) {
-      mount = document.createElement('div');
-      mount.id = 'header';
-      document.body.insertBefore(mount, document.body.firstChild);
+  /* -------------------------
+     MOUNTS & HELPERS
+  -------------------------- */
+  function ensureMount(id, where = 'start') {
+    let el = document.getElementById(id);
+    if (!el) {
+      el = document.createElement('div');
+      el.id = id;
+      if (where === 'start') {
+        document.body.insertBefore(el, document.body.firstChild);
+      } else {
+        document.body.appendChild(el);
+      }
     }
-    return mount;
+    return el;
   }
 
-  // Inject shared header AFTER DOM is ready
+  function isDesktop() { return window.innerWidth >= 768; }
+
+  /* -------------------------
+     HEADER INJECTION + MENU
+  -------------------------- */
   async function injectHeader() {
-    const mount = ensureHeaderMount();
+    const mount = ensureMount('header', 'start');
     const res = await fetch('/includes/header.html', { cache: 'no-cache' });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
+    if (!res.ok) throw new Error('Header HTTP ' + res.status);
     const html = await res.text();
     mount.innerHTML = html;
+
+    // Après injection: câbler le menu + i18n (les boutons existent enfin)
     initHeaderMenu();
+    initI18N();          // important: i18n après le header
+    injectHreflang();    // balises SEO selon la page courante
   }
 
-  // Hamburger wiring (no scripts inside header.html)
   function initHeaderMenu() {
     const btn = document.getElementById('menuToggle');
     const panel = document.getElementById('mobileMenu');
     if (!btn || !panel) return;
+
+    // éviter le double-binding si on réinjecte
+    if (btn.dataset.bound === '1') return;
+    btn.dataset.bound = '1';
 
     const closeMenu = () => {
       panel.classList.add('hidden');
@@ -43,190 +59,325 @@
       const isOpen = btn.getAttribute('aria-expanded') === 'true';
       isOpen ? closeMenu() : openMenu();
     });
+
     panel.addEventListener('click', (e) => {
       if (e.target.tagName === 'A') closeMenu();
     });
+
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-    window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMenu(); });
+    window.addEventListener('resize', () => { if (isDesktop()) closeMenu(); });
   }
 
-  // Run after DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => injectHeader().catch(console.error));
-  } else {
-    injectHeader().catch(console.error);
+  /* -------------------------
+     FOOTER (optionnel)
+  -------------------------- */
+  async function injectFooter() {
+    const mount = document.getElementById('footer') || (() => {
+      const el = document.createElement('div');
+      el.id = 'footer';
+      document.body.appendChild(el);
+      return el;
+    })();
+    try {
+      const res = await fetch('/includes/footer.html', { cache: 'no-cache' });
+      if (!res.ok) return; // pas obligatoire
+      const html = await res.text();
+      mount.innerHTML = html;
+      // met à jour l'année s'il y a #year dans le footer inclus
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    } catch (e) {
+      console.warn('Footer load skipped:', e);
+    }
   }
-})();
-// ==== AUTO LANGUAGE REDIRECT (EN <-> FR) ====
 
-// Liste des correspondances entre les pages anglaises et françaises
-const LANG_MAP = {
-  '/':                     { en: '/',                 fr: '/fr/' },
-  '/index.html':           { en: '/index.html',       fr: '/fr/index.html' },
-  '/about.html':           { en: '/about.html',       fr: '/fr/a-propos.html' },
-  '/our-products.html':    { en: '/our-products.html', fr: '/fr/produits.html' },
-  '/custom-packaging.html':{ en: '/custom-packaging.html', fr: '/fr/emballages-personnalises.html' },
-  '/thanks.html':          { en: '/thanks.html',      fr: '/fr/merci.html' },
-  // les pages FR pointent aussi vers leur équivalent EN
-  '/fr/':                  { en: '/',                 fr: '/fr/' },
-  '/fr/index.html':        { en: '/index.html',       fr: '/fr/index.html' },
-  '/fr/a-propos.html':     { en: '/about.html',       fr: '/fr/a-propos.html' },
-  '/fr/produits.html':     { en: '/our-products.html', fr: '/fr/produits.html' },
-  '/fr/emballages-personnalises.html': { en: '/custom-packaging.html', fr: '/fr/emballages-personnalises.html' },
-  '/fr/merci.html':        { en: '/thanks.html',      fr: '/fr/merci.html' },
-};
+  /* -------------------------
+     FAVICON (assure l’icône)
+  -------------------------- */
+  function ensureFavicon() {
+    // supprime anciens liens pour éviter les doublons
+    document.querySelectorAll('link[rel="icon"], link[rel="alternate icon"], link[rel="apple-touch-icon"]')
+      .forEach(n => n.parentNode.removeChild(n));
 
-// Fonction utilitaire
-function getCurrentPath() {
-  let p = location.pathname;
-  if (p === '' || p === '/') return '/';
-  return p;
-}
+    const svg = document.createElement('link');
+    svg.rel = 'icon';
+    svg.type = 'image/svg+xml';
+    svg.href = '/assets/favicon.svg?v=2';
+    document.head.appendChild(svg);
 
-// Vérifie si la page actuelle est française
-function isFrenchPage(p) {
-  return p.startsWith('/fr/');
-}
+    // Optionnel: PNG/Apple fallback — décommente si tu as /assets/favicon.png
+    // const png = document.createElement('link');
+    // png.rel = 'alternate icon';
+    // png.type = 'image/png';
+    // png.sizes = '32x32';
+    // png.href = '/assets/favicon.png?v=2';
+    // document.head.appendChild(png);
 
-// Détecte la langue du navigateur (fr / en)
-function detectBrowserLang() {
-  const lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-  return lang.startsWith('fr') ? 'fr' : 'en';
-}
-
-// Redirection automatique à la première visite
-(function autoLangRedirect() {
-  const storedLang = localStorage.getItem('cana_lang');
-  const browserLang = detectBrowserLang();
-  const current = getCurrentPath();
-  const pair = LANG_MAP[current] || LANG_MAP['/'];
-
-  // Si on a déjà choisi une langue manuellement, ne rien faire
-  if (storedLang) return;
-
-  // Sinon, rediriger selon la langue du navigateur
-  if (browserLang === 'fr' && !isFrenchPage(current)) {
-    localStorage.setItem('cana_lang', 'fr');
-    location.replace(pair.fr);
-  } else if (browserLang === 'en' && isFrenchPage(current)) {
-    localStorage.setItem('cana_lang', 'en');
-    location.replace(pair.en);
+    // const apple = document.createElement('link');
+    // apple.rel = 'apple-touch-icon';
+    // apple.href = '/assets/favicon.png?v=2';
+    // document.head.appendChild(apple);
   }
-})();
-/* ===== Lightweight i18n (EN <-> FR) =====
-   Usage:
-   - data-i18n="key"            -> remplace textContent
-   - data-i18n-attr="attr:key"  -> remplace un attribut (placeholder, title, aria-label, etc.)
-   - Plusieurs attributs: data-i18n-attr="placeholder:form_name,title:tooltip_name"
-*/
 
-const I18N = {
-  en: {
-    // --- Nav / Header ---
-    nav_home: "Home",
-    nav_products: "Our Products",
-    nav_packaging: "Custom Packaging",
-    nav_about: "About",
-    nav_quotes: "Get Quotes",
-    nav_contact: "Contact",
-    cta_portfolio: "View Portfolio",
-    cta_samples: "Request Samples",
+  /* -------------------------
+     I18N (EN <-> FR)
+     - data-i18n           : remplace textContent
+     - data-i18n-attr      : ex. "placeholder:form_name_ph,title:tooltip_key"
+  -------------------------- */
+  const I18N = {
+    en: {
+      hero_kicker: "Côte d'Ivoire Export House",
+      hero_title: "Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Coffee",
+      hero_desc: "We coordinate sourcing, grading, documentation, and shipping from Abidjan and San Pedro for roasters, processors, and industrial buyers around the world.",
+      cta_quote: "Request a Desk Quote",
+      cta_products: "Explore Products",
+      cta_sales: "Talk to Sales",
 
-    // --- About page (exemples) ---
-    about_hero_kicker: "Who We Are",
-    about_hero_title: "20 Years Connecting Côte d’Ivoire to Global Markets",
-    about_hero_desc:
-      "Cana Impex is a privately-held export house built by agronomy and logistics experts. From Abidjan, we manage end-to-end sourcing for cashew, cocoa, hevea, and coffee buyers who demand quality, compliance, and reliable sailings.",
-    about_hero_btn_talk: "Talk to Our Team",
-    about_hero_btn_explore: "Explore Our Commodities",
-    about_section_title: "Origin Specialists with a Global Mindset",
-    card_experience_title: "Experience",
-    card_experience_value: "20+ years of export leadership",
-    card_footprint_title: "Footprint",
-    card_footprint_value: "12+ countries served annually",
-    card_compliance_title: "Compliance",
-    card_compliance_value: "SGS, Cotecna & Phyto ready",
-    card_logistics_title: "Logistics",
-    card_logistics_value: "Abidjan & San Pedro coverage",
-  },
+      quotes_kicker: "Market Quotes",
+      quotes_title: "Preview Our Core Commodities",
+      quotes_sub: "Every shipment is calibrated to your target grade, moisture, and packaging requirements.",
 
-  fr: {
-    // --- Nav / Header ---
-    nav_home: "Accueil",
-    nav_products: "Nos Produits",
-    nav_packaging: "Emballages Personnalisés",
-    nav_about: "À propos",
-    nav_quotes: "Devis",
-    nav_contact: "Contact",
-    cta_portfolio: "Voir le Portefeuille",
-    cta_samples: "Demander des Échantillons",
+      card_cashew_title: "Cashew",
+      card_cashew_desc: "Bulk W240/W320 kernels and RCN with humidity control.",
+      card_cashew_btn: "Request Cashew Quote",
 
-    // --- About page (exemples) ---
-    about_hero_kicker: "Qui sommes-nous",
-    about_hero_title: "20 ans reliant la Côte d’Ivoire aux marchés mondiaux",
-    about_hero_desc:
-      "Cana Impex est une maison d’export privée fondée par des experts en agronomie et logistique. Depuis Abidjan, nous gérons l’approvisionnement de bout en bout pour des acheteurs de cajou, cacao, hévéa et café exigeant qualité, conformité et fiabilité des départs.",
-    about_hero_btn_talk: "Parler à notre équipe",
-    about_hero_btn_explore: "Explorer nos produits",
-    about_section_title: "Spécialistes d’origine au regard international",
-    card_experience_title: "Expérience",
-    card_experience_value: "20+ ans de leadership à l’export",
-    card_footprint_title: "Empreinte",
-    card_footprint_value: "12+ pays servis par an",
-    card_compliance_title: "Conformité",
-    card_compliance_value: "SGS, Cotecna & Phyto prêts",
-    card_logistics_title: "Logistique",
-    card_logistics_value: "Couverture Abidjan & San Pedro",
+      card_cocoa_title: "Cocoa",
+      card_cocoa_desc: "Traceable cocoa beans and nibs ready for EU and NA import.",
+      card_cocoa_btn: "Request Cocoa Quote",
+
+      card_hevea_title: "Hevea",
+      card_hevea_desc: "Cup-lump and latex programs with SGS and Cotecna oversight.",
+      card_hevea_btn: "Request Rubber Quote",
+
+      card_coffee_title: "Coffee",
+      card_coffee_desc: "Robusta and arabica profiles shipped in bulk bags or pallets.",
+      card_coffee_btn: "Request Coffee Quote",
+
+      origin_kicker: "Origin Advantage",
+      origin_title: "End-to-End Execution from Côte d’Ivoire",
+      origin_desc: "Our bilingual teams manage procurement, quality control, fumigation, and documentation. We work directly with cooperatives and processors to secure volume and maintain traceability.",
+      origin_exp_title: "Experience",
+      origin_exp_value: "20+ years shipping globally",
+      origin_foot_title: "Footprint",
+      origin_foot_value: "Abidjan & San Pedro desks",
+      origin_comp_title: "Compliance",
+      origin_comp_value: "SGS • Cotecna • Phytosanitary",
+      origin_logi_title: "Logistics",
+      origin_logi_value: "FOB, CIF & multimodal options",
+      desk_title: "Desk Coverage",
+      desk_li1: "• Côte d’Ivoire origin specialists at port",
+      desk_li2: "• Canada & Europe customer service desks",
+      desk_li3: "• Weekly status reports and vessel tracking",
+      desk_li4: "• Financing options via partner banks",
+
+      sampling_title: "Sampling & Quality Control",
+      sampling_desc: "We prepare desk samples from our Abidjan warehouse and coordinate independent lab analysis when required. Moisture, defects, and count per pound are tracked in a shared dashboard.",
+      sampling_li1: "• Pre-shipment inspection with SGS/Cotecna",
+      sampling_li2: "• Photo and video updates from stuffing",
+      sampling_li3: "• Custom packaging per Incoterm",
+
+      docs_title: "Documentation & Logistics",
+      docs_desc: "Our team prepares commercial invoices, packing lists, certificates of origin, phytosanitary certificates, and negotiates freight with preferred carriers to match your schedule.",
+      docs_li1: "• Abidjan & San Pedro port coverage",
+      docs_li2: "• FOB, CFR, CIF, EXW, and FCA delivery",
+      docs_li3: "• Digitised paperwork for rapid clearance",
+
+      contact_kicker: "Contact",
+      contact_title: "Request Samples or a Quote",
+      contact_desc: "Tell us your volumes, target grades, and Incoterms. We respond within 24–48 hours.",
+      form_name_ph: "Your name",
+      form_company_ph: "Company",
+      form_email_ph: "Email",
+      form_message_ph: "Volumes, grades, Incoterms…",
+      form_submit_btn: "Send Message",
+      sidebar_label: "Commercial Desk",
+      sidebar_locations: "Locations: Abidjan • San Pedro • Montreal",
+      sidebar_commodities: "Commodities: Cashew, Cocoa, Hevea, Coffee",
+      sidebar_integrity: "We conduct our business with integrity and transparent reporting from farmgate to vessel.",
+
+      footer_company: "Cana Impex Inc.",
+      footer_rights: "All rights reserved.",
+      footer_madein: "Made in Côte d’Ivoire",
+    },
+    fr: {
+      hero_kicker: "Maison d’export — Côte d’Ivoire",
+      hero_title: "Approvisionnement en vrac — Cajou • Cacao • Hévéa • Café",
+      hero_desc: "Nous coordonnons l’achat, le calibrage, la documentation et l’expédition depuis Abidjan et San Pedro pour des torréfacteurs, transformateurs et acheteurs industriels dans le monde entier.",
+      cta_quote: "Demander un devis rapide",
+      cta_products: "Voir les produits",
+      cta_sales: "Parler aux ventes",
+
+      quotes_kicker: "Devis marché",
+      quotes_title: "Aperçu de nos marchandises clés",
+      quotes_sub: "Chaque expédition est ajustée à votre grade cible, humidité et exigences d’emballage.",
+
+      card_cashew_title: "Cajou",
+      card_cashew_desc: "Amandes W240/W320 et RCN avec contrôle d’humidité.",
+      card_cashew_btn: "Devis Cajou",
+
+      card_cocoa_title: "Cacao",
+      card_cocoa_desc: "Fèves et nibs traçables, prêts pour UE et Amérique du Nord.",
+      card_cocoa_btn: "Devis Cacao",
+
+      card_hevea_title: "Hévéa",
+      card_hevea_desc: "Cup-lump et latex avec supervision SGS et Cotecna.",
+      card_hevea_btn: "Devis Hévéa",
+
+      card_coffee_title: "Café",
+      card_coffee_desc: "Profils robusta et arabica expédiés en sacs vrac ou palettes.",
+      card_coffee_btn: "Devis Café",
+
+      origin_kicker: "Avantage Origine",
+      origin_title: "Exécution de bout en bout depuis la Côte d’Ivoire",
+      origin_desc: "Nos équipes bilingues gèrent l’achat, le contrôle qualité, la fumigation et la documentation. Nous travaillons avec coopératives et transformateurs pour sécuriser les volumes et maintenir la traçabilité.",
+      origin_exp_title: "Expérience",
+      origin_exp_value: "20+ ans d’expéditions mondiales",
+      origin_foot_title: "Empreinte",
+      origin_foot_value: "Bureaux Abidjan & San Pedro",
+      origin_comp_title: "Conformité",
+      origin_comp_value: "SGS • Cotecna • Phytosanitaire",
+      origin_logi_title: "Logistique",
+      origin_logi_value: "FOB, CIF et options multimodales",
+      desk_title: "Couverture Opérationnelle",
+      desk_li1: "• Spécialistes d’origine sur les ports ivoiriens",
+      desk_li2: "• Bureaux service client Canada & Europe",
+      desk_li3: "• Rapports hebdomadaires & suivi navires",
+      desk_li4: "• Options de financement via banques partenaires",
+
+      sampling_title: "Échantillonnage & Contrôle Qualité",
+      sampling_desc: "Préparation d’échantillons depuis notre entrepôt d’Abidjan et analyses labo indépendantes si requis. Humidité, défauts et compte par livre suivis dans un tableau partagé.",
+      sampling_li1: "• Inspection pré-expédition avec SGS/Cotecna",
+      sampling_li2: "• Photos et vidéos pendant le stuffing",
+      sampling_li3: "• Emballage personnalisé selon Incoterm",
+
+      docs_title: "Documentation & Logistique",
+      docs_desc: "Émission des factures commerciales, listes de colisage, certificats d’origine, certificats phytos, et négociation du fret avec transporteurs selon votre planning.",
+      docs_li1: "• Couverture ports d’Abidjan & San Pedro",
+      docs_li2: "• Livraisons FOB, CFR, CIF, EXW, FCA",
+      docs_li3: "• Dossiers digitalisés pour un dédouanement rapide",
+
+      contact_kicker: "Contact",
+      contact_title: "Demander des échantillons ou un devis",
+      contact_desc: "Indiquez vos volumes, grades cibles et Incoterms. Réponse sous 24–48 h.",
+      form_name_ph: "Votre nom",
+      form_company_ph: "Société",
+      form_email_ph: "Email",
+      form_message_ph: "Volumes, grades, Incoterms…",
+      form_submit_btn: "Envoyer",
+      sidebar_label: "Bureau commercial",
+      sidebar_locations: "Implantations : Abidjan • San Pedro • Montréal",
+      sidebar_commodities: "Produits : Cajou, Cacao, Hévéa, Café",
+      sidebar_integrity: "Nous travaillons avec intégrité et un reporting transparent du champ au navire.",
+
+      footer_company: "Cana Impex Inc.",
+      footer_rights: "Tous droits réservés.",
+      footer_madein: "Fait en Côte d’Ivoire",
+    }
+  };
+
+  function i18nGet(lang, key) {
+    return (I18N[lang] && I18N[lang][key]) || I18N.en[key] || "";
   }
-};
 
-// Helper
-function i18nGet(lang, key) {
-  return (I18N[lang] && I18N[lang][key]) || I18N.en[key] || "";
-}
-
-function applyTranslations(lang) {
-  // Texte simple
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    const txt = i18nGet(lang, key);
-    if (txt) el.textContent = txt;
-  });
-
-  // Attributs (placeholder, title, aria-label…)
-  document.querySelectorAll("[data-i18n-attr]").forEach(el => {
-    const spec = el.getAttribute("data-i18n-attr"); // e.g. "placeholder:form_name,title:tooltip_name"
-    if (!spec) return;
-    spec.split(",").forEach(pair => {
-      const [attr, key] = pair.split(":").map(s => s.trim());
-      const val = i18nGet(lang, key);
-      if (attr && val) el.setAttribute(attr, val);
+  function applyTranslations(lang) {
+    // textes
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const k = el.getAttribute("data-i18n");
+      const v = i18nGet(lang, k);
+      if (v) el.textContent = v;
     });
-  });
-
-  // <html lang="...">
-  document.documentElement.setAttribute("lang", lang);
-
-  // mémorise le choix
-  localStorage.setItem("cana_lang", lang);
-}
-
-function initI18N() {
-  // Détecte choix utilisateur ou langue navigateur
-  let lang = localStorage.getItem("cana_lang");
-  if (!lang) {
-    const nav = (navigator.language || "en").toLowerCase();
-    lang = nav.startsWith("fr") ? "fr" : "en";
+    // attributs
+    document.querySelectorAll("[data-i18n-attr]").forEach(el => {
+      const spec = el.getAttribute("data-i18n-attr");
+      if (!spec) return;
+      spec.split(",").forEach(pair => {
+        const [attr, key] = pair.split(":").map(s => s.trim());
+        const v = i18nGet(lang, key);
+        if (attr && v) el.setAttribute(attr, v);
+      });
+    });
+    document.documentElement.setAttribute("lang", lang);
     localStorage.setItem("cana_lang", lang);
   }
-  applyTranslations(lang);
 
-  // Boutons EN/FR
-  const enBtn = document.getElementById("langEN");
-  const frBtn = document.getElementById("langFR");
-  if (enBtn) enBtn.addEventListener("click", (e) => { e.preventDefault(); applyTranslations("en"); });
-  if (frBtn) frBtn.addEventListener("click", (e) => { e.preventDefault(); applyTranslations("fr"); });
-}
+  function initI18N() {
+    // empêcher double init si le header est ré-injecté
+    if (window.__i18n_inited) {
+      // on remet juste les listeners si besoin
+      bindLangButtons();
+      return;
+    }
+    window.__i18n_inited = true;
 
-// Lance après chargement (ton site.js est déjà defer)
-try { initI18N(); } catch (e) { console.error("i18n init error:", e); }
+    let lang = localStorage.getItem("cana_lang");
+    if (!lang) {
+      lang = (navigator.language || "en").toLowerCase().startsWith("fr") ? "fr" : "en";
+      localStorage.setItem("cana_lang", lang);
+    }
+    applyTranslations(lang);
+    bindLangButtons();
+  }
+
+  function bindLangButtons() {
+    const enBtn = document.getElementById("langEN");
+    const frBtn = document.getElementById("langFR");
+
+    if (enBtn && enBtn.dataset.bound !== '1') {
+      enBtn.dataset.bound = '1';
+      enBtn.addEventListener("click", (e) => { e.preventDefault(); applyTranslations("en"); });
+    }
+    if (frBtn && frBtn.dataset.bound !== '1') {
+      frBtn.dataset.bound = '1';
+      frBtn.addEventListener("click", (e) => { e.preventDefault(); applyTranslations("fr"); });
+    }
+  }
+
+  /* -------------------------
+     HREFLANG (SEO)
+  -------------------------- */
+  function injectHreflang() {
+    // En i18n “même URL”, on peut annoncer EN et FR sur la même page.
+    // (Si tu préfères le /fr/ séparé, dis-le et je remets la version par mapping.)
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(n => n.remove());
+
+    const loc = location.origin + location.pathname + location.search;
+    const linkEN = document.createElement('link');
+    linkEN.rel = 'alternate';
+    linkEN.hreflang = 'en';
+    linkEN.href = loc;
+
+    const linkFR = document.createElement('link');
+    linkFR.rel = 'alternate';
+    linkFR.hreflang = 'fr';
+    linkFR.href = loc;
+
+    const linkXD = document.createElement('link');
+    linkXD.rel = 'alternate';
+    linkXD.hreflang = 'x-default';
+    linkXD.href = loc;
+
+    document.head.appendChild(linkEN);
+    document.head.appendChild(linkFR);
+    document.head.appendChild(linkXD);
+  }
+
+  /* -------------------------
+     BOOT
+  -------------------------- */
+  function boot() {
+    ensureFavicon();
+    injectHeader()
+      .catch(err => {
+        console.error('Header load error:', err);
+        // si header échoue, tenter quand même i18n pour le contenu
+        try { initI18N(); } catch (e) {}
+      });
+    injectFooter().catch(() => {});
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
