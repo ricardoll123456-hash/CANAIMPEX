@@ -15,160 +15,151 @@
     .card { background:rgba(11,31,22,0.55); border:1px solid rgba(255,255,255,0.12); border-radius:22px; backdrop-filter:blur(16px); }
     .img-card { border-radius:18px; object-fit:cover; width:100%; height:200px; }
     header { background:linear-gradient(180deg, rgba(9,27,18,0.95) 0%, rgba(9,27,18,0.75) 100%); border-bottom:1px solid rgba(255,255,255,0.08); }
-    .hero-shell { position:relative; min-height:75vh; overflow:hidden; }
-.hero-shell {
-  position: relative;
-  min-height: 85vh;
-  overflow: hidden;
-}
 
-/* Soft gradient background only — no image */
-.hero-shell::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(80% 60% at 50% 30%, rgba(17,55,38,.55) 0%, rgba(10,31,22,.2) 45%, rgba(8,24,17,.85) 100%);
-  opacity: 1;
-}
+    .hero-shell { position: relative; min-height: 85vh; overflow: hidden; }
+    .hero-shell::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(80% 60% at 50% 30%, rgba(17,55,38,.55) 0%, rgba(10,31,22,.2) 45%, rgba(8,24,17,.85) 100%);
+      opacity: 1;
+    }
+    #hero3d { position: absolute; inset: 0; z-index: 0; opacity: 0.7; mix-blend-mode: normal; pointer-events: none; }
+    .hero-overlay { position: relative; z-index: 1; }
 
-#hero3d {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.7;
-  mix-blend-mode: normal;
-  pointer-events: none;
-}
-
-.hero-overlay {
-  position: relative;
-  z-index: 1;
-}
     .section-title { letter-spacing:0.3em; text-transform:uppercase; font-size:0.75rem; }
     .glass { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:20px; }
   </style>
 </head>
 
 <body class="min-h-screen flex flex-col">
-<div id="header"></div>
-
+  <!-- header mount -->
+  <div id="header"></div>
 
   <main class="flex-1">
+    <!-- HERO -->
     <section class="hero-shell">
       <canvas id="hero3d"></canvas>
       <div class="hero-overlay max-w-7xl mx-auto px-6 py-24 md:py-32">
         <div class="max-w-3xl">
-          <p class="section-title text-emerald-300/80">Côte d'Ivoire Export House</p>
-          <h1 class="mt-4 text-3xl md:text-5xl font-extrabold text-white">Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Coffee</h1>
-          <p class="mt-6 text-white/80 md:text-lg">We coordinate sourcing, grading, documentation, and shipping from Abidjan and San Pedro for roasters, processors, and industrial buyers around the world.</p>
+          <p class="section-title text-emerald-300/80" data-i18n="hero_kicker">Côte d'Ivoire Export House</p>
+          <h1 class="mt-4 text-3xl md:text-5xl font-extrabold text-white" data-i18n="hero_title">Unlimited Bulk Supply — Cashew • Cocoa • Hevea • Coffee</h1>
+          <p class="mt-6 text-white/80 md:text-lg" data-i18n="hero_desc">We coordinate sourcing, grading, documentation, and shipping from Abidjan and San Pedro for roasters, processors, and industrial buyers around the world.</p>
           <div class="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#quotes" class="btn px-5 py-3 rounded-xl font-semibold">Request a Desk Quote</a>
-            <a href="our-products.html" class="px-5 py-3 rounded-xl font-semibold border border-white/20 text-white/90 hover:bg-white/10">Explore Products</a>
-            <a href="#contact" class="px-5 py-3 rounded-xl font-semibold border border-white/20 text-white/90 hover:bg-white/10">Talk to Sales</a>
+            <a href="#quotes" class="btn px-5 py-3 rounded-xl font-semibold" data-i18n="cta_quote">Request a Desk Quote</a>
+            <a href="our-products.html" class="px-5 py-3 rounded-xl font-semibold border border-white/20 text-white/90 hover:bg-white/10" data-i18n="cta_products">Explore Products</a>
+            <a href="#contact" class="px-5 py-3 rounded-xl font-semibold border border-white/20 text-white/90 hover:bg-white/10" data-i18n="cta_sales">Talk to Sales</a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- QUOTES -->
     <section id="quotes" class="max-w-7xl mx-auto px-6 py-16">
       <div class="text-center max-w-3xl mx-auto">
-        <p class="section-title text-emerald-400 mb-2">Market Quotes</p>
-        <h2 class="text-2xl md:text-3xl font-bold text-white">Preview Our Core Commodities</h2>
-        <p class="mt-3 text-white/70 text-sm">Every shipment is calibrated to your target grade, moisture, and packaging requirements.</p>
+        <p class="section-title text-emerald-400 mb-2" data-i18n="quotes_kicker">Market Quotes</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-white" data-i18n="quotes_title">Preview Our Core Commodities</h2>
+        <p class="mt-3 text-white/70 text-sm" data-i18n="quotes_sub">Every shipment is calibrated to your target grade, moisture, and packaging requirements.</p>
       </div>
       <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Cashew -->
         <article class="card p-5 flex flex-col">
           <img class="img-card" src="assets/cashew.jpg" alt="Cashew kernels in wooden bowls">
-          <h3 class="font-semibold text-lg mt-4 text-white">Cashew</h3>
-          <p class="text-sm text-white/70 mt-2">Bulk W240/W320 kernels and RCN with humidity control.</p>
-          <a href="#contact" class="btn mt-4 inline-flex justify-center px-4 py-2 text-sm">Request Cashew Quote</a>
+          <h3 class="font-semibold text-lg mt-4 text-white" data-i18n="card_cashew_title">Cashew</h3>
+          <p class="text-sm text-white/70 mt-2" data-i18n="card_cashew_desc">Bulk W240/W320 kernels and RCN with humidity control.</p>
+          <a href="#contact" class="btn mt-4 inline-flex justify-center px-4 py-2 text-sm" data-i18n="card_cashew_btn">Request Cashew Quote</a>
         </article>
+        <!-- Cocoa -->
         <article class="card p-5 flex flex-col">
           <img class="img-card" src="assets/cocoa-photo.jpg" alt="Cocoa pods and beans">
-          <h3 class="font-semibold text-lg mt-4 text-white">Cocoa</h3>
-          <p class="text-sm text-white/70 mt-2">Traceable cocoa beans and nibs ready for EU and NA import.</p>
-          <a href="#contact" class="btn mt-4 inline-flex justify-center px-4 py-2 text-sm">Request Cocoa Quote</a>
+          <h3 class="font-semibold text-lg mt-4 text-white" data-i18n="card_cocoa_title">Cocoa</h3>
+          <p class="text-sm text-white/70 mt-2" data-i18n="card_cocoa_desc">Traceable cocoa beans and nibs ready for EU and NA import.</p>
+          <a href="#contact" class="btn mt-4 inline-flex justify-center px-4 py-2 text-sm" data-i18n="card_cocoa_btn">Request Cocoa Quote</a>
         </article>
+        <!-- Hevea -->
         <article class="card p-5 flex flex-col">
           <img class="img-card" src="assets/rubber-photo.jpg" alt="Hevea rubber cup collection">
-          <h3 class="font-semibold text-lg mt-4 text-white">Hevea</h3>
-          <p class="text-sm text-white/70 mt-2">Cup-lump and latex programs with SGS and Cotecna oversight.</p>
-          <a href="#contact" class="btn mt-4 inline-flex justify-center px-4 py-2 text-sm">Request Rubber Quote</a>
+          <h3 class="font-semibold text-lg mt-4 text-white" data-i18n="card_hevea_title">Hevea</h3>
+          <p class="text-sm text-white/70 mt-2" data-i18n="card_hevea_desc">Cup-lump and latex programs with SGS and Cotecna oversight.</p>
+          <a href="#contact" class="btn mt-4 inline-flex justify-center px-4 py-2 text-sm" data-i18n="card_hevea_btn">Request Rubber Quote</a>
         </article>
+        <!-- Coffee -->
         <article class="card p-5 flex flex-col">
           <img class="img-card" src="assets/coffee-photo.jpg" alt="Green coffee beans on burlap">
-          <h3 class="font-semibold text-lg mt-4 text-white">Coffee</h3>
-          <p class="text-sm text-white/70 mt-2">Robusta and arabica profiles shipped in bulk bags or pallets.</p>
-          <a href="#contact" class="btn mt-4 inline-flex justify-center px-4 py-2 text-sm">Request Coffee Quote</a>
+          <h3 class="font-semibold text-lg mt-4 text-white" data-i18n="card_coffee_title">Coffee</h3>
+          <p class="text-sm text-white/70 mt-2" data-i18n="card_coffee_desc">Robusta and arabica profiles shipped in bulk bags or pallets.</p>
+          <a href="#contact" class="btn mt-4 inline-flex justify-center px-4 py-2 text-sm" data-i18n="card_coffee_btn">Request Coffee Quote</a>
         </article>
       </div>
     </section>
 
+    <!-- ORIGIN -->
     <section id="origin" class="py-16" style="background:linear-gradient(180deg, rgba(12,38,26,0.92) 0%, rgba(11,31,22,0.88) 100%);">
       <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-[1.4fr,1fr] gap-12 items-center">
         <div>
-          <p class="section-title text-emerald-300">Origin Advantage</p>
-          <h2 class="mt-4 text-2xl md:text-3xl font-bold text-white">End-to-End Execution from Côte d’Ivoire</h2>
-          <p class="mt-4 text-white/70">Our bilingual teams manage procurement, quality control, fumigation, and documentation. We work directly with cooperatives and processors to secure volume and maintain traceability.</p>
+          <p class="section-title text-emerald-300" data-i18n="origin_kicker">Origin Advantage</p>
+          <h2 class="mt-4 text-2xl md:text-3xl font-bold text-white" data-i18n="origin_title">End-to-End Execution from Côte d’Ivoire</h2>
+          <p class="mt-4 text-white/70" data-i18n="origin_desc">Our bilingual teams manage procurement, quality control, fumigation, and documentation. We work directly with cooperatives and processors to secure volume and maintain traceability.</p>
           <dl class="mt-8 grid sm:grid-cols-2 gap-6 text-sm text-white/80">
             <div class="glass p-6">
-              <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90">Experience</dt>
-              <dd class="mt-2 text-xl font-semibold text-white">20+ years shipping globally</dd>
+              <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90" data-i18n="origin_exp_title">Experience</dt>
+              <dd class="mt-2 text-xl font-semibold text-white" data-i18n="origin_exp_value">20+ years shipping globally</dd>
             </div>
             <div class="glass p-6">
-              <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90">Footprint</dt>
-              <dd class="mt-2 text-xl font-semibold text-white">Abidjan & San Pedro desks</dd>
+              <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90" data-i18n="origin_foot_title">Footprint</dt>
+              <dd class="mt-2 text-xl font-semibold text-white" data-i18n="origin_foot_value">Abidjan & San Pedro desks</dd>
             </div>
             <div class="glass p-6">
-              <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90">Compliance</dt>
-              <dd class="mt-2 text-xl font-semibold text-white">SGS • Cotecna • Phytosanitary</dd>
+              <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90" data-i18n="origin_comp_title">Compliance</dt>
+              <dd class="mt-2 text-xl font-semibold text-white" data-i18n="origin_comp_value">SGS • Cotecna • Phytosanitary</dd>
             </div>
             <div class="glass p-6">
-              <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90">Logistics</dt>
-              <dd class="mt-2 text-xl font-semibold text-white">FOB, CIF & multimodal options</dd>
+              <dt class="uppercase tracking-[0.25em] text-xs text-emerald-300/90" data-i18n="origin_logi_title">Logistics</dt>
+              <dd class="mt-2 text-xl font-semibold text-white" data-i18n="origin_logi_value">FOB, CIF & multimodal options</dd>
             </div>
           </dl>
         </div>
         <div class="glass p-6 rounded-3xl">
-          <h3 class="text-lg font-semibold text-white">Desk Coverage</h3>
+          <h3 class="text-lg font-semibold text-white" data-i18n="desk_title">Desk Coverage</h3>
           <ul class="mt-4 space-y-3 text-white/80 text-sm">
-            <li>• Côte d’Ivoire origin specialists at port</li>
-            <li>• Canada & Europe customer service desks</li>
-            <li>• Weekly status reports and vessel tracking</li>
-            <li>• Financing options via partner banks</li>
+            <li data-i18n="desk_li1">• Côte d’Ivoire origin specialists at port</li>
+            <li data-i18n="desk_li2">• Canada & Europe customer service desks</li>
+            <li data-i18n="desk_li3">• Weekly status reports and vessel tracking</li>
+            <li data-i18n="desk_li4">• Financing options via partner banks</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- SAMPLING & DOCS -->
     <section class="max-w-7xl mx-auto px-6 py-16">
       <div class="grid lg:grid-cols-[1fr,1fr] gap-12 items-center">
         <div class="card p-8">
-          <h2 class="text-2xl font-bold text-white">Sampling & Quality Control</h2>
-          <p class="mt-4 text-white/70">We prepare desk samples from our Abidjan warehouse and coordinate independent lab analysis when required. Moisture, defects, and count per pound are tracked in a shared dashboard.</p>
+          <h2 class="text-2xl font-bold text-white" data-i18n="sampling_title">Sampling & Quality Control</h2>
+          <p class="mt-4 text-white/70" data-i18n="sampling_desc">We prepare desk samples from our Abidjan warehouse and coordinate independent lab analysis when required. Moisture, defects, and count per pound are tracked in a shared dashboard.</p>
           <ul class="mt-6 space-y-2 text-sm text-white/80">
-            <li>• Pre-shipment inspection with SGS/Cotecna</li>
-            <li>• Photo and video updates from stuffing</li>
-            <li>• Custom packaging per Incoterm</li>
+            <li data-i18n="sampling_li1">• Pre-shipment inspection with SGS/Cotecna</li>
+            <li data-i18n="sampling_li2">• Photo and video updates from stuffing</li>
+            <li data-i18n="sampling_li3">• Custom packaging per Incoterm</li>
           </ul>
         </div>
         <div class="card p-8">
-          <h2 class="text-2xl font-bold text-white">Documentation & Logistics</h2>
-          <p class="mt-4 text-white/70">Our team prepares commercial invoices, packing lists, certificates of origin, phytosanitary certificates, and negotiates freight with preferred carriers to match your schedule.</p>
+          <h2 class="text-2xl font-bold text-white" data-i18n="docs_title">Documentation & Logistics</h2>
+          <p class="mt-4 text-white/70" data-i18n="docs_desc">Our team prepares commercial invoices, packing lists, certificates of origin, phytosanitary certificates, and negotiates freight with preferred carriers to match your schedule.</p>
           <ul class="mt-6 space-y-2 text-sm text-white/80">
-            <li>• Abidjan & San Pedro port coverage</li>
-            <li>• FOB, CFR, CIF, EXW, and FCA delivery</li>
-            <li>• Digitised paperwork for rapid clearance</li>
+            <li data-i18n="docs_li1">• Abidjan & San Pedro port coverage</li>
+            <li data-i18n="docs_li2">• FOB, CFR, CIF, EXW, and FCA delivery</li>
+            <li data-i18n="docs_li3">• Digitised paperwork for rapid clearance</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="max-w-7xl mx-auto px-6 pb-20">
       <div class="max-w-3xl">
-        <p class="section-title text-emerald-400 mb-2">Contact</p>
-        <h2 class="text-2xl md:text-3xl font-bold text-white">Request Samples or a Quote</h2>
-        <p class="mt-3 text-white/70 text-sm">Tell us your volumes, target grades, and Incoterms. We respond within 24–48 hours.</p>
+        <p class="section-title text-emerald-400 mb-2" data-i18n="contact_kicker">Contact</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-white" data-i18n="contact_title">Request Samples or a Quote</h2>
+        <p class="mt-3 text-white/70 text-sm" data-i18n="contact_desc">Tell us your volumes, target grades, and Incoterms. We respond within 24–48 hours.</p>
       </div>
       <div class="mt-10 grid md:grid-cols-2 gap-8">
         <form action="https://formsubmit.co/9557f1bf227663742077ce7c6353e6df" method="POST" class="card p-6">
@@ -178,33 +169,34 @@
           <input type="hidden" name="_next" value="thanks.html">
           <input type="hidden" name="_autoresponse" value="Thanks for contacting Cana Impex. We received your message and will reply soon.">
           <div class="grid gap-4">
-            <input name="name" placeholder="Your name" required class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60">
-            <input name="company" placeholder="Company" class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60">
-            <input type="email" name="email" placeholder="Email" required class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60">
-            <textarea name="message" placeholder="Volumes, grades, Incoterms…" rows="4" required class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60"></textarea>
-            <button class="btn px-4 py-2 rounded-lg text-sm font-semibold">Send Message</button>
+            <input name="name" class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60" data-i18n-attr="placeholder:form_name_ph" placeholder="Your name" required>
+            <input name="company" class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60" data-i18n-attr="placeholder:form_company_ph" placeholder="Company">
+            <input type="email" name="email" class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60" data-i18n-attr="placeholder:form_email_ph" placeholder="Email" required>
+            <textarea name="message" rows="4" class="rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60" data-i18n-attr="placeholder:form_message_ph" placeholder="Volumes, grades, Incoterms…" required></textarea>
+            <button class="btn px-4 py-2 rounded-lg text-sm font-semibold" data-i18n="form_submit_btn">Send Message</button>
           </div>
         </form>
         <div class="card p-6 flex flex-col justify-between">
           <div>
-            <p class="text-sm text-white/70">Commercial Desk</p>
+            <p class="text-sm text-white/70" data-i18n="sidebar_label">Commercial Desk</p>
             <p class="mt-2 text-lg font-semibold text-white">ricardollorente@canaimpex.com</p>
-            <p class="mt-4 text-sm text-white/80">Locations: Abidjan • San Pedro • Montreal</p>
-            <p class="mt-2 text-sm text-white/80">Commodities: Cashew, Cocoa, Hevea, Coffee</p>
+            <p class="mt-4 text-sm text-white/80" data-i18n="sidebar_locations">Locations: Abidjan • San Pedro • Montreal</p>
+            <p class="mt-2 text-sm text-white/80" data-i18n="sidebar_commodities">Commodities: Cashew, Cocoa, Hevea, Coffee</p>
           </div>
-          <div class="mt-8 text-sm text-white/70">
-            <p>We conduct our business with integrity and transparent reporting from farmgate to vessel.</p>
+          <div class="mt-8 text-sm text-white/70" data-i18n="sidebar_integrity">
+            We conduct our business with integrity and transparent reporting from farmgate to vessel.
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="py-8 text-sm bg-[#0A7F49] text-white">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p>© <span id="year"></span> Cana Impex Inc. All rights reserved.</p>
+      <p>© <span id="year"></span> <span data-i18n="footer_company">Cana Impex Inc.</span> <span data-i18n="footer_rights">All rights reserved.</span></p>
       <div class="flex items-center gap-3">
-        <span class="text-white/90">Made in Côte d’Ivoire</span>
+        <span class="text-white/90" data-i18n="footer_madein">Made in Côte d’Ivoire</span>
         <svg width="36" height="24" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-label="Ivory Coast flag">
           <rect width="1" height="2" x="0" y="0" fill="#F77F00"/>
           <rect width="1" height="2" x="1" y="0" fill="#FFFFFF"/>
@@ -214,6 +206,7 @@
     </div>
   </footer>
 
+  <!-- SCRIPTS -->
   <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
   <script>
     const canvas = document.getElementById('hero3d');
@@ -221,37 +214,26 @@
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 100);
     camera.position.set(1.8, 0.3, 6.5);
-    
-// Create a random "particle cloud" roughly globe-shaped
-const particleCount = 3200;
-const positions = new Float32Array(particleCount * 3);
-const radius = 3.8;
 
-for (let i = 0; i < particleCount; i++) {
-  // random spherical coordinates
-  const phi = Math.random() * Math.PI * 2;   // 0 to 360°
-  const costheta = Math.random() * 2 - 1;    // -1 to 1
-  const theta = Math.acos(costheta);
-  const r = radius + (Math.random() - 0.5) * 0.25; // slightly uneven radius
-
-  positions[i * 3] = r * Math.sin(theta) * Math.cos(phi);
-  positions[i * 3 + 1] = r * Math.sin(theta) * Math.sin(phi);
-  positions[i * 3 + 2] = r * Math.cos(theta);
-}
-
-const geometry = new THREE.BufferGeometry();
-geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-
-const material = new THREE.PointsMaterial({
-  color: 0x2fb47c,
-  size: 0.05,
-  opacity: 0.9,
-  transparent: true
-});
-
-const globe = new THREE.Points(geometry, material);
+    // Random particle globe
+    const particleCount = 3200;
+    const positions = new Float32Array(particleCount * 3);
+    const radius = 3.8;
+    for (let i = 0; i < particleCount; i++) {
+      const phi = Math.random() * Math.PI * 2;
+      const costheta = Math.random() * 2 - 1;
+      const theta = Math.acos(costheta);
+      const r = radius + (Math.random() - 0.5) * 0.25;
+      positions[i * 3] = r * Math.sin(theta) * Math.cos(phi);
+      positions[i * 3 + 1] = r * Math.sin(theta) * Math.sin(phi);
+      positions[i * 3 + 2] = r * Math.cos(theta);
+    }
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    const material = new THREE.PointsMaterial({ color: 0x2fb47c, size: 0.05, opacity: 0.9, transparent: true });
+    const globe = new THREE.Points(geometry, material);
     globe.position.set(2.4, 0.1, 0);
-scene.add(globe);
+    scene.add(globe);
 
     const ambient = new THREE.AmbientLight(0xffffff, 0.6);
     const directional = new THREE.DirectionalLight(0xffffff, 0.4);
@@ -265,28 +247,19 @@ scene.add(globe);
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
     }
-
-  function animate() {
-  requestAnimationFrame(animate);
-  globe.rotation.y += 0.0021;
-  renderer.render(scene, camera);
-}
-    
+    function animate() {
+      requestAnimationFrame(animate);
+      globe.rotation.y += 0.0021;
+      renderer.render(scene, camera);
+    }
     window.addEventListener('resize', resize);
     resize();
     animate();
 
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-  <script>
-  // Load shared header into this page
-  fetch("includes/header.html")
-    .then(res => res.text())
-    .then(html => { document.getElementById("header").innerHTML = html; })
-    .catch(err => console.error("Header load error:", err));
-</script>
+
+  <!-- only this (header+lang engine lives in site.js) -->
   <script src="/assets/site.js" defer></script>
-
-
 </body>
 </html>
