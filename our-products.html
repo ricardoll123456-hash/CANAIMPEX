@@ -361,6 +361,38 @@
     .catch(err => console.error("Header load error:", err));
 </script>
   <script src="/assets/site.js" defer></script>
+<script>
+  // Simple tab controller for the subcategories
+  (function(){
+    const tabs = Array.from(document.querySelectorAll('.tab'));
+    const panels = Array.from(document.querySelectorAll('.panel'));
+
+    function activate(id){
+      panels.forEach(p => p.classList.toggle('hidden', '#' + p.id !== id));
+      tabs.forEach(t => t.dataset.active = (t.getAttribute('data-panel') === id) ? 'true' : 'false');
+      if (history.replaceState) history.replaceState(null, '', id); // update hash without scroll
+    }
+
+    // default: use hash or first tab
+    const start = location.hash && document.querySelector(location.hash) ? location.hash : (tabs[0]?.getAttribute('data-panel') || '#tab-cashew');
+    activate(start);
+
+    // click handlers
+    tabs.forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const id = btn.getAttribute('data-panel');
+        if (!id) return;
+        activate(id);
+      });
+    });
+
+    // if user opens /our-products.html#tab-hevea
+    window.addEventListener('hashchange', ()=>{
+      if (document.querySelector(location.hash)) activate(location.hash);
+    }, false);
+  })();
+</script>
 
 
 </html>
