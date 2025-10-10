@@ -252,58 +252,84 @@
       </article>
     </div>
 
-    <!-- Hevea: Partner factories -->
-    <div id="tab-hevea" class="panel hidden">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Factory card -->
-        <article class="card p-6">
-          <div class="flex items-center gap-3">
-            <img src="assets/partners/hevea-factory-1.jpg" alt="Partner Factory 1" class="w-14 h-14 rounded-xl object-cover">
-            <div>
-              <h3 class="text-lg font-semibold text-white">San Pedro TSR Plant</h3>
-              <p class="text-white/60 text-xs">Certs: SGS • ISO • Phyto</p>
-            </div>
-          </div>
-          <div class="mt-4 text-white/80 text-sm">
-            <p>• Grades: TSR 10 / TSR 20</p>
-            <p>• Capacity: 1,200–1,500 MT/month</p>
-            <p>• Loading: 20’ &amp; 40’ FCL</p>
-          </div>
-        </article>
-        <article class="card p-6">
-          <div class="flex items-center gap-3">
-            <img src="assets/partners/hevea-factory-2.jpg" alt="Partner Factory 2" class="w-14 h-14 rounded-xl object-cover">
-            <div>
-              <h3 class="text-lg font-semibold text-white">Abidjan Latex Line</h3>
-              <p class="text-white/60 text-xs">Certs: SGS • Cotecna</p>
-            </div>
-          </div>
-          <div class="mt-4 text-white/80 text-sm">
-            <p>• HA/LA grades (ammonia)</p>
-            <p>• Drums / IBC totes</p>
-            <p>• Customs fast-track</p>
-          </div>
-        </article>
-        <article class="card p-6">
-          <div class="flex items-center gap-3">
-            <img src="assets/partners/hevea-factory-3.jpg" alt="Partner Factory 3" class="w-14 h-14 rounded-xl object-cover">
-            <div>
-              <h3 class="text-lg font-semibold text-white">Cup-Lump Aggregation</h3>
-              <p class="text-white/60 text-xs">Supervision: SGS</p>
-            </div>
-          </div>
-          <div class="mt-4 text-white/80 text-sm">
-            <p>• Cup-lump programs</p>
-            <p>• Clean/Dry specs as per PO</p>
-            <p>• Export via San Pedro</p>
-          </div>
-        </article>
-      </div>
-      <div class="mt-8">
-        <a href="#contact" class="btn px-5 py-3 rounded-xl font-semibold">Request Hevea Quote</a>
+    <!-- Hevea: Partner factories (REPLACE the whole #tab-hevea div with this) -->
+<div id="tab-hevea" class="panel grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <!-- Plant 1 -->
+  <article class="card p-6 flex flex-col">
+    <div class="flex items-center gap-3 mb-4">
+      <img src="assets/partners/hevea-factory-1.jpg" alt="" class="w-12 h-12 rounded-lg object-cover">
+      <div>
+        <h3 class="text-lg font-semibold text-white">San Pedro TSR Plant</h3>
+        <span class="chip text-white/70">SGS • ISO • Phyto</span>
       </div>
     </div>
 
+    <!-- vertical video -->
+    <div class="aspect-[9/16] rounded-2xl overflow-hidden bg-black/20">
+      <video src="assets/videos/hevea-tsr.mp4" autoplay loop muted playsinline preload="metadata"
+             class="w-full h-full object-cover"></video>
+    </div>
+
+    <ul class="text-white/75 text-sm mt-4 space-y-1">
+      <li>• Grades: TSR 10 / TSR 20</li>
+      <li>• Capacity: 1,200–1,500 MT/month</li>
+      <li>• Loading: 20’ & 40’ FCL</li>
+    </ul>
+
+    <a href="index.html#contact" class="btn px-4 py-2 rounded-lg mt-5 ml-auto">Request Quote</a>
+  </article>
+
+  <!-- Plant 2 -->
+  <article class="card p-6 flex flex-col">
+    <div class="flex items-center gap-3 mb-4">
+      <img src="assets/partners/hevea-factory-2.jpg" alt="" class="w-12 h-12 rounded-lg object-cover">
+      <div>
+        <h3 class="text-lg font-semibold text-white">Abidjan Latex Line</h3>
+        <span class="chip text-white/70">SGS • Cotecna</span>
+      </div>
+    </div>
+
+    <div class="aspect-[9/16] rounded-2xl overflow-hidden bg-black/20">
+      <video src="assets/videos/hevea-latex.mp4" autoplay loop muted playsinline preload="metadata"
+             class="w-full h-full object-cover"></video>
+    </div>
+
+    <ul class="text-white/75 text-sm mt-4 space-y-1">
+      <li>• HA / LA grades (ammonia)</li>
+      <li>• Drums / IBC totes</li>
+      <li>• Customs fast-track</li>
+    </ul>
+
+    <a href="index.html#contact" class="btn px-4 py-2 rounded-lg mt-5 ml-auto">Request Quote</a>
+  </article>
+
+  <!-- Plant 3 -->
+  <article class="card p-6 flex flex-col">
+    <div class="flex items-center gap-3 mb-4">
+      <img src="assets/partners/hevea-factory-3.jpg" alt="" class="w-12 h-12 rounded-lg object-cover">
+      <div>
+        <h3 class="text-lg font-semibold text-white">Cup-Lump Aggregation</h3>
+        <span class="chip text-white/70">Supervision: SGS</span>
+      </div>
+    </div>
+
+    <div class="aspect-[9/16] rounded-2xl overflow-hidden bg-black/20">
+      <video src="assets/videos/hevea-cuplump.mp4" autoplay loop muted playsinline preload="metadata"
+             class="w-full h-full object-cover"></video>
+    </div>
+
+    <ul class="text-white/75 text-sm mt-4 space-y-1">
+      <li>• Cup-lump programs</li>
+      <li>• Clean/Dry specs per PO</li>
+      <li>• Export via San Pedro</li>
+    </ul>
+
+    <a href="index.html#contact" class="btn px-4 py-2 rounded-lg mt-5 ml-auto">Request Quote</a>
+  </article>
+</div>
+
+
+    
     <!-- Coffee: SKUs -->
     <div id="tab-coffee" class="panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <article class="card p-6">
