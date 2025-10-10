@@ -74,24 +74,18 @@
 
 <section class="py-16" style="background:rgba(255,255,255,0.04);">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-      <div>
-        <h2 class="text-2xl md:text-3xl font-bold text-white">Leadership</h2>
-        <p class="mt-4 text-white/80 max-w-2xl">Our founders built Cana Impex on long-term relationships with cooperatives, processors, and shipping agents. Together they ensure transparent execution from sample to shipment.</p>
-      </div>
-      <div class="card px-6 py-4 text-sm text-white/80 max-w-sm">
-        <p class="font-semibold text-white">Executive Contacts</p>
-        <p class="mt-2">
-          Reach our leadership team directly:<br>
-          <a href="mailto:Jeanfortune@canaimpex.com" class="text-emerald-300 underline">JeanFortune@canaimpex.com</a><br>
-          <a href="mailto:RicardoL@canaimpex.com" class="text-emerald-300 underline">RicardoL@canaimpex.com</a>
-        </p>
-      </div>
+    <div class="mb-10">
+      <h2 class="text-2xl md:text-3xl font-bold text-white">Leadership</h2>
+      <p class="mt-4 text-white/80 max-w-2xl">Our founders built Cana Impex on long-term relationships with cooperatives, processors, and shipping agents. Together they ensure transparent execution from sample to shipment.</p>
     </div>
-    <div class="mt-10 grid md:grid-cols-2 gap-8">
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Jean -->
       <article class="card p-8 flex flex-col gap-6">
         <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-emerald-100/10">
-          <img src="assets/jean-fortune-kouassi.jpg" alt="Portrait of Jean Fortuné Kouassi" class="portrait">
+          <a href="mailto:Jeanfortune@canaimpex.com">
+            <img src="assets/jean-fortune-kouassi.jpg" alt="Portrait of Jean Fortuné Kouassi" class="portrait">
+          </a>
         </div>
         <div>
           <h3 class="text-xl font-semibold text-white">
@@ -101,9 +95,13 @@
           <p class="mt-4 text-white/80">Jean launched Cana Impex after a decade coordinating cashew procurement programmes throughout Côte d’Ivoire. He leads origin sourcing, cooperative relations, and government liaison to secure consistent commodity flows.</p>
         </div>
       </article>
+
+      <!-- Ricardo -->
       <article class="card p-8 flex flex-col gap-6">
         <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-emerald-100/10">
-          <img src="assets/ricardo-llorente.jpg" alt="Portrait of Ricardo A. Llorente" class="portrait">
+          <a href="mailto:RicardoL@canaimpex.com">
+            <img src="assets/ricardo-llorente.jpg" alt="Portrait of Ricardo A. Llorente" class="portrait">
+          </a>
         </div>
         <div>
           <h3 class="text-xl font-semibold text-white">
@@ -113,6 +111,18 @@
           <p class="mt-4 text-white/80">Ricardo oversees commercial strategy, contract execution, and customer service from our international desks. His background in coffee trading and supply chain digitisation keeps clients informed at every milestone.</p>
         </div>
       </article>
+
+      <!-- Contact Card (now part of the grid) -->
+      <div class="card p-8 flex flex-col justify-center">
+        <h3 class="text-xl font-semibold text-white">Executive Contacts</h3>
+        <p class="mt-4 text-white/80">
+          Reach our leadership team directly:
+        </p>
+        <div class="mt-3 space-y-2">
+          <a href="mailto:Jeanfortune@canaimpex.com" class="text-emerald-300 underline block">JeanFortune@canaimpex.com</a>
+          <a href="mailto:RicardoL@canaimpex.com" class="text-emerald-300 underline block">RicardoL@canaimpex.com</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
