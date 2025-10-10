@@ -309,12 +309,11 @@
     }
     window.__i18n_inited = true;
 
-    let lang = localStorage.getItem("cana_lang");
-    if (!lang) {
-      lang = (navigator.language || "en").toLowerCase().startsWith("fr") ? "fr" : "en";
-      localStorage.setItem("cana_lang", lang);
-    }
-    applyTranslations(lang);
+// Force English for now
+let lang = "en";
+localStorage.setItem("cana_lang", "en");
+applyTranslations("en");
+    
     bindLangButtons();
   }
 
