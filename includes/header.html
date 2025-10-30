@@ -1,68 +1,56 @@
 <header class="sticky top-0 z-50">
   <!-- Google tag (gtag.js) -->
 <!-- NutWorks: Global Consent + GA4 (auto-injects banner) -->
+<!-- Cana Impex / NutWorks – GA4 + Consent -->
 <script>
 (function () {
-  const GA_ID = "G-2RWCT01R3F";             // <-- your GA4 ID
-  const KEY   = "nutworks_cookie_consent";   // localStorage key
+  const GA_ID = "G-2RWCT01R3F";
+  const KEY = "canaimpex_cookie_consent";
 
   function loadGA() {
-    if (window.gtagLoaded) return;
+    if (window.gtagLoaded || localStorage.getItem(KEY) !== "accepted") return;
     const s = document.createElement("script");
     s.async = true;
     s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
     document.head.appendChild(s);
-
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
     window.gtag = gtag;
-
     gtag("js", new Date());
     gtag("config", GA_ID, { anonymize_ip: true });
     window.gtagLoaded = true;
-    // console.log("GA loaded");
   }
 
-  function makeBanner() {
-    if (document.getElementById("cookie-banner")) return;
+  window.acceptCookies = function () {
+    localStorage.setItem(KEY, "accepted");
+    document.getElementById("cookie-banner")?.remove();
+    loadGA();
+  };
+  window.rejectCookies = function () {
+    localStorage.setItem(KEY, "rejected");
+    document.getElementById("cookie-banner")?.remove();
+  };
 
-    const wrap = document.createElement("div");
-    wrap.id = "cookie-banner";
-    wrap.style.cssText = "position:fixed;bottom:0;left:0;width:100%;background:#111;color:#fff;text-align:center;padding:15px 10px;z-index:9999;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;box-shadow:0 -2px 8px rgba(0,0,0,.4)";
+  if (localStorage.getItem(KEY) === "accepted") loadGA();
 
-    const linkColor = "#b8860b";
-    wrap.innerHTML = `
-      We use cookies for analytics. Read our
-      <a href="/privacy-policy" target="_blank" style="color:${linkColor};text-decoration:underline">Privacy Policy</a>.
-      <button id="btn-accept" style="background:#0a5;border:none;color:#fff;padding:8px 14px;margin-left:10px;border-radius:6px;font-weight:600;cursor:pointer">Accept</button>
-      <button id="btn-decline" style="background:${linkColor};border:none;color:#111;padding:8px 14px;margin-left:6px;border-radius:6px;font-weight:700;cursor:pointer">Decline</button>
-    `;
-
-    wrap.querySelector("#btn-accept").onclick = function () {
-      localStorage.setItem(KEY, "accepted");
-      wrap.remove();
-      loadGA();
-    };
-    wrap.querySelector("#btn-decline").onclick = function () {
-      localStorage.setItem(KEY, "rejected");
-      wrap.remove();
-    };
-
-    document.body.appendChild(wrap);
-  }
-
-  // If already accepted in a past visit, load GA immediately
-  const saved = localStorage.getItem(KEY);
-  if (saved === "accepted") loadGA();
-
-  // Inject banner when DOM is ready (incognito will show it)
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", makeBanner);
-  } else {
-    makeBanner();
-  }
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!localStorage.getItem(KEY)) {
+      const banner = document.createElement("div");
+      banner.id = "cookie-banner";
+      banner.style.cssText =
+        "position:fixed;bottom:0;left:0;width:100%;background:#111;color:#fff;text-align:center;padding:15px 10px;z-index:99999;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;box-shadow:0 -2px 8px rgba(0,0,0,0.4)";
+      banner.innerHTML = `
+        We use cookies to improve performance and analyze traffic. 
+        See our <a href="/privacy-policy" style="color:#b8860b;text-decoration:underline">Privacy Policy</a>.
+        <button onclick="acceptCookies()" style="background:#0a5;border:none;color:#fff;padding:8px 14px;margin-left:10px;border-radius:6px;font-weight:600;cursor:pointer">Accept</button>
+        <button onclick="rejectCookies()" style="background:#b8860b;border:none;color:#111;padding:8px 14px;margin-left:6px;border-radius:6px;font-weight:700;cursor:pointer">Decline</button>
+      `;
+      document.body.appendChild(banner);
+    }
+  });
 })();
 </script>
+
 
 
 
