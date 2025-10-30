@@ -393,39 +393,54 @@ applyTranslations("en");
 
 
 
-// --- Replace any stylized/emoji flag with the real CI flag globally ---
+// --- Show ONE real Côte d'Ivoire flag in the green strip (inline SVG; skip black footer) ---
 (function () {
-  function swapFlagInGreenBar() {
-    // Find any element that contains the text "Made in Côte d’Ivoire"
-    // (works for your green strip on every page)
-    var candidates = Array.from(document.querySelectorAll('body *'))
-      .filter(function (el) {
-        // avoid gigantic lists by checking short, visible elements
-        if (!el || !el.textContent) return false;
-        var text = el.textContent.trim();
-        return /Made in Côte d['’]Ivoire/i.test(text) && el.offsetParent !== null;
-      });
-
-    candidates.forEach(function (el) {
-      // Remove any emoji or inline flag inside that element
-      Array.from(el.querySelectorAll('img, svg')).forEach(function (n) { n.remove(); });
-
-      // Append the real flag
-      var img = document.createElement('img');
-      img.src = '/assets/flag-ci.svg';   // use .png if you chose PNG
-      img.alt = 'Flag of Côte d’Ivoire';
-      img.style.height = '18px';
-      img.style.width = 'auto';
-      img.style.marginLeft = '8px';
-      img.style.verticalAlign = 'middle';
-      el.appendChild(img);
+  function insertRealFlagOnce() {
+    // Find the first visible element that contains "Made in Côte d’Ivoire"
+    // and is NOT inside the injected black footer (#footer).
+    var nodes = Array.from(document.querySelectorAll('body *')).filter(function (el) {
+      if (!el || !el.textContent || el.offsetParent === null) return false;
+      if (el.closest('#footer')) return false; // ignore black footer area
+      return /Made in Côte d['’]Ivoire/i.test(el.textContent.trim());
     });
+    if (!nodes.length) return;
+
+    var el = nodes[0]; // only first match → exactly one flag
+
+    // Remove any existing <img> or <svg> inside that element
+    Array.from(el.querySelectorAll('img, svg')).forEach(function (n) { n.remove(); });
+
+    // Inject inline SVG (official orange–white–green tricolor, 2:3 ratio)
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 3 2');
+    svg.setAttribute('width', '27');    // change size if you want
+    svg.setAttribute('height', '18');
+    svg.style.marginLeft = '8px';
+    svg.style.verticalAlign = 'middle';
+
+    var r1 = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    r1.setAttribute('x', '0'); r1.setAttribute('y', '0');
+    r1.setAttribute('width', '1'); r1.setAttribute('height', '2');
+    r1.setAttribute('fill', '#F77F00'); // orange
+
+    var r2 = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    r2.setAttribute('x', '1'); r2.setAttribute('y', '0');
+    r2.setAttribute('width', '1'); r2.setAttribute('height', '2');
+    r2.setAttribute('fill', '#FFFFFF'); // white
+
+    var r3 = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    r3.setAttribute('x', '2'); r3.setAttribute('y', '0');
+    r3.setAttribute('width', '1'); r3.setAttribute('height', '2');
+    r3.setAttribute('fill', '#009E60'); // green
+
+    svg.appendChild(r1); svg.appendChild(r2); svg.appendChild(r3);
+    el.appendChild(svg);
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', swapFlagInGreenBar);
+    document.addEventListener('DOMContentLoaded', insertRealFlagOnce);
   } else {
-    swapFlagInGreenBar();
+    insertRealFlagOnce();
   }
 })();
 
