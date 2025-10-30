@@ -1,90 +1,55 @@
 <header class="sticky top-0 z-50">
   <!-- Google tag (gtag.js) -->
-<!-- NutWorks Global Cookie Consent + Google Analytics -->
+<!-- NutWorks: global consent + GA loader -->
 <script>
-  (function() {
-    const GA_ID = "G-2RWCT01R3F";
+(function () {
+  const GA_ID = "G-2RWCT01R3F";
 
-    function loadGA() {
-      if (!window.gtagLoaded) {
-        const s = document.createElement('script');
-        s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-        s.async = true;
-        document.head.appendChild(s);
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        window.gtag = gtag;
-        gtag('js', new Date());
-        gtag('config', GA_ID, { anonymize_ip: true });
-        window.gtagLoaded = true;
-      }
+  // Read stored choice (incognito will be empty = show banner)
+  window.nwConsent = localStorage.getItem("nutworks_cookie_consent");
+
+  function loadGA() {
+    if (window.gtagLoaded || window.nwConsent !== "accepted") return;
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(s);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    gtag("js", new Date());
+    gtag("config", GA_ID, { anonymize_ip: true });
+    window.gtagLoaded = true;
+  }
+
+  // Public handlers for buttons
+  window.nwAccept = function () {
+    localStorage.setItem("nutworks_cookie_consent", "accepted");
+    window.nwConsent = "accepted";
+    const b = document.getElementById("cookie-banner"); if (b) b.remove();
+    loadGA();
+  };
+  window.nwReject = function () {
+    localStorage.setItem("nutworks_cookie_consent", "rejected");
+    window.nwConsent = "rejected";
+    const b = document.getElementById("cookie-banner"); if (b) b.remove();
+  };
+
+  // If already accepted in a previous visit, load GA immediately
+  if (window.nwConsent === "accepted") loadGA();
+
+  // When DOM is ready, show banner if no choice yet
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!window.nwConsent) {
+      const b = document.getElementById("cookie-banner");
+      if (b) b.style.display = "block";
     }
-
-    const consent = localStorage.getItem('nutworks_cookie_consent');
-    if (consent === 'accepted') loadGA();
-
-    window.acceptCookies = function() {
-      localStorage.setItem('nutworks_cookie_consent', 'accepted');
-      document.getElementById('cookie-banner').style.display = 'none';
-      loadGA();
-    };
-
-    window.rejectCookies = function() {
-      localStorage.setItem('nutworks_cookie_consent', 'rejected');
-      document.getElementById('cookie-banner').style.display = 'none';
-    };
-  })();
+  });
+})();
 </script>
 
-<style>
-  #cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #111;
-    color: #fff;
-    text-align: center;
-    padding: 15px 10px;
-    z-index: 9999;
-    font-family: sans-serif;
-    font-size: 15px;
-    box-shadow: 0 -2px 8px rgba(0,0,0,0.4);
-  }
-  #cookie-banner button {
-    background: #006400; /* deep green */
-    border: none;
-    color: #fff;
-    padding: 8px 15px;
-    margin-left: 8px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-  }
-  #cookie-banner button.reject {
-    background: #b8860b; /* gold tone */
-  }
-  #cookie-banner a {
-    color: #b8860b;
-    text-decoration: underline;
-  }
-</style>
-
-<div id="cookie-banner" style="display:none;">
-  We use cookies to personalize content and analyze traffic. 
-  By clicking <strong>Accept</strong>, you consent to our use of cookies in accordance with our 
-  <a href="/privacy-policy" target="_blank">Privacy Policy</a>.
-  <button onclick="acceptCookies()">Accept</button>
-  <button class="reject" onclick="rejectCookies()">Decline</button>
-</div>
-
-<script>
-  // Show banner only if user hasn't made a choice
-  if (!localStorage.getItem('nutworks_cookie_consent')) {
-    document.getElementById('cookie-banner').style.display = 'block';
-  }
-</script>
-<!-- End NutWorks Cookie Consent -->
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/assets/favicon.png" type="image/png">
