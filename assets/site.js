@@ -380,3 +380,13 @@ applyTranslations("en");
     boot();
   }
 })();
+
+
+
+/* load global consent/GA once for all pages */
+(function(){
+  var s = document.createElement('script');
+  s.src = '/consent.js';  // loads your global cookie + GA logic
+  s.defer = true;
+  document.head.appendChild(s);
+})();
