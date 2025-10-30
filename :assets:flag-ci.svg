@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
+  <rect width="1" height="2" x="0" y="0" fill="#F77F00"></rect>   <!-- orange -->
+  <rect width="1" height="2" x="1" y="0" fill="#FFFFFF"></rect>   <!-- white -->
+  <rect width="1" height="2" x="2" y="0" fill="#009E60"></rect>   <!-- green -->
+</svg>
