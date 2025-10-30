@@ -390,3 +390,42 @@ applyTranslations("en");
   s.defer = true;
   document.head.appendChild(s);
 })();
+
+
+
+// --- Replace any stylized/emoji flag with the real CI flag globally ---
+(function () {
+  function swapFlagInGreenBar() {
+    // Find any element that contains the text "Made in Côte d’Ivoire"
+    // (works for your green strip on every page)
+    var candidates = Array.from(document.querySelectorAll('body *'))
+      .filter(function (el) {
+        // avoid gigantic lists by checking short, visible elements
+        if (!el || !el.textContent) return false;
+        var text = el.textContent.trim();
+        return /Made in Côte d['’]Ivoire/i.test(text) && el.offsetParent !== null;
+      });
+
+    candidates.forEach(function (el) {
+      // Remove any emoji or inline flag inside that element
+      Array.from(el.querySelectorAll('img, svg')).forEach(function (n) { n.remove(); });
+
+      // Append the real flag
+      var img = document.createElement('img');
+      img.src = '/assets/flag-ci.svg';   // use .png if you chose PNG
+      img.alt = 'Flag of Côte d’Ivoire';
+      img.style.height = '18px';
+      img.style.width = 'auto';
+      img.style.marginLeft = '8px';
+      img.style.verticalAlign = 'middle';
+      el.appendChild(img);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', swapFlagInGreenBar);
+  } else {
+    swapFlagInGreenBar();
+  }
+})();
+
