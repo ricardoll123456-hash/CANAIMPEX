@@ -1,15 +1,13 @@
 <header class="sticky top-0 z-50">
   <!-- Google tag (gtag.js) -->
-<!-- NutWorks: global consent + GA loader -->
+<!-- NutWorks: Global Consent + GA4 (auto-injects banner) -->
 <script>
 (function () {
-  const GA_ID = "G-2RWCT01R3F";
-
-  // Read stored choice (incognito will be empty = show banner)
-  window.nwConsent = localStorage.getItem("nutworks_cookie_consent");
+  const GA_ID = "G-2RWCT01R3F";             // <-- your GA4 ID
+  const KEY   = "nutworks_cookie_consent";   // localStorage key
 
   function loadGA() {
-    if (window.gtagLoaded || window.nwConsent !== "accepted") return;
+    if (window.gtagLoaded) return;
     const s = document.createElement("script");
     s.async = true;
     s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
@@ -22,33 +20,50 @@
     gtag("js", new Date());
     gtag("config", GA_ID, { anonymize_ip: true });
     window.gtagLoaded = true;
+    // console.log("GA loaded");
   }
 
-  // Public handlers for buttons
-  window.nwAccept = function () {
-    localStorage.setItem("nutworks_cookie_consent", "accepted");
-    window.nwConsent = "accepted";
-    const b = document.getElementById("cookie-banner"); if (b) b.remove();
-    loadGA();
-  };
-  window.nwReject = function () {
-    localStorage.setItem("nutworks_cookie_consent", "rejected");
-    window.nwConsent = "rejected";
-    const b = document.getElementById("cookie-banner"); if (b) b.remove();
-  };
+  function makeBanner() {
+    if (document.getElementById("cookie-banner")) return;
 
-  // If already accepted in a previous visit, load GA immediately
-  if (window.nwConsent === "accepted") loadGA();
+    const wrap = document.createElement("div");
+    wrap.id = "cookie-banner";
+    wrap.style.cssText = "position:fixed;bottom:0;left:0;width:100%;background:#111;color:#fff;text-align:center;padding:15px 10px;z-index:9999;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;box-shadow:0 -2px 8px rgba(0,0,0,.4)";
 
-  // When DOM is ready, show banner if no choice yet
-  document.addEventListener("DOMContentLoaded", function () {
-    if (!window.nwConsent) {
-      const b = document.getElementById("cookie-banner");
-      if (b) b.style.display = "block";
-    }
-  });
+    const linkColor = "#b8860b";
+    wrap.innerHTML = `
+      We use cookies for analytics. Read our
+      <a href="/privacy-policy" target="_blank" style="color:${linkColor};text-decoration:underline">Privacy Policy</a>.
+      <button id="btn-accept" style="background:#0a5;border:none;color:#fff;padding:8px 14px;margin-left:10px;border-radius:6px;font-weight:600;cursor:pointer">Accept</button>
+      <button id="btn-decline" style="background:${linkColor};border:none;color:#111;padding:8px 14px;margin-left:6px;border-radius:6px;font-weight:700;cursor:pointer">Decline</button>
+    `;
+
+    wrap.querySelector("#btn-accept").onclick = function () {
+      localStorage.setItem(KEY, "accepted");
+      wrap.remove();
+      loadGA();
+    };
+    wrap.querySelector("#btn-decline").onclick = function () {
+      localStorage.setItem(KEY, "rejected");
+      wrap.remove();
+    };
+
+    document.body.appendChild(wrap);
+  }
+
+  // If already accepted in a past visit, load GA immediately
+  const saved = localStorage.getItem(KEY);
+  if (saved === "accepted") loadGA();
+
+  // Inject banner when DOM is ready (incognito will show it)
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", makeBanner);
+  } else {
+    makeBanner();
+  }
 })();
 </script>
+
 
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
