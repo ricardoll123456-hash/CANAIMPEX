@@ -32,6 +32,13 @@
 </head>
 
 <body class="min-h-screen flex flex-col">
+  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;width:100%;background:#111;color:#fff;text-align:center;padding:15px 10px;z-index:9999;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;box-shadow:0 -2px 8px rgba(0,0,0,.4)">
+  We use cookies for analytics. By clicking <strong>Accept</strong>, you consent as described in our
+  <a href="/privacy-policy" target="_blank" style="color:#b8860b;text-decoration:underline">Privacy Policy</a>.
+  <button onclick="nwAccept()" style="background:#0a5; border:none; color:#fff; padding:8px 14px; margin-left:10px; border-radius:6px; font-weight:600; cursor:pointer">Accept</button>
+  <button onclick="nwReject()" style="background:#b8860b; border:none; color:#111; padding:8px 14px; margin-left:6px; border-radius:6px; font-weight:700; cursor:pointer">Decline</button>
+</div>
+
   <!-- header mount -->
   <div id="header"></div>
 
