@@ -5,13 +5,13 @@ Independent QA was performed separately from the builder against the built produ
 | Check | Result |
 | --- | --- |
 | Strict TypeScript, ESLint, production build on Node 24 | Passed |
-| Backend unit/integration boundary tests | 29 passed |
+| Backend and trusted CMS callback tests | 39 passed |
 | Complete server-mode browser suite | 69 passed; provider acceptance is mocked in explicitly named tests |
 | Latest complete email-draft browser run | 74 passed, 5 intentionally skipped server-only provider-response cases |
 | Independent focused draft rerun | 10 passed, including Unicode mail-link limits and visible recipient |
 | CMS published vs protected draft rendering | Passed with a temporary draft; cleaned up afterward |
 | Invalid draft secret | 401; no draft cookie |
-| Signed content revalidation | 200; unsigned request401 |
+| Signed content revalidation | 200; unsigned request 401 |
 | EN/FR privacy content after cache refresh | Correct email-draft data flow verified independently |
 
 Browser coverage includes category-to-quote selection, same-page language switching, required-field feedback, duplicate/concurrent requests, rate limits, provider failures, retained form entries, consent grant/revoke, no form PII in events, responsive layouts at 360/390/768/1024/1440 px, keyboard-accessible navigation, French text expansion, no-JavaScript readable navigation and direct email access, reduced motion and forced WebGL failure.
@@ -24,9 +24,9 @@ Measured from a local optimized build with `node scripts/measure-bundles.mjs`, u
 
 | Resource | Bytes | Budget assessment |
 | --- | ---: | --- |
-| Initial modern JavaScript, gzip | 191,093 (186.6 KiB) | Slightly above the approximate180 KB target; recorded variance, not represented as a strict pass |
-| Additional user-activated 3D JavaScript, gzip | 287,288 (280.6 KiB) | Below1.8 MB |
-| Mobile hero poster, original WebP | 28,110 | Below180 KB |
+| Initial modern JavaScript, gzip | 191,162 (186.7 KiB) | Slightly above the approximate 180 KB target; recorded variance, not represented as a strict pass |
+| Additional user-activated 3D JavaScript, gzip | 287,452 (280.7 KiB) | Below 1.8 MB |
+| Mobile hero poster, original WebP | 28,110 | Below 180 KB |
 | Desktop artwork WebP | 67,704 | Optimized source; actual served image may be resized further |
 
 The live model is procedural with no model/texture downloads, demand rendering and capped device pixel ratio. It is removed when outside the viewport. 3D requires explicit desktop activation; mobile/reduced-motion paths remain static.

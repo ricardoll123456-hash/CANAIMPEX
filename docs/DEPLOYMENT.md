@@ -26,7 +26,7 @@ Server mode keeps hashed abuse/idempotency keys in Redis, not the form payload. 
 
 ## CMS
 
-Studio: `/studio`. CORS must allow credentials for localhost development, production and the project's Vercel preview origins. Never allow a blanket `*` credentialed origin. The Presentation tool uses the same origin and official Sanity preview-secret verification; unsigned requests cannot enable drafts.
+Studio: `/studio`. CORS must allow credentials for localhost development, production and the project's Vercel preview origins. Never allow a blanket `*` credentialed origin. The Studio normalizes Vercel’s legacy trusted Sanity callback to the current session-hash format; untrusted callback URLs are ignored. The Presentation tool uses the same origin and official Sanity preview-secret verification; unsigned requests cannot enable drafts.
 
 Create a Sanity document webhook named `Cana Impex content revalidation` with POST destination `https://canaimpex.vercel.app/api/revalidate`, the production dataset, create/update/delete triggers, no drafts or versions, a projection containing only `_id` and `_type`, and a secret matching `SANITY_REVALIDATE_SECRET`. Limit its filter to public website content types. See [Sanity's webhook reference](https://www.sanity.io/docs/http-reference/webhooks). The signed route invalidates the `cms` cache; ordinary content also refreshes after one hour.
 
