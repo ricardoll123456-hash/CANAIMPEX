@@ -1,0 +1,542 @@
+{
+  "about": {
+    "en": {
+      "eyebrow": "ABOUT CANA IMPEX",
+      "title": "Your next vehicle. Beyond borders.",
+      "lead": "Vehicle sourcing and export coordination, centered on your next move.",
+      "sections": [
+        {
+          "heading": "A vehicle is only the beginning.",
+          "body": "Finding a car is one part of an international purchase. Condition, vehicle records, export preparation, transport and destination requirements all deserve attention before you commit.",
+          "items": []
+        },
+        {
+          "heading": "Your brief comes first.",
+          "body": "Cana Impex starts with what you want to drive: vehicle type, preferred make and model, budget and destination. We use those details to open a focused sourcing and export conversation.",
+          "items": []
+        },
+        {
+          "heading": "Clear steps. Clear expectations.",
+          "body": "Any proposed vehicle, service scope, costs, delivery arrangements and responsibilities must be confirmed in a written offer. Website illustrations do not represent current stock.",
+          "items": []
+        }
+      ]
+    },
+    "fr": {
+      "eyebrow": "À PROPOS DE CANA IMPEX",
+      "title": "Votre prochain véhicule. Au-delà des frontières.",
+      "lead": "Sourcing automobile et coordination des exportations, selon votre projet.",
+      "sections": [
+        {
+          "heading": "Le véhicule n’est que le début.",
+          "body": "Trouver une voiture n’est qu’une partie de l’achat international. État, dossier, préparation, transport et exigences de destination méritent une attention avant l’engagement.",
+          "items": []
+        },
+        {
+          "heading": "Votre besoin d’abord.",
+          "body": "Cana Impex part du véhicule que vous recherchez : catégorie, marque et modèle, budget et destination. Ces éléments orientent un échange ciblé sur la recherche et l’exportation.",
+          "items": []
+        },
+        {
+          "heading": "Des étapes et attentes claires.",
+          "body": "Véhicule proposé, services, coûts, livraison et responsabilités sont à confirmer dans une offre écrite. Les illustrations du site ne représentent pas un stock disponible.",
+          "items": []
+        }
+      ]
+    }
+  },
+  "services": {
+    "en": {
+      "eyebrow": "EXPORT SERVICES",
+      "title": "More than finding a car.",
+      "lead": "Connect the vehicle search, preparation and shipping conversation in one place.",
+      "sections": [
+        {
+          "heading": "Vehicle sourcing.",
+          "body": "Define the vehicle you want, your budget, preferred condition and destination. A precise brief helps narrow the search and clarify the next steps.",
+          "items": []
+        },
+        {
+          "heading": "Vehicle review.",
+          "body": "Discuss the records, inspection and condition information you need to evaluate a proposed vehicle. The availability and scope of checks are agreed for each request.",
+          "items": []
+        },
+        {
+          "heading": "Export & shipping coordination.",
+          "body": "Discuss the departure location, destination port, shipping method and preparation needs. Confirm the service scope and commercial terms before booking.",
+          "items": []
+        }
+      ]
+    },
+    "fr": {
+      "eyebrow": "SERVICES D’EXPORTATION",
+      "title": "Bien plus que trouver une voiture.",
+      "lead": "Relier la recherche, la préparation et le transport dans un même échange.",
+      "sections": [
+        {
+          "heading": "Recherche automobile.",
+          "body": "Définissez le véhicule, le budget, l’état souhaité et la destination. Un besoin précis aide à cibler la recherche et les prochaines étapes.",
+          "items": []
+        },
+        {
+          "heading": "Examen du véhicule.",
+          "body": "Précisez le dossier, l’inspection et les informations d’état nécessaires. Disponibilité et portée des vérifications sont convenues selon la demande.",
+          "items": []
+        },
+        {
+          "heading": "Coordination export et transport.",
+          "body": "Discutez du départ, du port de destination, du mode de transport et de la préparation. Confirmez les prestations et conditions avant réservation.",
+          "items": []
+        }
+      ]
+    }
+  },
+  "services/vehicle-sourcing": {
+    "en": {
+      "eyebrow": "VEHICLE SOURCING",
+      "title": "A search shaped around you.",
+      "lead": "Start with a vehicle brief, not a guess.",
+      "sections": [
+        {
+          "heading": "Make the priorities clear.",
+          "body": "Specify make, model, approximate year range, mileage preferences, condition and budget. Tell us which features are essential and where you can be flexible.",
+          "items": []
+        },
+        {
+          "heading": "Evaluate the proposed vehicle.",
+          "body": "Ask for the vehicle identification, available condition information, title or registration records and inspection scope. A photograph alone cannot establish a vehicle’s history or suitability.",
+          "items": []
+        },
+        {
+          "heading": "Confirm before purchase.",
+          "body": "Agree the vehicle details, purchase arrangements, costs and responsibilities in writing. Vehicle suitability and import eligibility depend on the actual vehicle and destination.",
+          "items": []
+        }
+      ]
+    },
+    "fr": {
+      "eyebrow": "RECHERCHE AUTOMOBILE",
+      "title": "Une recherche selon vos priorités.",
+      "lead": "Commencer par un besoin précis, sans approximation.",
+      "sections": [
+        {
+          "heading": "Clarifier les priorités.",
+          "body": "Précisez marque, modèle, années, kilométrage souhaité, état et budget. Distinguez les équipements indispensables des préférences.",
+          "items": []
+        },
+        {
+          "heading": "Évaluer le véhicule proposé.",
+          "body": "Demandez identification, informations d’état disponibles, titre ou immatriculation et portée d’inspection. Une photo seule ne prouve ni historique ni adéquation.",
+          "items": []
+        },
+        {
+          "heading": "Confirmer avant achat.",
+          "body": "Convenir par écrit du véhicule, de l’achat, des coûts et des responsabilités. Adéquation et admissibilité dépendent du véhicule réel et de sa destination.",
+          "items": []
+        }
+      ]
+    }
+  },
+  "services/export-shipping": {
+    "en": {
+      "eyebrow": "EXPORT & SHIPPING",
+      "title": "Map the route before the move.",
+      "lead": "A clear shipping brief connects your vehicle to its destination.",
+      "sections": [
+        {
+          "heading": "Departure and destination.",
+          "body": "State where the vehicle is located and the destination country and port. Departure, transshipment and destination arrangements need to be confirmed for the specific route.",
+          "items": []
+        },
+        {
+          "heading": "Shipping method.",
+          "body": "Discuss container or roll-on/roll-off options where available, handling needs and preparation. Availability and suitability depend on the vehicle, port and carrier.",
+          "items": []
+        },
+        {
+          "heading": "Documentation and collection.",
+          "body": "Clarify export records, shipping documents, destination clearance and who handles collection. Duties, taxes, eligibility and local registration require destination-specific advice.",
+          "items": []
+        }
+      ]
+    },
+    "fr": {
+      "eyebrow": "EXPORTATION ET TRANSPORT",
+      "title": "Tracer le parcours avant le départ.",
+      "lead": "Un besoin logistique clair relie votre véhicule à sa destination.",
+      "sections": [
+        {
+          "heading": "Départ et destination.",
+          "body": "Précisez la localisation du véhicule, le pays et le port de destination. Départ, transbordement et arrivée sont à confirmer pour l’itinéraire concerné.",
+          "items": []
+        },
+        {
+          "heading": "Mode de transport.",
+          "body": "Discutez du conteneur ou du roulier selon disponibilité, des manutentions et de la préparation. Les possibilités dépendent du véhicule, du port et du transporteur.",
+          "items": []
+        },
+        {
+          "heading": "Documents et réception.",
+          "body": "Clarifiez justificatifs export, documents de transport, dédouanement et prise en charge. Droits, taxes, admissibilité et immatriculation nécessitent un conseil adapté à la destination.",
+          "items": []
+        }
+      ]
+    }
+  },
+  "how-it-works": {
+    "en": {
+      "eyebrow": "THE EXPORT JOURNEY",
+      "title": "One move. Five clear steps.",
+      "lead": "From the first vehicle brief to a plan for destination collection.",
+      "sections": [
+        {
+          "heading": "01 — Tell us what you’re looking for.",
+          "body": "Share vehicle type, make and model preferences, budget and destination. Include a delivery timeframe if one matters to your project.",
+          "items": []
+        },
+        {
+          "heading": "02 — Review the possibilities.",
+          "body": "Discuss a proposed vehicle, its available records, condition information and the checks you require.",
+          "items": []
+        },
+        {
+          "heading": "03 — Agree the preparation.",
+          "body": "Confirm the vehicle, commercial terms, export preparation and each party’s responsibilities in writing.",
+          "items": []
+        },
+        {
+          "heading": "04 — Arrange the shipment.",
+          "body": "Clarify route, shipping method, booking, documents and handover requirements for the agreed program.",
+          "items": []
+        },
+        {
+          "heading": "05 — Prepare for arrival.",
+          "body": "Coordinate with the appropriate destination professionals on clearance, applicable charges and collection. Requirements depend on the vehicle and destination.",
+          "items": []
+        }
+      ]
+    },
+    "fr": {
+      "eyebrow": "LE PARCOURS EXPORT",
+      "title": "Un projet. Cinq étapes claires.",
+      "lead": "Du besoin automobile au plan de réception à destination.",
+      "sections": [
+        {
+          "heading": "01 — Décrivez le véhicule recherché.",
+          "body": "Partagez catégorie, marque et modèle, budget et destination. Précisez un délai de livraison si nécessaire.",
+          "items": []
+        },
+        {
+          "heading": "02 — Examinez les possibilités.",
+          "body": "Discutez du véhicule proposé, des documents disponibles, de son état et des vérifications souhaitées.",
+          "items": []
+        },
+        {
+          "heading": "03 — Convenez de la préparation.",
+          "body": "Confirmez par écrit véhicule, conditions commerciales, préparation export et responsabilités.",
+          "items": []
+        },
+        {
+          "heading": "04 — Organisez l’expédition.",
+          "body": "Précisez itinéraire, mode de transport, réservation, documents et remise du véhicule.",
+          "items": []
+        },
+        {
+          "heading": "05 — Préparez l’arrivée.",
+          "body": "Échangez avec les professionnels de destination sur le dédouanement, les frais et la réception. Les exigences dépendent du véhicule et du pays.",
+          "items": []
+        }
+      ]
+    }
+  },
+  "insights/vehicle-request": {
+    "en": {
+      "eyebrow": "EXPORT GUIDE / 01",
+      "title": "Write a better vehicle request.",
+      "lead": "The details that help turn a wish list into a useful sourcing brief.",
+      "sections": [
+        {
+          "heading": "Start with the vehicle.",
+          "body": "Include preferred make, model, body type, year range, fuel type, transmission and must-have features. Identify acceptable alternatives.",
+          "items": []
+        },
+        {
+          "heading": "Define budget and condition.",
+          "body": "State the budget and currency, what the budget should include and your mileage and condition preferences. Vehicle price and delivered costs are different figures.",
+          "items": []
+        },
+        {
+          "heading": "Add the destination.",
+          "body": "Give the destination country and port, timing and whether you need sourcing, export preparation, shipping or a combination.",
+          "items": []
+        },
+        {
+          "heading": "Keep the conversation open.",
+          "body": "Any vehicle availability, price, condition, service scope and destination suitability require confirmation for the actual proposal.",
+          "items": []
+        }
+      ]
+    },
+    "fr": {
+      "eyebrow": "GUIDE EXPORT / 01",
+      "title": "Préciser votre recherche automobile.",
+      "lead": "Les détails qui transforment une liste de souhaits en demande utile.",
+      "sections": [
+        {
+          "heading": "Commencer par le véhicule.",
+          "body": "Indiquez marque, modèle, carrosserie, années, carburant, transmission et équipements essentiels. Précisez les alternatives acceptables.",
+          "items": []
+        },
+        {
+          "heading": "Définir budget et état.",
+          "body": "Précisez montant, devise, éléments inclus et préférences de kilométrage et d’état. Prix d’achat et coût livré sont différents.",
+          "items": []
+        },
+        {
+          "heading": "Ajouter la destination.",
+          "body": "Indiquez pays, port, calendrier et besoins : recherche, préparation export, transport ou ensemble de services.",
+          "items": []
+        },
+        {
+          "heading": "Prévoir les clarifications.",
+          "body": "Disponibilité, prix, état, prestations et adéquation à destination sont à confirmer pour la proposition réelle.",
+          "items": []
+        }
+      ]
+    }
+  },
+  "insights/vehicle-inspection": {
+    "en": {
+      "eyebrow": "EXPORT GUIDE / 02",
+      "title": "Look beyond the photographs.",
+      "lead": "General considerations when reviewing a vehicle for an international purchase.",
+      "sections": [
+        {
+          "heading": "Identify the actual vehicle.",
+          "body": "Confirm the vehicle identification number and compare the available records with the vehicle being offered. Photos and model descriptions do not establish a complete history.",
+          "items": []
+        },
+        {
+          "heading": "Define the inspection scope.",
+          "body": "Discuss mechanical, structural, cosmetic and diagnostic checks with an appropriate professional. Confirm who inspects the vehicle, what is covered and how findings are reported.",
+          "items": []
+        },
+        {
+          "heading": "Understand the limitations.",
+          "body": "A report describes an inspection at a particular time and within an agreed scope. It is not a guarantee against every defect or future repair.",
+          "items": []
+        },
+        {
+          "heading": "Check destination suitability.",
+          "body": "Discuss destination eligibility and registration requirements with qualified local professionals before purchasing. Requirements may depend on age, specification, condition and records.",
+          "items": []
+        }
+      ]
+    },
+    "fr": {
+      "eyebrow": "GUIDE EXPORT / 02",
+      "title": "Voir au-delà des photographies.",
+      "lead": "Points généraux à examiner avant un achat automobile international.",
+      "sections": [
+        {
+          "heading": "Identifier le véhicule réel.",
+          "body": "Confirmez le numéro d’identification et comparez les dossiers au véhicule proposé. Photos et descriptif ne constituent pas un historique complet.",
+          "items": []
+        },
+        {
+          "heading": "Définir la portée de l’inspection.",
+          "body": "Discutez des contrôles mécaniques, structurels, esthétiques et diagnostics avec un professionnel adapté. Précisez responsable, portée et rapport.",
+          "items": []
+        },
+        {
+          "heading": "Comprendre les limites.",
+          "body": "Un rapport reflète un contrôle à une date et selon une portée donnée. Il ne garantit pas l’absence de tout défaut ou réparation future.",
+          "items": []
+        },
+        {
+          "heading": "Vérifier l’adéquation à destination.",
+          "body": "Examinez admissibilité et immatriculation avec des professionnels locaux avant achat. Âge, caractéristiques, état et documents peuvent être déterminants.",
+          "items": []
+        }
+      ]
+    }
+  },
+  "insights/export-preparation": {
+    "en": {
+      "eyebrow": "EXPORT GUIDE / 03",
+      "title": "Prepare the move before departure.",
+      "lead": "A starting checklist for the export and shipping conversation.",
+      "sections": [
+        {
+          "heading": "Confirm the service scope.",
+          "body": "Clarify who handles purchase, inland transport, preparation, booking, export formalities and destination collection. Record the agreed scope in writing.",
+          "items": []
+        },
+        {
+          "heading": "Agree the documents.",
+          "body": "Ask the appropriate export, carrier and destination professionals what records apply. Confirm the needed title or registration, commercial and shipping documents for the transaction.",
+          "items": []
+        },
+        {
+          "heading": "Discuss preparation and shipping.",
+          "body": "Confirm carrier requirements, vehicle condition, handling, personal items and the selected shipping method. Do not assume all vehicles or routes use the same preparation rules.",
+          "items": []
+        },
+        {
+          "heading": "Plan for arrival.",
+          "body": "Understand who is responsible for destination clearance, charges and collection. This guide is general information and does not replace current advice for the actual route and vehicle.",
+          "items": []
+        }
+      ]
+    },
+    "fr": {
+      "eyebrow": "GUIDE EXPORT / 03",
+      "title": "Préparer le départ en amont.",
+      "lead": "Une première liste pour le dialogue export et transport.",
+      "sections": [
+        {
+          "heading": "Confirmer les prestations.",
+          "body": "Précisez achat, transport intérieur, préparation, réservation, formalités export et réception. Consignez la portée convenue par écrit.",
+          "items": []
+        },
+        {
+          "heading": "Convenir des documents.",
+          "body": "Demandez aux professionnels export, transport et destination les pièces applicables. Confirmez titre ou immatriculation, justificatifs commerciaux et de transport.",
+          "items": []
+        },
+        {
+          "heading": "Discuter préparation et expédition.",
+          "body": "Confirmez exigences du transporteur, état, manutention, objets personnels et mode retenu. Les règles ne sont pas identiques pour tous véhicules et itinéraires.",
+          "items": []
+        },
+        {
+          "heading": "Prévoir l’arrivée.",
+          "body": "Identifiez responsables du dédouanement, des frais et de la réception. Ce guide général ne remplace pas un conseil à jour pour le véhicule et l’itinéraire concernés.",
+          "items": []
+        }
+      ]
+    }
+  },
+  "privacy": {
+    "en": {
+      "eyebrow": "LEGAL",
+      "title": "Privacy notice.",
+      "lead": "How information is handled when you use this website or submit an inquiry.",
+      "sections": [
+        {
+          "heading": "Your inquiry.",
+          "body": "Cana Impex uses the contact details and vehicle requirements you submit to evaluate and respond to your inquiry. Use the contact form for questions, correction or deletion requests.",
+          "items": []
+        },
+        {
+          "heading": "Information and service providers.",
+          "body": "In email-draft mode, your entries stay in your browser until you choose to open your mail app or copy them. You review and send the email yourself; your mail provider then processes it. The website uses Vercel for hosting and Sanity for published content. There is no separate lead database. If direct delivery is enabled later, Resend will process inquiries and Upstash will protect against abuse. Providers may process data in other countries.",
+          "items": []
+        },
+        {
+          "heading": "Analytics and choices.",
+          "body": "Optional Google analytics tags load only after your consent, if configured. Form names, email addresses, telephone numbers and messages are excluded from analytics parameters. Your preference is stored in your browser and can be changed through Cookie preferences.",
+          "items": []
+        },
+        {
+          "heading": "Retention and communication.",
+          "body": "Inquiry records are retained in the commercial mailbox for responding and managing the relationship, subject to applicable obligations. Marketing consent is separate and optional. No unsupported fixed retention period is claimed.",
+          "items": []
+        },
+        {
+          "heading": "Security.",
+          "body": "Do not submit payment details, identity documents, vehicle ownership originals or other sensitive records through the public form. Any transaction-specific document exchange is arranged separately.",
+          "items": []
+        }
+      ]
+    },
+    "fr": {
+      "eyebrow": "MENTIONS LÉGALES",
+      "title": "Avis de confidentialité.",
+      "lead": "Le traitement des informations lors de votre visite ou de votre demande.",
+      "sections": [
+        {
+          "heading": "Votre demande.",
+          "body": "Cana Impex utilise vos coordonnées et besoins automobiles pour étudier votre demande et y répondre. Utilisez le formulaire pour les questions, corrections ou demandes de suppression.",
+          "items": []
+        },
+        {
+          "heading": "Informations et prestataires.",
+          "body": "En mode brouillon, vos données restent dans votre navigateur jusqu’à l’ouverture de votre messagerie ou leur copie. Vous vérifiez et envoyez vous-même l’e-mail ; votre fournisseur de messagerie le traite ensuite. Le site utilise Vercel pour l’hébergement et Sanity pour le contenu publié. Aucune base séparée de prospects n’est maintenue. Si l’envoi direct est activé plus tard, Resend traitera les demandes et Upstash les protégera contre les abus. Les prestataires peuvent traiter les données à l’étranger.",
+          "items": []
+        },
+        {
+          "heading": "Statistiques et choix.",
+          "body": "Les balises Google facultatives ne sont chargées qu’avec votre consentement, si configurées. Noms, e-mails, téléphones et messages sont exclus des paramètres statistiques. La préférence est enregistrée dans le navigateur et modifiable dans les préférences cookies.",
+          "items": []
+        },
+        {
+          "heading": "Conservation et communication.",
+          "body": "Les demandes sont conservées dans la boîte commerciale pour réponse et suivi, selon les obligations applicables. Le consentement marketing est distinct et facultatif. Aucune durée fixe non établie n’est annoncée.",
+          "items": []
+        },
+        {
+          "heading": "Sécurité.",
+          "body": "N’envoyez ni données de paiement, pièces d’identité, originaux de propriété automobile ni documents sensibles via le formulaire public. Les échanges documentaires d’une transaction sont organisés séparément.",
+          "items": []
+        }
+      ]
+    }
+  },
+  "terms": {
+    "en": {
+      "eyebrow": "LEGAL",
+      "title": "Website terms.",
+      "lead": "General information for using the Cana Impex website.",
+      "sections": [
+        {
+          "heading": "Vehicle and service information.",
+          "body": "This website introduces vehicle sourcing and export services. Category illustrations are not live stock listings or binding offers. Any vehicle availability, condition, price, service scope or delivery date must be confirmed in writing.",
+          "items": []
+        },
+        {
+          "heading": "Costs and destination requirements.",
+          "body": "Duties, taxes, fees, import eligibility and registration depend on the actual vehicle and destination. Obtain current advice from the appropriate professionals before purchase.",
+          "items": []
+        },
+        {
+          "heading": "Illustrative media and guides.",
+          "body": "Original vehicle artwork is illustrative and does not represent a specific vehicle for sale. Guides provide general educational information, not transaction-specific legal, customs or technical advice.",
+          "items": []
+        },
+        {
+          "heading": "Responsible use and rights.",
+          "body": "Use forms for legitimate inquiries and avoid sensitive documents or payment information. Original branding and creative assets are subject to their recorded rights; third-party software retains its own licenses.",
+          "items": []
+        }
+      ]
+    },
+    "fr": {
+      "eyebrow": "MENTIONS LÉGALES",
+      "title": "Conditions d’utilisation.",
+      "lead": "Informations générales sur l’utilisation du site Cana Impex.",
+      "sections": [
+        {
+          "heading": "Véhicules et prestations.",
+          "body": "Ce site présente la recherche automobile et les services d’exportation. Les illustrations ne constituent ni stock réel ni offre ferme. Disponibilité, état, prix, prestations et délai doivent être confirmés par écrit.",
+          "items": []
+        },
+        {
+          "heading": "Coûts et destination.",
+          "body": "Droits, taxes, frais, admissibilité et immatriculation dépendent du véhicule et de la destination. Demandez un conseil à jour aux professionnels compétents avant achat.",
+          "items": []
+        },
+        {
+          "heading": "Visuels et guides.",
+          "body": "Les créations automobiles sont illustratives et ne représentent pas un véhicule précis en vente. Les guides sont pédagogiques, sans conseil juridique, douanier ou technique propre à une transaction.",
+          "items": []
+        },
+        {
+          "heading": "Utilisation et droits.",
+          "body": "Réservez les formulaires aux demandes légitimes, sans documents sensibles ni données de paiement. Identité et créations originales restent soumises aux droits consignés ; les logiciels tiers conservent leurs licences.",
+          "items": []
+        }
+      ]
+    }
+  }
+}
