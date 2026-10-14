@@ -1,0 +1,264 @@
+{
+  "ui": {
+    "en": {
+      "products": "Vehicles",
+      "capabilities": "Export services",
+      "compliance": "How it works",
+      "about": "About",
+      "insights": "Insights",
+      "contact": "Contact",
+      "quote": "Request a quote",
+      "explore": "Find your next vehicle",
+      "back": "All vehicle categories",
+      "origin": "Vehicle sourcing & exports",
+      "menu": "Open navigation",
+      "close": "Close navigation",
+      "skip": "Skip to content",
+      "tagline": "Selected. Prepared. Exported.",
+      "footerLine": "Your next vehicle. Beyond borders.",
+      "footerBody": "Vehicle sourcing and export coordination, built around your next move.",
+      "copyright": "All rights reserved.",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "cookies": "Cookie preferences",
+      "readGuide": "Read the guide",
+      "commercial": "Your next move starts here.",
+      "commercialBody": "Tell us the vehicle you want, your budget and your destination. Let’s map the next steps together.",
+      "productCta": "Request this vehicle type",
+      "specTitle": "The right vehicle starts with the right brief.",
+      "specBody": "Make, model, year, condition, budget and destination shape your sourcing request.",
+      "buyerBrief": "Your vehicle brief",
+      "notClaim": "Illustrative vehicle artwork. These categories are sourcing options, not live inventory.",
+      "guideLabel": "Vehicle export guide",
+      "related": "Continue exploring",
+      "available": "Discuss your vehicle",
+      "details": "Explore vehicle type",
+      "all": "All vehicle types",
+      "stepLabel": "From your brief to your destination",
+      "direct": "A direct conversation. A clearer next step.",
+      "directBody": "Use the form for a general inquiry, or request a vehicle and export quote.",
+      "noPublic": "Commercial inquiries are handled through the contact form.",
+      "quoteTitle": "Let’s find your next vehicle.",
+      "quoteBody": "Share your preferred vehicle, budget and destination. We’ll use your brief to clarify the sourcing and export requirements.",
+      "contactTitle": "Let’s open a conversation.",
+      "contactBody": "Questions about vehicle sourcing, preparation or shipping? Tell us what you need.",
+      "formPrivacy": "We use your details to evaluate and respond to this inquiry. Read our Privacy Notice.",
+      "submit": "Send request",
+      "sending": "Sending…",
+      "success": "Request received",
+      "successBody": "Your request has been accepted for delivery to the commercial desk. Keep this reference for your records.",
+      "error": "We could not send your request. Your entries have been kept. Please try again.",
+      "unavailable": "Online delivery is temporarily unavailable. Please try again later.",
+      "errors": "Please check the highlighted fields.",
+      "required": "Required",
+      "optional": "Optional",
+      "selected": "Select an option",
+      "company": "Company",
+      "name": "Your name",
+      "email": "Business email",
+      "phone": "Phone / WhatsApp",
+      "product": "Vehicle type",
+      "grade": "Preferred make / model",
+      "volume": "Number of vehicles",
+      "volumeUnit": "Budget currency",
+      "country": "Destination country",
+      "port": "Destination port",
+      "incoterm": "Preferred Incoterm",
+      "shipment": "Preferred delivery period",
+      "packaging": "Shipping preference",
+      "inspection": "Condition / inspection requirements",
+      "message": "Tell us more about your vehicle",
+      "acknowledgement": "I have read the Privacy Notice and understand how this inquiry will be handled.",
+      "marketing": "I would also like occasional product and market updates (optional).",
+      "consentTitle": "Your privacy, your choice.",
+      "consentBody": "Essential functionality is always available. Optional analytics helps us understand how the website is used and loads only with your permission.",
+      "accept": "Accept analytics",
+      "reject": "Essential only",
+      "learn": "Learn more",
+      "noData": "Vehicle records and transaction documents are discussed for the specific vehicle and destination. No blanket guarantees are made.",
+      "reviewed": "Reviewed October 2026",
+      "home": "Home"
+    },
+    "fr": {
+      "products": "Véhicules",
+      "capabilities": "Services d’exportation",
+      "compliance": "Le processus",
+      "about": "À propos",
+      "insights": "Ressources",
+      "contact": "Contact",
+      "quote": "Demander un devis",
+      "explore": "Trouver votre prochain véhicule",
+      "back": "Toutes les catégories",
+      "origin": "Sourcing et exportation automobile",
+      "menu": "Ouvrir la navigation",
+      "close": "Fermer la navigation",
+      "skip": "Aller au contenu",
+      "tagline": "Sélectionné. Préparé. Exporté.",
+      "footerLine": "Votre prochain véhicule. Au-delà des frontières.",
+      "footerBody": "Sourcing automobile et coordination des exportations, selon votre projet.",
+      "copyright": "Tous droits réservés.",
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "cookies": "Préférences cookies",
+      "readGuide": "Lire le guide",
+      "commercial": "Votre prochain projet commence ici.",
+      "commercialBody": "Indiquez le véhicule recherché, votre budget et votre destination. Définissons les prochaines étapes ensemble.",
+      "productCta": "Demander ce type de véhicule",
+      "specTitle": "Le bon véhicule commence par un besoin précis.",
+      "specBody": "Marque, modèle, année, état, budget et destination orientent votre recherche.",
+      "buyerBrief": "Votre recherche automobile",
+      "notClaim": "Visuel automobile illustratif. Ces catégories décrivent des recherches possibles, pas un stock disponible.",
+      "guideLabel": "Guide export automobile",
+      "related": "Poursuivre la découverte",
+      "available": "Parlons de votre véhicule",
+      "details": "Découvrir la catégorie",
+      "all": "Tous les types de véhicules",
+      "stepLabel": "De votre besoin à votre destination",
+      "direct": "Un échange direct. Une prochaine étape claire.",
+      "directBody": "Utilisez le formulaire pour une question générale ou demandez un devis de véhicule et d’exportation.",
+      "noPublic": "Les demandes commerciales sont traitées via le formulaire de contact.",
+      "quoteTitle": "Trouvons votre prochain véhicule.",
+      "quoteBody": "Précisez véhicule, budget et destination. Votre demande permettra de clarifier la recherche et les besoins d’exportation.",
+      "contactTitle": "Ouvrons la conversation.",
+      "contactBody": "Une question sur la recherche, la préparation ou l’expédition d’un véhicule ? Décrivez votre besoin.",
+      "formPrivacy": "Vos coordonnées servent à étudier votre demande et à vous répondre. Consultez notre avis de confidentialité.",
+      "submit": "Envoyer la demande",
+      "sending": "Envoi en cours…",
+      "success": "Demande reçue",
+      "successBody": "Votre demande a été acceptée pour transmission à l’équipe commerciale. Conservez cette référence.",
+      "error": "Votre demande n’a pas pu être envoyée. Vos informations sont conservées. Veuillez réessayer.",
+      "unavailable": "L’envoi en ligne est temporairement indisponible. Veuillez réessayer plus tard.",
+      "errors": "Veuillez vérifier les champs indiqués.",
+      "required": "Obligatoire",
+      "optional": "Facultatif",
+      "selected": "Choisir une option",
+      "company": "Entreprise",
+      "name": "Votre nom",
+      "email": "E-mail professionnel",
+      "phone": "Téléphone / WhatsApp",
+      "product": "Type de véhicule",
+      "grade": "Marque / modèle souhaités",
+      "volume": "Nombre de véhicules",
+      "volumeUnit": "Devise du budget",
+      "country": "Pays de destination",
+      "port": "Port de destination",
+      "incoterm": "Incoterm souhaité",
+      "shipment": "Période de livraison souhaitée",
+      "packaging": "Mode d’expédition souhaité",
+      "inspection": "Exigences d’état / inspection",
+      "message": "Précisions sur votre véhicule",
+      "acknowledgement": "J’ai lu l’avis de confidentialité et compris le traitement de cette demande.",
+      "marketing": "Je souhaite également recevoir des actualités produits et marchés (facultatif).",
+      "consentTitle": "Votre confidentialité, votre choix.",
+      "consentBody": "Les fonctions essentielles restent disponibles. Les statistiques facultatives nous aident à comprendre l’utilisation du site et ne sont chargées qu’avec votre accord.",
+      "accept": "Accepter les statistiques",
+      "reject": "Essentiels uniquement",
+      "learn": "En savoir plus",
+      "noData": "Les dossiers et documents sont examinés selon le véhicule et la destination. Aucune garantie générale n’est annoncée.",
+      "reviewed": "Révisé en octobre 2026",
+      "home": "Accueil"
+    }
+  },
+  "steps": [
+    {
+      "en": [
+        "Find",
+        "Define the vehicle, budget and destination."
+      ],
+      "fr": [
+        "Rechercher",
+        "Préciser véhicule, budget et destination."
+      ]
+    },
+    {
+      "en": [
+        "Review",
+        "Evaluate the proposed vehicle and its records."
+      ],
+      "fr": [
+        "Examiner",
+        "Évaluer le véhicule proposé et son dossier."
+      ]
+    },
+    {
+      "en": [
+        "Prepare",
+        "Agree the purchase and export preparation."
+      ],
+      "fr": [
+        "Préparer",
+        "Convenir de l’achat et de la préparation."
+      ]
+    },
+    {
+      "en": [
+        "Ship",
+        "Clarify the route and shipping arrangements."
+      ],
+      "fr": [
+        "Expédier",
+        "Préciser l’itinéraire et le transport."
+      ]
+    },
+    {
+      "en": [
+        "Receive",
+        "Plan destination clearance and collection."
+      ],
+      "fr": [
+        "Réceptionner",
+        "Prévoir dédouanement et prise en charge."
+      ]
+    }
+  ],
+  "vehicles": [
+    {
+      "slug": "suv",
+      "name": {
+        "en": "SUVs & crossovers",
+        "fr": "VUS et multisegments"
+      },
+      "category": "SUV",
+      "description": {
+        "en": "Space, presence and everyday versatility. Tell us the SUV you want to find.",
+        "fr": "Espace, prestance et polyvalence. Indiquez le VUS que vous recherchez."
+      }
+    },
+    {
+      "slug": "sedan",
+      "name": {
+        "en": "Sedans & hatchbacks",
+        "fr": "Berlines et compactes"
+      },
+      "category": "SEDAN",
+      "description": {
+        "en": "Considered choices for the daily drive. Start with your preferred make, model and budget.",
+        "fr": "Des choix adaptés au quotidien. Précisez la marque, le modèle et le budget souhaités."
+      }
+    },
+    {
+      "slug": "pickup",
+      "name": {
+        "en": "Pickups & utility",
+        "fr": "Camionnettes et utilitaires"
+      },
+      "category": "PICKUP",
+      "description": {
+        "en": "Built around your work and your terrain. Define the capability your next vehicle needs.",
+        "fr": "Selon votre activité et votre terrain. Définissez les capacités de votre prochain véhicule."
+      }
+    },
+    {
+      "slug": "van",
+      "name": {
+        "en": "Vans & fleet vehicles",
+        "fr": "Fourgonnettes et flottes"
+      },
+      "category": "VAN",
+      "description": {
+        "en": "A practical brief for business mobility, passenger transport or a fleet requirement.",
+        "fr": "Un besoin précis pour la mobilité professionnelle, le transport ou votre flotte."
+      }
+    }
+  ]
+}

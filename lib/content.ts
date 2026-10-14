@@ -1,0 +1,10 @@
+import data from './data.json';
+export type Locale = 'en' | 'fr';
+export const locales: Locale[] = ['en', 'fr'];
+export const ui = (locale: Locale) => data.ui[locale];
+export const vehicles = data.vehicles;
+export const steps = data.steps;
+export const href = (locale: Locale, path = '/') => `${locale === 'fr' ? '/fr' : ''}${path === '/' && locale === 'fr' ? '' : path}`;
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://canaimpex.vercel.app').replace(/\/$/, '');
+export const routePaths = ['', 'vehicles', ...vehicles.map(p => `vehicles/${p.slug}`), 'services', 'services/vehicle-sourcing', 'services/export-shipping', 'how-it-works', 'about', 'contact', 'quote', 'insights', 'insights/vehicle-request', 'insights/vehicle-inspection', 'insights/export-preparation', 'privacy', 'terms'];
+export type VehicleCategory = typeof vehicles[number];
